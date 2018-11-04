@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
+import Loginscreen from './Loginscreen';
 
-class App extends Component {
+class App extends React.Component{
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-         
-       <div><h1>Hello</h1></div>
-          
-        </header>
+      <div>
+        <div>
+          <Loginscreen/>
+        </div>
       </div>
     );
   }
