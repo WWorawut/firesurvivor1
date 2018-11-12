@@ -2,15 +2,30 @@ import React, {} from 'react';
 import './App.css';
 
 class Loginscreen extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { 
+      value:"input name"
+    };
+  }
+  gg=()=>{
+    alert(this.state.value)
+  }
+  cc=(e)=>{
+    this.setState({
+      value:e.target.value
+    })
+  }
   render() {
+    const bg={
+      backgroundColor:this.props.color,
+    }
     return (
       <div>
-         <a-scene>
-      <a-sky src="/Final01.jpg" rotation="0 -130 0"></a-sky>
+        <input value={this.state.value} onChange={this.cc}></input>
+        <button style={bg} onClick={this.gg}>fdgdf</button>
 
-      <a-text font="kelsonsans" value="Puy" width="6" position="-2.5 0.25 -1.5"
-              rotation="0 15 0"></a-text>
-    </a-scene>
+  
       </div>
      
      
