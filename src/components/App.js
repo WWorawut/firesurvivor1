@@ -1,6 +1,7 @@
 import React, {} from 'react';
 import './App.css';
 import New from './new';
+import Loginscreen from './Loginscreen';
 import Exam from './exam/Exam';
 import { BrowserRouter as Router, Route, Redirect} from 'react-router-dom';
 
@@ -9,7 +10,8 @@ class App extends React.Component{
     return (
       <Router>
       <div>
-        <Route exact path="/" component={New} />
+        <Route exact path="/" component={Loginscreen} />
+        <Route path="/office" component={New} />
         <Route path="/exam" component={Exam} />                
       </div>
     </Router>

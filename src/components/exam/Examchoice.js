@@ -6,30 +6,31 @@ class Examchoice extends React.Component {
   constructor(props) {
     super(props);
     this.state = { 
-
     };
   }
 
 
   render() {
+    let cardColor;
+      {this.props.cardColor === 'normal' ?
+        cardColor = null
+        :
+        cardColor = {backgroundColor:this.props.cardColor}   
+      }
 
     return (
-    <div>
-        <div class="card">
-            <div class="card-header" id="headingOne">
-            <h5 class="mb-0">
-            <button class="btn btn-link" type="button" data-toggle="collapse" data-target={"#"+this.props.id} aria-expanded="true" aria-controls="collapseOne">
-            <p>{this.props.quiz}</p>
-            </button>
-            </h5>
+    <div className="container">
+        <div className="card box1">
+            <div className="card-header" style={cardColor} id="headingOne">
+                <p className="sizef btn-link" data-toggle="collapse" data-target={"#"+this.props.id} aria-expanded="true" aria-controls="collapseOne">{this.props.quiz}</p>
             </div>
 
-            <div id={this.props.id} class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-                <div class="card-body">
-                    <input type="radio" checked={this.props.choice===this.props.a} onChange={this.props.change} value={this.props.a} /> <p>{this.props.onechoice}</p>
-                    <input type="radio" checked={this.props.choice===this.props.b} onChange={this.props.change} value={this.props.b} /> <p>{this.props.twochoice}</p>
-                    <input type="radio" checked={this.props.choice===this.props.c} onChange={this.props.change} value={this.props.c} /> <p>{this.props.threechoice}</p>
-                    <input type="radio" checked={this.props.choice===this.props.d} onChange={this.props.change} value={this.props.d} /> <p>{this.props.fourchoice}</p>
+            <div id={this.props.id} className="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div className="card-body">
+                    <div><input type="radio" checked={this.props.choice===this.props.a} onChange={this.props.change} value={this.props.a} /> <p className="line sizef">{this.props.onechoice}</p></div>
+                    <div><input type="radio" checked={this.props.choice===this.props.b} onChange={this.props.change} value={this.props.b} /> <p className="line sizef">{this.props.twochoice}</p></div>
+                    <div><input type="radio" checked={this.props.choice===this.props.c} onChange={this.props.change} value={this.props.c} /> <p className="line sizef">{this.props.threechoice}</p></div>
+                    <div><input type="radio" checked={this.props.choice===this.props.d} onChange={this.props.change} value={this.props.d} /> <p className="line sizef">{this.props.fourchoice}</p></div>
                 </div>
             </div>
         </div>

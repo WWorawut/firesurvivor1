@@ -1,0 +1,41 @@
+.boxlogin{
+    width: auto;
+    box-shadow: 1px 3px 10px #bdbdbd;
+    border-width: 0.5px;
+    border-radius: 10px 10px 10px 10px;
+    background-color: white;
+}
+
+.piclogo{
+    width: 360px;
+    padding: 50px 100px 20px 90px;
+}
+
+.fontlog{
+    font-family: 'Kanit', sans-serif;
+    font-size: 15px;
+}
+
+.space{
+    padding: 0 50px 0 50px;
+}
+
+.btn-info{
+    margin: 20px 0 85px 75px;
+    width: 40%;
+}
+
+.modal-content{
+    border: none;
+    background: none;
+}
+
+.modal-dialog{
+    margin: 10px 140px 10px 140px;
+}
+
+@media only screen and (max-width: 728px) {
+    .modal-dialog{
+        margin: 0px 10px 0px 10px;
+    }
+}
