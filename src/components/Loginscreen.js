@@ -1,7 +1,7 @@
 import React, {} from 'react';
 import './App.css';
 import './css/login.css';
-import logo from "./picture/Logo.png";
+import logo from "./picture/Logo.svg";
 import YouTube from 'react-youtube';
 
 class Loginscreen extends React.Component {
@@ -39,8 +39,8 @@ constructor(props){
 
     return (
       <div>
-        <div className="jumbotron">
-        <div className="row offset-6 fontlog"> 
+        <div className="cd">
+        <div className="fontlog"> 
 
           <div className="boxlogin">
             <img className="piclogo" src={logo}/>
@@ -73,8 +73,8 @@ constructor(props){
                   </div>
                 </div>
 
+                </div>
             </div>
-          </div>
 
 
           {/* <div>
