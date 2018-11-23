@@ -30,8 +30,8 @@ constructor(props){
   }
   render() {
     const opts = {
-      width: '700px',
-      height:'420px',
+      width: '800px',
+      height:'520px',
       playerVars: { // https://developers.google.com/youtube/player_parameters
         autoplay:0
       }
@@ -43,6 +43,7 @@ constructor(props){
         <div className="fontlog"> 
 
           <div className="boxlogin">
+          <div className="box">
             <img className="piclogo" src={logo}/>
             <div className="space">
             <p style={{marginBottom:"8px"}}>ลงชื่อเข้าใช้งาน</p>
@@ -57,11 +58,13 @@ constructor(props){
               </button>
             } 
             </form>
-            
-                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                  <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                      <div class="modal-body">
+            </div>
+            <div>
+                <div className="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div className="videospace">
+                  <div className="modal-dialog modal-dialog-centered" role="document">
+                    <div className="modal-content">
+                      <div className="modal-body">
                       <YouTube
                         videoId="A1BdhEYXkYI" 
                         opts={opts}
@@ -72,6 +75,8 @@ constructor(props){
                     </div>
                   </div>
                 </div>
+                </div>
+              </div>
 
                 </div>
             </div>
