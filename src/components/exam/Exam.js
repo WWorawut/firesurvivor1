@@ -1,5 +1,6 @@
 import React, {} from 'react';
 import Examchoice from './Examchoice';
+import logoexam from "../picture/logoexam.svg";
 import '../css/exam.css';
 
 class Exam extends React.Component {
@@ -189,9 +190,10 @@ class Exam extends React.Component {
 
     return (
     <div className="font">
-        <div className="jumbotron coverexam text-center">
-            <h1 className="fonteng">POST TEST</h1>
-            <h7>- แบบทดสอบหลังเรียน -</h7>
+        <div className="coverexam">
+        <div className="coverlogo">
+        <img src={logoexam}/>
+        </div>
         </div>
 
 
