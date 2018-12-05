@@ -33,16 +33,15 @@ class Exam extends React.Component {
     submit=(e)=>{
         e.preventDefault();
         let score = 0;
-        let check = 0;
+        let answered=0;
         if(this.state.choice1==="true"){
             score++;
         }
         if(this.state.choice1==="") {
-            check=1;   
             this.setState({cardColor1:"#EC8B8B"})
         }
         else{
-            check=0;   
+            answered++;
             this.setState({cardColor1:"normal"})
         }
 
@@ -52,11 +51,10 @@ class Exam extends React.Component {
             score++;
         }        
         if(this.state.choice2==="") {
-            check=1;   
             this.setState({cardColor2:"#EC8B8B"})
         }
         else{
-            check=0;   
+            answered++;
             this.setState({cardColor2:"normal"})
         }
 
@@ -67,11 +65,10 @@ class Exam extends React.Component {
             score++;
         }
         if(this.state.choice3==="") {
-            check=1;   
             this.setState({cardColor3:"#EC8B8B"})
         }
-        else{
-            check=0;   
+        else{ 
+            answered++;
             this.setState({cardColor3:"normal"})
         }
 
@@ -81,11 +78,10 @@ class Exam extends React.Component {
             score++;
         }
         if(this.state.choice4==="") {
-            check=1;   
             this.setState({cardColor4:"#EC8B8B"})
         }
-        else{
-            check=0;   
+        else{   
+            answered++;
             this.setState({cardColor4:"normal"})
         }
 
@@ -95,11 +91,10 @@ class Exam extends React.Component {
             score++;
         }
         if(this.state.choice5==="") {
-            check=1;   
             this.setState({cardColor5:"#EC8B8B"})
         }
-        else{
-            check=0;   
+        else{  
+            answered++; 
             this.setState({cardColor5:"normal"})
         }
 
@@ -109,11 +104,10 @@ class Exam extends React.Component {
             score++;
         }
         if(this.state.choice6==="") {
-            check=1;   
             this.setState({cardColor6:"#EC8B8B"})
         }
-        else{
-            check=0;   
+        else{  
+            answered++;
             this.setState({cardColor6:"normal"})
         }
 
@@ -124,11 +118,10 @@ class Exam extends React.Component {
             score++;
         }
         if(this.state.choice7==="") {
-            check=1;   
             this.setState({cardColor7:"#EC8B8B"})
         }
-        else{
-            check=0;   
+        else{           
+            answered++;
             this.setState({cardColor7:"normal"})
         }
 
@@ -139,11 +132,10 @@ class Exam extends React.Component {
             score++;
         }
         if(this.state.choice8==="") {
-            check=1;   
             this.setState({cardColor8:"#EC8B8B"})
         }
-        else{
-            check=0;   
+        else{         
+            answered++;
             this.setState({cardColor8:"normal"})
         }
 
@@ -153,11 +145,10 @@ class Exam extends React.Component {
             score++;
         }
         if(this.state.choice9==="") {
-            check=1;   
             this.setState({cardColor9:"#EC8B8B"})
         }
-        else{
-            check=0;   
+        else{ 
+            answered++; 
             this.setState({cardColor9:"normal"})
         }
 
@@ -167,23 +158,23 @@ class Exam extends React.Component {
             score++;
         }
         if(this.state.choice10==="") {
-            check=1;   
             this.setState({cardColor10:"#EC8B8B"})
         }
         else{
-            check=0;   
+            answered++; 
             this.setState({cardColor10:"normal"})
         }
 
-        if (check===0){
+        if (answered===10){
             const modal = Modal.success({
                 title: <div className="fonteng">คะแนนของคุณ</div>,
                 content:<div className="fonteng">{score} คะแนน</div>,
                 onOk:this.modal
               });
         }   
-        if (check===1){
+        else{
             this.openNotificationWithIcon();
+            answered=0;
         }  
     }
 
