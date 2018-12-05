@@ -56,6 +56,35 @@
     margin:0 20% 0 18%;
 }
 
+.typepeople{
+    box-shadow: 2px 3px 10px #e2e2e2;
+    width: 80%;
+    display: flex;
+    margin:auto;
+    margin-top:5%;
+}
+
+.bgtype{
+    background-color:white;
+    height: 100vh;
+}
+
+/* .buttontype{
+    margin:auto;
+    margin-top: 50%;
+} */
+
+
+.intro{
+    position:fixed;
+    top:50%;left:50%;min-width:100%;
+    min-height:100%;
+    width:auto;
+    height:auto;
+    z-index:-100;
+    -webkit-transform:translateX(-50%) translateY(-50%);transform:translateX(-50%) translateY(-50%);
+  }
+
 
 
 
@@ -80,6 +109,7 @@
         height: 50px;
     }
 }
+
 
 @media only screen and (max-width: 414px) {
     .cd{

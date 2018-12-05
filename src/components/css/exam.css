@@ -17,7 +17,8 @@
 }
 
 .fonteng{
-    font-family: 'Poppins', sans-serif;
+    /* font-family: 'Poppins', sans-serif; */
+    font-family: 'Kanit', sans-serif;
 }
 
 .box1{
@@ -68,6 +69,9 @@
     margin: 13% 0 0 55%;
 }
 
+.aa{
+    color: rgb(46, 46, 46);
+}
 
 
 

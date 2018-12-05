@@ -2,6 +2,7 @@ import React, {} from 'react';
 import './App.css';
 import New from './new';
 import Loginscreen from './Loginscreen';
+import Intro from './video/Intro';
 import Exam from './exam/Exam';
 import Asum from './PeopleSummary/Asum';
 import Bsum from './PeopleSummary/Bsum';
@@ -16,6 +17,7 @@ class App extends React.Component{
       <Router>
       <div>
         <Route exact path="/" component={Loginscreen} />
+        <Route path="/intro" component={Intro} />
         <Route path="/office" component={New} />
         <Route path="/exam" component={Exam} />
 

@@ -12,12 +12,10 @@ constructor(props){
     dd:""
   }
 }
-  office=() => {
-    window.location.href="/office";
-  }
 
  login=()=>{
   localStorage.setItem("user", this.state.value);
+  window.location.href="/intro";
  }
 
   onChangeValue=(e)=>{
@@ -25,17 +23,8 @@ constructor(props){
       value:e.target.value
     })
   }
-  onReady(event) {
-    event.target.pauseVideo();
-  }
+
   render() {
-    const opts = {
-      width: '800px',
-      height:'520px',
-      playerVars: { // https://developers.google.com/youtube/player_parameters
-        autoplay:0
-      }
-    };
 
     return (
       <div>
@@ -60,39 +49,9 @@ constructor(props){
             </form>
             </div>
             <div>
-                <div className="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                <div className="videospace">
-                  <div className="modal-dialog modal-dialog-centered" role="document">
-                    <div className="modal-content">
-                      <div className="modal-body">
-                      <YouTube
-                        videoId="A1BdhEYXkYI" 
-                        opts={opts}
-                        onReady={this.onReady}
-                        onEnd={this.office}
-                      />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                </div>
               </div>
-
                 </div>
             </div>
-
-
-          {/* <div>
-          <YouTube
-              videoId="A1BdhEYXkYI" 
-              opts={opts}
-            
-              onEnd={this.office}
-            />
-          </div> */}
-
-
-
           </div>
         </div>
       </div>

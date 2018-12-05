@@ -1,7 +1,10 @@
 import React, {} from 'react';
 import Examchoice from './Examchoice';
 import logoexam from "../picture/logoexam.svg";
+import { Button, notification, Modal } from 'antd';
+
 import '../css/exam.css';
+import 'antd/dist/antd.css'
 
 class Exam extends React.Component {
   constructor(props) {
@@ -172,21 +175,40 @@ class Exam extends React.Component {
             this.setState({cardColor10:"normal"})
         }
 
-
-
         if (check===0){
-           alert(score);
+            const modal = Modal.success({
+                title: <div className="fonteng">คะแนนของคุณ</div>,
+                content:<div className="fonteng">{score} คะแนน</div>,
+                onOk:this.modal
+              });
         }   
         if (check===1){
-            alert('ยังตอบคำถามไม่ครบค่ะ');
+            this.openNotificationWithIcon();
         }  
     }
-    
+
+
+    modal=()=>{
+        window.location.href="/";
+    }
+     openNotificationWithIcon = () => {
+        notification[('warning')]({
+          message:<p style={{color:'rgb(46, 46, 46)', fontFamily:'Kanit', fontWeight:'thin' }}>ยังตอบคำถามไม่ครบครับ</p> ,
+          style:{
+              paddingBottom:0,
+              visible: false
+          }
+        });
+      };
+
+      
 
   render() {
-    //   if(this.state.choice1!==""){
-    //     this.setState({cardColor1:"normal"})
-    //   }
+    notification.config({
+        placement: 'topRight',
+        duration: 2,
+
+      });
 
     return (
     <div className="font">
@@ -361,10 +383,11 @@ class Exam extends React.Component {
             </div>
 
             <div className="text-center">
-            <button className="btn btn-outline-info fonteng" type="submit">SUBMIT</button>
+            <button className="btn btn-outline-info fonteng" type="submit">ส่งคำตอบ</button>
             </div>
     
       </form>
+      
       
       </div>
 
