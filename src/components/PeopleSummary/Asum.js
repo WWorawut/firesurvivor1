@@ -1,15 +1,19 @@
 import React, {} from 'react';
 import '../css/login.css';
-import card1 from "../picture/Card1.jpg";
+import { Icon } from 'antd';
 
 class Asum extends React.Component{
+
+   close=()=>{
+     window.location.href="/exam";
+   }
+
     render() {
       return (
         <div className="bgg">
         <div className="bgtype">
-          <div className="typepeople">
-
- 
+          <div className="typepeople card1">
+          <Icon className="close" type="close" onClick={this.close}/>
           </div>              
         </div>
         </div>

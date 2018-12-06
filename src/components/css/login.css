@@ -56,14 +56,21 @@
     margin:0 20% 0 18%;
 }
 
+.close{
+    position: absolute;
+    right: 20px;
+    top:13px;
+    font-size: 33px;
+    color: blue;
+}
 
 .bgg{
     background-image: url("../picture/bg.png");
     background-size: cover;
+    overflow-y: hidden;
 }
 
 .typepeople{
-    background-image: url("../picture/Card1.jpg");
     background-size: cover;
     box-shadow: 2px 3px 10px #e2e2e2;
     height: 90%;
@@ -75,8 +82,26 @@
 
 .bgtype{
     height: 100vh;
-    width: 30%;
+    width: 80%;
     margin: auto;
+    transform: translate(0,5%);
+  
+}
+
+.card1{
+    background-image: url("../picture/Card1.png");
+}
+.card2{
+    background-image: url("../picture/Card2.png");
+}
+.card3{
+    background-image: url("../picture/Card3.png");
+}
+.card4{
+    background-image: url("../picture/Card4.png");
+}
+.card5{
+    background-image: url("../picture/Card5.png");
 }
 
 
@@ -114,6 +139,28 @@
         width: 80%;
         height: 50px;
     }
+
+    .card1{
+        background-image: url("../picture/Card1ipad.png");
+    }
+    .card2{
+        background-image: url("../picture/Card2ipad.png");
+    }
+    .card3{
+        background-image: url("../picture/Card3ipad.png");
+    }
+    .card4{
+        background-image: url("../picture/Card4ipad.png");
+    }
+    .card5{
+        background-image: url("../picture/Card5ipad.png");
+    }
+
+    .close{
+        right: 20px;
+        top:20px;
+        font-size: 45px;
+    }
 }
 
 
@@ -135,6 +182,28 @@
         width: 90%;
         height: 40px;
     }
+
+    .card1{
+        background-image: url("../picture/Card1mobile.png");
+    }
+    .card2{
+        background-image: url("../picture/Card2mobile.png");
+    }
+    .card3{
+        background-image: url("../picture/Card3mobile.png");
+    }
+    .card4{
+        background-image: url("../picture/Card4mobile.png");
+    }
+    .card5{
+        background-image: url("../picture/Card5mobile.png");
+    }
+
+    .close{
+        right: 8px;
+        top:8px;
+        font-size: 30px;
+    }
 }
 
 @media only screen and (max-width: 320px) {
@@ -154,6 +223,28 @@
     .form-control{
         width: 90%;
         height: 40px;
+    }
+
+    .card1{
+        background-image: url("../picture/Card1mobile.png");
+    }
+    .card2{
+        background-image: url("../picture/Card2mobile.png");
+    }
+    .card3{
+        background-image: url("../picture/Card3mobile.png");
+    }
+    .card4{
+        background-image: url("../picture/Card4mobile.png");
+    }
+    .card5{
+        background-image: url("../picture/Card5mobile.png");
+    }
+
+    .close{
+        right: 8px;
+        top:8px;
+        font-size: 27px;
     }
 }
 
