@@ -4,7 +4,7 @@ import YouTube from 'react-youtube';
 
 class Intro extends React.Component{
     office=() => {
-      window.location.href="/office";
+      window.location.href="/howtoplay";
     }
 
     render() {

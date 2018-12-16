@@ -1,5 +1,4 @@
 import React, {} from 'react';
-import Loginscreen from './Loginscreen';
 
 class New extends React.Component {
   

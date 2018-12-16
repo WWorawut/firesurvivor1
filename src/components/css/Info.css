@@ -1,0 +1,34 @@
+.janghad{
+    background-image: url("../picture/Infographic/janghad.png");
+}
+
+.bgjanghad{
+    /* background-image: url("../picture/bg.png"); */
+    background-size: cover;
+    overflow-y: hidden;
+}
+
+.typeinfo{
+    background-size: cover;
+    box-shadow: 2px 3px 10px #0000;
+    height: 90%;
+    width: 100%;
+    display: flex;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.close{
+    position: absolute;
+    right: 20px;
+    top:13px;
+    font-size: 33px;
+    color: white;
+}
+
+.bgtypeinfo{
+    height: 100vh;
+    width: 80%;
+    margin: auto;
+    transform: translate(0,5%);
+}
