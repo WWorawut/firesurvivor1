@@ -2,9 +2,9 @@ import React, {} from 'react';
 import '../css/Info.css';
 import { Icon } from 'antd';
 
-{/* Info แจ้งเหตุ */}
+{/* Info เดินหนีไฟ */}
 
-class janghad extends React.Component{  
+class walk extends React.Component{  
 
    close=()=>{
      window.location.href="/office";   
@@ -14,7 +14,7 @@ class janghad extends React.Component{
       return (
         <div className="bgjanghad">
         <div className="bgtypeinfo">
-          <div className="typeinfo janghad">
+          <div className="typeinfo walk">
           <Icon className="closea" type="close" onClick={this.close}/>
           </div>              
         </div>
@@ -23,4 +23,4 @@ class janghad extends React.Component{
     }
   }
   
-  export default janghad;
+  export default walk;

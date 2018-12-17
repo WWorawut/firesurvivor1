@@ -73,6 +73,7 @@
 .typepeople{
     background-size: cover;
     box-shadow: 2px 3px 10px #e2e2e2;
+    border-radius: 1%;
     height: 90%;
     width: 100%;
     display: flex;

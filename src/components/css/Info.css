@@ -1,16 +1,40 @@
 .janghad{
     background-image: url("../picture/Infographic/janghad.png");
 }
+.firetype{
+    background-image: url("../picture/Infographic/firetype.png");
+}
+.rarabhad{
+    background-image: url("../picture/Infographic/rarabhad.png");
+}
+.firetung{
+    background-image: url("../picture/Infographic/firetung.png");
+}
+.walk{
+    background-image: url("../picture/Infographic/walk.png");
+}
+.smoke{
+    background-image: url("../picture/Infographic/smoke.png");
+}
+.heat{
+    background-image: url("../picture/Infographic/heat.png");
+}
 
 .bgjanghad{
-    /* background-image: url("../picture/bg.png"); */
+    background-image: url("../picture/bg.png");
     background-size: cover;
     overflow-y: hidden;
 }
 
+
+
+
+
+
 .typeinfo{
     background-size: cover;
-    box-shadow: 2px 3px 10px #0000;
+    box-shadow: 2px 3px 10px rgb(128, 95, 190);
+    border-radius: 1%;
     height: 90%;
     width: 100%;
     display: flex;
@@ -18,13 +42,19 @@
     background-repeat: no-repeat;
 }
 
-.close{
+.closea{
     position: absolute;
     right: 20px;
     top:13px;
     font-size: 33px;
     color: white;
+    cursor: pointer;
 }
+
+.closea:hover{
+    color: #757575;
+}
+
 
 .bgtypeinfo{
     height: 100vh;

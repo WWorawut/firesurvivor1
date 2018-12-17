@@ -14,8 +14,17 @@ import Esum from './PeopleSummary/Esum';
 
 import allsum from './Infographic/allsum';
 import janghad from './Infographic/janghad'; 
+import firetype from './Infographic/firetype'; 
+import rarabhad from './Infographic/rarabhad';
+import firetung from './Infographic/firetung';  
+import walk from './Infographic/walk'; 
+import smoke from './Infographic/smoke'; 
+import heat from './Infographic/heat'; 
 
-import { BrowserRouter as Router, Route, Redirect} from 'react-router-dom';
+import test from './video/test';
+
+import { BrowserRouter as Router, Route} from 'react-router-dom';
+
 
 class App extends React.Component{
   render() {
@@ -28,16 +37,25 @@ class App extends React.Component{
         <Route path="/exam" component={Exam} />
         <Route path="/howtoplay" component={Howplay} />
 
-
-        <Route path="/typeA" component={Asum} />  {/* people summary page */}
+        {/* people summary page */}
+        <Route path="/typeA" component={Asum} />
         <Route path="/typeB" component={Bsum} />
         <Route path="/typeC" component={Csum} />
         <Route path="/typeD" component={Dsum} />
         <Route path="/typeE" component={Esum} />
 
-        <Route path="/allsum" component={allsum} /> {/* Infographic page */}
-        <Route path="/alarm" component={janghad} />  {/* Info แจ้งเหตุ */}
+        {/* Infographic page */}
+        <Route path="/allsum" component={allsum} /> {/* Info สรุปรวม */}
+        <Route path="/janghad" component={janghad} />  {/* Info แจ้งเหตุ */}
+        <Route path="/firetype" component={firetype} />  {/* Info ประเภทของไฟ */}
+        <Route path="/rarabhad" component={rarabhad} />  {/* Info ระงับเหตุ */}
+        <Route path="/firetung" component={firetung} />  {/* Info ประเภทถังดับเพลิง */}
+        <Route path="/walk" component={walk} />  {/* Info เดินหนีไฟ */}
+        <Route path="/smoke" component={smoke} />  {/* Info หนีควัน*/}
+        <Route path="/heat" component={heat} />  {/* Info หนีความร้อน */}
                         
+
+        <Route path="/test" component={test} />
       </div>
     </Router>
     );
