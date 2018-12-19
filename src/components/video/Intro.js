@@ -1,11 +1,17 @@
 import React, {} from 'react';
 import '../css/login.css';
 import YouTube from 'react-youtube';
+import { pause } from 'video-react/lib/actions/player';
 
 class Intro extends React.Component{
     office=() => {
       window.location.href="/howtoplay";
     }
+
+    // _onReady(event) {
+    //   // access to player in all event handlers via event.target
+    //   event.target.pauseVideo();
+    // }
 
     render() {
         const opts = {
@@ -20,7 +26,7 @@ class Intro extends React.Component{
               videoId="A1BdhEYXkYI" 
               opts={opts}
               className = "intro"
-              onReady={this.onReady}
+              onReady={this._onReady}
               onEnd={this.office}
             />    
 

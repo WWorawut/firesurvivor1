@@ -20,6 +20,8 @@ import firetung from './Infographic/firetung';
 import walk from './Infographic/walk'; 
 import smoke from './Infographic/smoke'; 
 import heat from './Infographic/heat'; 
+import escape from './Infographic/escape'; 
+import usetung from './Infographic/usetung'; 
 
 import test from './video/test';
 
@@ -53,6 +55,8 @@ class App extends React.Component{
         <Route path="/walk" component={walk} />  {/* Info เดินหนีไฟ */}
         <Route path="/smoke" component={smoke} />  {/* Info หนีควัน*/}
         <Route path="/heat" component={heat} />  {/* Info หนีความร้อน */}
+        <Route path="/escape" component={escape} />  {/* Info หนีเหตุ */}
+        <Route path="/usetung" component={usetung} />  {/* Info การใช้ถุงดับเพลิง */}
                         
 
         <Route path="/test" component={test} />

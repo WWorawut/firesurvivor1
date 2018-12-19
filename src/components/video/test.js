@@ -1,6 +1,7 @@
-import React, {} from 'react';
-import '../css/login.css';
-import YouTube from 'react-youtube';
+import React from 'react';
+import { Player, ControlBar, PlayToggle} from 'video-react';
+import '../css/Info.css';
+
 
 class test extends React.Component{
     office=() => {
@@ -8,21 +9,13 @@ class test extends React.Component{
     }
 
     render() {
-        const opts = {
-          playerVars: {
-            autoplay:1
-          }
-        };
-
       return (
         <div>
-            <YouTube
-              videoId="A1BdhEYXkYI" 
-              opts={opts}
-              className = "intro"
-              onReady={this.onReady}
-              onEnd={this.office}
-            />    
+            <div className="video">
+            <Player>
+            <source src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4" />
+            </Player> 
+            </div>
 
         </div>
       );

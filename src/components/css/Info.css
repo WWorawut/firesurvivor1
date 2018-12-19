@@ -19,6 +19,13 @@
 .heat{
     background-image: url("../picture/Infographic/heat.png");
 }
+.escape{
+    background-image: url("../picture/Infographic/escape.png");
+}
+.usetung{
+    background-image: url("../picture/Infographic/usetung.png");
+}
+
 
 .bgjanghad{
     background-image: url("../picture/bg.png");
@@ -61,4 +68,18 @@
     width: 80%;
     margin: auto;
     transform: translate(0,5%);
+}
+
+.video{
+    padding-top:0%;
+}
+
+
+@media only screen and (max-width: 1024px) {
+}
+
+@media only screen and (max-width: 414px) {
+}
+
+@media only screen and (max-width: 320px) {
 }
