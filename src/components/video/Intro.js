@@ -1,7 +1,7 @@
 import React, {} from 'react';
 import '../css/login.css';
 import YouTube from 'react-youtube';
-import { pause } from 'video-react/lib/actions/player';
+
 
 class Intro extends React.Component{
     office=() => {

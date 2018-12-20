@@ -15,7 +15,7 @@ constructor(props){
 
  login=()=>{
   localStorage.setItem("user", this.state.value);
-  window.location.href="/intro";
+  window.location.href="/test";
  }
 
   onChangeValue=(e)=>{

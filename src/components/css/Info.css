@@ -1,3 +1,5 @@
+@import "~video-react/dist/video-react.css";
+
 .janghad{
     background-image: url("../picture/Infographic/janghad.png");
 }
@@ -71,7 +73,7 @@
 }
 
 .video{
-    padding-top:0%;
+    height: 500px;
 }
 
 

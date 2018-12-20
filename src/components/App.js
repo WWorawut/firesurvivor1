@@ -5,6 +5,7 @@ import Loginscreen from './Loginscreen';
 import Intro from './video/Intro';
 import Exam from './exam/Exam';
 import Howplay from './Howplay';
+import exam2 from './exam/exam2';
 
 import Asum from './PeopleSummary/Asum';
 import Bsum from './PeopleSummary/Bsum';
@@ -60,6 +61,7 @@ class App extends React.Component{
                         
 
         <Route path="/test" component={test} />
+        <Route path="/exam2" component={exam2} />
       </div>
     </Router>
     );

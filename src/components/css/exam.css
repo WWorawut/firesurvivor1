@@ -39,8 +39,8 @@
 
 .coverexam{
     background-image: url("../picture/exambg.png");
-    background-size: cover;
     display: flex;
+    background-size: cover;
     height: 100vh;
     background-position: center center;
     background-repeat: no-repeat;
@@ -56,11 +56,17 @@
 }
 
 .card-body{
-    padding-left: 6rem;
+    padding-top: 90px;
+    margin: auto;
+    width: 60%;
+    line-height: 50px;
 }
 
+
 .sizef{
-    font-size: 16px;
+    font-size: 20px;
+    text-align: center;
+    transform: translate(0,300%);
 }
 
 
@@ -141,3 +147,63 @@
 style={{backgroundImage:"url(./picture/Exambanner.jpg)"}} 
 style={{color:"white"}} 
 */
+
+.detailexam{
+    background-image: url("../picture/detailexam.png");
+    background-size: cover;
+    height: 100vh;
+}
+
+.typeexambox{
+    height: 90vh;
+    width: 70%;
+    margin: auto;
+    transform: translate(0,5%);
+}
+
+.answer{
+    height: 70vh;
+    width: 50%;
+    margin: auto;
+    transform: translate(0,5%);
+}
+
+.typeexam{
+    background-size: cover;
+    box-shadow: 2px 3px 10px #b19191;
+    background-color: white;
+    border-radius: 1%;
+    height: 90%;
+    width: 100%;
+    /* display: flex; */
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+    position: absolute;
+    opacity: 0.95;
+}
+
+.sentans{
+    position: absolute;
+    right: 20px;
+    bottom: 100px;
+}
+
+.btn-outline-danger{
+    padding: 5px 20px 5px 20px;
+}
+
+.textanswer{
+    font-size: 25px;
+    text-align: center;
+    transform: translate(0,30%);
+}
+
+.boxanswer{
+    font-size: 15px;
+    border: 1px solid #000;
+    width: 10%;
+    height: 10%;
+    float: left;
+    margin-left: 5px;
+}
