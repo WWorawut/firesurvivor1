@@ -1,6 +1,5 @@
 import React, {} from 'react';
 import '../css/exam.css';
-import { Button } from 'antd';
 
 
 class Examchoice extends React.Component {

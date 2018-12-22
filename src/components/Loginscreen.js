@@ -15,7 +15,7 @@ constructor(props){
 
  login=()=>{
   localStorage.setItem("user", this.state.value);
-  window.location.href="/test";
+  window.location.href="/Intro";
  }
 
   onChangeValue=(e)=>{
@@ -35,15 +35,15 @@ constructor(props){
           <div className="box">
             <img className="piclogo" src={logo}/>
             <div className="space">
-            <p style={{marginBottom:"8px"}}>ลงชื่อเข้าใช้งาน</p>
+            <p style={{marginBottom:"8px"}}>ใส่ชื่อของคุณ</p>
 
             <form>
-            <input className="form-control fontlog" type="text" placeholder="ใส่ชื่อของคุณ" required onChange={this.onChangeValue} value={this.state.value}/>
+            <input className="form-control fontlog" type="text" placeholder="" required onChange={this.onChangeValue} value={this.state.value}/>
             {this.state.value === "" ?
-              <button type="submit" className="btn btn-info fontlog">เข้าสู่ระบบ</button>
+              <button type="submit" className="btn btn-info fontlog">เริ่มสำรวจ</button>
               :
               <button type="button" onClick={this.login} class="btn btn-info fontlog" data-toggle="modal" data-target="#exampleModalCenter">
-                เข้าสู่ระบบ
+                ไปกันเลย
               </button>
             } 
             </form>

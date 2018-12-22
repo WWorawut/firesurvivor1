@@ -1,9 +1,9 @@
 import React from 'react';
-import { Player, ControlBar, PlayToggle} from 'video-react';
+import { Player } from 'video-react';
 import '../css/Info.css';
 import intro from "../video/file/fire.mp4";
 
-class test extends React.Component{
+class IntroMP4 extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
@@ -29,11 +29,10 @@ class test extends React.Component{
       return (
         <div>
             <div className="video">
-            <button onClick={this.play}>hgj</button>
             <Player 
             ref="player"
             autoPlay
-            // playsInline={true}
+            playsInline={true}
 
             >
             <source src={intro} />
@@ -47,5 +46,5 @@ class test extends React.Component{
     }
   }
 
-  export default test;
+  export default IntroMP4;
   

@@ -82,12 +82,16 @@ class exam2 extends React.Component {
         width: '5%',
         top: '50%',
         transform: 'translate(-50%, -50%)',
+        '@media screen and (max-width: 414px)': {
+        width: '15%',
+        }
       }
 
-//   activeKey={this.state.pointKey}
+
+//   activeKey={this.state.pointKey}  activeKey='11'
     return (
     <div>     
-        <Tabs tabPosition="bottom" tabBarStyle={{display:'none'}} className="detailexam" activeKey='11' >  
+        <Tabs tabPosition="bottom" tabBarStyle={{display:'none'}} className="detailexam" activeKey={this.state.pointKey} >  
  
         <TabPane tab="1" key="1" >
         <div className="typeexambox">
@@ -97,7 +101,7 @@ class exam2 extends React.Component {
             next={this.nextPoint}
             choice={this.state.choice1}
             change={this.change('choice1')}
-            quiz="1. เมื่อเกิดเหตุเพลิงไหม้ ควรแจ้งเหตุอย่างไร จึงเรียกว่าเหมาะสมที่สุด ?"
+            quiz="1. เมื่อเกิดเหตุเพลิงไหม้ ควรแจ้งเหตุอย่างไร จึงเรียกว่าเหมาะสมที่สุด"
             onechoice="ก. ตะโกนไฟไหม้"
             twochoice="ข. ตะโกนไฟไหม้ และบอกจุดเกิดเหตุ"
             threechoice="ค. วิ่งหนี ไปเคาะประตูบอกเพื่อน"
@@ -204,9 +208,9 @@ class exam2 extends React.Component {
             change={this.change('choice6')}
             quiz="6. การหนีไฟในขณะลงบันได ควรกระทำอย่างใด"
             onechoice="ก. รีบวิ่งให้ถึงเร็วที่สุด"
-            twochoice="ข. เดินเร็ว ชิดฝั่งราวบันได"
-            threechoice="ค. เดินเร็ว ชิดฝั่งกำแพง หน้ามือสัมผัสกำแพง"
-            fourchoice="ง. เดินเร็ว ชิดฝั่งกำแพง หลังมือสัมผัสกำแพง"
+            twochoice="ข. หมอบต่ำ ชิดฝั่งราวบันได"
+            threechoice="ค. เดินเร็ว ชิดฝั่งราวบันได"
+            fourchoice="ง. เดินเร็ว ชิดฝั่งกำแพง"
             a = "false1"
             b = "false2"
             c = "false3"
@@ -305,21 +309,27 @@ class exam2 extends React.Component {
           <div className="typeexam font">
           <div className="textanswer">
             <p>คะแนนของคุณ : {this.state.score} คะแนน</p>
-            <Button onClick={this.success} >ดูเฉลย</Button> <Button type="primary">ยืนยัน</Button>
+            <Button onClick={this.success} >ดูเฉลย</Button> <Button onClick={this.modal} type="primary">ยืนยัน</Button>
             <br/>
             <br/>
             <hr/>
             <br/>
             <h6>คำตอบของคุณ</h6>
             <br/>
-            <div style={{width:'100%'}}>
+            <div style={{width:'100%',}}>
             <div className="boxanswer">1</div> 
-            <div className="boxanswer">1</div>
-            <div className="boxanswer">1</div>
-            <div className="boxanswer">1</div>
-            <div className="boxanswer">1</div>
-
+            <div className="boxanswer">2</div>
+            <div className="boxanswer">3</div>
+            <div className="boxanswer">4</div>
+            <div className="boxanswer">5</div>
+            <br/>
+            <div className="boxanswer">6</div> 
+            <div className="boxanswer">7</div>
+            <div className="boxanswer">8</div>
+            <div className="boxanswer">9</div>
+            <div className="boxanswer">10</div>
             </div>
+
 
         </div>
           </div>     
@@ -330,7 +340,7 @@ class exam2 extends React.Component {
 
 
 
-        <Steps current={this.state.pointKey-1} direction="vertical" size="small"  style={step}>
+        <Steps current={this.state.pointKey-1} direction="vertical" size="small" style={step}>
           <Step key={"1"} />
           <Step key={"2"} />
           <Step key={"3"} />

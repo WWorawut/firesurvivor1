@@ -3,7 +3,7 @@ import '../css/login.css';
 import YouTube from 'react-youtube';
 
 
-class Intro extends React.Component{
+class YouTube extends React.Component{
     office=() => {
       window.location.href="/howtoplay";
     }
@@ -43,5 +43,5 @@ class Intro extends React.Component{
     }
   }
   
-  export default Intro;
+  export default YouTube;
 

@@ -2,7 +2,6 @@ import React, {} from 'react';
 import './App.css';
 import New from './new';
 import Loginscreen from './Loginscreen';
-import Intro from './video/Intro';
 import Exam from './exam/Exam';
 import Howplay from './Howplay';
 import exam2 from './exam/exam2';
@@ -24,7 +23,7 @@ import heat from './Infographic/heat';
 import escape from './Infographic/escape'; 
 import usetung from './Infographic/usetung'; 
 
-import test from './video/test';
+import IntroMP4 from './video/IntroMP4';
 
 import { BrowserRouter as Router, Route} from 'react-router-dom';
 
@@ -35,9 +34,10 @@ class App extends React.Component{
       <Router>
       <div>
         <Route exact path="/" component={Loginscreen} />
-        <Route path="/intro" component={Intro} />
+        <Route path="/intro" component={IntroMP4} />
         <Route path="/office" component={New} />
         <Route path="/exam" component={Exam} />
+        <Route path="/exam2" component={exam2} />
         <Route path="/howtoplay" component={Howplay} />
 
         {/* people summary page */}
@@ -59,9 +59,6 @@ class App extends React.Component{
         <Route path="/escape" component={escape} />  {/* Info หนีเหตุ */}
         <Route path="/usetung" component={usetung} />  {/* Info การใช้ถุงดับเพลิง */}
                         
-
-        <Route path="/test" component={test} />
-        <Route path="/exam2" component={exam2} />
       </div>
     </Router>
     );
