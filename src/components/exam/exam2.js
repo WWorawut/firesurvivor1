@@ -1,9 +1,9 @@
 import React, {} from 'react';
 import Examchoice from './Examchoice';
-import { Steps ,BackTop, notification, Modal, Button, Tabs, Select,Icon } from 'antd';
+import { Steps , notification, Modal, Button, Tabs, Select } from 'antd';
 import 'antd/dist/antd.css'
 import '../css/exam.css';
-import logoexam from "../picture/logoexam.svg";
+import ans from "../picture/ans.png";
 
 const Step = Steps.Step;
 const TabPane = Tabs.TabPane;
@@ -54,18 +54,20 @@ class exam2 extends React.Component {
         window.location.href="/";
     }
     
-      nextPoint=()=>{
+    nextPoint=()=>{
         let pointKey = parseInt(this.state.pointKey, 10);
         pointKey++;
         pointKey = pointKey.toString(10);
         this.setState({ pointKey:pointKey})
-      }
+    }
 
-      success() {
+    success() {
         Modal.success({
-          content: <img src={logoexam}/>,
+          title: <img src={ans}/>,
+          iconType:NamedNodeMap,
+          width:'950px',
         });
-      }
+    }
       
 
 
@@ -250,7 +252,7 @@ class exam2 extends React.Component {
             change={this.change('choice8')}
             quiz="8. อุปกรณ์ใดเหมาะแก่การใช้หนีไฟ และสามารถใช้ได้เป็นเวลานานที่สุด"
             onechoice="ก. ขวดน้ำที่มีน้ำอยู่"
-            twochoice="ข. ผ้าคุมตัว"
+            twochoice="ข. ผ้าคลุมตัว"
             threechoice="ค. ถุงพลาสติกขนาดใหญ่"
             fourchoice="ง. ไฟฉาย"
             a = "false1"
@@ -316,12 +318,12 @@ class exam2 extends React.Component {
             <br/>
             <h6>คำตอบของคุณ</h6>
             <br/>
-            <div style={{width:'100%',}}>
+            <div className="col-md-10 offset-3">
             <div className="boxanswer">1</div> 
             <div className="boxanswer">2</div>
             <div className="boxanswer">3</div>
             <div className="boxanswer">4</div>
-            <div className="boxanswer">5</div>
+            <div className="boxanswer">5</div> 
             <br/>
             <div className="boxanswer">6</div> 
             <div className="boxanswer">7</div>

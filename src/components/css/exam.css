@@ -13,7 +13,6 @@
 
 .font{
     font-family: 'Kanit', sans-serif;
-    background-color: white;
 }
 
 .fonteng{
@@ -104,17 +103,18 @@ style={{color:"white"}}
 }
 
 .typeexambox{
-    height: 90vh;
+    height: 70vh;
     width: 70%;
     margin: auto;
     transform: translate(0,5%);
 }
 
 .answer{
-    height: 70vh;
+    height: 75vh;
     width: 50%;
     margin: auto;
     transform: translate(0,5%);
+    background-color: white;
 }
 
 .typeexam{
@@ -128,14 +128,14 @@ style={{color:"white"}}
     background-position: center;
     background-repeat: no-repeat;
     z-index: -1;
-    position: absolute;
+    position: absolute;    
     opacity: 0.95;
 }
 
 .sentans{
     position: absolute;
     right: 20px;
-    bottom: 130px;
+    bottom: 90px;
 }
 
 .btn-outline-danger{
