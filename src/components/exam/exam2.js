@@ -342,7 +342,7 @@ class exam2 extends React.Component {
 
 
 
-        <Steps current={this.state.pointKey-1} direction="vertical" size="small" style={step}>
+        <Steps current={this.state.pointKey-1} className="d" direction="vertical" size="small" style={step}>
           <Step key={"1"} />
           <Step key={"2"} />
           <Step key={"3"} />

@@ -1,0 +1,47 @@
+
+/* box */
+.bgmock{
+    background-color: white;
+    background-size: cover;
+    overflow-y: hidden;
+}
+
+.bgtypemock{
+    height: 15vh;
+    width: 25%;
+    right: 10px;
+    top:10px;
+    position: absolute;
+}
+
+.mock{
+    background-size: cover;
+    /* box-shadow: 2px 3px 10px rgb(24, 20, 32); */
+    border-radius: 3%;
+    height: 15vh;
+    width: 100%;
+    display: flex;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("../picture/opa.png");
+}
+/* end box */
+
+
+.name{
+    font-family: 'Kanit', sans-serif;
+    font-size: 20px;
+}
+
+.setting{
+    position: absolute;
+    font-size: 33px;
+    cursor: pointer;
+    bottom: 20px;
+    right: 20px;
+}
+.setting:hover{
+    color: #ffffff;
+}
+
+

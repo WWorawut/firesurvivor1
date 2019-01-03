@@ -158,6 +158,10 @@ style={{color:"white"}}
     margin-left: 5px;
 }
 
+.d{
+    display: none;
+}
+
 
 
 
@@ -253,6 +257,9 @@ style={{color:"white"}}
         width: 60%;
         margin: 130% 0 0 13%;
     }  
+    .d{
+        display: none !important;
+    }
     }
     
 
@@ -312,6 +319,9 @@ style={{color:"white"}}
     }
     .sentans{
         bottom: 115px;
+    }
+    .d{
+        display: none !important;
     }
 }
 
