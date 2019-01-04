@@ -84,9 +84,6 @@ class exam2 extends React.Component {
         width: '5%',
         top: '50%',
         transform: 'translate(-50%, -50%)',
-        '@media screen and (max-width: 414px)': {
-        width: '15%',
-        }
       }
 
 

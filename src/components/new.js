@@ -3,6 +3,10 @@ import './css/360.css';
 import { Icon } from 'antd';
 
 class New extends React.Component {
+
+
+  clicked = true;
+
   
   render() {
     return (
@@ -22,11 +26,19 @@ class New extends React.Component {
         </div>
 
         <div className="setting">
-        <Icon type="setting"/>
         <Icon type="info-circle" />
-        <Icon type="sound" />
-        <Icon type="info" />
         </div> 
+
+
+{/* sound setting */}
+        <div className="bar-c">
+          <div id="bar-1" className="bar"></div>
+          <div id="bar-2" className="bar"></div>
+          <div id="bar-3" className="bar"></div>
+          <div id="bar-4" className="bar"></div>
+          <div id="bar-5" className="bar"></div>
+          <div id="bar-6" className="bar"></div>
+        </div>
         
 
 
