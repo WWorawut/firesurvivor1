@@ -250,7 +250,7 @@ class exam2 extends React.Component {
             quiz="8. อุปกรณ์ใดเหมาะแก่การใช้หนีไฟ และสามารถใช้ได้เป็นเวลานานที่สุด"
             onechoice="ก. ขวดน้ำที่มีน้ำอยู่"
             twochoice="ข. ผ้าคลุมตัว"
-            threechoice="ค. ถุงพลาสติกขนาดใหญ่"
+            threechoice="ค. ถุงพลาสติกขนาดใหญ่ "
             fourchoice="ง. ไฟฉาย"
             a = "false1"
             b = "false2"
