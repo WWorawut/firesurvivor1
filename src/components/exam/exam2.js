@@ -9,6 +9,10 @@ const Step = Steps.Step;
 const TabPane = Tabs.TabPane;
 const Option = Select.Option;
 
+function ButtonCorrect(props) {
+  return <div className="boxanswer" style={props.choice ==='true'? {backgroundColor:'#33FF3E'}:{backgroundColor:'#FF3333'}}>{props.choiceName}</div>;
+}
+
 class exam2 extends React.Component {
   constructor(props) {
     super(props);
@@ -85,7 +89,7 @@ class exam2 extends React.Component {
         top: '50%',
         transform: 'translate(-50%, -50%)',
       }
-
+       
 
 //   activeKey={this.state.pointKey}  activeKey='11'
     return (
@@ -316,17 +320,17 @@ class exam2 extends React.Component {
             <h6>คำตอบของคุณ</h6>
             <br/>
             <div className="col-md-10 offset-3">
-            <div className="boxanswer">1</div> 
-            <div className="boxanswer">2</div>
-            <div className="boxanswer">3</div>
-            <div className="boxanswer">4</div>
-            <div className="boxanswer">5</div> 
+            <ButtonCorrect choice={this.state.choice1}  choiceName='1'/>
+            <ButtonCorrect choice={this.state.choice2}  choiceName='2'/>
+            <ButtonCorrect choice={this.state.choice3}  choiceName='3'/>
+            <ButtonCorrect choice={this.state.choice4}  choiceName='4'/>
+            <ButtonCorrect choice={this.state.choice5}  choiceName='5'/>
             <br/>
-            <div className="boxanswer">6</div> 
-            <div className="boxanswer">7</div>
-            <div className="boxanswer">8</div>
-            <div className="boxanswer">9</div>
-            <div className="boxanswer">10</div>
+            <ButtonCorrect choice={this.state.choice6}  choiceName='6'/>
+            <ButtonCorrect choice={this.state.choice7}  choiceName='7'/>
+            <ButtonCorrect choice={this.state.choice8}  choiceName='8'/>
+            <ButtonCorrect choice={this.state.choice9}  choiceName='9'/>
+            <ButtonCorrect choice={this.state.choice10} choiceName='10'/>
             </div>
 
 

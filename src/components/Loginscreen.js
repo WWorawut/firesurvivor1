@@ -3,6 +3,7 @@ import './App.css';
 import './css/login.css';
 import logo from "./picture/Logo.svg";
 import YouTube from 'react-youtube';
+import { BrowserRouter as  Router, Route, Link, Redirect } from 'react-router-dom';
 
 class Loginscreen extends React.Component {
 constructor(props){
@@ -15,7 +16,7 @@ constructor(props){
 
  login=()=>{
   localStorage.setItem("user", this.state.value);
-  window.location.href="/Intro";
+  this.setState({link:true});
  }
 
   onChangeValue=(e)=>{
@@ -25,7 +26,7 @@ constructor(props){
   }
 
   render() {
-
+    if(this.state.link){ return <Redirect to="/intro" /> }
     return (
       <div>
         <div className="cd">

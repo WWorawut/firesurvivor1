@@ -1,5 +1,10 @@
 import React, {} from 'react';
+import Sound from 'react-sound';
 import './App.css';
+import './css/setting.css';
+import { Icon } from 'antd';
+
+
 import New from './new';
 import Loginscreen from './Loginscreen';
 import Exam from './exam/Exam';
@@ -25,14 +30,77 @@ import usetung from './Infographic/usetung';
 
 import IntroMP4 from './video/IntroMP4';
 
-import { BrowserRouter as Router, Route} from 'react-router-dom';
+import { BrowserRouter as  Router, Route,Link} from 'react-router-dom';
 
+import Ms from './video/file/aasound.mp3';
 
 class App extends React.Component{
+  constructor(props) {
+    super(props);
+    this.state = { 
+      clickedSound:true,
+      pathname:true
+    };
+  }
+
+  componentDidMount(){
+    if(window.location.pathname === '/' || window.location.pathname === '/intro' || window.location.pathname === '/howtoplay'){
+      this.setState({
+        pathname:false
+      })
+    }
+  }
+
+  clickedSound=()=>{
+    this.setState({
+      clickedSound:!this.state.clickedSound
+    })
+  }
+  
   render() {
+    let sound;
+    if(this.state.clickedSound===true){
+      sound='bar'
+    }else{
+      sound='bar noAnim'
+    }
     return (
-      <Router>
       <div>
+      {/* <Sound
+        url={Ms}
+        loop={true}
+        volume={100}
+
+        playStatus={Sound.status.PLAYING}
+        onLoading={this.handleSongLoading}
+        onPlaying={this.handleSongPlaying}
+        onFinishedPlaying={this.handleSongFinishedPlaying}
+      />   */}
+
+
+      {/* sound setting */}
+      {this.state.pathname ?
+      <div>
+      <div className="bar-c" onClick={this.clickedSound}>
+          <div id="bar-1" className={sound}></div>
+          <div id="bar-2" className={sound}></div>
+          <div id="bar-3" className={sound}></div>
+          <div id="bar-4" className={sound}></div>
+          <div id="bar-5" className={sound}></div>
+          <div id="bar-6" className={sound}></div>
+        </div>
+
+        <div className="setting">
+        <Icon type="info-circle" />
+        </div>
+        </div>
+        :null
+      }
+
+
+      <Router>
+      <div>        
+
         <Route exact path="/" component={Loginscreen} />
         <Route path="/intro" component={IntroMP4} />
         <Route path="/office" component={New} />
@@ -57,10 +125,10 @@ class App extends React.Component{
         <Route path="/smoke" component={smoke} />  {/* Info หนีควัน*/}
         <Route path="/heat" component={heat} />  {/* Info หนีความร้อน */}
         <Route path="/escape" component={escape} />  {/* Info หนีเหตุ */}
-        <Route path="/usetung" component={usetung} />  {/* Info การใช้ถุงดับเพลิง */}
-                        
+        <Route path="/usetung" component={usetung} />  {/* Info การใช้ถุงดับเพลิง */}            
       </div>
     </Router>
+    </div>
     );
   }
 }
