@@ -28,42 +28,72 @@ import heat from './Infographic/heat';
 import escape from './Infographic/escape'; 
 import usetung from './Infographic/usetung'; 
 
+import toilet from './Scene/toilet';
+import deck from './Scene/deck';
+import lift from './Scene/lift';
+import stairnormal from './Scene/stairnormal';
+
 import IntroMP4 from './video/IntroMP4';
 
 import { BrowserRouter as  Router, Route,Link} from 'react-router-dom';
 
 import Ms from './video/file/aasound.mp3';
 
+
+
+const formattedSeconds = (sec) =>
+  Math.floor(sec / 60) +
+    ':' +
+  ('0' + sec % 60).slice(-2)
+
+
+
+
 class App extends React.Component{
   constructor(props) {
     super(props);
     this.state = { 
       clickedSound:true,
-      pathname:true
+      secondsElapsed: 0, 
     };
   }
 
+  //เงื่อนไขการ show
+  //sound
   componentDidMount(){
-    if(window.location.pathname === '/' || window.location.pathname === '/intro' || window.location.pathname === '/howtoplay'){
-      this.setState({
-        pathname:false
-      })
-    }
+    //time
+    this.incrementer = setInterval( () =>
+    this.setState({
+      secondsElapsed: this.state.secondsElapsed + 1
+    }),1000);
   }
 
+
+  //sound
   clickedSound=()=>{
     this.setState({
       clickedSound:!this.state.clickedSound
     })
   }
+
+
+  //time
+
   
+
+
+
   render() {
+    //sound
     let sound;
     if(this.state.clickedSound===true){
       sound='bar'
     }else{
       sound='bar noAnim'
     }
+    const Path = window.location.pathname;
+
+
     return (
       <div>
       {/* <Sound
@@ -79,8 +109,9 @@ class App extends React.Component{
 
 
       {/* sound setting */}
-      {this.state.pathname ?
       <div>
+      {Path === '/' || Path === '/intro'?
+      null:
       <div className="bar-c" onClick={this.clickedSound}>
           <div id="bar-1" className={sound}></div>
           <div id="bar-2" className={sound}></div>
@@ -89,15 +120,34 @@ class App extends React.Component{
           <div id="bar-5" className={sound}></div>
           <div id="bar-6" className={sound}></div>
         </div>
-
+      }
+      {/* info setting */}
+      {/* {Path === '/' || Path === '/intro' || Path === '/exam'? 
+      null:
         <div className="setting">
         <Icon type="info-circle" />
+        </div> 
+      } */}
+
+      </div>
+      {/* time setting */} 
+      {Path === '/' || Path === '/intro' || Path === '/exam2' || Path === '/allsum'? 
+      null:       
+      <div className="time">
+        <div className="container">
+          <div className="stopwatch">
+          <h1 className="timer">{formattedSeconds(this.state.secondsElapsed)}</h1>
+          </div>
         </div>
         </div>
-        :null
       }
 
 
+
+
+
+
+      {/* path */}
       <Router>
       <div>        
 
@@ -114,6 +164,13 @@ class App extends React.Component{
         <Route path="/typeC" component={Csum} />
         <Route path="/typeD" component={Dsum} />
         <Route path="/typeE" component={Esum} />
+
+        {/* scene normal page */}
+        <Route path="/restroom" component={toilet} />
+        <Route path="/deck" component={deck} />
+        <Route path="/lift" component={lift} />
+        <Route path="/stairnormal" component={stairnormal} />
+
 
         {/* Infographic page */}
         <Route path="/allsum" component={allsum} /> {/* Info สรุปรวม */}

@@ -1,9 +1,9 @@
 import React, {} from 'react';
 import './App.css';
 import './css/login.css';
-import logo from "./picture/Logo.svg";
+import logo from "./picture/Logofinal.png";
 import YouTube from 'react-youtube';
-import { BrowserRouter as  Router, Route, Link, Redirect } from 'react-router-dom';
+import { BrowserRouter as  Link,Redirect } from 'react-router-dom';
 
 class Loginscreen extends React.Component {
 constructor(props){

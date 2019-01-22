@@ -62,10 +62,22 @@
     top:13px;
     font-size: 33px;
     color: blue;
+    transform: rotate(0deg);
+    margin-top: -height/2;
+    margin-left: -width/2;
+    transition: all 0.4s ease-out;
+}
+.close:hover{
+    transform: rotate(-180deg);
+    margin-top: -height/2;
+    margin-left: -width/2;
+    transition: all 0.4s ease-out;
 }
 
+
+
 .bgg{
-    background-image: url("../picture/bg.png");
+    background-image: url("../picture/finalend.png");
     background-size: cover;
     overflow-y: hidden;
 }

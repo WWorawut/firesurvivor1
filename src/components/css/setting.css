@@ -10,7 +10,7 @@
     height: 15vh;
     width: 25%;
     right: 10px;
-    top:10px;
+    top: 10px;
     position: absolute;
 }
 
@@ -33,12 +33,14 @@
     font-size: 20px;
 }
 
+
+/* info setting */
 .setting{
     position: absolute;
     font-size: 30px;
     cursor: pointer;
-    bottom: 20px;
-    right: 20px;
+    bottom: 16px;
+    right: 80px;
 }
 .setting:hover{
     color: #ffffff;
@@ -57,7 +59,7 @@
     height: 30px;
     width: 40px;
     bottom: 20px;
-    right:  60px;
+    right:  20px;
     position: absolute;
     cursor:pointer;
     z-index: 1;
@@ -150,6 +152,9 @@
   color: #fdfdfd;
   text-shadow: 0 0.25rem 0.375rem hsla(0, 0%, 0%, 0.2);
   position: absolute;
+  top: 10px;
+  right: 2px;
+  z-index: 6;
 }
 
 .container {
@@ -159,11 +164,7 @@
 }
 
 .stopwatch {
-  width: 13rem;
-  /* display: grid;;
-  grid: "timer timer" 5rem
-        "start reset" 3rem 
-        / 1fr 1fr; */
+  width: 10rem;
   background: #2b2b2bbe;
   box-shadow: 0 0.25rem 0.375rem 0 hsla(0, 0%, 0%, 0.4);
   text-align: center;
@@ -185,103 +186,11 @@ label {
   font-family: "Roboto Mono", monospace;
   font-size: 2rem;
   box-shadow: 0 0.25rem 0.375rem 0 hsla(0, 0%, 0%, 0.4);
+  color:white;
 }
 
-.hours::before,
-.minutes::before,
-.seconds::before {
-    content: "0";
-  }
-.hours::after,
-.minutes::after,
-.seconds::after {
-    content: "0";
-  }
+  
 
-
-  #start ~ .timer > .hours::before {
-    animation: ones 360000s steps(1) infinite;
-  }
-  #start ~ .timer > .hours::after {
-    animation: ones 36000s steps(1) infinite;
-  }
-  #start ~ .timer > .minutes::before {
-    animation: tens 3600s steps(1) infinite;
-  }
-  #start ~ .timer > .minutes::after {
-    animation: ones 600s steps(1) infinite;
-  }
-  #start ~ .timer > .seconds::before {
-    animation: tens 60s steps(1) infinite;
-  }
-  #start ~ .timer > .seconds::after {
-    animation: ones 10s steps(1) infinite;
-  }
-
-  
-  #reset:active ~ .timer > .hours::before,
-  #reset:active ~ .timer > .hours::after,
-  #reset:active ~ .timer > .minutes::before,
-  #reset:active ~ .timer > .minutes::after,
-  #reset:active ~ .timer > .seconds::before,
-  #reset:active ~ .timer > .seconds::after {
-    animation: none;
-  }
-  
-  @keyframes tens {
-    0% {
-      content: "0";
-    }
-    16.66666666666667% {
-      content: "1";
-    }
-    33.33333333333333% {
-      content: "2";
-    }
-    50% {
-      content: "3";
-    }
-    66.66666666666667% {
-      content: "4";
-    }
-    83.33333333333333% {
-      content: "5";
-    }
-  }
-  
-  @keyframes ones {
-    0% {
-      content: "0";
-    }
-    10% {
-      content: "1";
-    }
-    20% {
-      content: "2";
-    }
-    30% {
-      content: "3";
-    }
-    40% {
-      content: "4";
-    }
-    50% {
-      content: "5";
-    }
-    60% {
-      content: "6";
-    }
-    70% {
-      content: "7";
-    }
-    80% {
-      content: "8";
-    }
-    90% {
-      content: "9";
-    }
-  }
-  
 
 
 

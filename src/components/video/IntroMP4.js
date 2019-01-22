@@ -2,6 +2,7 @@ import React from 'react';
 import { Player } from 'video-react';
 import '../css/Info.css';
 import intro from "../video/file/fire.mp4";
+import { BrowserRouter as  Link,Redirect } from 'react-router-dom';
 
 class IntroMP4 extends React.Component{
   constructor(props) {
@@ -21,9 +22,6 @@ class IntroMP4 extends React.Component{
     }
   }
 
-    office=() => {
-      window.location.href="/howtoplay";
-    }
 
     render() {
       return (

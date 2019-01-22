@@ -1,21 +1,26 @@
 import React, {} from 'react';
 import '../css/Info.css';
-import { Icon } from 'antd';
+import { Icon, Button, Tabs } from 'antd';
+import { BrowserRouter as  Link,Redirect } from 'react-router-dom';
+
 
 {/* Info ประเภทถังดับเพลิง */}
 
 class firetung extends React.Component{  
+  state = { 
+    link:false
+  };
 
-   close=()=>{
-     window.location.href="/office";   
-   }
+  close=()=>{this.setState({ link:true })}
+  Redirect=()=>{if(this.state.link){ return <Redirect to="/office" /> }}
 
     render() {
       return (
         <div className="bgjanghad">
         <div className="bgtypeinfo">
           <div className="typeinfo firetung">
-          <Icon className="closea" type="close" onClick={this.close}/>
+          {this.Redirect()}
+          <Button className="buttonhowto" onClick={this.close} ghost>วิธีการใช้</Button>
           </div>              
         </div>
         </div>

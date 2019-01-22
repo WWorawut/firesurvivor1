@@ -1,11 +1,19 @@
 import React, {} from 'react';
 import '../css/login.css';
 import { Icon } from 'antd';
+import { BrowserRouter as  Link,Redirect } from 'react-router-dom';
 
 class Csum extends React.Component{
+  state = { 
+    link:false
+  };
 
-  close=()=>{
-    window.location.href="/exam";
+  close=()=>{this.setState({ link:true })}
+  Redirect=()=>{
+    if(this.state.link){ 
+      return <Redirect to="/exam" 
+      /> 
+    }
   }
   
     render() {
@@ -13,6 +21,7 @@ class Csum extends React.Component{
         <div className="bgg">
         <div className="bgtype">
           <div className="typepeople card3">
+          {this.Redirect()}
           <Icon className="close" type="close" onClick={this.close}/>
           </div>              
         </div>

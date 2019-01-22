@@ -1,0 +1,22 @@
+.closepop{
+    position: absolute;
+    right: 10px;
+    top:10px;
+    font-size: 25px;
+    color: rgb(255, 38, 38);
+    cursor: pointer;
+}
+.closepop:hover{
+    color: rgb(160, 81, 81);
+}
+
+.out{
+    position: absolute;
+    padding-left: 3px;
+    bottom: 20px;
+    left: 50px;
+}
+.out:hover{
+    color: gray;
+    border-color: gray;
+}

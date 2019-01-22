@@ -2,13 +2,20 @@ import React, {} from 'react';
 import './css/setting.css';
 import { Icon } from 'antd';
 
+
+
+  
+
+
 class New extends React.Component {
   constructor(props) {
     super(props);
     this.state = { 
-      clickedSound:true
+      clickedSound:true,
+      secondsElapsed: 0, 
     };
   }
+
 
   
   // clickedSound=()=>{
@@ -58,21 +65,7 @@ class New extends React.Component {
         </div> */}
 
 
-{/* time setting */}
-        <div className="time">
-        <div className="container">
-          <div className="stopwatch">
-            <input type="checkbox" style={{display:'none'}} id="start"/>
-            <div className="timer">
-              <span className="minutes"></span>
-              <span>:</span>
-              <span className="seconds"></span>
-            </div>
-            <label for="start" className="start"></label>
-          </div>
-        </div>
-        </div>
-        
+
 
 
 

@@ -4,6 +4,7 @@ import { Steps , notification, Modal, Button, Tabs, Select } from 'antd';
 import 'antd/dist/antd.css'
 import '../css/exam.css';
 import ans from "../picture/ans.png";
+import { BrowserRouter as   Link, Redirect } from 'react-router-dom';
 
 const Step = Steps.Step;
 const TabPane = Tabs.TabPane;
@@ -17,6 +18,7 @@ class exam2 extends React.Component {
   constructor(props) {
     super(props);
     this.state = { 
+        link:false,
         choice1:"",
         choice2:"",
         choice3:"",
@@ -53,11 +55,9 @@ class exam2 extends React.Component {
         this.setState({score:score})
     }
 
-
-    modal=()=>{
-        window.location.href="/";
-    }
-    
+    modal=()=>{this.setState({ link:true })} 
+    Redirect=()=>{if(this.state.link){ return <Redirect to="/" /> }}
+ 
     nextPoint=()=>{
         let pointKey = parseInt(this.state.pointKey, 10);
         pointKey++;
@@ -92,8 +92,8 @@ class exam2 extends React.Component {
        
 
 //   activeKey={this.state.pointKey}  activeKey='11'
-    return (
-    <div>     
+    return ( 
+    <div>   
         <Tabs tabPosition="bottom" tabBarStyle={{display:'none'}} className="detailexam" activeKey={this.state.pointKey} >  
  
         <TabPane tab="1" key="1" >
@@ -312,6 +312,7 @@ class exam2 extends React.Component {
           <div className="typeexam font">
           <div className="textanswer">
             <p>คะแนนของคุณ : {this.state.score} คะแนน</p>
+                {this.Redirect()}  
             <Button onClick={this.success} >ดูเฉลย</Button> <Button onClick={this.modal} type="primary">ยืนยัน</Button>
             <br/>
             <br/>
