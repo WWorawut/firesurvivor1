@@ -8,9 +8,9 @@
 
 .bgtypemock{
     height: 15vh;
-    width: 25%;
+    width: 15%;
     right: 10px;
-    top: 10px;
+    bottom: 10px;
     position: absolute;
 }
 
@@ -20,17 +20,19 @@
     border-radius: 3%;
     height: 15vh;
     width: 100%;
-    display: flex;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: url("../picture/opa.png");
+    background-color: rgba(19, 19, 19, 0.308);
 }
 /* end box */
 
 
 .name{
     font-family: 'Kanit', sans-serif;
-    font-size: 20px;
+    font-size: 1.3rem;
+    color: white;
+    display: inline;
+    margin: 5px 0 0 5px;
 }
 
 
@@ -46,6 +48,20 @@
     color: #ffffff;
 }
 
+
+
+.star{
+  font-size: 1.2rem;
+  margin: 15px 5px 0 15px;
+}
+
+.score{
+  margin: 50px 0 0 5px;
+  font-size: 1.2rem;
+  color: white;
+  display: inline;
+  font-family: 'Kanit', sans-serif;
+}
 
 
 
@@ -153,7 +169,7 @@
   text-shadow: 0 0.25rem 0.375rem hsla(0, 0%, 0%, 0.2);
   position: absolute;
   top: 10px;
-  right: 2px;
+  right: 1px;
   z-index: 6;
 }
 
@@ -164,7 +180,7 @@
 }
 
 .stopwatch {
-  width: 10rem;
+  width: 5rem;
   background: #2b2b2bbe;
   box-shadow: 0 0.25rem 0.375rem 0 hsla(0, 0%, 0%, 0.4);
   text-align: center;
@@ -179,14 +195,20 @@ label {
 }
 
 .timer {
-  display: flex;
   justify-content: center;
   align-items: center;
   grid-area: timer;
   font-family: "Roboto Mono", monospace;
-  font-size: 2rem;
+  font-size: 1.3rem;
   box-shadow: 0 0.25rem 0.375rem 0 hsla(0, 0%, 0%, 0.4);
   color:white;
+  display: flexd;
+  margin-left: 0px;
+}
+
+.clock{
+  font-size: 1 rem;
+  padding-bottom: 3px;
 }
 
   

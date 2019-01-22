@@ -77,7 +77,7 @@ class App extends React.Component{
   }
 
 
-  //time
+
 
   
 
@@ -131,16 +131,41 @@ class App extends React.Component{
 
       </div>
       {/* time setting */} 
-      {Path === '/' || Path === '/intro' || Path === '/exam2' || Path === '/allsum'? 
+      {Path === '/' || Path === '/intro' || Path === '/howtoplay' 
+      || Path === '/exam'|| Path === '/exam2' || Path === '/allsum' 
+      || Path === '/typea' || Path === '/typeb' || Path === '/typec' || Path === '/typed' || Path === '/typee'? 
       null:       
       <div className="time">
         <div className="container">
           <div className="stopwatch">
+          <Icon className="clock" type="clock-circle"/>
           <h1 className="timer">{formattedSeconds(this.state.secondsElapsed)}</h1>
           </div>
         </div>
         </div>
       }
+      
+
+      
+      {/* score setting */} 
+      {Path === '/' || Path === '/intro'?
+      null:
+      <div className="bgmock">
+        <div className="bgtypemock">
+          <div className="mock">
+          <div  className="name">
+          <Icon style={{marginLeft:'10px'}} type="user" />
+          <p className="name">Bee</p>
+          </div>
+          <br/>
+          <Icon style={{color:'white'}} className="star" type="star" theme="filled" />
+          <p className="score">45</p>
+          </div>           
+        </div>
+        </div>
+      }
+
+
 
 
 

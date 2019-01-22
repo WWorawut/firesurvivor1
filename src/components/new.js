@@ -40,18 +40,20 @@ class New extends React.Component {
         <a-text font="kelsonsans" value="" width="6" position="-2.5 0.25 -1.5" rotation="0 15 0"></a-text>
       </a-scene>
 
-      <div className="bgmock">
+      {/* <div className="bgmock">
         <div className="bgtypemock">
           <div className="mock">
-          {/* <Icon className="closea" type="close" onClick={this.close}/> */}
-          <p className="name">คุณ</p>
-          </div>              
+          <div  className="name">
+          <Icon style={{marginLeft:'10px'}} type="user" />
+          <p className="name">Bee</p>
+          </div>
+          <br/>
+          <Icon style={{color:'white'}} className="star" type="star" theme="filled" />
+          <p className="score">45</p>
+          </div>           
         </div>
-        </div>
+        </div> */}
 
-        <div className="setting">
-        <Icon type="info-circle" />
-        </div> 
 
 
 {/* sound setting */}
