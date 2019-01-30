@@ -10,6 +10,7 @@ import Loginscreen from './Loginscreen';
 import Exam from './exam/Exam';
 import Howplay from './Howplay';
 import exam2 from './exam/exam2';
+import share from './share';
 
 import Asum from './PeopleSummary/Asum';
 import Bsum from './PeopleSummary/Bsum';
@@ -31,13 +32,27 @@ import usetung from './Infographic/usetung';
 import toilet from './Scene/toilet';
 import deck from './Scene/deck';
 import lift from './Scene/lift';
-import stairnormal from './Scene/stairnormal';
+
+import call from './Scene/call';
+import alarm from './Scene/alarm';
+import friend from './Scene/tellfriend';
+
+import stair19 from './stairnormal/stair19';
+import stair17 from './stairnormal/stair17';
+import stair177 from './stairnormal/stair17run';
+import stair16 from './stairnormal/stair16';
+import stair15 from './stairnormal/stair15';
+
+import officeoutside from './360/officeoutside';
+import gotoshair from './360/gotoshair';
 
 import IntroMP4 from './video/IntroMP4';
 
 import { BrowserRouter as  Router, Route,Link} from 'react-router-dom';
 
 import Ms from './video/file/aasound.mp3';
+
+import preload from './preload';
 
 
 
@@ -47,14 +62,13 @@ const formattedSeconds = (sec) =>
   ('0' + sec % 60).slice(-2)
 
 
-
-
 class App extends React.Component{
   constructor(props) {
     super(props);
     this.state = { 
       clickedSound:true,
       secondsElapsed: 0, 
+      user:localStorage.getItem("user")
     };
   }
 
@@ -108,9 +122,35 @@ class App extends React.Component{
       />   */}
 
 
+
+            
+      {/* score setting */} 
+      {Path === '/' || Path === '/intro' || Path === '/howtoplay' || Path === '/allsum'
+      || Path === '/typea' || Path === '/typeb' || Path === '/typec' || Path === '/typed' || Path === '/typee'
+      || Path === '/exam' || Path === '/exam2' || Path === '/preload'?
+      null:
+      <div className="bgmock">
+        <div className="bgtypemock">
+          <div className="mock">
+          <div  className="name">
+          <Icon style={{marginLeft:'10px'}} type="user" />
+          <p className="name">{this.state.user}</p>
+          </div>
+          <br/>
+          <Icon style={{color:'white'}} className="star" type="star" theme="filled" />
+          <p className="score">45</p>
+          </div>           
+        </div>
+        </div>
+      }
+
+
+
+
+
       {/* sound setting */}
       <div>
-      {Path === '/' || Path === '/intro'?
+      {Path === '/' || Path === '/intro' || Path === '/preload'?
       null:
       <div className="bar-c" onClick={this.clickedSound}>
           <div id="bar-1" className={sound}></div>
@@ -129,11 +169,14 @@ class App extends React.Component{
         </div> 
       } */}
 
+
+
       </div>
       {/* time setting */} 
       {Path === '/' || Path === '/intro' || Path === '/howtoplay' 
       || Path === '/exam'|| Path === '/exam2' || Path === '/allsum' 
-      || Path === '/typea' || Path === '/typeb' || Path === '/typec' || Path === '/typed' || Path === '/typee'? 
+      || Path === '/typea' || Path === '/typeb' || Path === '/typec' || Path === '/typed' || Path === '/typee'
+      || Path === '/preload'? 
       null:       
       <div className="time">
         <div className="container">
@@ -146,24 +189,7 @@ class App extends React.Component{
       }
       
 
-      
-      {/* score setting */} 
-      {Path === '/' || Path === '/intro'?
-      null:
-      <div className="bgmock">
-        <div className="bgtypemock">
-          <div className="mock">
-          <div  className="name">
-          <Icon style={{marginLeft:'10px'}} type="user" />
-          <p className="name">Bee</p>
-          </div>
-          <br/>
-          <Icon style={{color:'white'}} className="star" type="star" theme="filled" />
-          <p className="score">45</p>
-          </div>           
-        </div>
-        </div>
-      }
+
 
 
 
@@ -175,6 +201,7 @@ class App extends React.Component{
       {/* path */}
       <Router>
       <div>        
+        <Route path="/preload" component={preload} />
 
         <Route exact path="/" component={Loginscreen} />
         <Route path="/intro" component={IntroMP4} />
@@ -182,6 +209,7 @@ class App extends React.Component{
         <Route path="/exam" component={Exam} />
         <Route path="/exam2" component={exam2} />
         <Route path="/howtoplay" component={Howplay} />
+        <Route path="/share" component={share} />
 
         {/* people summary page */}
         <Route path="/typeA" component={Asum} />
@@ -194,8 +222,20 @@ class App extends React.Component{
         <Route path="/restroom" component={toilet} />
         <Route path="/deck" component={deck} />
         <Route path="/lift" component={lift} />
-        <Route path="/stairnormal" component={stairnormal} />
 
+        <Route path="/call" component={call} />
+        <Route path="/alarm" component={alarm} />
+        <Route path="/friend" component={friend} />
+
+
+        {/* stair normal page */}
+        <Route path="/stair19" component={stair19} />
+        <Route path="/stair17" component={stair17} />
+        <Route path="/stair177" component={stair177} />
+        <Route path="/stair16" component={stair16} />
+        <Route path="/stair15" component={stair15} />
+
+  
 
         {/* Infographic page */}
         <Route path="/allsum" component={allsum} /> {/* Info สรุปรวม */}
@@ -207,7 +247,14 @@ class App extends React.Component{
         <Route path="/smoke" component={smoke} />  {/* Info หนีควัน*/}
         <Route path="/heat" component={heat} />  {/* Info หนีความร้อน */}
         <Route path="/escape" component={escape} />  {/* Info หนีเหตุ */}
-        <Route path="/usetung" component={usetung} />  {/* Info การใช้ถุงดับเพลิง */}            
+        <Route path="/usetung" component={usetung} />  {/* Info การใช้ถังดับเพลิง */}  
+
+
+
+        {/* 360 page */}
+        <Route path="/officeoutside" component={officeoutside} />
+        <Route path="/gotoshair" component={gotoshair} />
+
       </div>
     </Router>
     </div>

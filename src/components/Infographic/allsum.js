@@ -19,7 +19,7 @@ class allsum extends React.Component {
       </a-scene>
 
           <div className="typepeople">
-          <Icon className="close" type="close" onClick={this.close}/>
+          <Icon className="closea" type="close" onClick={this.close}/>
           </div>
           
     </div>

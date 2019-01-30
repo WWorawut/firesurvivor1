@@ -24,7 +24,7 @@ class toilet extends React.Component{
   }
   
   out=()=>{this.setState({ link:true })}
-  Redirect=()=>{if(this.state.link){ return <Redirect to="/" /> }}
+  Redirect=()=>{if(this.state.link){ return <Redirect to="/officeoutside" /> }}
    
    render() {
     return (

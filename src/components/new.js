@@ -36,9 +36,13 @@ class New extends React.Component {
     return (
     <div>
       <a-scene>
-          <a-sky src="/Final01.jpg" rotation="0 -130 0"></a-sky>
+          <a-sky src="/office.png" rotation="0 -130 0"></a-sky>
         <a-text font="kelsonsans" value="" width="6" position="-2.5 0.25 -1.5" rotation="0 15 0"></a-text>
       </a-scene>
+
+
+
+
 
       {/* <div className="bgmock">
         <div className="bgtypemock">
@@ -53,22 +57,6 @@ class New extends React.Component {
           </div>           
         </div>
         </div> */}
-
-
-
-{/* sound setting */}
-        {/* <div className="bar-c" onClick={this.clickedSound}>
-          <div id="bar-1" className={sound}></div>
-          <div id="bar-2" className={sound}></div>
-          <div id="bar-3" className={sound}></div>
-          <div id="bar-4" className={sound}></div>
-          <div id="bar-5" className={sound}></div>
-          <div id="bar-6" className={sound}></div>
-        </div> */}
-
-
-
-
 
 
     </div>

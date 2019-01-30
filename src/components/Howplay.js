@@ -1,7 +1,9 @@
 import React, {} from 'react';
 import './css/login.css';
+import './css/test.css';
 import { Icon } from 'antd';
 import { BrowserRouter as  Link,Redirect } from 'react-router-dom';
+import mousegif from "./picture/mouse.gif";
 
 class Howplay extends React.Component{
   constructor(props) {
@@ -16,14 +18,33 @@ class Howplay extends React.Component{
 
     render() {
       return (
-        <div className="bgg">
-        <div className="bgtype">
-          <div className="typepeople">
-          {this.Redirect()}
-          <Icon className="close" type="close" onClick={this.close}/>
-          </div>              
+        <div>
+          <section>
+          <div className="bghowto">
+          <div className="container">
+            <div className="background-img">
+              <div className="box11">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <div className="content">
+                  <img className="mousegif" src={mousegif} />
+                  {this.Redirect()}
+                  <Icon className="closehowto" type="close" onClick={this.close}/>
+                </div>
+                
+              </div>
+              </div>
+            </div>
+          </div>
+        </section>
         </div>
-        </div>
+
+
+
+
+  
       );
     }
   }

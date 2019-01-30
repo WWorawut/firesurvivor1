@@ -20,3 +20,14 @@
     color: gray;
     border-color: gray;
 }
+
+
+.gobutton{
+    width: 4%;
+    display: flex;
+    margin: auto;
+}
+.gobutton:hover{
+    cursor: pointer;
+    width: 4.5%;
+}

@@ -1,0 +1,48 @@
+body{
+    font-family: 'Kanit';
+}
+.bgcall{
+    background-image: url("../picture2/bgcall.png");
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    background-position: center;
+}
+.bgfriend{
+    background-image: url("../picture2/bgfriend.png");
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    background-position: center;
+}
+.bgalarm{
+    background-image: url("../picture2/bgalarm.png");
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    background-position: center;
+}
+
+.boxjang{
+    background-color:white;
+    width: 25%;
+    height: 50%;
+    margin-top: 10%;
+    border-radius: 5%;
+}
+
+.boxjangtext{
+    width: 80%;
+    margin: auto;
+    margin-top: 10%;
+    /* font-size: 1.3rem; */
+}
+.buttonjang{
+    width: 100%;
+    margin-top: 5%;
+    font-size: 1.1rem;
+}
+
+.texthead{
+    font-size: 1.2rem;
+}

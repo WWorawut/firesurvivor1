@@ -1,7 +1,7 @@
 import React, {} from 'react';
 import './App.css';
 import './css/login.css';
-import logo from "./picture/Logofinal.png";
+import logo from "./picture/logo.png";
 import YouTube from 'react-youtube';
 import { BrowserRouter as  Link,Redirect } from 'react-router-dom';
 

@@ -2,7 +2,7 @@ import React, {} from 'react';
 import '../css/button.css';
 import '../css/Info.css';
 
-import { Icon, Modal, Button } from 'antd';
+import { Button } from 'antd';
 import Popup from './popup';
 import Iconout from '@material-ui/icons/ChevronLeft';
 import choosebutton from "../picture2/button/choosebutton.png";
@@ -24,7 +24,7 @@ popupClose=()=>{
 }
 
 out=()=>{this.setState({ link:true })}
-Redirect=()=>{if(this.state.link){ return <Redirect to="/" /> }}
+Redirect=()=>{if(this.state.link){ return <Redirect to="/officeoutside" /> }}
    
    render() {
     return (
