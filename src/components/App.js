@@ -48,8 +48,11 @@ import stair11 from './stairnormal/stair11';
 import stair10 from './stairnormal/stair10';
 import endstair from './stairnormal/endstair';
 
+import stair12A1 from './stairnormal/12a1';
+
 import officeoutside from './360/officeoutside';
 import gotoshair from './360/gotoshair';
+import fireoffice from './360/fireoffice';
 
 import IntroMP4 from './video/IntroMP4';
 
@@ -245,6 +248,8 @@ class App extends React.Component{
         <Route path="/stair10" component={stair10} />
         <Route path="/endstair" component={endstair} />
 
+        <Route path="/s12a1" component={stair12A1} />
+
   
 
         {/* Infographic page */}
@@ -264,6 +269,7 @@ class App extends React.Component{
         {/* 360 page */}
         <Route path="/officeoutside" component={officeoutside} />
         <Route path="/gotoshair" component={gotoshair} />
+        <Route path="/fireoffice" component={fireoffice} />
 
       </div>
     </Router>

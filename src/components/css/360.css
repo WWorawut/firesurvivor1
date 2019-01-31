@@ -19,6 +19,14 @@
     position: absolute;
     z-index: 1;
 }
+.firetext{
+    margin: 1% 0 0 7%;
+    width: 25%;
+    height: 13%;
+    animation-delay: 0.6s;
+    position: absolute;
+    z-index: 1;
+}
 
 .none{
     display: none;

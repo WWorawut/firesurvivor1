@@ -11,7 +11,7 @@ class Csum extends React.Component{
   close=()=>{this.setState({ link:true })}
   Redirect=()=>{
     if(this.state.link){ 
-      return <Redirect to="/exam" 
+      return <Redirect to="/allsum" 
       /> 
     }
   }
@@ -20,7 +20,7 @@ class Csum extends React.Component{
       return (
         <div className="bgg">
         <div className="bgtype">
-          <div className="typepeople card3">
+          <div className="typepeople card3 animated jackInTheBox">
           {this.Redirect()}
           <Icon className="close" type="close" onClick={this.close}/>
           </div>              

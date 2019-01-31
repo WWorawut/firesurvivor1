@@ -2,18 +2,19 @@ import React, {} from 'react';
 import '../css/scenenormal.css';
 import human from "../picture2/speak/human.png";
 import stair10talk from "../picture2/speak/stair10talk.png";
-import glass from "../picture2/speak/glass12.png";
-import water from "../picture2/speak/water12.png";
-import towel from "../picture2/speak/towel12.png";
-import bag from "../picture2/speak/bag12.png";
+import hand1 from "../picture2/speak/hand1.png";
+import hand2 from "../picture2/speak/hand2.png";
+import hand3 from "../picture2/speak/hand3.png";
 import { Link } from 'react-router-dom';
 
 
-class stair15 extends React.Component{
+
+class stair10 extends React.Component{
   state={
     class:'fadeInUp',
     outshow2:false
   }
+
     componentDidMount(){ 
       setInterval(this.outshow,5000)
     }
@@ -24,14 +25,18 @@ class stair15 extends React.Component{
 
     outshow2=()=>{this.setState({outshow2:'true'})}
 
-   render() {
 
- 
-;
-    var images = [{human,stair10talk,water,towel,glass,bag}];
+
+
+   render() {;
+    var images = [{human,stair10talk,hand1,hand2,hand3}];
  
     
     return (
+
+      <div>
+ 
+     
  
           
       <div className="bgstair10">
@@ -46,22 +51,15 @@ class stair15 extends React.Component{
           <p className="text12 animated fadeInUp">เลือกวิธีการสัมผัสผนัง เพื่อสังเกตุความร้อน</p>
           <div className="animated fadeInUp">
           <div className="boxd">
-          <Link to = "/"><img className="box12" src={water} /></Link>
-          <Link to = "/"><img className="box12" src={towel} /></Link>
-          <br/>
-          <br/>
-          <Link to = "/"><img className="box12" src={glass} /></Link>
-          <Link to = "/"><img className="box12" src={bag} /></Link>
+          <img className="box12" src={hand1}   />
+          <Link to = "/"><img className="box12" src={hand2} /></Link>
+          <Link to = "/"><img className="box12" src={hand3} /></Link>
           </div>
           </div>
       </div>
       </div>
       }
-    
-
-     
-      
-
+      </div>    
 
       </div>
 
@@ -69,4 +67,4 @@ class stair15 extends React.Component{
   }
 }
   
-  export default stair15;
+  export default stair10;

@@ -9,7 +9,7 @@ import bag from "../picture2/speak/bag12.png";
 import { Link } from 'react-router-dom';
 
 
-class stair15 extends React.Component{
+class stair12A extends React.Component{
   state={
     class:'fadeInUp',
     outshow2:false
@@ -51,7 +51,7 @@ class stair15 extends React.Component{
           <br/>
           <br/>
           <Link to = "/"><img className="box12" src={glass} /></Link>
-          <Link to = "/"><img className="box12" src={bag} /></Link>
+          <Link to = "/12A1"><img className="box12" src={bag} /></Link>
           </div>
           </div>
       </div>
@@ -69,4 +69,4 @@ class stair15 extends React.Component{
   }
 }
   
-  export default stair15;
+  export default stair12A;

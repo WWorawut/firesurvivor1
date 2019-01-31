@@ -5,7 +5,7 @@ import { Button } from 'antd';
 import Popup from './popup';
 import Iconout from '@material-ui/icons/ChevronLeft';
 import choosebutton from "../picture2/button/choosebutton.png";
-import popdeck from "../picture2/deck/warningdeck.png";
+import friendtext from "../picture2/speak/friendtext.png";
 import { BrowserRouter as  Link,Redirect } from 'react-router-dom'
 
 class call extends React.Component{
@@ -30,7 +30,7 @@ class call extends React.Component{
       <div>
       <Popup
       open={this.state.popup}
-      image={popdeck}
+      image={friendtext}
       close={this.popupClose}
       />
 
@@ -40,11 +40,11 @@ class call extends React.Component{
           <div className="boxjangtext">
           <p>สถานการณ์ :</p>
           <p className="texthead">หลังจากที่คุณพบเหตุแล้ว คุณต้องการแจ้งเพื่อนร่วมชั้นให้หนี คุณจะแจ้งอย่างไร ?</p>
-          <Button className="buttonjang">เจ้าค่าเอ้ย ไฟไหม้จ้า เจ้าค่าเอ้ย</Button>
+          <Button className="buttonjang" onClick={this.openpop}>เจ้าค่าเอ้ย ไฟไหม้จ้า เจ้าค่าเอ้ย</Button>
           <br/>
-          <Button className="buttonjang">ทุกคน หนีเร็ว ไฟไหม้ใหญ่แล้ว</Button>
+          <Button className="buttonjang" onClick={this.openpop}>ทุกคน หนีเร็ว ไฟไหม้ใหญ่แล้ว</Button>
           <br/>
-          <Button className="buttonjang">ไฟไหม้! ที่ห้องออฟฟิศชั้น 20 รีบหนีเร็ว</Button>
+          <Button className="buttonjang" onClick={this.openpop}>ไฟไหม้! ที่ห้องออฟฟิศชั้น 20 รีบหนีเร็ว</Button>
           </div>
           </div>
 

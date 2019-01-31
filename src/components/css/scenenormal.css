@@ -66,6 +66,13 @@ body{
   overflow-y: hidden;
 }
 
+.bg12a1{
+  background-image: url("../picture2/stairnormal/12A1.png");
+  background-size: cover;
+  height: 100vh;
+  background-position: center;
+  overflow-y: hidden;
+}
 
 
 
@@ -163,8 +170,10 @@ body{
   padding-top: 50px;
 }
 
-
-
+.su{
+  width: 20%;
+  padding-top: 17%;
+}
 
 
 

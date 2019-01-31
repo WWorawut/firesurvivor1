@@ -9,13 +9,13 @@ class Bsum extends React.Component{
   };
 
   close=()=>{this.setState({ link:true })}
-  Redirect=()=>{if(this.state.link){ return <Redirect to="/exam" /> }}
+  Redirect=()=>{if(this.state.link){ return <Redirect to="/allsum" /> }}
   
     render() {
       return (
         <div className="bgg">
         <div className="bgtype">
-          <div className="typepeople card2">
+          <div className="typepeople card2 animated jackInTheBox">
           {this.Redirect()}
           <Icon className="close" type="close" onClick={this.close}/>
           </div>              

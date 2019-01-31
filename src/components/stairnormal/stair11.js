@@ -6,7 +6,7 @@ import gobutton from "../picture2/button/gobutton.png";
 import { Link } from 'react-router-dom';
 
 
-class stair16 extends React.Component{
+class stair11 extends React.Component{
 
 
    render() {;
@@ -26,4 +26,4 @@ class stair16 extends React.Component{
   }
 }
   
-  export default stair16;
+  export default stair11;
