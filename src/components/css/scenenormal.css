@@ -1,17 +1,69 @@
+body{
+  font-family: 'Kanit';
+}
+
 .bgstair19{
     background-image: url("../picture2/stairnormal/stair19.png");
     background-size: cover;
     height: 100vh;
+    background-position: center;
+    overflow-y: hidden;
 }
 .bgstair17{
   background-image: url("../picture2/stairnormal/stair17.png");
   background-size: cover;
   height: 100vh;
+  background-position: center;
+  overflow-y: hidden;
 }
 .bgstair16{
   background-image: url("../picture2/stairnormal/stair16.png");
   background-size: cover;
   height: 100vh;
+  background-position: center;
+  overflow-y: hidden;
+}
+.bgstair15{
+  background-image: url("../picture2/stairnormal/stair15.png");
+  background-size: cover;
+  height: 100vh;
+  background-position: center;
+  overflow-y: hidden;
+}
+.bgstair14{
+  background-image: url("../picture2/stairnormal/stair14.png");
+  background-size: cover;
+  height: 100vh;
+  background-position: center;
+  overflow-y: hidden;
+}
+.bgstair12A{
+  background-image: url("../picture2/stairnormal/stair12A.png");
+  background-size: cover;
+  height: 100vh;
+  background-position: center;
+  overflow-y: hidden;
+}
+.bgstair11{
+  background-image: url("../picture2/stairnormal/stair11.png");
+  background-size: cover;
+  height: 100vh;
+  background-position: center;
+  overflow-y: hidden;
+}
+.bgstair10{
+  background-image: url("../picture2/stairnormal/stair10.png");
+  background-size: cover;
+  height: 100vh;
+  background-position: center;
+  overflow-y: hidden;
+}
+.bgendstair{
+  background-image: url("../picture2/stairnormal/endstair.png");
+  background-size: cover;
+  height: 100vh;
+  background-position: center;
+  overflow-y: hidden;
 }
 
 
@@ -84,6 +136,58 @@
 .listwalk:hover{
   width: 93%;
 }
+
+
+.boxhelp12{
+  width: 40%;
+  margin: auto;
+  padding-top: 7%;
+}
+.text12{
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+}
+.box12{
+  width: 28%;
+  padding-right: 20px;
+}
+.box12:hover{
+  cursor: pointer;
+  width: 30%;
+}
+.boxd{
+  text-align: center;
+}
+.b{
+  padding-top: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

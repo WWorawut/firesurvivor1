@@ -10,12 +10,12 @@ class heat extends React.Component{
   };
 
   close=()=>{this.setState({ link:true })}
-  Redirect=()=>{if(this.state.link){ return <Redirect to="/office" /> }}
+  Redirect=()=>{if(this.state.link){ return <Redirect to="/endstair" /> }}
 
     render() {
       return (
-        <div className="bgjanghad">
-        <div className="bgtypeinfo">
+        <div className="bgheat">
+        <div className="bgtypeinfo animated fadeIn">
           <div className="typeinfo heat">
           {this.Redirect()}
           <Icon className="closea" type="close" onClick={this.close}/>

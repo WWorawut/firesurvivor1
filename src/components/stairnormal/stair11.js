@@ -14,10 +14,10 @@ class stair16 extends React.Component{
     
     return (
           
-      <div className="bgstair16">
+      <div className="bgstair11">
 
       <div style={{paddingTop:'48vh'}}>
-      <Link to = "/stair15"><img className="gobutton animated fadeInUp" src={gobutton} /></Link>
+      <Link to = "/stair10"><img className="gobutton animated fadeInUp" src={gobutton} /></Link>
       </div>
       
 

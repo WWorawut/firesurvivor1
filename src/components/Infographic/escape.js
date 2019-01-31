@@ -16,7 +16,7 @@ class escape extends React.Component{
     render() {
       return (
         <div className="bgescape">
-        <div className="bgtypeinfo">
+        <div className="bgtypeinfo animated fadeIn ">
           <div className="typeinfo escape">
           {this.Redirect()}
           <Icon className="closea" type="close" onClick={this.close}/>

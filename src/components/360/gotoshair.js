@@ -36,7 +36,8 @@ class officeoutside extends React.Component {
 
   next=name=>()=>{ this.setState({ [name]:true })}
   Redirect=()=>{
-    if(this.state.stair){ return <Redirect to="/stair19"/> }
+  if(this.state.stair){ return <Redirect to="/stair19"/> }
+    if(this.state.back){ return <Redirect to="/officeoutside"/> }
 }
 
 
@@ -49,8 +50,14 @@ class officeoutside extends React.Component {
 
       <Scene>
       {this.Redirect()}
-      <Entity events={{click:this.next('stair') , mouseenter:this.mouseenter('scale1') , mouseleave:this.mouseleave('scale1')}}  primitive='a-image' material={{ src: gobutton}} scale={{x: this.state.scale1, y: this.state.scale1, z:this.state.scale1}} rotation={{x: 0, y: 0 ,z: 0}} position={{x:3, y: 0, z: -12}}/>
-        <Entity primitive='a-sky' rotation="0 -100 0" src={gotoshair}/>
+      <Entity events={{click:this.next('stair') , mouseenter:this.mouseenter('scale1') , mouseleave:this.mouseleave('scale1')}}  
+              primitive='a-image' material={{ src: gobutton}} scale={{x: this.state.scale1, y: this.state.scale1, z:this.state.scale1}} 
+              rotation={{x: 0, y: 0 ,z: 0}} position={{x:3, y: 0, z: -12}}/>
+      {/* <Entity events={{click:this.next('back') , mouseenter:this.mouseenter('scale2') , mouseleave:this.mouseleave('scale2')}}  
+              primitive='a-image' material={{ src: gobutton}} scale={{x: this.state.scale2, y: this.state.scale2, z:this.state.scale2}} 
+              rotation={{x: 0, y: 180 ,z: 0}} position={{x:7, y: 0, z: -12}}/> */}
+
+       <Entity primitive='a-sky' rotation="0 -100 0" src={gotoshair}/>
       
         <Entity primitive="a-camera">
           <Entity primitive="a-cursor"  

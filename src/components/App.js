@@ -42,6 +42,11 @@ import stair17 from './stairnormal/stair17';
 import stair177 from './stairnormal/stair17run';
 import stair16 from './stairnormal/stair16';
 import stair15 from './stairnormal/stair15';
+import stair14 from './stairnormal/stair14';
+import stair12A from './stairnormal/stair12A';
+import stair11 from './stairnormal/stair11';
+import stair10 from './stairnormal/stair10';
+import endstair from './stairnormal/endstair';
 
 import officeoutside from './360/officeoutside';
 import gotoshair from './360/gotoshair';
@@ -234,6 +239,11 @@ class App extends React.Component{
         <Route path="/stair177" component={stair177} />
         <Route path="/stair16" component={stair16} />
         <Route path="/stair15" component={stair15} />
+        <Route path="/stair14" component={stair14} />
+        <Route path="/stair12A" component={stair12A} />
+        <Route path="/stair11" component={stair11} />
+        <Route path="/stair10" component={stair10} />
+        <Route path="/endstair" component={endstair} />
 
   
 

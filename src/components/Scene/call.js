@@ -36,7 +36,7 @@ class call extends React.Component{
 
       <div className="bgcall">
 
-      <div className="offset-6 boxjang">
+      <div className="offset-6 boxjang animated pulse">
       <div className="boxjangtext">
       <p>สถานการณ์ :</p>
       <p className="texthead">คุณจะแจ้งข้อมูลให้เจ้าหน้าที่ดับเพลิงว่าอย่างไรในสถานการณ์ฉุกเฉิน ?</p>

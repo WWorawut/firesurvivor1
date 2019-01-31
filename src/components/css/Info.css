@@ -33,17 +33,33 @@
     background-image: url("../picture/bgjang.png");
     background-size: cover;
     overflow-y: hidden;
+    background-position: center;
 }
 .bgescape{
     background-image: url("../picture/finalend.png");
     background-size: cover;
     overflow-y: hidden;
+    background-position: center;
 }
-.bgstair16{
-    background-image: url("../picture/stair16.png");
+.bgwalkinfo{
+    background-image: url("../picture/bgwalk.png");
     background-size: cover;
     overflow-y: hidden;
+    background-position: center;
 }
+.bgsmoke{
+    background-image: url("../picture/bgsmoke.png");
+    background-size: cover;
+    overflow-y: hidden;
+    background-position: center;
+}
+.bgheat{
+    background-image: url("../picture/bgheat.png");
+    background-size: cover;
+    overflow-y: hidden;
+    background-position: center;
+}
+
 
 
 .buttonhowto{
@@ -99,6 +115,7 @@
     margin: auto;
     transform: translate(0,5%);
 }
+
 
 .video{
     height: 500px;

@@ -14,8 +14,8 @@ class walk extends React.Component{
 
     render() {
       return (
-        <div className="bgstair16">
-        <div className="bgtypeinfo">
+        <div className="bgwalkinfo">
+        <div className="bgtypeinfo animated fadeIn">
           <div className="typeinfo walkinfo">
           {this.Redirect()}
           <Icon className="closea" type="close" onClick={this.close}/>

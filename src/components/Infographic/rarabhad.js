@@ -15,7 +15,7 @@ class rarabhad extends React.Component{
     render() {
       return (
         <div className="bgjanghad">
-        <div className="bgtypeinfo">
+        <div className="bgtypeinfo animated fadeIn">
           <div className="typeinfo rarabhad">
           {this.Redirect()}
           <Icon className="closea" type="close" onClick={this.close}/>

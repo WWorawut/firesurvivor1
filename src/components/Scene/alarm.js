@@ -37,7 +37,7 @@ class alarm extends React.Component{
       
       <div className="bgalarm">
 
-      <div className="offset-6 boxjang">
+      <div className="offset-6 boxjang animated pulse">
       <div className="boxjangtext">
       <p>สถานการณ์ :</p>
       <p className="texthead">ในขณะที่ไฟไหม้มาแล้ว 10 นาทีแต่กริ่งสัญญานไฟดังเพียงชั้นที่คุณอยู่ คุณต้องการกดกริ่งทั้งอาคารหรือไม่ ?</p>

@@ -1,13 +1,12 @@
 import React, {} from 'react';
 import '../css/scenenormal.css';
 import human from "../picture2/speak/human.png";
-import stair1 from "../picture2/speak/stair1.png";
-import walk from "../picture2/speak/walkk.png";
-import run from "../picture2/speak/run.png";
+import stair15talk from "../picture2/speak/stair15talk.png";
+import list151 from "../picture2/speak/list151.png";
+import list152 from "../picture2/speak/list152.png";
+import list153 from "../picture2/speak/list153.png";
 import { Link } from 'react-router-dom';
-import Preload from 'react-preload';
 
-import Reloade from '../preload';
 
 class stair15 extends React.Component{
   state={
@@ -28,31 +27,29 @@ class stair15 extends React.Component{
 
  
 ;
-    var images = [{human,stair1,walk,run}];
-    var loadingIndicator = (<Reloade/>);
+    var images = [{human,stair15talk,list151,list152,list153}];
+ 
     
     return (
  
-        <Preload
-            loadingIndicator={loadingIndicator}
-            images={images}
-            autoResolveDelay={30000}
-            onError={this._handleImageLoadError}
-            onSuccess={this._handleImageLoadSuccess}
-            resolveOnError={true}
-            mountChildren={true}
-        >
           
-      <div className="bgstair19">
+      <div className="bgstair15">
       {this.state.outshow2 === false ?
       <div className="centerhuman">
       <img className={"human animated " +this.state.class} src={human}/>
-      <img className={"text animated " +this.state.class} src={stair1}/>
+      <img className={"text animated " +this.state.class} src={stair15talk}/>
       </div>
       :
-      <div className="centerwalk">
-       <Link to = "/stair17"><img className={"walkk animated fadeInUp"} src={walk}/></Link>
-       <Link to = "/stair177"><img className={"run animated fadeInUp"} src={run}/></Link>
+      <div>
+      <div className="centerlist">
+       <Link to = "/stair14"><img className={"listwalk animated fadeInUp"} src={list151}/></Link>
+       </div>
+       <div className="centerlist2">
+       <Link to = "/stair14"><img className={"listwalk animated fadeInUp"} src={list152}/></Link>
+       </div>
+       <div className="centerlist2">
+       <Link to = "/stair14"><img className={"listwalk animated fadeInUp"} src={list153}/></Link>
+       </div>
        </div>
       }
     
@@ -60,13 +57,9 @@ class stair15 extends React.Component{
      
       
 
-      {/* <div className="bgtypeinfo">
-        <div className="typeinfo janghad">
-        <Icon className="closea" type="close" onClick={this.close}/>
-        </div>              
-      </div> */}
+
       </div>
-      </Preload>
+
     );
   }
 }

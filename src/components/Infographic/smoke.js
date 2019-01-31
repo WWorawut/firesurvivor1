@@ -14,8 +14,8 @@ class smoke extends React.Component{
 
     render() {
       return (
-        <div className="bgjanghad">
-        <div className="bgtypeinfo">
+        <div className="bgsmoke">
+        <div className="bgtypeinfo animated fadeIn">
           <div className="typeinfo smoke">
           {this.Redirect()}
           <Icon className="closea" type="close" onClick={this.close}/>
