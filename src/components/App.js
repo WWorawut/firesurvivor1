@@ -5,7 +5,6 @@ import './css/setting.css';
 import { Icon } from 'antd';
 
 
-import New from './new';
 import Loginscreen from './Loginscreen';
 import Exam from './exam/Exam';
 import Howplay from './Howplay';
@@ -53,6 +52,7 @@ import stair12A1 from './stairnormal/12a1';
 import officeoutside from './360/officeoutside';
 import gotoshair from './360/gotoshair';
 import fireoffice from './360/fireoffice';
+import office from './360/office';
 
 import IntroMP4 from './video/IntroMP4';
 
@@ -184,7 +184,7 @@ class App extends React.Component{
       {Path === '/' || Path === '/intro' || Path === '/howtoplay' 
       || Path === '/exam'|| Path === '/exam2' || Path === '/allsum' 
       || Path === '/typea' || Path === '/typeb' || Path === '/typec' || Path === '/typed' || Path === '/typee'
-      || Path === '/preload'? 
+      || Path === '/preload' || Path === '/office'? 
       null:       
       <div className="time">
         <div className="container">
@@ -213,7 +213,6 @@ class App extends React.Component{
 
         <Route exact path="/" component={Loginscreen} />
         <Route path="/intro" component={IntroMP4} />
-        <Route path="/office" component={New} />
         <Route path="/exam" component={Exam} />
         <Route path="/exam2" component={exam2} />
         <Route path="/howtoplay" component={Howplay} />
@@ -270,6 +269,7 @@ class App extends React.Component{
         <Route path="/officeoutside" component={officeoutside} />
         <Route path="/gotoshair" component={gotoshair} />
         <Route path="/fireoffice" component={fireoffice} />
+        <Route path="/office" component={office} />
 
       </div>
     </Router>

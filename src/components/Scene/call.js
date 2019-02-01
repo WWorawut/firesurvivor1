@@ -42,7 +42,7 @@ class call extends React.Component{
       <p className="texthead">คุณจะแจ้งข้อมูลให้เจ้าหน้าที่ดับเพลิงว่าอย่างไรในสถานการณ์ฉุกเฉิน ?</p>
       <Button className="buttonjang" onClick={this.openpop}>คุณๆ ไฟไหม้ตึกใหญ่แล้ว ช่วยด้วย!!</Button>
       <br/>
-      <Button className="buttonjang" onClick={this.openpop}>ผมชื่อ... ไฟไหม้ที่ตึกสยามอาร์ท 5 นาทีแล้วครับ</Button>
+      <Button className="buttonjang" onClick={this.openpop}>ไฟไหม้ตึกสยามอาร์ท อโศก 5 นาทีแล้วครับ</Button>
       <br/>
       <Button className="buttonjang" onClick={this.openpop}>ไฟไหม้ตึกสยามอาร์ทครับ รีบมาเลยนะครับ</Button>
       </div>

@@ -25,14 +25,14 @@ body{
 
 .boxjang{
     background-color:white;
-    width: 25%;
-    height: 50%;
+    width: 30%;
+    height: 55%;
     margin-top: 10%;
     border-radius: 5%;
 }
 
 .boxjangtext{
-    width: 90%;
+    width: 85%;
     margin: auto;
     margin-top: 10%;
     /* font-size: 1.3rem; */
