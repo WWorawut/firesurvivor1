@@ -51,7 +51,7 @@ class stair12A extends React.Component{
           <br/>
           <br/>
           <Link to = "/"><img className="box12" src={glass} /></Link>
-          <Link to = "/12A1"><img className="box12" src={bag} /></Link>
+          <Link to = "/s12A1"><img className="box12" src={bag} /></Link>
           </div>
           </div>
       </div>
