@@ -3,7 +3,7 @@ import Sound from 'react-sound';
 import './App.css';
 import './css/setting.css';
 import { Icon } from 'antd';
-
+import {connect} from 'react-redux';
 
 import New from './new';
 import Loginscreen from './Loginscreen';
@@ -115,7 +115,6 @@ class App extends React.Component{
     }
     const Path = window.location.pathname;
 
-
     return (
       <div>
       {/* <Sound
@@ -146,7 +145,7 @@ class App extends React.Component{
           </div>
           <br/>
           <Icon style={{color:'white'}} className="star" type="star" theme="filled" />
-          <p className="score">45</p>
+          <p className="score">{this.props.score}</p>
           </div>           
         </div>
         </div>
@@ -278,4 +277,8 @@ class App extends React.Component{
   }
 }
 
-export default App;
+const connectscore = state => ({
+score:state.score
+})
+
+export default connect(connectscore) (App);

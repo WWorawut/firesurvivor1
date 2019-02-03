@@ -34,7 +34,10 @@ class AlertDialogSlide extends React.Component {
 
           <img className="pop" src={this.props.image}/>
 
+          {this.props.iconclose === 'none' ?
+          null:
           <Icon className="closepop" type="close" onClick={this.props.close}/>
+    }
 
         </Dialog>
       </div>
