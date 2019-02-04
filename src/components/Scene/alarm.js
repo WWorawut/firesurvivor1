@@ -3,10 +3,13 @@ import '../css/normal.css';
 
 import { Button } from 'antd';
 import Popup from './popup';
-import Iconout from '@material-ui/icons/ChevronLeft';
-import choosebutton from "../picture2/button/choosebutton.png";
-import popdeck from "../picture2/deck/warningdeck.png";
+
+import alarm1 from "../picture2/popscore/alarm1.png";
+import alarm2 from "../picture2/popscore/alarm2.png";
+
 import { BrowserRouter as  Link,Redirect } from 'react-router-dom'
+import {savescore} from '../../action'
+import {connect} from 'react-redux';
 
 class alarm extends React.Component{
 
@@ -15,23 +18,34 @@ class alarm extends React.Component{
     link:false,
   }
 
-  openpop=()=>{
-    this.setState({popup:true})
+  openpop=data=>()=>{
+    this.setState({[data.state]:true});
+    this.props.dispatch(savescore(data.score));
+    setTimeout(this.popupClose(data),2000);
   }
-  popupClose=()=>{
-    this.setState({popup:false})
+
+  popupClose=data=>()=>{
+    this.setState({[data.state]:false})
+    setTimeout(this.setlink(data.link),1000);  
   }
-  
-  out=()=>{this.setState({ link:true })}
-  Redirect=()=>{if(this.state.link){ return <Redirect to="/" /> }}
+
+  setlink=link=>()=>{this.setState({ [link]:true })}
+  Redirect=()=>{if(this.state.link){ return <Redirect to="/officeoutside" /> }}
    
    render() {
     return (
       <div>
-      <Popup
+        {this.Redirect()}
+        <Popup
       open={this.state.popup}
-      image={popdeck}
-      close={this.popupClose}
+      image={alarm1}
+      iconclose={'none'}
+      />
+
+      <Popup
+      open={this.state.popup2}
+      image={alarm2}
+      iconclose={'none'}
       />
 
       
@@ -41,9 +55,9 @@ class alarm extends React.Component{
       <div className="boxjangtext">
       <p>สถานการณ์ :</p>
       <p className="texthead">ในขณะที่ไฟไหม้มาแล้ว 10 นาทีแต่กริ่งสัญญานไฟดังเพียงชั้นที่คุณอยู่ คุณต้องการกดกริ่งทั้งอาคารหรือไม่ ?</p>
-      <Button className="buttonjang">กดสัญญาณ</Button>
+      <Button className="buttonjang" onClick={this.openpop({link:'link',score:5,state:'popup'})}>กดสัญญาณ</Button>
       <br/>
-      <Button className="buttonjang">ไม่กดสัญญาณ</Button>
+      <Button className="buttonjang" onClick={this.openpop({link:'link',score:-5,state:'popup2'})}>ไม่กดสัญญาณ</Button>
       </div>
 
 
@@ -58,5 +72,8 @@ class alarm extends React.Component{
     );
   }
 }
+const connectscore = state => ({
+  score:state.score
+  })
   
-  export default alarm;
+  export default connect(connectscore)(alarm);

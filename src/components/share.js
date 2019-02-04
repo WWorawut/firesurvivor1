@@ -57,7 +57,19 @@ class share extends React.Component{
           <p><Icon style={{marginRight:'10px'}}  type="clock-circle" />เวลาที่ใช้ในการหนีไฟ : </p>
           
        
-
+                
+            <div class="social">
+              <div class="social__item">
+                <span class="fa fa-facebook" data-count="..." data-social="fb"></span>
+              </div>
+              <div class="social__item">
+                <span class="fa fa-twitter" data-count="..." data-social="tw"></span>
+              </div>
+              <div class="social__item">
+                <span class="fa fa-pinterest" data-count="..." data-social="pt"></span>
+              </div>
+            </div>
+        
           
           
           {/* {this.Redirect()}

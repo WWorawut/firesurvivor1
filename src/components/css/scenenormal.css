@@ -103,23 +103,27 @@ body{
   padding-top: 40vh;
 }
 .walkk{
-    width: 65%;
+    width: 35%;
+    height: 30vh;
     box-shadow: 2px 3px 10px #777777;
 }
 .walkk:hover{
     cursor: pointer;
     box-shadow: 5px 8px 10px #777777;
-    width: 70%;
+    width: 37%;
+    height: 31vh;
 }
 .run{
-    width: 65%;
+    width: 35%;
+    height: 30vh;
     box-shadow: 2px 3px 10px #777777;
     animation-delay: 0.2s;
 }
 .run:hover{
     cursor: pointer;
     box-shadow: 5px 8px 10px #777777;
-    width: 70%;
+    width: 37%;
+    height: 31vh;
 }
 
 
@@ -137,11 +141,14 @@ body{
 }
 .listwalk{
   width: 90%;
+  height: 11vh;
   animation-delay: 0.6s;
   box-shadow: 2px 3px 10px #777777;
 }
 .listwalk:hover{
+  cursor: pointer;
   width: 93%;
+  height: 12vh;
 }
 
 

@@ -10,7 +10,7 @@ class walk extends React.Component{
   };
 
   close=()=>{this.setState({ link:true })}
-  Redirect=()=>{if(this.state.link){ return <Redirect to="/stair16" /> }}
+  Redirect=()=>{if(this.state.link){ return <Redirect to="/stair15" /> }}
 
     render() {
       return (

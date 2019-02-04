@@ -58,9 +58,12 @@ import IntroMP4 from './video/IntroMP4';
 
 import { BrowserRouter as  Router, Route,Link} from 'react-router-dom';
 
-import Ms from './video/file/aasound.mp3';
+import sound from './video/sound/speakstair.mp3';
+import bgsound from './video/file/soundfirebg.mp3';
 
 import preload from './preload';
+
+
 
 
 
@@ -117,16 +120,12 @@ class App extends React.Component{
 
     return (
       <div>
-      {/* <Sound
-        url={Ms}
+      <Sound
+        url={bgsound}
         loop={true}
         volume={100}
-
-        playStatus={Sound.status.PLAYING}
-        onLoading={this.handleSongLoading}
-        onPlaying={this.handleSongPlaying}
-        onFinishedPlaying={this.handleSongFinishedPlaying}
-      />   */}
+        playStatus={Sound.status.PLAYING}   
+      />  
 
 
 

@@ -3,36 +3,59 @@ import '../css/normal.css';
 
 import { Button } from 'antd';
 import Popup from './popup';
-import Iconout from '@material-ui/icons/ChevronLeft';
-import choosebutton from "../picture2/button/choosebutton.png";
-import friendtext from "../picture2/speak/friendtext.png";
-import { BrowserRouter as  Link,Redirect } from 'react-router-dom'
 
-class call extends React.Component{
+import friend1 from "../picture2/popscore/friend1.png";
+import friend2 from "../picture2/popscore/friend2.png";
+import friend3 from "../picture2/popscore/friend3.png";
+
+import { BrowserRouter as  Link,Redirect } from 'react-router-dom'
+import {savescore} from '../../action'
+import {connect} from 'react-redux';
+
+class tellfriend extends React.Component{
 
   state={
     popup:false,
     link:false,
   }
 
-  openpop=()=>{
-    this.setState({popup:true})
+  openpop=data=>()=>{
+    this.setState({[data.state]:true});
+    this.props.dispatch(savescore(data.score));
+    setTimeout(this.popupClose(data),2000);
   }
-  popupClose=()=>{
-    this.setState({popup:false})
+
+  popupClose=data=>()=>{
+    this.setState({[data.state]:false})
+    setTimeout(this.setlink(data.link),1000);  
   }
-  
-  out=()=>{this.setState({ link:true })}
-  Redirect=()=>{if(this.state.link){ return <Redirect to="/" /> }}
+
+  setlink=link=>()=>{this.setState({ [link]:true })}
+  Redirect=()=>{if(this.state.link){ return <Redirect to="/officeoutside" /> }}
+
    
    render() {
     return (
       <div>
-      <Popup
+        {this.Redirect()}
+        <Popup
       open={this.state.popup}
-      image={friendtext}
-      close={this.popupClose}
+      image={friend1}
+      iconclose={'none'}
       />
+
+      <Popup
+      open={this.state.popup2}
+      image={friend2}
+      iconclose={'none'}
+      />
+
+      <Popup
+      open={this.state.popup3}
+      image={friend3}
+      iconclose={'none'}
+      />
+
 
           <div className="bgfriend">
 
@@ -40,11 +63,11 @@ class call extends React.Component{
           <div className="boxjangtext">
           <p>สถานการณ์ :</p>
           <p className="texthead">หลังจากที่คุณพบเหตุแล้ว คุณต้องการแจ้งเพื่อนร่วมชั้นให้หนี คุณจะแจ้งอย่างไร ?</p>
-          <Button className="buttonjang" onClick={this.openpop}>เจ้าค่าเอ้ย ไฟไหม้จ้า เจ้าค่าเอ้ย</Button>
+          <Button className="buttonjang" onClick={this.openpop({link:'link',score:1,state:'popup'})}>เจ้าค่าเอ้ย ไฟไหม้จ้า เจ้าค่าเอ้ย</Button>
           <br/>
-          <Button className="buttonjang" onClick={this.openpop}>ทุกคน หนีเร็ว ไฟไหม้ใหญ่แล้ว</Button>
+          <Button className="buttonjang" onClick={this.openpop({link:'link',score:2,state:'popup2'})}>ทุกคน หนีเร็ว ไฟไหม้ใหญ่แล้ว</Button>
           <br/>
-          <Button className="buttonjang" onClick={this.openpop}>ไฟไหม้! ที่ห้องออฟฟิศชั้น 20 รีบหนีเร็ว</Button>
+          <Button className="buttonjang" onClick={this.openpop({link:'link',score:3,state:'popup3'})}>ไฟไหม้! ที่ห้องออฟฟิศชั้น 20 รีบหนีเร็ว</Button>
           </div>
           </div>
 
@@ -57,5 +80,8 @@ class call extends React.Component{
     );
   }
 }
+const connectscore = state => ({
+  score:state.score
+  })
   
-  export default call;
+  export default connect(connectscore)(tellfriend);

@@ -17,7 +17,7 @@ class stair16 extends React.Component{
       <div className="bgstair16">
 
       <div style={{paddingTop:'48vh'}}>
-      <Link to = "/stair15"><img className="gobutton animated fadeInUp" src={gobutton} /></Link>
+      <Link to = "/walk"><img className="gobutton animated fadeInUp" src={gobutton} /></Link>
       </div>
       
 

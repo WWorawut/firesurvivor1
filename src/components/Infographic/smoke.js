@@ -10,7 +10,7 @@ class smoke extends React.Component{
   };
 
   close=()=>{this.setState({ link:true })}
-  Redirect=()=>{if(this.state.link){ return <Redirect to="/office" /> }}
+  Redirect=()=>{if(this.state.link){ return <Redirect to="/stair11" /> }}
 
     render() {
       return (

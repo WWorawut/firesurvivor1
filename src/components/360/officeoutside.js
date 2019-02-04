@@ -84,13 +84,7 @@ class officeoutside extends React.Component {
        </div>
        }
        </div>
- 
        
-   
-
-
-
-
       <Scene>
       {this.Redirect()}
       <Entity events={{click:this.next('firestair') , mouseenter:this.mouseenter('scale1') , mouseleave:this.mouseleave('scale1')}}  primitive='a-image' material={{ src: gobutton}} scale={{x: this.state.scale1, y: this.state.scale1, z:this.state.scale1}} rotation={{x: 0, y: -90 ,z: 0}} position={{x:15, y: 0, z: -3}}/>
