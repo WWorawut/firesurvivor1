@@ -23,6 +23,9 @@ import p2 from "../picture2/popscore/p2.png";
 import p3 from "../picture2/popscore/p3.png";
 import p4 from "../picture2/popscore/p4.png";
 
+import Sound from 'react-sound';
+import sound from '../video/sound/speaksmoke.mp3';
+
 
 class stair12A extends React.Component{
   state={
@@ -31,10 +34,16 @@ class stair12A extends React.Component{
     popup:false,
     link:false,
     people:'',
-    image:''
+    image:'',
+    playStatus:Sound.status.STOPPED
   }
     componentDidMount(){ 
-      setInterval(this.outshow,5000)
+      setTimeout(this.soundOn,1200);
+      setInterval(this.outshow,7000);
+    }
+
+    soundOn=()=>{
+      this.setState({playStatus:Sound.status.PLAYING})
     }
 
     outshow=()=>{this.setState({class:'fadeOutDown'})
@@ -97,6 +106,14 @@ class stair12A extends React.Component{
       zIndex='6'
       />
 
+      
+      <Sound
+        url={sound}
+        volume={this.props.sound === false?0:100}
+        playStatus={this.state.playStatus}
+        onFinishedPlaying={() => this.setState({ playStatus: Sound.status.STOPPED })}
+      />  
+
     
       
           
@@ -140,7 +157,8 @@ class stair12A extends React.Component{
 }
 
 const connectscore = state => ({
-  score:state.score
+  score:state.score,
+  sound:state.sound
   })
   
   export default connect(connectscore)(stair12A);

@@ -13,19 +13,28 @@ import { Link,Redirect } from 'react-router-dom';
 import {savescore} from '../../action'
 import {connect} from 'react-redux';
 
+import Sound from 'react-sound';
+import sound from '../video/sound/speaktoilet.mp3';
+
 class toilet extends React.Component{
 
   state={
     popup:false,
     link:false,
+    playStatus:Sound.status.STOPPED
   }
 
   openpop=data=>()=>{
+    setTimeout(this.soundOn,100);
     this.setState({popup:true})
     this.props.dispatch(savescore(data.score));
   }
   popupClose=()=>{
     this.setState({popup:false})
+  }
+
+  soundOn=()=>{
+    this.setState({playStatus:Sound.status.PLAYING})
   }
   
   setlink=link=>()=>{this.setState({ [link]:true })}
@@ -40,6 +49,13 @@ class toilet extends React.Component{
       close={this.popupClose}
       />
 
+      <Sound
+        url={sound}
+        volume={this.props.sound === false?0:100}
+        playStatus={this.state.playStatus}
+        onFinishedPlaying={() => this.setState({ playStatus: Sound.status.STOPPED })}
+      />  
+
       <div className="bgtoilet">
       <div className="boxchoose">
       <img className="choosebutton" src={choosebutton} onClick={this.openpop({link:'link',score:-5,state:'popup'})} />
@@ -52,7 +68,8 @@ class toilet extends React.Component{
   }
 }
 const connectscore = state => ({
-  score:state.score
+  score:state.score,
+  score:state.sound
   })
   
   export default connect(connectscore)(toilet);

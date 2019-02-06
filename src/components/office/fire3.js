@@ -64,7 +64,7 @@ class fire3 extends React.Component{
 
       <div className="bgfireoffice">
 
-      <div className=" boxfireoffice animated pulse">
+      <div className=" boxfireoffice animated zoomIn">
       <div className="boxjangtext">
       <p>สถานการณ์ :</p>
       <p className="texthead">ปลั๊กไฟปริมาณมากในเต้าเสียบอันเดียว เกิดความร้อนสูงจนไหม้เศษกระดาษที่วางบริเวณใกล้เคียง ควรทำเช่นใดเพื่อไม่ให้ไฟลุกลาม?</p>

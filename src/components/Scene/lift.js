@@ -12,16 +12,25 @@ import { Link,Redirect } from 'react-router-dom';
 import {savescore} from '../../action'
 import {connect} from 'react-redux';
 
+import Sound from 'react-sound';
+import sound from '../video/sound/speaklift.mp3';
+
 class lift extends React.Component{
 
 state={
   popup:false,
-  link:false
+  link:false,
+  playStatus:Sound.status.STOPPED
 }
 
 openpop=data=>()=>{
+  setTimeout(this.soundOn,100);
   this.setState({popup:true})
   this.props.dispatch(savescore(data.score));
+}
+
+soundOn=()=>{
+  this.setState({playStatus:Sound.status.PLAYING})
 }
   
 popupClose=()=>{
@@ -39,6 +48,13 @@ Redirect=()=>{if(this.state.link){ return <Redirect to="/stair16" /> }}
         image={poplift}
         close={this.popupClose}
         />
+
+      <Sound
+        url={sound}
+        volume={this.props.sound === false?0:100}
+        playStatus={this.state.playStatus}
+        onFinishedPlaying={() => this.setState({ playStatus: Sound.status.STOPPED })}
+      />  
         
       <div className="bglift">
       <div className="boxchoose">
@@ -52,7 +68,8 @@ Redirect=()=>{if(this.state.link){ return <Redirect to="/stair16" /> }}
   }
 }
 const connectscore = state => ({
-  score:state.score
+  score:state.score,
+  score:state.sound
   })
 
   

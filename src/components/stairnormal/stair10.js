@@ -16,6 +16,9 @@ import hand13 from "../picture2/popscore/hand13.png";
 import {savescore} from '../../action'
 import {connect} from 'react-redux';
 
+import Sound from 'react-sound';
+import sound from '../video/sound/speakheat.mp3';
+
 
 
 
@@ -24,11 +27,17 @@ class stair10 extends React.Component{
     class:'fadeInUp',
     outshow2:false,
     popup:false,
-    link:false
+    link:false,
+    playStatus:Sound.status.STOPPED
   }
 
     componentDidMount(){ 
-      setInterval(this.outshow,5000)
+      setTimeout(this.soundOn,1200);
+      setInterval(this.outshow,6200);
+    }
+
+    soundOn=()=>{
+      this.setState({playStatus:Sound.status.PLAYING})
     }
 
     outshow=()=>{this.setState({class:'fadeOutDown'})
@@ -81,6 +90,12 @@ class stair10 extends React.Component{
         iconclose={'none'}
         />
  
+      <Sound
+        url={sound}
+        volume={this.props.sound === false?0:100}
+        playStatus={this.state.playStatus}
+        onFinishedPlaying={() => this.setState({ playStatus: Sound.status.STOPPED })}
+      />  
      
  
           
@@ -112,7 +127,8 @@ class stair10 extends React.Component{
   }
 }
 const connectscore = state => ({
-  score:state.score
+  score:state.score,
+  sound:state.sound
   })
   
   export default connect(connectscore)(stair10);

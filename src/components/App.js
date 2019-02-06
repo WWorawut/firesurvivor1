@@ -61,8 +61,8 @@ import IntroMP4 from './video/IntroMP4';
 
 import { BrowserRouter as  Router, Route,Link} from 'react-router-dom';
 
-import sound from './video/sound/speakstair.mp3';
-import bgsound from './video/file/soundfirebg.mp3';
+
+import bgsound from './video/file/s1.mp3';
 
 import preload from './preload';
 
@@ -82,6 +82,7 @@ class App extends React.Component{
     this.state = { 
       clickedSound:true,
       secondsElapsed: 0, 
+      layStatus:Sound.status.STOPPED,
       user:localStorage.getItem("user")
     };
   }
@@ -106,6 +107,10 @@ class App extends React.Component{
   }
 
 
+  soundOn=()=>{
+    this.setState({playStatus:Sound.status.PLAYING})
+  }
+
 
 
   
@@ -127,8 +132,9 @@ class App extends React.Component{
       <Sound
         url={bgsound}
         loop={true}
-        volume={100}
+        volume={this.props.sound === false?0:20}
         playStatus={Sound.status.PLAYING}   
+        onFinishedPlaying={() => this.setState({ playStatus: Sound.status.STOPPED })}
       />  
 
 

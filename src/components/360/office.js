@@ -11,6 +11,13 @@ import office from '../picture2/360/office.png'
 import human from "../picture2/speak/human.png";
 import officetext from "../picture2/speak/officetext11.png";
 
+import {savescore} from '../../action'
+import {connect} from 'react-redux';
+
+
+import Sound from 'react-sound';
+import sound from '../video/sound/speakstart.mp3';
+
 
   
 class officenormal extends React.Component {

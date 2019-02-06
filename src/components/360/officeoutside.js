@@ -10,6 +10,12 @@ import Officeoutside from '../picture2/360/officeoutside.png'
 import human from "../picture2/speak/human.png";
 import officeouttext from "../picture2/speak/officeouttext.png";
 
+import Sound from 'react-sound';
+import sound from '../video/sound/speakoutoffice.mp3';
+
+import {savescore} from '../../action'
+import {connect} from 'react-redux';
+
 
   
 class officeoutside extends React.Component {
@@ -20,12 +26,18 @@ class officeoutside extends React.Component {
       secondsElapsed: 0, 
       link:false,
       class:'fadeInUp',
-      outshow2:false
+      outshow2:false,
+      playStatus:Sound.status.STOPPED
     };
   }
 
     componentDidMount(){ 
-      setInterval(this.outshow,5000)
+      setTimeout(this.soundOn,1000);
+      setInterval(this.outshow,6000);
+    }
+
+    soundOn=()=>{
+      this.setState({playStatus:Sound.status.PLAYING})
     }
 
     outshow=()=>{this.setState({class:'fadeOutDown'})
@@ -64,6 +76,13 @@ class officeoutside extends React.Component {
   render() {
     return (
     <div>
+
+      <Sound
+        url={sound}
+        volume={this.props.sound === false?0:100}
+        playStatus={this.state.playStatus}
+        onFinishedPlaying={() => this.setState({ playStatus: Sound.status.STOPPED })}
+      />  
       
       {/* <a-scene>
       {this.Redirect()}
@@ -117,4 +136,9 @@ class officeoutside extends React.Component {
   }
 }
 
-export default officeoutside;
+const connectscore = state => ({
+  score:state.score,
+  sound:state.sound
+  })
+
+export default connect(connectscore)(officeoutside);

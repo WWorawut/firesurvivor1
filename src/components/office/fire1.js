@@ -64,7 +64,7 @@ class fire1 extends React.Component{
 
       <div className="bgfireoffice">
 
-      <div className=" boxfireoffice animated pulse">
+      <div className=" boxfireoffice animated zoomIn">
       <div className="boxjangtext">
       <p>สถานการณ์ :</p>
       <p className="texthead">ไมโครเวฟเกิดความร้อนสูงจนเกิดประกายไฟไหม้ ลุกไหม้ผ้าเช็ดโต๊ะ ควรทำเช่นใดเพื่อไม่ให้ไฟลุกลาม?</p>

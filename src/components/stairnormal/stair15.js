@@ -17,16 +17,26 @@ import {savescore} from '../../action'
 import {connect} from 'react-redux';
 
 
+import Sound from 'react-sound';
+import sound from '../video/sound/speakmanysmoke.mp3';
+
+
 
 class stair15 extends React.Component{
   state={
     class:'fadeInUp',
     outshow2:false,
     popup:false,
-    link:false
+    link:false,
+    playStatus:Sound.status.STOPPED
   }
     componentDidMount(){ 
-      setInterval(this.outshow,5000)
+      setTimeout(this.soundOn,1200);
+      setInterval(this.outshow,6000);
+    }
+
+    soundOn=()=>{
+      this.setState({playStatus:Sound.status.PLAYING})
     }
 
     outshow=()=>{this.setState({class:'fadeOutDown'})
@@ -79,6 +89,13 @@ class stair15 extends React.Component{
           image={smoke3}
           iconclose={'none'}
           />
+
+      <Sound
+        url={sound}
+        volume={this.props.sound === false?0:100}
+        playStatus={this.state.playStatus}
+        onFinishedPlaying={() => this.setState({ playStatus: Sound.status.STOPPED })}
+      />  
  
           
       <div className="bgstair15">
@@ -114,7 +131,8 @@ class stair15 extends React.Component{
   }
 }
 const connectscore = state => ({
-  score:state.score
+  score:state.score,
+  sound:state.sound
   })  
 
   export default connect(connectscore)(stair15);

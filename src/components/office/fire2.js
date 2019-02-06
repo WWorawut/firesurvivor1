@@ -64,7 +64,7 @@ class fire2 extends React.Component{
 
       <div className="bgfireoffice">
 
-      <div className=" boxfireoffice animated pulse">
+      <div className=" boxfireoffice animated zoomIn">
       <div className="boxjangtext">
       <p>สถานการณ์ :</p>
       <p className="texthead">สายไฟบริเวณหิ้งพระที่เก่ามากจนหลอมละลาย เกิดประกายไฟไหม้กระดาษต่างๆ บนโต๊ะ ควรทำเช่นใดเพื่อไม่ให้ไฟลุกลาม?</p>
