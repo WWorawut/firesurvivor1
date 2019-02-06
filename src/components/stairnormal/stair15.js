@@ -2,9 +2,9 @@ import React, {} from 'react';
 import '../css/scenenormal.css';
 import human from "../picture2/speak/human.png";
 import stair15talk from "../picture2/speak/stair15talk.png";
-import list151 from "../picture2/speak/list151.png";
-import list152 from "../picture2/speak/list152.png";
-import list153 from "../picture2/speak/list153.png";
+import list151 from "../picture2/speak/list11.png";
+import list152 from "../picture2/speak/list12.png";
+import list153 from "../picture2/speak/list13.png";
 import { Redirect } from 'react-router-dom';
 
 import Popup from '../Scene/popup';

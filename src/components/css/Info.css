@@ -59,6 +59,12 @@
     overflow-y: hidden;
     background-position: center;
 }
+.bgfiretype{
+    background-image: url("../picture/bg.png");
+    background-size: cover;
+    overflow-y: hidden;
+    background-position: center;
+}
 
 
 

@@ -86,3 +86,22 @@ body {
   
 
 
+
+
+
+  .bgfireoffice{
+    background-image: url("../picture/bg.png");
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    background-position: center;
+}
+
+.boxfireoffice{
+  background-color:white;
+  width: 30%;
+  height: 55%;
+  margin: auto;
+  margin-top: 10%;
+  border-radius: 5%;
+}

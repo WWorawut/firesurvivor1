@@ -11,11 +11,11 @@ class firetype extends React.Component{
   };
 
   close=()=>{this.setState({ link:true })}
-  Redirect=()=>{if(this.state.link){ return <Redirect to="/office" /> }}
+  Redirect=()=>{if(this.state.link){ return <Redirect to="/fireoffice" /> }}
 
     render() {
       return (
-        <div className="bgjanghad">
+        <div className="bgfiretype">
         <div className="bgtypeinfo animated fadeIn">
           <div className="typeinfo firetype">
           {this.Redirect()}
