@@ -9,7 +9,7 @@ import choosebutton from '../picture2/button/choosebutton.png'
 import { BrowserRouter as  Link,Redirect } from 'react-router-dom'
 import office from '../picture2/360/office.png'
 import human from "../picture2/speak/human.png";
-import officetext from "../picture2/speak/officetext.png";
+import officetext from "../picture2/speak/officetext11.png";
 
 
   
@@ -42,8 +42,9 @@ class officenormal extends React.Component {
 
   next=name=>()=>{ this.setState({ [name]:true })}
   Redirect=()=>{
-    if(this.state.firetung){ return <Redirect to="/firetung"/> }
-    if(this.state.out){ return <Redirect to="/officeoutside"/> }
+    if(this.state.A){ return <Redirect to="/firetung"/> }
+    if(this.state.B){ return <Redirect to="/officeoutside"/> }
+    if(this.state.C){ return <Redirect to="/officeoutside"/> }
 }
 
 
@@ -77,8 +78,9 @@ class officenormal extends React.Component {
 
       <Scene>
       {this.Redirect()}
-        <Entity onClick={this.openpop} events={{click:this.next('firetung') , mouseenter:this.mouseenter('scale1') , mouseleave:this.mouseleave('scale1')}}  primitive='a-image' material={{ src: choosebutton}} scale={{x: this.state.scale1, y: this.state.scale1, z:this.state.scale1}} rotation={{x: 0, y: -90 ,z: 0}} position={{x:15, y: -1, z: -3}}/>
-        <Entity events={{click:this.next('out') , mouseenter:this.mouseenter('scale2') , mouseleave:this.mouseleave('scale2')}}  primitive='a-image' material={{ src: gobutton}} scale={{x: this.state.scale2, y: this.state.scale2, z:this.state.scale2}} rotation={{x: 0, y: -90 ,z: 0}} position={{x:20, y: 0, z:3}}/> 
+      <Entity events={{click:this.next('A') , mouseenter:this.mouseenter('scale1') , mouseleave:this.mouseleave('scale1')}}  primitive='a-image' material={{ src: choosebutton}} scale={{x: this.state.scale1, y: this.state.scale1, z:this.state.scale1}} rotation={{x: 0, y: -90 ,z: 0}} position={{x:15, y: 0, z: -3}}/>
+        <Entity events={{click:this.next('B') , mouseenter:this.mouseenter('scale2') , mouseleave:this.mouseleave('scale2')}}  primitive='a-image' material={{ src: choosebutton}} scale={{x: this.state.scale2, y: this.state.scale2, z:this.state.scale2}} rotation={{x: 0, y: -90 ,z: 0}} position={{x:25, y: 0, z:4}}/> 
+        <Entity events={{click:this.next('C') , mouseenter:this.mouseenter('scale3') , mouseleave:this.mouseleave('scale3')}}  primitive='a-image' material={{ src: choosebutton}} scale={{x: this.state.scale3, y: this.state.scale3, z:this.state.scale3}} rotation={{x: 0, y: 270 ,z: 0}} position={{x:10, y: 0, z:8}}/>
         
        
         <Entity primitive='a-sky' rotation="0 -100 0" src={office}/>

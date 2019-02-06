@@ -47,12 +47,15 @@ import stair11 from './stairnormal/stair11';
 import stair10 from './stairnormal/stair10';
 import endstair from './stairnormal/endstair';
 
-import stair12A1 from './stairnormal/12a1';
 
 import officeoutside from './360/officeoutside';
 import gotoshair from './360/gotoshair';
 import fireoffice from './360/fireoffice';
+
 import office from './360/office';
+import fire1 from './office/fire1';
+import fire2 from './office/fire2';
+import fire3 from './office/fire3';
 
 import IntroMP4 from './video/IntroMP4';
 
@@ -246,7 +249,7 @@ class App extends React.Component{
         <Route path="/stair10" component={stair10} />
         <Route path="/endstair" component={endstair} />
 
-        <Route path="/s12a1" component={stair12A1} />
+      
 
   
 
@@ -261,6 +264,11 @@ class App extends React.Component{
         <Route path="/heat" component={heat} />  {/* Info หนีความร้อน */}
         <Route path="/escape" component={escape} />  {/* Info หนีเหตุ */}
         <Route path="/usetung" component={usetung} />  {/* Info การใช้ถังดับเพลิง */}  
+
+
+        <Route path="/fire1" component={fire1} />
+        <Route path="/fire2" component={fire2} />
+        <Route path="/fire3" component={fire3} />
 
 
 

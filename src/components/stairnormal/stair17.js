@@ -67,13 +67,13 @@ class stair17 extends React.Component{
       <div className="bgstair17">
     
       <div className="centerlist">
-       <img className={"listwalk animated fadeInUp"} onClick={this.openpop({link:'link',score:-3,state:'popup'})} src={listwalk1}/>
+       <img className={"list animated fadeInUp"} onClick={this.openpop({link:'link',score:-3,state:'popup'})} src={listwalk1}/>
        </div>
        <div className="centerlist2">
-      <img className={"listwalk animated fadeInUp"} onClick={this.openpop({link:'link',score:5,state:'popup1'})} src={listwalk2}/>
+      <img className={"list animated fadeInUp"} onClick={this.openpop({link:'link',score:5,state:'popup1'})} src={listwalk2}/>
        </div>
        <div className="centerlist2">
-      <img className={"listwalk animated fadeInUp"} onClick={this.openpop({link:'link',score:2,state:'popup2'})} src={listwalk3}/>
+      <img className={"list animated fadeInUp"} onClick={this.openpop({link:'link',score:2,state:'popup2'})} src={listwalk3}/>
        </div>
       
  

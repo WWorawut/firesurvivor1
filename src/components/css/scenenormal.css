@@ -195,7 +195,18 @@ body{
   z-index: 7;
   height: 50%;
   bottom: 0;
-  left:5;
+  left:6%;
+}
+
+.list{
+  width: 96%;
+  height: 12vh;
+  animation-delay: 0.6s;
+}
+.list:hover{
+  cursor: pointer;
+  width: 98%;
+  height: 12.5vh;
 }
 
 

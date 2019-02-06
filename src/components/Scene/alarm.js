@@ -54,7 +54,7 @@ class alarm extends React.Component{
       <div className="offset-6 boxjang animated pulse">
       <div className="boxjangtext">
       <p>สถานการณ์ :</p>
-      <p className="texthead">ในขณะที่ไฟไหม้มาแล้ว 10 นาทีแต่กริ่งสัญญานไฟดังเพียงชั้นที่คุณอยู่ คุณต้องการกดกริ่งทั้งอาคารหรือไม่ ?</p>
+      <p className="texthead">ในขณะเกิดเหตุเพลิงไหม้ คุณต้องการที่จะกดกริ่งเพื่อเตือนภัย หรือไม่ ?</p>
       <Button className="buttonjang" onClick={this.openpop({link:'link',score:5,state:'popup'})}>กดสัญญาณ</Button>
       <br/>
       <Button className="buttonjang" onClick={this.openpop({link:'link',score:-5,state:'popup2'})}>ไม่กดสัญญาณ</Button>

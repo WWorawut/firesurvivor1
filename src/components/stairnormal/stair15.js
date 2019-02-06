@@ -90,13 +90,13 @@ class stair15 extends React.Component{
       :
       <div>
       <div className="centerlist">
-       <img className={"listwalk animated fadeInUp"} onClick={this.openpop({link:'link',score:-5,state:'popup'})} src={list151}/>
+       <img className={"list animated fadeInUp"} onClick={this.openpop({link:'link',score:-5,state:'popup'})} src={list151}/>
        </div>
        <div className="centerlist2">
-       <img className={"listwalk animated fadeInUp"} onClick={this.openpop({link:'link',score:2,state:'popup1'})} src={list152}/>
+       <img className={"list animated fadeInUp"} onClick={this.openpop({link:'link',score:2,state:'popup1'})} src={list152}/>
        </div>
        <div className="centerlist2">
-      <img className={"listwalk animated fadeInUp"} onClick={this.openpop({link:'link',score:7,state:'popup2'})} src={list153}/>
+      <img className={"list animated fadeInUp"} onClick={this.openpop({link:'link',score:7,state:'popup2'})} src={list153}/>
        </div>
        </div>
       }
