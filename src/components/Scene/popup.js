@@ -30,6 +30,7 @@ class AlertDialogSlide extends React.Component {
           onClose={this.props.close}
           aria-labelledby="alert-dialog-slide-title"
           aria-describedby="alert-dialog-slide-description"
+          style={{zIndex:this.props.zIndex?this.props.zIndex:'100'}}
         >
 
           <img className="pop" src={this.props.image}/>

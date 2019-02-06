@@ -13,7 +13,8 @@ import Popup from '../Scene/popup';
 import {savescore} from '../../action'
 import {connect} from 'react-redux';
 import calltext from "../picture2/speak/calltext.png";
-import callcorrect1 from "../picture2/popscore/callcorrect1.png";
+import use4 from "../picture2/popscore/use4.png";
+import p4 from "../picture2/popscore/p4.png";
 
 
 class stair12A extends React.Component{
@@ -21,7 +22,9 @@ class stair12A extends React.Component{
     class:'fadeInUp',
     outshow2:false,
     popup:false,
-    link:false
+    link:false,
+    people:'',
+    image:''
   }
     componentDidMount(){ 
       setInterval(this.outshow,5000)
@@ -34,22 +37,21 @@ class stair12A extends React.Component{
     outshow2=()=>{this.setState({outshow2:'true'})}
 
    ////////////////////
-    openpop=data=>()=>{
-      this.setState({[data.state]:true});
-      this.props.dispatch(savescore(data.score));
-      setTimeout(this.popupClose(data),2000);
-    }
-      
-    popupClose=data=>()=>{
-      this.setState({[data.state]:false})
-      setTimeout(this.setlink(data.link),1000);  
-    }
-  
-    setlink=link=>()=>{this.setState({ [link]:true })}
-  
-  
-    Redirect=()=>{if(this.state.link){ return <Redirect to="/" /> }}
-    Redirect1=()=>{if(this.state.l){ return <Redirect to="/officeoutside" /> }}
+   openpop=data=>()=>{
+    this.setState({[data.state]:true ,people:'fadeInUp',image:data.image});
+    this.props.dispatch(savescore(data.score));
+    setTimeout(this.popupClose(data),4000);
+  }
+    
+  popupClose=data=>()=>{
+    this.setState({[data.state]:false})
+    setTimeout(this.setlink(data.link),5000);  
+  }
+
+  setlink=link=>()=>{this.setState({ [link]:true })}
+
+
+  Redirect=()=>{if(this.state.link1){ return <Redirect to="/stair17" /> }}
     /////////////////////
 
 
@@ -68,6 +70,22 @@ class stair12A extends React.Component{
       image={calltext}
       iconclose={'none'}
       />
+        <Popup
+      open={this.state.popup}
+      image={calltext}
+      iconclose={'none'}
+      />
+        <Popup
+      open={this.state.popup}
+      image={calltext}
+      iconclose={'none'}
+      />
+        <Popup
+      open={this.state.popup4}
+      image={use4}
+      iconclose={'none'}
+      zIndex='6'
+      />
 
     
       
@@ -80,20 +98,22 @@ class stair12A extends React.Component{
       </div>
       :
       <div className="b">
-      <div className="boxhelp12">
-          <p className="text12 animated fadeInUp">เลือกสิ่งของ 1 อย่าง เพื่อฝ่าควันออกไป</p>
-          <div className="animated fadeInUp">
-          
-          <div className="boxd">
-          <img className="box12" onClick={this.openpop({link:'link',score:3,state:'popup'})} src={water} />
-          <img className="box12" onClick={this.openpop({link:'link',score:3,state:'popup'})} src={towel} />
-          <br/>
-          <br/>
-          <img className="box12" onClick={this.openpop({link:'link',score:3,state:'popup'})} src={glass} />
-          <Link to = "/s12A1"><img className="box12" src={bag} /></Link>
-          </div>
-          </div>
-      </div>
+        {this.state.people !== ''?
+        <div className='ggg'><img className={"people animated "+this.state.people} src={this.state.image} /></div>:null
+        }
+        <div className="boxhelp12">
+            <p className="text12 animated fadeInUp">เลือกสิ่งของ 1 อย่าง เพื่อฝ่าควันออกไป</p>
+            <div className="animated fadeInUp">
+            <div className="boxd">
+            <img className="box12" onClick={this.openpop({link:'link',score:3,state:'popup'})} src={water} />
+            <img className="box12" onClick={this.openpop({link:'link',score:2,state:'popup2'})} src={towel} />
+            <br/>
+            <br/>
+            <img className="box12" onClick={this.openpop({link:'link',score:-1,state:'popup3'})} src={glass} />
+            <img className="box12" onClick={this.openpop({link:'link',score:3,state:'popup4',image:p4})} src={bag} />
+            </div>
+            </div>
+        </div>
       </div>
       }
     

@@ -2,3 +2,8 @@
     type: 'savescore',
     score
     })
+
+   export const closeSound = (sound) => ({
+   type: 'closeSound',
+   sound
+   })

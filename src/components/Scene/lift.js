@@ -24,7 +24,7 @@ openpop=data=>()=>{
   this.props.dispatch(savescore(data.score));
 }
   
-popupClose=data=>()=>{
+popupClose=()=>{
   this.setState({popup:false})
 }
 
@@ -56,4 +56,4 @@ const connectscore = state => ({
   })
 
   
-  export default connect(connectscore)(lift);
+  export default connect(connectscore)(lift); 

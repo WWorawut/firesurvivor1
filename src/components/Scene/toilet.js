@@ -7,7 +7,11 @@ import Popup from './popup';
 import Iconout from '@material-ui/icons/ChevronLeft';
 import choosebutton from "../picture2/button/choosebutton.png";
 import poptoilet from "../picture2/toilet/warningtoilet.png";
-import { BrowserRouter as  Link,Redirect } from 'react-router-dom'
+
+import { Link,Redirect } from 'react-router-dom';
+
+import {savescore} from '../../action'
+import {connect} from 'react-redux';
 
 class toilet extends React.Component{
 
@@ -16,15 +20,16 @@ class toilet extends React.Component{
     link:false,
   }
 
-  openpop=()=>{
+  openpop=data=>()=>{
     this.setState({popup:true})
+    this.props.dispatch(savescore(data.score));
   }
   popupClose=()=>{
     this.setState({popup:false})
   }
   
-  out=()=>{this.setState({ link:true })}
-  Redirect=()=>{if(this.state.link){ return <Redirect to="/officeoutside" /> }}
+  setlink=link=>()=>{this.setState({ [link]:true })}
+  Redirect=()=>{if(this.state.link){ return <Redirect to="/stair16" /> }}
    
    render() {
     return (
@@ -37,14 +42,17 @@ class toilet extends React.Component{
 
       <div className="bgtoilet">
       <div className="boxchoose">
-      <img className="choosebutton" src={choosebutton} onClick={this.openpop} />
+      <img className="choosebutton" src={choosebutton} onClick={this.openpop({link:'link',score:-5,state:'popup'})} />
       </div>
       </div>
       {this.Redirect()}
-      <Button className="out" ghost onClick={this.out}> <Iconout/>ออก</Button>
+      <Link to = "/officeoutside"><Button className="out" ghost onClick={this.out}> <Iconout/>ออก</Button></Link>
       </div>
     );
   }
 }
+const connectscore = state => ({
+  score:state.score
+  })
   
-  export default toilet;
+  export default connect(connectscore)(toilet);

@@ -63,7 +63,7 @@ import bgsound from './video/file/soundfirebg.mp3';
 
 import preload from './preload';
 
-
+import {closeSound} from './../action'
 
 
 
@@ -99,6 +99,7 @@ class App extends React.Component{
     this.setState({
       clickedSound:!this.state.clickedSound
     })
+    this.props.dispatch(closeSound(!this.state.clickedSound));
   }
 
 
@@ -277,7 +278,8 @@ class App extends React.Component{
 }
 
 const connectscore = state => ({
-score:state.score
+score:state.score,
+sound:state.sound
 })
 
 export default connect(connectscore) (App);

@@ -24,7 +24,8 @@ class stair19 extends React.Component{
     class:'fadeInUp',
     outshow2:false,
     popup:false,
-    link:false
+    link:false,
+    playStatus:Sound.status.STOPPED
   }
     componentDidMount(){ 
       setTimeout(this.soundOn,1200);
@@ -81,7 +82,7 @@ class stair19 extends React.Component{
 
       <Sound
         url={sound}
-        volume={90}
+        volume={this.props.sound === false?0:100}
         playStatus={this.state.playStatus}
         onFinishedPlaying={() => this.setState({ playStatus: Sound.status.STOPPED })}
       />  
@@ -132,7 +133,8 @@ class stair19 extends React.Component{
 }
 
 const connectscore = state => ({
-  score:state.score
+  score:state.score,
+  sound:state.sound
   })
   
   export default connect(connectscore)(stair19);

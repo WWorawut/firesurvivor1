@@ -98,7 +98,7 @@ body{
 
 .centerwalk{
   width: 30%;
-  display: flex;
+  position: relative;
   margin: auto;
   padding-top: 40vh;
 }
@@ -154,8 +154,10 @@ body{
 
 .boxhelp12{
   width: 45%;
-  margin: auto;
+  margin: 0 27.5%;
   padding-top: 5%;
+  position: absolute;
+  z-index: 5;
 }
 .text12{
   color: white;
@@ -175,6 +177,8 @@ body{
 }
 .b{
   padding-top: 1rem;
+  position: relative;
+  height: 100%;
 }
 
 .su{
@@ -182,7 +186,17 @@ body{
   padding-top: 17%;
 }
 
+.people{
+  height: 100%;
+}
 
+.ggg{
+  position: absolute;
+  z-index: 7;
+  height: 50%;
+  bottom: 0;
+  left:5;
+}
 
 
 
