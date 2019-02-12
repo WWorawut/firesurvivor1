@@ -16,7 +16,6 @@ import smoke3 from "../picture2/popscore/smoke3.png";
 import {savescore} from '../../action'
 import {connect} from 'react-redux';
 
-
 import Sound from 'react-sound';
 import sound from '../video/sound/speakmanysmoke.mp3';
 

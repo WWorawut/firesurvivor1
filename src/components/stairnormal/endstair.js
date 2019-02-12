@@ -2,6 +2,8 @@ import React, {} from 'react';
 import '../css/scenenormal.css';
 import human from "../picture2/speak/human.png";
 import endstairtalk from "../picture2/speak/endstairtalk.png";
+import '../css/button.css';
+import gobutton from "../picture2/button/gobutton.png";
 
 import { Link, Redirect } from 'react-router-dom';
 
@@ -51,11 +53,17 @@ class endstair extends React.Component{
  
           
       <div className="bgendstair">
-      
+      {this.state.outshow2 === false ?
       <div className="centerhuman">
       <img className={"human animated " +this.state.class} src={human}/>
       <img className={"text animated " +this.state.class} src={endstairtalk }/>
       </div>
+      :
+      <div style={{paddingTop:'48vh'}}>
+      <Link to = "/finalend"><img className="gobutton animated fadeInUp" src={gobutton} /></Link>
+      </div>
+    }
+    </div> 
      
     
 
@@ -64,7 +72,7 @@ class endstair extends React.Component{
 
 
       </div>
-      </div>
+   
 
     );
   }

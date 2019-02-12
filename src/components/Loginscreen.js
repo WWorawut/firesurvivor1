@@ -3,19 +3,22 @@ import './App.css';
 import './css/login.css';
 import logo from "./picture/logo.png";
 import YouTube from 'react-youtube';
+import { Player, ControlBar } from 'video-react';
+import intro from "./video/file/ae.mp4";
+import {connect} from 'react-redux';
 import { BrowserRouter as  Link,Redirect } from 'react-router-dom';
+
+import {takeuser} from './../action'
 
 class Loginscreen extends React.Component {
 constructor(props){
   super(props);
   this.state={
-    value:'',
-    dd:""
   }
 }
 
  login=()=>{
-  localStorage.setItem("user", this.state.value);
+  this.props.dispatch(takeuser(this.state.value));
   this.setState({link:true});
  }
 
@@ -28,11 +31,20 @@ constructor(props){
   render() {
     if(this.state.link){ return <Redirect to="/intro" /> }
     return (
-      <div>
-        <div className="cd">
+        <div className="dddd">
+          <Player 
+            ref="player"
+            autoPlay
+            playsInline={true}
+            loop={true}
+            className="vdologin"
+            >
+            <source src={intro} />
+            <ControlBar autoHide={false} disableDefaultControls></ControlBar>
+            </Player> 
+        <div className="bgbbbb">
         <div className="fontlog"> 
 
-          <div className="boxlogin">
           <div className="box">
             <img className="piclogo" src={logo}/>
             <div className="space">
@@ -49,17 +61,16 @@ constructor(props){
             } 
             </form>
             </div>
-            <div>
               </div>
-                </div>
             </div>
           </div>
-        </div>
-      </div>
-     
-     
+        </div>   
     );
   }
 }
 
-export default Loginscreen;
+const connectscore = state => ({
+  user:state.user
+  })
+  
+  export default connect(connectscore) (Loginscreen);

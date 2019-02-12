@@ -2,18 +2,42 @@ import React, {} from 'react';
 import '../css/Info.css';
 import { Icon } from 'antd';
 import { BrowserRouter as  Link,Redirect } from 'react-router-dom';
+
+import {savescore} from '../../action'
+import {connect} from 'react-redux';
+
+import Sound from 'react-sound';
+import sound from '../video/sound/infoheat.mp3';
 {/* Info หนีความร้อน */}
+
 
 class heat extends React.Component{  
   state = { 
-    link:false
+    link:false,
+    playStatus:Sound.status.STOPPED
   };
+
+  componentDidMount(){ 
+    setTimeout(this.soundOn,1200);
+  }
+  soundOn=()=>{
+    this.setState({playStatus:Sound.status.PLAYING})
+  }
 
   close=()=>{this.setState({ link:true })}
   Redirect=()=>{if(this.state.link){ return <Redirect to="/endstair" /> }}
 
     render() {
       return (
+        <div>
+           <Sound
+        url={sound}
+        volume={this.props.sound === false?0:100}
+        playStatus={this.state.playStatus}
+        onFinishedPlaying={() => this.setState({ playStatus: Sound.status.STOPPED })}
+      />  
+
+
         <div className="bgheat">
         <div className="bgtypeinfo animated fadeIn">
           <div className="typeinfo heat">
@@ -22,8 +46,13 @@ class heat extends React.Component{
           </div>              
         </div>
         </div>
+        </div>
       );
     }
   }
+  const connectscore = state => ({
+    score:state.score,
+    sound:state.sound
+    })  
   
-  export default heat;
+  export default connect(connectscore)(heat);

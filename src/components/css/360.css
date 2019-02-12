@@ -21,13 +21,42 @@
 }
 .firetext{
     margin: 1% 0 0 7%;
-    width: 27%;
-    height: 10%;
+    width: 29%;
+    height: 9%;
+    animation-delay: 0.6s;
+    position: absolute;
+    z-index: 1;
+}
+
+.firetext1{
+    margin: 1% 0 0 7%;
+    width: 26%;
+    height: 9%;
+    animation-delay: 0.6s;
+    position: absolute;
+    z-index: 1;
+}
+
+.firetext2{
+    margin: 1% 0 0 7%;
+    width: 24%;
+    height: 13%;
+    animation-delay: 0.6s;
+    position: absolute;
+    z-index: 1;
+}
+.firetext3{
+    margin: 1% 0 0 7%;
+    width: 26%;
+    height: 11%;
     animation-delay: 0.6s;
     position: absolute;
     z-index: 1;
 }
 
 .none{
+    display: none;
+}
+.a-enter-vr-button{
     display: none;
 }

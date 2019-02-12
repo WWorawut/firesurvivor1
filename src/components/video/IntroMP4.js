@@ -17,15 +17,20 @@ class IntroMP4 extends React.Component{
   handleStateChange(state) {
     const { player } = this.refs.player.getState();
     const ended = player.ended;
-    if(ended==true){
-      window.location.href="/howtoplay";
+    if (ended == true){
+         this.setState({ended:true}) 
     }
+
   }
 
 
     render() {
+      if(this.state.ended){
+        return <Redirect to="/howtoplay" /> 
+       }
       return (
         <div>
+         
             <div className="video">
             <Player 
             ref="player"

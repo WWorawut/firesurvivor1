@@ -47,6 +47,12 @@
     overflow-y: hidden;
     background-position: center;
 }
+.bgwalk360{
+    background-image: url("../picture/bgwalk360.png");
+    background-size: cover;
+    overflow-y: hidden;
+    background-position: center;
+}
 .bgsmoke{
     background-image: url("../picture/bgsmoke.png");
     background-size: cover;
@@ -60,7 +66,13 @@
     background-position: center;
 }
 .bgfiretype{
-    background-image: url("../picture/bg.png");
+    background-image: url("../picture/bg.jpg");
+    background-size: cover;
+    overflow-y: hidden;
+    background-position: center;
+}
+.bgrarabhad{
+    background-image: url("../picture/bgrarabhad.jpg");
     background-size: cover;
     overflow-y: hidden;
     background-position: center;

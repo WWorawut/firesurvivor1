@@ -39,9 +39,6 @@ class stair19 extends React.Component{
     }
 
     outshow2=()=>{this.setState({outshow2:'true'})}
-    
-
-
 
     openpop=data=>()=>{
       this.setState({[data.state]:true});
@@ -58,15 +55,12 @@ class stair19 extends React.Component{
   
   
     Redirect=()=>{if(this.state.link1){ return <Redirect to="/stair17" /> }}
-    Redirect1=()=>{if(this.state.link2){ return <Redirect to="/starir177" /> }}
+    Redirect1=()=>{if(this.state.link2){ return <Redirect to="/stair177" /> }}
 
    render() {
 
- 
-;
     var images = [{human,stair1,walk,run}];
     var loadingIndicator = (<Reloade/>);
-    
     return (
  
         <Preload
@@ -134,7 +128,8 @@ class stair19 extends React.Component{
 
 const connectscore = state => ({
   score:state.score,
-  sound:state.sound
+  sound:state.sound,
+  timer:state.timer
   })
   
   export default connect(connectscore)(stair19);

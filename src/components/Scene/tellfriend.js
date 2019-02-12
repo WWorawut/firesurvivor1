@@ -9,7 +9,7 @@ import friend2 from "../picture2/popscore/friend2.png";
 import friend3 from "../picture2/popscore/friend3.png";
 
 import { BrowserRouter as  Link,Redirect } from 'react-router-dom'
-import {savescore} from '../../action'
+import {savescore,choosefriend} from '../../action'
 import {connect} from 'react-redux';
 
 class tellfriend extends React.Component{
@@ -31,7 +31,12 @@ class tellfriend extends React.Component{
   }
 
   setlink=link=>()=>{this.setState({ [link]:true })}
-  Redirect=()=>{if(this.state.link){ return <Redirect to="/officeoutside" /> }}
+
+  Redirect=()=>{
+    if(this.state.link){ 
+      if(this.props.choosealarm && this.props.choosecall && this.props.choosefriend&& this.state.link){ return <Redirect to="/janghad" /> }else{ return <Redirect to="/officeoutside" />} 
+    } 
+} 
 
    
    render() {
@@ -81,7 +86,10 @@ class tellfriend extends React.Component{
   }
 }
 const connectscore = state => ({
-  score:state.score
+  score:state.score,
+  choosecall:state.choosecall,
+  choosefriend:state.choosefriend,
+  choosealarm:state.choosealarm
   })
   
   export default connect(connectscore)(tellfriend);

@@ -62,7 +62,7 @@ Redirect=()=>{if(this.state.link){ return <Redirect to="/stair16" /> }}
       </div>
       </div>
       {this.Redirect()}
-      <Link to = "/officeoutside"><Button className="out" ghost onClick={this.out}> <Iconout/>ออก</Button></Link>
+      <Link to = "/officeoutside"><Button className="out" ghost onClick={this.out}> <Iconout/>กลับ</Button></Link>
       </div> 
     );
   }

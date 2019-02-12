@@ -14,9 +14,11 @@ import Popup from '../Scene/popup';
 
 import bu from "../picture2/popscore/bu.png";
 
-import {savescore} from '../../action'
+import {savescore,stopTimer,fireroom} from '../../action'
 import {connect} from 'react-redux';
 
+import Sound from 'react-sound';
+import sound from '../video/sound/speakfiredown.mp3';
 
   
 class fire extends React.Component {
@@ -28,14 +30,22 @@ class fire extends React.Component {
       link:false,
       class:'fadeInUp',
       outshow2:false,
-      popup:false
+      popup:false,
+      cursor:'white',
+      playStatus:Sound.status.STOPPED
     };
   }
 
 
 
     componentDidMount(){ 
-      setInterval(this.outshow,5000)
+      this.props.dispatch(stopTimer(true));
+      setTimeout(this.soundOn,1200);
+      setInterval(this.outshow,5000);
+    }
+
+    soundOn=()=>{
+      this.setState({playStatus:Sound.status.PLAYING})
     }
 
     outshow=()=>{this.setState({class:'fadeOutDown'})
@@ -44,14 +54,14 @@ class fire extends React.Component {
 
     outshow2=()=>{this.setState({outshow2:'true'})}
 
-  mouseenter=name=>()=>{this.setState({[name]:2})}
-  mouseleave=name=>()=>{this.setState({[name]:1.5})}
+  mouseenter=name=>()=>{this.setState({[name]:2,cursor:'black'})}
+  mouseleave=name=>()=>{this.setState({[name]:1.5,cursor:'white'})}
 
   next=name=>()=>{ this.setState({ [name]:true })}
   Redirect=()=>{
     if(this.state.firetung){ return <Redirect to="/firetung"/> }
-    if(this.state.out){ return <Redirect to="/officeoutside"/> }
-    if(this.state.link){ return <Redirect to="/firetung" /> }
+    if(this.state.out){ return <Redirect to="/rarabhad"/> }
+    if(this.state.link){this.props.dispatch(fireroom(true)); return <Redirect to="/firetung" /> }
 }
 
   openpop=data=>()=>{
@@ -80,9 +90,20 @@ class fire extends React.Component {
           image={bu}
           iconclose={'none'}
           />
+
+{!this.props.fireroom ?
+      <Sound
+        url={sound}
+        volume={this.props.sound === false?0:100}
+        playStatus={this.state.playStatus}
+        onFinishedPlaying={() => this.setState({ playStatus: Sound.status.STOPPED })}
+      />  
+      :
+      null
+}
       
    
-  
+      {this.props.fireroom === false ?
        <div>
        {this.state.outshow2 === false ?
        <div className="center">
@@ -96,7 +117,9 @@ class fire extends React.Component {
        </div>
        }
        </div>
- 
+ :
+ null
+      }
        
    
 
@@ -105,14 +128,16 @@ class fire extends React.Component {
 
       <Scene>
       {this.Redirect()}
+      {this.props.fireroom === false ?
         <Entity events={{click:this.openpop({link:'link',score:7,state:'popup'}) , mouseenter:this.mouseenter('scale1') , mouseleave:this.mouseleave('scale1')}}  primitive='a-image' material={{ src: choosebutton}} scale={{x: this.state.scale1, y: this.state.scale1, z:this.state.scale1}} rotation={{x: 0, y: -90 ,z: 0}} position={{x:15, y: -1, z: -3}}/>
+        :null}
         <Entity events={{click:this.next('out') , mouseenter:this.mouseenter('scale2') , mouseleave:this.mouseleave('scale2')}}  primitive='a-image' material={{ src: gobutton}} scale={{x: this.state.scale2, y: this.state.scale2, z:this.state.scale2}} rotation={{x: 0, y: -90 ,z: 0}} position={{x:20, y: 0, z:3}}/> 
         
        
         <Entity primitive='a-sky' rotation="0 -100 0" src={fireoffice}/>
       
         <Entity primitive="a-camera">
-          <Entity primitive="a-cursor"  
+          <Entity primitive="a-cursor"  material={"color:"+this.state.cursor}
           animation__click={{property: 'scale', startEvents: 'click', from: '0.1 0.1 0.1', to: '1 1 1', dur: 150}}/>
 
         
@@ -132,7 +157,9 @@ class fire extends React.Component {
   }
 }
 const connectscore = state => ({
-  score:state.score
+  score:state.score,
+  timer:state.timer,
+  fireroom:state.fireroom
   })
 
 export default connect(connectscore)(fire);

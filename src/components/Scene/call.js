@@ -9,7 +9,7 @@ import call2 from "../picture2/popscore/call2.png";
 import call3 from "../picture2/popscore/call3.png";
 
 import { BrowserRouter as  Link,Redirect } from 'react-router-dom'
-import {savescore} from '../../action'
+import {savescore,choosecall} from '../../action'
 import {connect} from 'react-redux';
 
 class call extends React.Component{
@@ -17,7 +17,6 @@ class call extends React.Component{
     popup:false,
     link:false,
   }
-
 
 
   openpop=data=>()=>{
@@ -35,7 +34,11 @@ class call extends React.Component{
 
 
   // Redirect1=()=>{if(this.state.l){ return <Redirect to="/" /> }}
-  Redirect=()=>{if(this.state.link){ return <Redirect to="/officeoutside" /> }}
+  Redirect=()=>{
+    if(this.state.link){ 
+      if(this.props.choosealarm && this.props.choosecall && this.props.choosefriend&& this.state.link){ return <Redirect to="/janghad" /> }else{ return <Redirect to="/officeoutside" />} 
+    } 
+} 
   
 
    render() {
@@ -70,9 +73,9 @@ class call extends React.Component{
       <p className="texthead">คุณจะแจ้งข้อมูลให้เจ้าหน้าที่ดับเพลิงว่าอย่างไรในสถานการณ์ฉุกเฉิน ?</p>
       <Button className="buttonjang" onClick={this.openpop({link:'link',score:1,state:'popup'})}>คุณๆ ไฟไหม้ตึกใหญ่แล้ว ช่วยด้วย!!</Button>
       <br/>
-      <Button className="buttonjang" onClick={this.openpop({link:'link',score:2,state:'popup2'})}>ผมชื่อ... ไฟไหม้ที่ตึกสยามอาร์ท 5 นาทีแล้วครับ</Button>
+      <Button className="buttonjang" onClick={this.openpop({link:'link',score:3,state:'popup3'})}>ผมชื่อ... ไฟไหม้ที่ตึกสยามอาร์ท อโศก 5 นาทีแล้วครับ</Button>
       <br/>
-      <Button className="buttonjang" onClick={this.openpop({link:'link',score:3,state:'popup3'})}>ไฟไหม้ตึกสยามอาร์ทครับ รีบมาเลยนะครับ</Button>
+      <Button className="buttonjang" onClick={this.openpop({link:'link',score:2,state:'popup2'})}>ไฟไหม้ตึกสยามอาร์ทครับ รีบมาเลยนะครับ</Button>
       </div>
       </div>
 
@@ -86,7 +89,10 @@ class call extends React.Component{
   }
 }
 const connectscore = state => ({
-  score:state.score
+  score:state.score,
+  choosecall:state.choosecall,
+  choosefriend:state.choosefriend,
+  choosealarm:state.choosealarm
   })
 
   export default connect(connectscore)(call);

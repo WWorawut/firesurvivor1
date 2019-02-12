@@ -101,6 +101,7 @@ body{
   position: relative;
   margin: auto;
   padding-top: 40vh;
+  z-index: 1;
 }
 .walkk{
     width: 35%;
@@ -207,6 +208,12 @@ body{
   cursor: pointer;
   width: 98%;
   height: 12.5vh;
+}
+
+.a{
+  z-index: 1;
+  position: absolute;
+  width: 100%;
 }
 
 

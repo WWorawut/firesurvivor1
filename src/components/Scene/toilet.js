@@ -2,7 +2,7 @@ import React, {} from 'react';
 import '../css/Info.css';
 import '../css/button.css';
 
-import { Icon, Modal, Button } from 'antd';
+import { Button } from 'antd';
 import Popup from './popup';
 import Iconout from '@material-ui/icons/ChevronLeft';
 import choosebutton from "../picture2/button/choosebutton.png";
@@ -62,7 +62,7 @@ class toilet extends React.Component{
       </div>
       </div>
       {this.Redirect()}
-      <Link to = "/officeoutside"><Button className="out" ghost onClick={this.out}> <Iconout/>ออก</Button></Link>
+      <Link to = "/officeoutside"><Button className="out" ghost onClick={this.out}> <Iconout/>กลับ</Button></Link>
       </div>
     );
   }

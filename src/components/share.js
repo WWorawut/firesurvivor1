@@ -3,16 +3,21 @@ import './css/share.css';
 import './css/login.css';
 import './css/test.css';
 import { Button, Icon } from 'antd';
-import { BrowserRouter as  Link,Redirect } from 'react-router-dom';
+import { Link,Redirect } from 'react-router-dom';
+import {connect} from 'react-redux';
 
-class share extends React.Component{
+
+const formattedSeconds = (sec) =>
+  Math.floor(sec / 60) +
+    ':' +
+  ('0' + sec % 60).slice(-2);
+
+class sharepage extends React.Component{
   state = { 
     link:false
   };
 
-
-
-
+  
   close=()=>{this.setState({ link:true })}
   Redirect=()=>{if(this.state.link){ return <Redirect to="/exam" /> }}
 
@@ -22,7 +27,7 @@ class share extends React.Component{
         <div className="bgtype" style={{paddingTop:'25vh'}}>
 
 
-        <div className="boxshare">
+        <div className="boxshare" >
 
  
  
@@ -53,11 +58,13 @@ class share extends React.Component{
 
 
 
-          <p style={{marginTop:'10%'}}><Icon  style={{marginRight:'10px'}} type="star" theme="filled" />คะแนนของคุณ : </p>
-          <p><Icon style={{marginRight:'10px'}}  type="clock-circle" />เวลาที่ใช้ในการหนีไฟ : </p>
+          <p style={{marginTop:'10%'}}><Icon  style={{marginRight:'10px'}} type="star" theme="filled" />คะแนนของคุณ : {this.props.score}</p>
+          <p><Icon style={{marginRight:'10px'}}  type="clock-circle" />เวลาที่ใช้ในการหนีไฟ : {this.props.time}</p>
           
-       
-                
+          <div style={{textAlign:'center'}}>
+          <Link to ="/typeA" ><Button  type="primary">ถัดไป</Button></Link>
+          </div>
+{/*                 
             <div class="social">
               <div class="social__item">
                 <span class="fa fa-facebook" data-count="..." data-social="fb"></span>
@@ -68,7 +75,7 @@ class share extends React.Component{
               <div class="social__item">
                 <span class="fa fa-pinterest" data-count="..." data-social="pt"></span>
               </div>
-            </div>
+            </div> */}
         
           
           
@@ -82,5 +89,10 @@ class share extends React.Component{
       );
     }
   }
-  
-  export default share;
+
+  const connectscore = state => ({
+    score:state.score,
+    time:state.time,
+    })  
+
+  export default connect(connectscore)(sharepage);

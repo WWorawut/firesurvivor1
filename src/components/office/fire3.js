@@ -1,5 +1,6 @@
 import React, {} from 'react';
 import '../css/normal.css';
+import '../css/scenenormal.css';
 
 import { Button } from 'antd';
 import Popup from '../Scene/popup';
@@ -8,17 +9,45 @@ import listfire1 from "../picture2/popscore/listfire31.png";
 import listfire2 from "../picture2/popscore/listfire32.png";
 import listfire3 from "../picture2/popscore/listfire33.png";
 
-import { BrowserRouter as  Link,Redirect } from 'react-router-dom'
+
+import human from "../picture2/speak/human.png";
+import sfire from "../picture2/speak/sfire.png";
+
+import { Player, ControlBar } from 'video-react';
+import intro from "../video/file/fire3.mp4";
+
+import { Link,Redirect } from 'react-router-dom'
 import {savescore} from '../../action'
 import {connect} from 'react-redux';
 
+import Sound from 'react-sound';
+import sound from '../video/sound/speakfire.mp3';
+
+
 class fire3 extends React.Component{
   state={
+    class:'fadeInUp',
+    class2:'fadeInUp',
+    controlPopup:false,
     popup:false,
     link:false,
+    outshow2:false,
+    playStatus:Sound.status.STOPPED
   }
 
+  componentDidMount(){ 
+    setTimeout(this.soundOn,1200);
+    setTimeout(this.outshow,5000);
+  }
+  outshow=()=>{this.setState({class:'fadeOutDown'})
+  setTimeout(this.outshow2,1000)
+  }
+  soundOn=()=>{
+    this.setState({playStatus:Sound.status.PLAYING})
+  }
 
+  outshow2=()=>{this.setState({outshow2:'true'})}
+ 
 
   openpop=data=>()=>{
     this.setState({[data.state]:true});
@@ -33,9 +62,14 @@ class fire3 extends React.Component{
 
   setlink=link=>()=>{this.setState({ [link]:true })}
 
+  control=()=>{
+    this.setState({controlPopup:true,class2:'fadeOutDown' })
+  }
 
   // Redirect1=()=>{if(this.state.l){ return <Redirect to="/" /> }}
-  Redirect=()=>{if(this.state.link){ return <Redirect to="/firetype" /> }}
+  Redirect=()=>{
+    if(this.state.link){ return <Redirect to="/firetype" /> }
+  }
   
 
    render() {
@@ -62,31 +96,77 @@ class fire3 extends React.Component{
       iconclose={'none'}
       />
 
-      <div className="bgfireoffice">
+      <Sound
+        url={sound}
+        volume={this.props.sound === false?0:100}
+        playStatus={this.state.playStatus}
+        onFinishedPlaying={() => this.setState({ playStatus: Sound.status.STOPPED })}
+      />  
 
-      <div className=" boxfireoffice animated zoomIn">
-      <div className="boxjangtext">
-      <p>สถานการณ์ :</p>
-      <p className="texthead">ปลั๊กไฟปริมาณมากในเต้าเสียบอันเดียว เกิดความร้อนสูงจนไหม้เศษกระดาษที่วางบริเวณใกล้เคียง ควรทำเช่นใดเพื่อไม่ให้ไฟลุกลาม?</p>
-      <Button className="buttonjang" onClick={this.openpop({link:'link',score:1,state:'popup'})}>นำถังขยะเปล่าครอบเพลิง</Button>
-      <br/>
-      <Button className="buttonjang" onClick={this.openpop({link:'link',score:2,state:'popup2'})}>ใช้ผ้าชุบน้ำตบ</Button>
-      <br/>
-      <Button className="buttonjang" onClick={this.openpop({link:'link',score:3,state:'popup3'})}>ใช้น้ำราด ไปที่กระดาษที่ติดไฟ</Button>
+      {/* <img className="bgfire11" src={mousegif} />  */}
+
+      <div className="v">
+
+            <Player 
+            ref="player"
+            autoPlay
+            playsInline={true}
+            loop={true}
+            className="bgv"
+            >
+            <source src={intro} />
+            <ControlBar autoHide={false} disableDefaultControls></ControlBar>
+            </Player> 
+
+
+      <div className="bgtext">
+     {this.state.outshow2 === false ?
+      <div className="centerhuman" style={{position:'absolute', right:'15%'}}>
+        <img className={"human animated " +this.state.class} src={human}/>
+        <img className={"text animated " +this.state.class} src={sfire}/>
+        </div>
+        :
+        <div className={"boxfire animated "+this.state.class2}>
+        <div className="boxjangtext">
+        <p style={{textAlign:'center'}} className="texthead">คุณต้องการดับเพลิงเบื้องต้นด้วยตนเองหรือไม่ ?</p>
+        <div classname="buttonchoice">
+        <div style={{textAlign:'center', paddingTop:'3%'}}>
+        <Button style={{marginRight:'5%'}} onClick={this.control} type="primary">ตกลง</Button>
+        <Link to ="/firetype" ><Button type="primary" onClick={this.end} ghost>ยกเลิก</Button></Link>
+        </div>
+        </div>
+        </div>
       </div>
+      }
+
+
+{this.state.controlPopup === true ?
+        <div className=" boxfireoffice animated zoomIn">
+        <div className="boxjangtext">
+        <p>สถานการณ์ :</p>
+        <p className="texthead">ปลั๊กไฟปริมาณมากในเต้าเสียบอันเดียว เกิดความร้อนสูงจนไหม้เศษกระดาษที่วางบริเวณใกล้เคียง ควรทำเช่นใดเพื่อไม่ให้ไฟลุกลาม?</p>
+        <Button className="buttonjang" onClick={this.openpop({link:'link',score:3,state:'popup'})}>นำถังขยะเปล่าครอบเพลิง</Button>
+        <br/>
+        <Button className="buttonjang" onClick={this.openpop({link:'link',score:-3,state:'popup2'})}>ใช้ผ้าชุบน้ำตบปลั๊กไฟ</Button>
+        <br/>
+        <Button className="buttonjang" onClick={this.openpop({link:'link',score:-3,state:'popup3'})}>ใช้น้ำราด ไปที่ปลั๊กไฟ</Button>
+        </div>
+        </div>
+      :
+      null
+}
       </div>
 
-      {/* <img className="choosebutton" src={choosebutton} onClick={this.openpop} /> */}
       </div>
-      
-      {/* {this.Redirect()}
-      <Button className="out" ghost onClick={this.out}> <Iconout/>ออก</Button> */}
-      </div>
+    </div>
     );
   }
 }
 const connectscore = state => ({
-  score:state.score
+  score:state.score,
+  sound:state.sound
   })
 
   export default connect(connectscore)(fire3);
+
+

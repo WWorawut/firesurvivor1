@@ -8,7 +8,7 @@ import alarm1 from "../picture2/popscore/alarm1.png";
 import alarm2 from "../picture2/popscore/alarm2.png";
 
 import { BrowserRouter as  Link,Redirect } from 'react-router-dom'
-import {savescore} from '../../action'
+import {savescore,choosealarm} from '../../action'
 import {connect} from 'react-redux';
 
 class alarm extends React.Component{
@@ -30,8 +30,12 @@ class alarm extends React.Component{
   }
 
   setlink=link=>()=>{this.setState({ [link]:true })}
-  Redirect=()=>{if(this.state.link){ return <Redirect to="/officeoutside" /> }}
-   
+  Redirect=()=>{
+      if(this.state.link){ 
+        if(this.props.choosealarm && this.props.choosecall && this.props.choosefriend&& this.state.link){ return <Redirect to="/janghad" /> }else{ return <Redirect to="/officeoutside" />} 
+      } 
+  }   
+  
    render() {
     return (
       <div>
@@ -73,7 +77,10 @@ class alarm extends React.Component{
   }
 }
 const connectscore = state => ({
-  score:state.score
+  score:state.score,
+  choosecall:state.choosecall,
+  choosefriend:state.choosefriend,
+  choosealarm:state.choosealarm
   })
   
   export default connect(connectscore)(alarm);
