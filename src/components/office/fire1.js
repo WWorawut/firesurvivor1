@@ -8,7 +8,7 @@ import Popup from '../Scene/popup';
 import listfire1 from "../picture2/popscore/listfire11.png";
 import listfire2 from "../picture2/popscore/listfire12.png";
 import listfire3 from "../picture2/popscore/listfire13.png";
-import mousegif from "../picture/firegif.gif";
+
 
 import human from "../picture2/speak/human.png";
 import sfire from "../picture2/speak/sfire.png";
