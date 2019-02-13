@@ -40,7 +40,7 @@ body{
 .buttonjang{
     width: 100%;
     margin-top: 5%;
-    font-size: 1.1rem;
+    font-size: 1.1vw;
 }
 
 .texthead{
@@ -90,3 +90,23 @@ body{
 .video-react{
     position: absolute;
 }
+
+
+@media only screen and (max-width: 1024px) {
+    .boxjang{
+        width: 40%;
+        height: 70vh;
+    
+    }
+    .texthead{
+        font-size: 2vw;
+    }
+    .buttonjang{
+        width: 100%;
+        margin-top: 3%;
+        font-size: 1.5vw;
+    }
+
+
+}
+    

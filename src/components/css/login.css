@@ -74,7 +74,7 @@
     position: absolute;
     right: 20px;
     top:13px;
-    font-size: 33px;
+    font-size: 2.5vw;
     color: blue;
     transform: rotate(0deg);
     margin-top: -height/2;
@@ -118,7 +118,6 @@
     width: 80%;
     margin: auto;
     transform: translate(0,5%);
-  
 }
 
 .card1{
@@ -178,113 +177,14 @@
         width: 45vh;
     }
 
-    .card1{
-        background-image: url("../picture/Sumhuman/Card1ipad.png");
-    }
-    .card2{
-        background-image: url("../picture/Sumhuman/Card2ipad.png");
-    }
-    .card3{
-        background-image: url("../picture/Sumhuman/Card3ipad.png");
-    }
-    .card4{
-        background-image: url("../picture/Sumhuman/Card4ipad.png");
-    }
-    .card5{
-        background-image: url("../picture/Sumhuman/Card5ipad.png");
-    }
 
-    .close{
-        right: 20px;
-        top:20px;
-        font-size: 45px;
-    }
-}
-
-
-@media only screen and (max-width: 414px) {
-    .cd{
-        background-image: url("../picture/loginMobile.png");
-    }
-   
-    .btn-info{
-        margin: 10% 70px 0 0px;
-        width: 50%;
-    }
-
-    .fontlog{
-        font-size: 18px;
-    } 
-
-    .form-control{
+    .bgtype{
         width: 90%;
-        height: 40%;
     }
-
-    .card1{
-        background-image: url("../picture/Sumhuman/Card1mobile.png");
-    }
-    .card2{
-        background-image: url("../picture/Sumhuman/Card2mobile.png");
-    }
-    .card3{
-        background-image: url("../picture/Sumhuman/Card3mobile.png");
-    }
-    .card4{
-        background-image: url("../picture/Sumhuman/Card4mobile.png");
-    }
-    .card5{
-        background-image: url("../picture/Sumhuman/Card5mobile.png");
-    }
-
     .close{
-        right: 8px;
-        top:8px;
-        font-size: 30px;
+        font-size: 4vw;
+        right: 10px;
     }
+
 }
-
-@media only screen and (max-width: 320px) {
-    .cd{
-        background-image: url("../picture/loginMobile.png");
-    }
-    
-    .btn-info{
-        margin: 10% 70px 0 0px;
-        width: 50%;
-    }
-
-    .fontlog{
-        font-size: 15px;
-    } 
-    
-    .form-control{
-        width: 90%;
-        height: 40%;
-    }
-
-    .card1{
-        background-image: url("../picture/Sumhuman/Card1mobile.png");
-    }
-    .card2{
-        background-image: url("../picture/Sumhuman/Card2mobile.png");
-    }
-    .card3{
-        background-image: url("../picture/Sumhuman/Card3mobile.png");
-    }
-    .card4{
-        background-image: url("../picture/Sumhuman/Card4mobile.png");
-    }
-    .card5{
-        background-image: url("../picture/Sumhuman/Card5mobile.png");
-    }
-
-    .close{
-        right: 8px;
-        top:8px;
-        font-size: 27px;
-    }
-}
-
-
 

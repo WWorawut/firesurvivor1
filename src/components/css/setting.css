@@ -7,7 +7,7 @@
 
 .bgtypemock{
     height: 15vh;
-    width: 15%;
+    width: 15vw;
     right: 10px;
     bottom: 10px;
     position: absolute;
@@ -167,8 +167,8 @@
   color: #fdfdfd;
   text-shadow: 0 0.25rem 0.375rem hsla(0, 0%, 0%, 0.2);
   position: absolute;
-  top: 1px;
-  right: 1px;
+  top: 0px;
+  right: 0px;
   z-index: 1;
 }
 
@@ -216,3 +216,30 @@ label {
 
 
 
+@media only screen and (max-width: 1024px) {
+.bgtypemock{
+    width: 23%;
+}
+
+.name{
+  font-size: 1rem;
+}
+.score{
+  font-size: 1rem;
+}
+.star{
+  font-size: 1rem;
+}
+
+.bar-c {
+  height: 10px;
+  width: 30px;
+}
+
+.stopwatch {
+  width: 3rem;
+}
+.timer {
+  font-size: 1rem;
+}
+}

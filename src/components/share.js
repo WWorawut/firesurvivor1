@@ -1,6 +1,5 @@
 import React, {} from 'react';
 import './css/share.css';
-import './css/login.css';
 import './css/test.css';
 import { Button, Icon } from 'antd';
 import { Link,Redirect } from 'react-router-dom';
@@ -23,7 +22,7 @@ class sharepage extends React.Component{
 
     render() {
       return (
-        <div className="bgg">
+        <div className="bgescape">
         <div className="bgtype" style={{paddingTop:'25vh'}}>
 
 
