@@ -6,6 +6,7 @@ import { Icon } from 'antd';
 import {connect} from 'react-redux';
 
 import Loginscreen from './Loginscreen';
+import choose from './choose';
 import exam from './exam/Exam';
 import howtoplay from './Howplay';
 import exam2 from './exam/exam2';
@@ -156,6 +157,7 @@ class App extends React.Component{
       {path:"/exam2",component:exam2,timer:false,scoreSetting:false},
       {path:"/howtoplay",component:howtoplay,timer:false,scoreSetting:false},
       {path:"/share",component:share,timer:false,scoreSetting:false},
+      {path:"/choose",component:choose,timer:false,scoreSetting:false},
 
       {path:"/typeA",component:typeA,timer:false,scoreSetting:false},
 
