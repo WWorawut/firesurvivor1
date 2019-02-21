@@ -8,8 +8,10 @@ import {connect} from 'react-redux';
 import Loginscreen from './Loginscreen';
 import choose from './choose';
 import exam from './exam/Exam';
-import howtoplay from './Howplay';
 import exam2 from './exam/exam2';
+import preexam from './exam/preexam';
+import preexam2 from './exam/preexam2';
+import howtoplay from './Howplay';
 import share from './share';
 
 import typeA from './PeopleSummary/Asum';
@@ -155,6 +157,8 @@ class App extends React.Component{
       {path:"/finalend",component:finalend,timer:false,openSound:false,scoreSetting:false,soundSetting:false},
       {path:"/exam",component:exam,timer:false,scoreSetting:false},
       {path:"/exam2",component:exam2,timer:false,scoreSetting:false},
+      {path:"/preexam",component:preexam,timer:false,scoreSetting:false},
+      {path:"/pre2exam",component:preexam2,timer:false,scoreSetting:false},
       {path:"/howtoplay",component:howtoplay,timer:false,scoreSetting:false},
       {path:"/share",component:share,timer:false,scoreSetting:false},
       {path:"/choose",component:choose,timer:false,scoreSetting:false},

@@ -45,6 +45,16 @@
     background-repeat: no-repeat;
 }
 
+.coverpreexam{
+    background-image: url("../picture/preexam.png");
+    display: flex;
+    background-size: cover;
+    height: 100vh;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+
 .card-header{
     border-bottom: 0px;
     padding-left: 5rem;
@@ -69,7 +79,15 @@
 
 .coverlogo{
     width: 27%;
-    margin: 13% 0 0 55%;
+    margin: 13% 0 0 0;
+    position: absolute;
+    right: 15%;
+}
+.coverprelogo{
+    width: 27%;
+    margin: 20% 0 0 0;
+    position: absolute;
+    left: 15%;
 }
 
 .aa{
@@ -174,13 +192,6 @@ style={{color:"white"}}
     
 /* ipad */
     @media only screen and (max-width: 768px) {
-        .coverexam{
-            background-image: url("../picture/exambgIpad.png");
-        }
-        .coverlogo{
-            width: 40%;
-            margin: 100% 0 0 15%;
-        }
     
         .sentans{
             bottom: 80px;
@@ -254,11 +265,7 @@ style={{color:"white"}}
     .answer{
         width: 70%;
     }
-
-    .coverlogo{
-        width: 60%;
-        margin: 130% 0 0 13%;
-    }  
+ 
     .d{
         display: none !important;
     }
@@ -279,14 +286,7 @@ style={{color:"white"}}
     .card-body{
         padding-left: 15px;
         padding-right: 15px;
-    }
-    .coverexam{
-        background-image: url("../picture/exambgMobile.png");
-    }
-    .coverlogo{
-        width: 60%;
-        margin: 125% 0 0 18%;
-    }   
+    } 
 
     .textanswer{
         font-size: 20px;

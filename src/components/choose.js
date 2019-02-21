@@ -37,8 +37,16 @@ class choose extends React.Component{
                             </div>
                         </div>
 
-            <div className="boxx1"> ddd </div>
-                        
+                        <div className="row">
+                            <div className="col">
+                            <div className="boxx3">แบบทดสอบก่อนเรียน</div>
+                            </div>
+                            <div className="col">
+                            <div className="boxx3">GALLERY</div>
+                            </div>
+                        </div>
+
+            
 
 
 {/* 
