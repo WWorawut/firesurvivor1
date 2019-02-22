@@ -108,7 +108,6 @@
 
 
 
-
 /* 
 style={{backgroundImage:"url(./picture/Exambanner.jpg)"}} 
 style={{color:"white"}} 
@@ -194,13 +193,14 @@ style={{color:"white"}}
     @media only screen and (max-width: 768px) {
     
         .sentans{
-            bottom: 80px;
+            bottom: 0px;
         }
     
         .sizef{
             text-align: center;
             transform: translate(0,100%);
             margin: 0 40px 0 40px;
+            font-size: 15px;
         }
         .card-body{
             margin: 90px 0 0 60px;
@@ -211,6 +211,9 @@ style={{color:"white"}}
         .line{
             padding-left: 0px;
             margin-left: 5px;
+        }
+        .d{
+            display: none !important;
         }
    
         

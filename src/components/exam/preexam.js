@@ -24,7 +24,8 @@ class preexam extends React.Component {
         <img src={logoexam}/>
         <div className="text-center" style={{marginTop:'12px',}}>
         {this.Redirect()}
-        <Button onClick={this.next}>เริ่มทำแบบทดสอบ</Button>
+        <Button onClick={this.next} className="button">เริ่มทำแบบทดสอบ</Button>
+        
         </div>
         </div>
         </div>
