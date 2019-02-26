@@ -10,10 +10,7 @@ import Sound from 'react-sound';
 import sound from '../video/sound/infoescape.mp3';
 
 {/* Info หนีเหตุ */}
-const formattedSeconds = (sec) =>
-  Math.floor(sec / 60) +
-    ':' +
-  ('0' + sec % 60).slice(-2);
+
 
 class escape extends React.Component{  
   state = { 

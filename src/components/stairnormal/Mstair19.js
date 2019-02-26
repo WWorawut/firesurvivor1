@@ -9,8 +9,8 @@ import { Link, Redirect } from 'react-router-dom';
 import Preload from 'react-preload';
 import Sound from 'react-sound';
 
-import walk1 from "../picture2/popscore/walk1.png";
-import run1 from "../picture2/popscore/run1.png";
+import walk1 from "../picture2/popscore/Mwalk1.png";
+import run1 from "../picture2/popscore/Mrun1.png";
 import Popup from '../Scene/popup';
 
 import Reloade from '../preload';
@@ -18,18 +18,14 @@ import {savescore} from '../../action'
 import {connect} from 'react-redux';
 
 import sound from '../video/sound/speakstair.mp3';
-import sound3 from '../video/sound/infowalk.mp3';
-import sound4 from '../video/sound/infoheat.mp3';
 
-class stair19 extends React.Component{
+class Mstair19 extends React.Component{
   state={
     class:'fadeInUp',
     outshow2:false,
     popup:false,
     link:false,
-    playStatus:Sound.status.STOPPED,
-    playpop:Sound.status.STOPPED,
-    urlSound:""
+    playStatus:Sound.status.STOPPED
   }
     componentDidMount(){ 
       setTimeout(this.soundOn,1200);
@@ -47,9 +43,6 @@ class stair19 extends React.Component{
     openpop=data=>()=>{
       this.setState({[data.state]:true});
       this.props.dispatch(savescore(data.score));
-      if(data.sound){
-        this.setState({playpop:Sound.status.PLAYING,urlSound:data.sound})  
-        }
       setTimeout(this.popupClose(data),2000);
     }
       
@@ -61,8 +54,8 @@ class stair19 extends React.Component{
     setlink=link=>()=>{this.setState({ [link]:true })}
   
   
-    Redirect=()=>{if(this.state.link1){ return <Redirect to="/stair17" /> }}
-    Redirect1=()=>{if(this.state.link2){ return <Redirect to="/stair177" /> }}
+    Redirect=()=>{if(this.state.link1){ return <Redirect to="/Mstair17" /> }}
+    Redirect1=()=>{if(this.state.link2){ return <Redirect to="/Mstair177" /> }}
 
    render() {
 
@@ -87,14 +80,6 @@ class stair19 extends React.Component{
         playStatus={this.state.playStatus}
         onFinishedPlaying={() => this.setState({ playStatus: Sound.status.STOPPED })}
       />  
-
-      
-      <Sound
-        url={this.state.urlSound}
-        volume={this.props.sound === false?0:100}
-        playStatus={this.state.playpop}
-        onFinishedPlaying={() => this.setState({ playpop: Sound.status.STOPPED })}
-      />
           
 
         {this.Redirect()}
@@ -121,8 +106,8 @@ class stair19 extends React.Component{
       </div>
       :
       <div className="centerwalk">
-       <img className={"walkk animated fadeInUp"} style={{marginRight:'15%'}} onClick={this.openpop({link:'link1',score:5,state:'popup',sound:sound3})} src={walk}/>
-       <img className={"run animated fadeInUp"} onClick={this.openpop({link:'link2',score:-5,state:'popup2',sound:sound4})} src={run}/>
+       <img className={"walkk animated fadeInUp"} style={{marginRight:'15%'}} onClick={this.openpop({link:'link1',state:'popup'})} src={walk}/>
+       <img className={"run animated fadeInUp"} onClick={this.openpop({link:'link2',state:'popup2'})} src={run}/>
        </div>
       }
     
@@ -142,9 +127,7 @@ class stair19 extends React.Component{
 }
 
 const connectscore = state => ({
-  score:state.score,
-  sound:state.sound,
-  timer:state.timer
+  sound:state.sound
   })
   
-  export default connect(connectscore)(stair19);
+  export default connect(connectscore)(Mstair19);

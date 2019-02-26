@@ -14,6 +14,8 @@ import preexam2 from './exam/preexam2';
 import howtoplay from './Howplay';
 import share from './share';
 
+import gallery from './gallery';
+
 import typeA from './PeopleSummary/Asum';
 
 import allsum from './Infographic/allsum';
@@ -25,6 +27,12 @@ import walk from './Infographic/walk';
 import walk360 from './Infographic/walk360'; 
 import smoke from './Infographic/smoke'; 
 import smoke360 from './Infographic/smoke360'; 
+import Mwalk from './Infographic/Mwalk'; 
+import Mwalk360 from './Infographic/Mwalk360'; 
+import Msmoke from './Infographic/Msmoke'; 
+import Msmoke360 from './Infographic/Msmoke360'; 
+import Mheat from './Infographic/Mheat'; 
+import Mheat360 from './Infographic/Mheat360'; 
 import heat from './Infographic/heat'; 
 import heat360 from './Infographic/heat360'; 
 import escape from './Infographic/escape'; 
@@ -75,6 +83,36 @@ import stair36011 from './stair360code/stair36011';
 import stair36012 from './stair360code/stair36012';
 import stair36013 from './stair360code/stair36013';
 
+import modeescape from './360/modeescape';
+import Mrestroom from './Scene/Mtoilet';
+import Mdeck from './Scene/Mdeck';
+import Mlift from './Scene/Mlift';
+import Mgotoshair from './360/Mgotoshair';
+import Mstair19 from './stairnormal/Mstair19';
+import Mstair17 from './stairnormal/Mstair17';
+import Mstair177 from './stairnormal/Mstair17run';
+import Mstair16 from './stairnormal/Mstair16';
+import Mstair15 from './stairnormal/Mstair15';
+import Mstair14 from './stairnormal/Mstair14';
+import Mstair12A from './stairnormal/Mstair12A';
+import Mstair11 from './stairnormal/Mstair11';
+import Mstair10 from './stairnormal/Mstair10';
+import Mendstair from './stairnormal/Mendstair';
+import Mstair3600 from './stair360code/Mstair3600';
+import Mstair3601 from './stair360code/Mstair3601';
+import Mstair3602 from './stair360code/Mstair3602';
+import Mstair3603 from './stair360code/Mstair3603';
+import Mstair3604 from './stair360code/Mstair3604';
+import Mstair3605 from './stair360code/Mstair3605';
+import Mstair3606 from './stair360code/Mstair3606';
+import Mstair3607 from './stair360code/Mstair3607';
+import Mstair3608 from './stair360code/Mstair3608';
+import Mstair3609 from './stair360code/Mstair3609';
+import Mstair36010 from './stair360code/Mstair36010';
+import Mstair36011 from './stair360code/Mstair36011';
+import Mstair36012 from './stair360code/Mstair36012';
+import Mstair36013 from './stair360code/Mstair36013';
+
 
 import intro from './video/IntroMP4';
 
@@ -123,6 +161,9 @@ class App extends React.Component{
         clock:1,
       })
     }else{
+      this.setState({
+        clock:0,
+      })
       this.props.dispatch(time(formattedSeconds(this.state.secondsElapsed)));
     }
   }
@@ -158,10 +199,12 @@ class App extends React.Component{
       {path:"/exam",component:exam,timer:false,scoreSetting:false},
       {path:"/exam2",component:exam2,timer:false,scoreSetting:false},
       {path:"/preexam",component:preexam,timer:false,scoreSetting:false},
-      {path:"/pre2exam",component:preexam2,timer:false,scoreSetting:false},
+      {path:"/preexam2",component:preexam2,timer:false,scoreSetting:false},
       {path:"/howtoplay",component:howtoplay,timer:false,scoreSetting:false},
       {path:"/share",component:share,timer:false,scoreSetting:false},
+
       {path:"/choose",component:choose,timer:false,scoreSetting:false},
+      {path:"/gallery",component:gallery,timer:false,scoreSetting:false},
 
       {path:"/typeA",component:typeA,timer:false,scoreSetting:false},
 
@@ -220,7 +263,45 @@ class App extends React.Component{
       {path:"/stair36010",component:stair36010},
       {path:"/stair36011",component:stair36011},
       {path:"/stair36012",component:stair36012},
-      {path:"/stair36013",component:stair36013}]
+      {path:"/stair36013",component:stair36013},
+    
+      /////////////////////////////////////////////////////////////////////////
+    
+      {path:"/modeescape",component:modeescape,timer:false,scoreSetting:false},
+      {path:"/Mrestroom",component:Mrestroom,timer:false,scoreSetting:false},
+      {path:"/Mdeck",component:Mdeck,timer:false,scoreSetting:false},
+      {path:"/Mlift",component:Mlift,timer:false,scoreSetting:false},
+      {path:"/Mgotoshair",component:Mgotoshair,timer:false,scoreSetting:false},
+      {path:"/Mstair19",component:Mstair19,timer:false,scoreSetting:false},
+      {path:"/Mstair17",component:Mstair17,timer:false,scoreSetting:false},
+      {path:"/Mstair177",component:Mstair177,timer:false,scoreSetting:false},
+      {path:"/Mstair16",component:Mstair16,timer:false,scoreSetting:false},
+      {path:"/Mstair15",component:Mstair15,timer:false,scoreSetting:false},
+      {path:"/Mstair14",component:Mstair14,timer:false,scoreSetting:false},
+      {path:"/Mstair12A",component:Mstair12A,timer:false,scoreSetting:false},
+      {path:"/Mstair11",component:Mstair11,timer:false,scoreSetting:false},
+      {path:"/Mstair10",component:Mstair10,timer:false,scoreSetting:false},
+      {path:"/Mendstair",component:Mendstair,timer:false,scoreSetting:false},
+      {path:"/Mstair3600",component:Mstair3600,timer:false,scoreSetting:false},
+      {path:"/Mstair3601",component:Mstair3601,timer:false,scoreSetting:false},
+      {path:"/Mstair3602",component:Mstair3602,timer:false,scoreSetting:false},
+      {path:"/Mstair3603",component:Mstair3603,timer:false,scoreSetting:false},
+      {path:"/Mstair3604",component:Mstair3604,timer:false,scoreSetting:false},
+      {path:"/Mstair3605",component:Mstair3605,timer:false,scoreSetting:false},
+      {path:"/Mstair3606",component:Mstair3606,timer:false,scoreSetting:false},
+      {path:"/Mstair3607",component:Mstair3607,timer:false,scoreSetting:false},
+      {path:"/Mstair3608",component:Mstair3608,timer:false,scoreSetting:false},
+      {path:"/Mstair3609",component:Mstair3609,timer:false,scoreSetting:false},
+      {path:"/Mstair36010",component:Mstair36010,timer:false,scoreSetting:false},
+      {path:"/Mstair36011",component:Mstair36011,timer:false,scoreSetting:false},
+      {path:"/Mstair36012",component:Mstair36012,timer:false,scoreSetting:false},
+      {path:"/Mstair36013",component:Mstair36013,timer:false,scoreSetting:false},
+      {path:"/Msmoke",component:Msmoke,timer:false,scoreSetting:false},
+      {path:"/Msmoke360",component:Msmoke360,timer:false,scoreSetting:false},
+      {path:"/Mheat",component:Mheat,timer:false,scoreSetting:false},
+      {path:"/Mheat360",component:Mheat360,timer:false,scoreSetting:false},
+      {path:"/Mwalk",component:Mwalk,timer:false,scoreSetting:false},
+      {path:"/Mwalk360",component:Mwalk360,timer:false,scoreSetting:false}]
       
     const timer =(    
     <div className="time">

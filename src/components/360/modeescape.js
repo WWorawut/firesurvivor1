@@ -18,12 +18,12 @@ import a from "../picture2/popscore/popalarm.png";
 import b from "../picture2/popscore/popcall.png";
 import c from "../picture2/popscore/popfriend.png";
 
-import {savescore, enterroom, choosealarm, choosefriend, choosecall, stopTimer} from '../../action'
+import {savescore, enterroom, choosealarm, choosefriend, choosecall} from '../../action'
 import {connect} from 'react-redux';
 
 
   
-class officeoutside extends React.Component {
+class modeeacape extends React.Component {
   constructor(props) {
     super(props);
     this.state = { 
@@ -39,7 +39,6 @@ class officeoutside extends React.Component {
   }
 
     componentDidMount(){ 
-      this.props.dispatch(stopTimer(true));
       setTimeout(this.soundOn,1000);
       setInterval(this.outshow,6000);
     }
@@ -61,13 +60,10 @@ class officeoutside extends React.Component {
 
   next=name=>()=>{ this.setState({ [name]:true })}
   Redirect=()=>{
-    if(this.state.firestair){this.props.dispatch(enterroom(true)); return <Redirect to="/stair3600"/> }
-    if(this.state.lift){this.props.dispatch(enterroom(true)); return <Redirect to="/lift"/> }
-    if(this.state.normalstair){this.props.dispatch(enterroom(true)); return <Redirect to="/gotoshair"/> }
-    if(this.state.toilet){this.props.dispatch(enterroom(true)); return <Redirect to="/restroom"/> }
-    if(this.state.call){this.props.dispatch(choosecall(true)); return <Redirect to="/call"/> }
-    if(this.state.alarm){this.props.dispatch(choosealarm(true)); return <Redirect to="/alarm"/> }
-    if(this.state.friend){this.props.dispatch(choosefriend(true)); return <Redirect to="/friend"/> }
+    if(this.state.firestair){this.props.dispatch(enterroom(true)); return <Redirect to="/Mstair3600"/> }
+    if(this.state.lift){this.props.dispatch(enterroom(true)); return <Redirect to="/Mlift"/> }
+    if(this.state.normalstair){this.props.dispatch(enterroom(true)); return <Redirect to="/Mgotoshair"/> }
+    if(this.state.toilet){this.props.dispatch(enterroom(true)); return <Redirect to="/Mrestroom"/> }
 }
 
 openpop=data=>()=>{
@@ -153,15 +149,7 @@ popupClose=data=>()=>{
         <Entity events={{click:this.next('normalstair') , mouseenter:this.mouseenter('scale3') , mouseleave:this.mouseleave('scale3')}}  primitive='a-image' material={{ src: gobutton}} scale={{x: this.state.scale3, y: this.state.scale3, z:this.state.scale3}} rotation={{x: 0, y: 270 ,z: 0}} position={{x:10, y: 0, z:8}}/>
         <Entity className="a" events={{click:this.next('toilet') , mouseenter:this.mouseenter('scale4') , mouseleave:this.mouseleave('scale4')}}  primitive='a-image' material={{ src: gobutton}} scale={{x: this.state.scale4, y: this.state.scale4, z:this.state.scale4}} rotation={{x: 0, y: 270 ,z: 0}} position={{x:-15, y: 0, z:-4}}/>
        
-        {!this.props.choosealarm?
-        <Entity events={{click:this.openpop({link:'alarm',score:3,state:'popup'}), mouseenter:this.mouseenter('scale5') , mouseleave:this.mouseleave('scale5')}}  primitive='a-image' material={{ src: choosebutton}} scale={{x: this.state.scale5, y: this.state.scale5, z:this.state.scale5}} rotation={{x: 0, y: 150 ,z: 0}} position={{x:4, y: -2, z:8}}/>
-        :null}
-        {!this.props.choosecall?
-        <Entity events={{click:this.openpop({link:'call',score:3,state:'popup2'}) , mouseenter:this.mouseenter('scale6') , mouseleave:this.mouseleave('scale6')}}  primitive='a-image' material={{ src: choosebutton}} scale={{x: this.state.scale6, y: this.state.scale6, z:this.state.scale6}} rotation={{x: 0, y: 150 ,z: 0}} position={{x:3, y: 0, z:8}}/>
-        :null}
-        {!this.props.choosefriend?
-        <Entity events={{click:this.openpop({link:'friend',score:3,state:'popup3'}), mouseenter:this.mouseenter('scale7') , mouseleave:this.mouseleave('scale7')}}  primitive='a-image' material={{ src: choosebutton}} scale={{x: this.state.scale7, y: this.state.scale7, z:this.state.scale7}} rotation={{x: 0, y: 150 ,z: 0}} position={{x:-8, y: -2, z:8}}/>
-        :null}
+        
         <Entity primitive='a-sky' rotation="0 -100 0" src={Officeoutside}/>
       
         <Entity primitive="a-camera">
@@ -188,4 +176,4 @@ const connectscore = state => ({
   choosealarm:state.choosealarm
   })
 
-export default connect(connectscore)(officeoutside);
+export default connect(connectscore)(modeeacape);

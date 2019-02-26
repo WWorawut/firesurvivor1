@@ -20,6 +20,7 @@
 }
 .heat{
     background-image: url("../picture/Infographic/heat.png");
+    width: 10vw;
 }
 .escape{
     background-image: url("../picture/Infographic/escape.png");
@@ -129,7 +130,7 @@
 
 .bgtypeinfo{
     height: 100vh;
-    width: 80%;
+    width: 80vw;
     margin: auto;
     transform: translate(0,5%);
 }
