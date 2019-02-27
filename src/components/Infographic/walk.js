@@ -3,7 +3,7 @@ import '../css/Info.css';
 import { Icon } from 'antd';
 import { BrowserRouter as  Link,Redirect } from 'react-router-dom';
 
-import {savescore} from '../../action'
+import {stopTimer} from '../../action'
 import {connect} from 'react-redux';
 
 import Sound from 'react-sound';
@@ -17,6 +17,7 @@ class walk extends React.Component{
   };
 
   componentDidMount(){ 
+    this.props.dispatch(stopTimer(false));
     setTimeout(this.soundOn,1200);
   }
   soundOn=()=>{

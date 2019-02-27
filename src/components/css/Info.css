@@ -182,10 +182,11 @@
 }
 
 
+
+
 @media only screen and (max-width: 1024px) {
     .closea{
-        right: 10px;
-        font-size: 15px;
+        font-size: 25px;
     }
     .bgtypeinfo{
         width: 90%;
@@ -193,20 +194,12 @@
 }
 
 @media only screen and (max-width: 414px) {
-    .closea{
-        right: 10px;
-        font-size: 15px;
-    }
     .bgtypeinfo{
         width: 90%;
     }
 }
 
 @media only screen and (max-width: 320px) {
-    .closea{
-        right: 10px;
-        font-size: 15px;
-    }
     .bgtypeinfo{
         width: 90%;
     }

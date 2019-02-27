@@ -10,7 +10,7 @@ import { Link, Redirect } from 'react-router-dom';
 import Sound from 'react-sound';
 import sound from '../video/sound/speakoutfinal.mp3';
 
-import {savescore} from '../../action'
+import {stopTimer} from '../../action'
 import {connect} from 'react-redux';
 
 
@@ -21,6 +21,7 @@ class endstair extends React.Component{
     playStatus:Sound.status.STOPPED
   }
     componentDidMount(){ 
+      this.props.dispatch(stopTimer(true));
       setTimeout(this.soundOn,1200);
       setInterval(this.outshow,3500);
     }

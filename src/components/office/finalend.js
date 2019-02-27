@@ -4,6 +4,7 @@ import '../css/scenenormal.css';
 import { BrowserRouter as Link, Redirect } from 'react-router-dom';
 import { Player, ControlBar } from 'video-react';
 import intro from "../video/file/finalend.mp4";
+import {stopTimer} from '../../action'
 
 import {connect} from 'react-redux';
 
@@ -15,6 +16,7 @@ class finalend extends React.Component{
         };
       }
       componentDidMount() {
+        this.props.dispatch(stopTimer(false));
         this.refs.player.subscribeToStateChange(this.handleStateChange.bind(this));
       }
     

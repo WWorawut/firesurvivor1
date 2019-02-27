@@ -56,7 +56,7 @@ class preexam2 extends React.Component {
     }
 
     modal=()=>{this.setState({ link:true })} 
-    Redirect=()=>{if(this.state.link){ return <Redirect to="/" /> }}
+    Redirect=()=>{if(this.state.link){ return <Redirect to="/choose" /> }}
  
     nextPoint=()=>{
         let pointKey = parseInt(this.state.pointKey, 10);
@@ -104,11 +104,11 @@ class preexam2 extends React.Component {
             next={this.nextPoint}
             choice={this.state.choice1}
             change={this.change('choice1')}
-            quiz="1. เมื่อเกิดเหตุเพลิงไหม้ ควรแจ้งเหตุอย่างไร จึงเรียกว่าเหมาะสมที่สุด"
-            onechoice="ก. ตะโกนไฟไหม้"
-            twochoice="ข. ตะโกนไฟไหม้ และบอกจุดเกิดเหตุ"
-            threechoice="ค. วิ่งหนี ไปเคาะประตูบอกเพื่อน"
-            fourchoice="ง. กดกริ่ง ตะโกนไฟไหม้ และตะโกนบอกจุดเกิดเหตุ"
+            quiz="1. เบอร์โทรใดเป็นเบอร์แจ้งเหตุไฟไหม้"
+            onechoice="ก. 190"
+            twochoice="ข. 191"
+            threechoice="ค. 1669"
+            fourchoice="ง. 199"
             a = "false1"
             b = "false2"
             c = "false3"
@@ -125,18 +125,19 @@ class preexam2 extends React.Component {
             next={this.nextPoint}
             choice={this.state.choice2}
             change={this.change('choice2')}
-            quiz="2. เบอร์โทรใดเป็นเบอร์แจ้งเหตุไฟไหม้"
-            onechoice="ก. 191"
-            twochoice="ข. 199"
-            threechoice="ค. 190"
-            fourchoice="ง. 1669"
+            quiz="2. คนส่วนใหญ่ที่เสียชีวิตในเหตุเพลิงไหม้ มาจากสาเหตุใดมากที่สุด"
+            onechoice="ก. ล้ม"
+            twochoice="ข. ไฟคอก"
+            threechoice="ค. ความร้อน"
+            fourchoice="ง. ควันพิษ"
             a = "false1"
-            b = "true"
+            b = "false2"
             c = "false3"
-            d = "false2"
+            d = "true"
         />         
         </div>
         </TabPane>
+
 
         <TabPane tab="3" key="3">
         <div className="typeexambox">
@@ -146,11 +147,11 @@ class preexam2 extends React.Component {
             next={this.nextPoint}
             choice={this.state.choice3}
             change={this.change('choice3')}
-            quiz="3. สถานที่ใด ไม่ควรหนีเข้าไปมากที่สุดในขณะเกิดเหตุไฟไหม้"
-            onechoice="ก. ดาดฟ้า"
-            twochoice="ข. ห้องน้ำ"
-            threechoice="ค. ลานจอดรถใต้ดิน"
-            fourchoice="ง. ลานจอดรถชั้น 1"
+            quiz="3. เมื่อเกิดเหตุเพลิงไหม้ ควรแจ้งเหตุอย่างไร จึงเรียกว่าเหมาะสมที่สุด"
+            onechoice="ก. วิ่งหนี ไปเคาะประตูบอกเพื่อน"
+            twochoice="ข. กดกริ่ง ตะโกนไฟไหม้ และตะโกนบอกจุดเกิดเหตุ"
+            threechoice="ค. ตะโกนไฟไหม้"
+            fourchoice="ง. ตะโกนไฟไหม้ และบอกจุดเกิดเหตุ"
             a = "false1"
             b = "true"
             c = "false3"
@@ -167,15 +168,15 @@ class preexam2 extends React.Component {
             next={this.nextPoint}
             choice={this.state.choice4}
             change={this.change('choice4')}
-            quiz="4. สถานที่ใด ควรหนีไปหลบมากที่สุดในขณะเกิดเหตุไฟไหม้"
+            quiz="4. สถานที่ใด ไม่ควรหนีเข้าไปมากที่สุดในขณะเกิดเหตุไฟไหม้"
             onechoice="ก. ดาดฟ้า"
             twochoice="ข. ห้องน้ำ"
             threechoice="ค. ลานจอดรถใต้ดิน"
-            fourchoice="ง. ลานจอดรถชั้น 1"
+            fourchoice="ง. ลานจอดรถชั้นพื้นดิน"
             a = "false1"
-            b = "false2"
+            b = "true"
             c = "false3"
-            d = "true"
+            d = "false2"
         />
         </div>
         </TabPane>
@@ -188,14 +189,14 @@ class preexam2 extends React.Component {
             next={this.nextPoint}
             choice={this.state.choice5}
             change={this.change('choice5')}
-            quiz="5. ขณะที่กำลังหนีไฟทางบันได มีควันเริ่มเข้ามาควรกระทำอย่างใดจึงเหมาะสมที่สุด"
-            onechoice="ก. รีบวิ่งลุยควันออกไป"
-            twochoice="ข. หมอบต่ำ และคลานออก"
-            threechoice="ค. เดินเร็ว และใช้มือปัดควัน"
-            fourchoice="ง. หนีควันขึ้นไปชั้นบนทันที"
-            a = "false1"
+            quiz="5. อุปกรณ์ใดเหมาะแก่การใช้หนีไฟ และสามารถใช้ได้เป็นเวลานานที่สุด"
+            onechoice="ก. ไฟฉาย"
+            twochoice="ข. ผ้าคลุมตัว"
+            threechoice="ค. ขวดน้ำที่มีน้ำอยู่"
+            fourchoice="ง. ถุงพลาสติกขนาดใหญ่"
+            a = "true"
             b = "false2"
-            c = "true"
+            c = "false1"
             d = "false3"
         />
         </div>
@@ -209,15 +210,15 @@ class preexam2 extends React.Component {
             next={this.nextPoint}
             choice={this.state.choice6}
             change={this.change('choice6')}
-            quiz="6. การหนีไฟในขณะลงบันได ควรกระทำอย่างใด"
-            onechoice="ก. รีบวิ่งให้ถึงเร็วที่สุด"
-            twochoice="ข. หมอบต่ำ ชิดฝั่งราวบันได"
-            threechoice="ค. เดินเร็ว ชิดฝั่งราวบันได"
-            fourchoice="ง. เดินเร็ว ชิดฝั่งกำแพง"
+            quiz="6. ถ้าควันพิษนอกห้องมีมากจนไม่สามารถออกไปข้างนอกได้ ควรปฏิบัติตัวอย่างไรเป็นอันดับแรกถึงเหมาะสมที่สุด"
+            onechoice="ก. หลบซ่อนในห้องน้ำ"
+            twochoice="ข. เอาผ้ามาปิดจมูกตัวเอง"
+            threechoice="ค. เอาผ้ามาปิดช่องทางรอดของควัน เพื่อไม่ให้ควันเข้าห้องได้"
+            fourchoice="ง. ไปที่กระจกขอความช่วยเหลือ"
             a = "false1"
             b = "false2"
-            c = "false3"
-            d = "true"
+            c = "true"
+            d = "false3"
         />
         </div>
         </TabPane>
@@ -230,11 +231,11 @@ class preexam2 extends React.Component {
             next={this.nextPoint}
             choice={this.state.choice7}
             change={this.change('choice7')}
-            quiz="7. สถานการณ์ใด ที่แสดงว่าเราอยู่ใกล้ในจุดที่เกิดเหตุเพลิงไหม้รุนแรงที่สุด"
-            onechoice="ก. สถานที่นั้นมีควันออกมาเล็กน้อย"
-            twochoice="ข. สถานที่นั้นมีความร้อนสูง จนรู้สึกได้"
-            threechoice="ค. สถานที่นั้นมีสิ่งของวางกีดขวาง กระจัดกระจายอยู่"
-            fourchoice="ง. สถานที่นั้นมีนักดับเพลิงอยู่"
+            quiz="7. สถานที่ใด ควรหนีไปหลบมากที่สุดในขณะเกิดเหตุไฟไหม้"
+            onechoice="ก. ดาดฟ้า"
+            twochoice="ข. ลานจอดรถชั้นพื้นดิน"
+            threechoice="ค. ลานจอดรถใต้ดิน"
+            fourchoice="ง. ห้องน้ำ"
             a = "false1"
             b = "true"
             c = "false3"
@@ -251,11 +252,11 @@ class preexam2 extends React.Component {
             next={this.nextPoint}
             choice={this.state.choice8}
             change={this.change('choice8')}
-            quiz="8. อุปกรณ์ใดเหมาะแก่การใช้หนีไฟ และสามารถใช้ได้เป็นเวลานานที่สุด"
-            onechoice="ก. ขวดน้ำที่มีน้ำอยู่"
-            twochoice="ข. ผ้าคลุมตัว"
-            threechoice="ค. ถุงพลาสติกขนาดใหญ่ "
-            fourchoice="ง. ไฟฉาย"
+            quiz="8. สถานการณ์ใด ที่แสดงว่าเราอยู่ใกล้ในจุดที่เกิดเหตุเพลิงไหม้รุนแรงที่สุด"
+            onechoice="ก. สถานที่นั้นมีนักดับเพลิงอยู่"
+            twochoice="ข. สถานที่นั้นมีควันออกมาเล็กน้อย"
+            threechoice="ค. สถานที่นั้นมีสิ่งของวางกีดขวาง กระจัดกระจายอยู่"
+            fourchoice="ง. สถานที่นั้นมีความร้อนสูง จนรู้สึกได้"
             a = "false1"
             b = "false2"
             c = "false3"
@@ -272,11 +273,11 @@ class preexam2 extends React.Component {
             next={this.nextPoint}
             choice={this.state.choice9}
             change={this.change('choice9')}
-            quiz="9. คนส่วนใหญ่ที่เสียชีวิตในเหตุเพลิงไหม้ มาจากสาเหตุใดมากที่สุด"
-            onechoice="ก. ควันพิษ"
-            twochoice="ข. ความร้อน"
-            threechoice="ค. ไฟคอก"
-            fourchoice="ง. ล้ม"
+            quiz="9. การหนีไฟในขณะลงบันได ควรกระทำอย่างใด"
+            onechoice="ก. เดินเร็ว ชิดฝั่งกำแพง"
+            twochoice="ข. หมอบต่ำ ชิดฝั่งราวบันได"
+            threechoice="ค. รีบวิ่งให้ถึงเร็วที่สุด"
+            fourchoice="ง. เดินเร็ว ชิดฝั่งราวบันได"
             a = "true"
             b = "false2"
             c = "false3"
@@ -293,46 +294,27 @@ class preexam2 extends React.Component {
             next={this.submit}
             choice={this.state.choice10}
             change={this.change('choice10')}
-            quiz="10. ถ้าควันพิษนอกห้องมีมากจนไม่สามารถออกไปข้างนอกได้ ควรปฏิบัติตัวอย่างไรเป็นอันดับแรกถึงเหมาะสมที่สุด"
-            onechoice="ก. เอาผ้ามาปิดจมูกตัวเอง"
-            twochoice="ข. เอาผ้ามาปิดช่องทางรอดของควัน เพื่อไม่ให้ควันเข้าห้องได้"
-            threechoice="ค. ไปที่กระจกขอความช่วยเหลือ"
-            fourchoice="ง. หลบซ่อนในห้องน้ำ"
+            quiz="10. ขณะที่กำลังหนีไฟทางบันได มีควันเริ่มเข้ามาควรกระทำอย่างใดจึงเหมาะสมที่สุด"
+            onechoice="ก. หมอบต่ำ และคลานออก"
+            twochoice="ข. หนีควันขึ้นไปชั้นบนทันที"
+            threechoice="ค. รีบวิ่งลุยควันออกไป"
+            fourchoice="ง. เดินเร็ว และใช้มือปัดควัน"
             a = "false1"
-            b = "true"
+            b = "false2"
             c = "false3"
-            d = "false2"
+            d = "true"
             final="final"
         />
         </div>
         </TabPane>  
 
         <TabPane tab="11" key="11">
-        <div className="answer">
-          <div className="typeexam font">
+        <div className="preanswer">
+          <div className="pretypeexam font">
           <div className="textanswer">
             <p>คะแนนของคุณ : {this.state.score} คะแนน</p>
                 {this.Redirect()}  
-            <Button onClick={this.success} >ดูเฉลย</Button> <Button onClick={this.modal} type="primary">ยืนยัน</Button>
-            <br/>
-            <br/>
-            <hr/>
-            <br/>
-            <h6>คำตอบของคุณ</h6>
-            <br/>
-            <div className="col-md-10 offset-3">
-            <ButtonCorrect choice={this.state.choice1}  choiceName='1'/>
-            <ButtonCorrect choice={this.state.choice2}  choiceName='2'/>
-            <ButtonCorrect choice={this.state.choice3}  choiceName='3'/>
-            <ButtonCorrect choice={this.state.choice4}  choiceName='4'/>
-            <ButtonCorrect choice={this.state.choice5}  choiceName='5'/>
-            <br/>
-            <ButtonCorrect choice={this.state.choice6}  choiceName='6'/>
-            <ButtonCorrect choice={this.state.choice7}  choiceName='7'/>
-            <ButtonCorrect choice={this.state.choice8}  choiceName='8'/>
-            <ButtonCorrect choice={this.state.choice9}  choiceName='9'/>
-            <ButtonCorrect choice={this.state.choice10} choiceName='10'/>
-            </div>
+          <Button onClick={this.modal} type="primary">ยืนยัน</Button>
 
 
         </div>

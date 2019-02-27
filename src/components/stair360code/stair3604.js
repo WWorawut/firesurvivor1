@@ -70,9 +70,8 @@ class stair3604 extends React.Component {
 
   next=name=>()=>{ this.setState({ [name]:true })}
   Redirect=()=>{
-    if(this.state.A){ return <Redirect to="/firetung"/> }
     if(this.state.up){ return <Redirect to="/stair3601"/> }
-    if(this.state.down){ return <Redirect to="/stair3605"/> }
+    if(this.state.down){ return <Redirect to="/walk360"/> }
 }
 
 

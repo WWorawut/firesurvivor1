@@ -23,6 +23,11 @@ import {connect} from 'react-redux';
 import Sound from 'react-sound';
 import sound from '../video/sound/speakfire.mp3';
 
+import dab from "../picture2/popscore/dab.png";
+import sound2 from '../video/sound/infosmoke.mp3';
+import sound3 from '../video/sound/infowalk.mp3';
+import sound4 from '../video/sound/infoheat.mp3';
+
 
 class fire2 extends React.Component{
   state={
@@ -32,13 +37,16 @@ class fire2 extends React.Component{
     popup:false,
     link:false,
     outshow2:false,
-    playStatus:Sound.status.STOPPED
+    playStatus:Sound.status.STOPPED,
+    playpop:Sound.status.STOPPED,
+    urlSound:"",
   }
 
-  componentDidMount(){ 
+  componentDidMount(){
     setTimeout(this.soundOn,1200);
     setTimeout(this.outshow,5000);
   }
+
   outshow=()=>{this.setState({class:'fadeOutDown'})
   setTimeout(this.outshow2,1000)
   }
@@ -51,7 +59,10 @@ class fire2 extends React.Component{
 
   openpop=data=>()=>{
     this.setState({[data.state]:true});
-    this.props.dispatch(savescore(data.score));
+    this.props.dispatch(savescore(data.score));    
+    if(data.sound){
+      this.setState({playpop:Sound.status.PLAYING,urlSound:data.sound})  
+      }
     setTimeout(this.popupClose(data),2000);
   }
     
@@ -62,8 +73,22 @@ class fire2 extends React.Component{
 
   setlink=link=>()=>{this.setState({ [link]:true })}
 
-  control=()=>{
-    this.setState({controlPopup:true,class2:'fadeOutDown' })
+          openpop1=data=>()=>{
+            this.setState({[data.state]:true});
+            this.props.dispatch(savescore(data.score));
+            this.waittocontrol(data);
+          }
+            //time
+            waittocontrol=(data)=>{
+              if(data.sound){
+              this.setState({playpop:Sound.status.PLAYING,urlSound:data.sound})  
+              }
+              setTimeout(this.control(data),2000)
+            }
+
+
+  control=data=>()=>{
+    this.setState({[data.state]:false, controlPopup:true,class2:'fadeOutDown' })
   }
 
   // Redirect1=()=>{if(this.state.l){ return <Redirect to="/" /> }}
@@ -73,6 +98,9 @@ class fire2 extends React.Component{
   
 
    render() {
+     const state={
+      volume:0
+     }
     return (
       <div>
         {this.Redirect()}
@@ -96,12 +124,25 @@ class fire2 extends React.Component{
       iconclose={'none'}
       />
 
+      <Popup
+      open={this.state.dab}
+      image={dab}
+      iconclose={'none'}
+      />    
+
       <Sound
         url={sound}
         volume={this.props.sound === false?0:100}
         playStatus={this.state.playStatus}
         onFinishedPlaying={() => this.setState({ playStatus: Sound.status.STOPPED })}
       />  
+
+      <Sound
+        url={this.state.urlSound}
+        volume={this.props.sound === false?0:100}
+        playStatus={this.state.playpop}
+        onFinishedPlaying={() => this.setState({ playpop: Sound.status.STOPPED })}
+      />
 
       {/* <img className="bgfire11" src={mousegif} />  */}
 
@@ -112,12 +153,12 @@ class fire2 extends React.Component{
             autoPlay
             playsInline={true}
             loop={true}
+            volume={0}
             className="bgv"
             >
             <source src={intro} />
             <ControlBar autoHide={false} disableDefaultControls></ControlBar>
             </Player> 
-
 
       <div className="bgtext">
      {this.state.outshow2 === false ?
@@ -131,7 +172,7 @@ class fire2 extends React.Component{
         <p style={{textAlign:'center'}} className="texthead">คุณต้องการดับเพลิงเบื้องต้นด้วยตนเองหรือไม่ ?</p>
         <div classname="buttonchoice">
         <div style={{textAlign:'center', paddingTop:'3%'}}>
-        <Button style={{marginRight:'5%'}} onClick={this.control} type="primary">ตกลง</Button>
+        <Button style={{marginRight:'5%'}}  onClick={this.openpop1({score:4,state:'dab',sound:sound2})} type="primary">ตกลง</Button>
         <Link to ="/firetype" ><Button type="primary" onClick={this.end} ghost>ยกเลิก</Button></Link>
         </div>
         </div>
@@ -145,11 +186,11 @@ class fire2 extends React.Component{
         <div className="boxjangtext">
         <p>สถานการณ์ :</p>
         <p className="texthead">สายไฟบริเวณหิ้งพระที่เก่ามากจนหลอมละลาย เกิดประกายไฟไหม้กระดาษต่างๆ บนโต๊ะ ควรทำเช่นใดเพื่อไม่ให้ไฟลุกลาม?</p>
-        <Button className="buttonjang" onClick={this.openpop({link:'link',score:3,state:'popup'})}>นำสิ่งของรอบๆ ออก</Button>
+        <Button className="buttonjang" onClick={this.openpop({link:'link',score:3,state:'popup',sound:sound2})}>นำสิ่งของรอบๆ ออก</Button>
         <br/>
-        <Button className="buttonjang" onClick={this.openpop({link:'link',score:-3,state:'popup2'})}>ใช้น้ำราดไปที่สายไฟ เพื่อดับเพลิง</Button>
+        <Button className="buttonjang" onClick={this.openpop({link:'link',score:-3,state:'popup2',sound:sound3})}>ใช้น้ำราดไปที่สายไฟ เพื่อดับเพลิง</Button>
         <br/>
-        <Button className="buttonjang" onClick={this.openpop({link:'link',score:-3,state:'popup3'})}>ดึงปลั๊กไฟด้วยมือเปล่า</Button>
+        <Button className="buttonjang" onClick={this.openpop({link:'link',score:-3,state:'popup3',sound:sound4})}>ดึงปลั๊กไฟด้วยมือเปล่า</Button>
         </div>
         </div>
       :

@@ -4,9 +4,16 @@ import '../css/button.css';
 import gobutton from "../picture2/button/gobutton.png";
 
 import { Link } from 'react-router-dom';
+import {stopTimer} from '../../action'
+import {connect} from 'react-redux';
 
 
 class stair11 extends React.Component{
+
+  componentDidMount(){ 
+    this.props.dispatch(stopTimer(true));
+  }
+
 
 
    render() {;
@@ -26,4 +33,4 @@ class stair11 extends React.Component{
   }
 }
   
-  export default stair11;
+export default connect()(stair11);

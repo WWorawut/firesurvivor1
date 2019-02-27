@@ -134,6 +134,30 @@ style={{color:"white"}}
     background-color: white;
 }
 
+.preanswer{
+    height: 50vh;
+    width: 50%;
+    margin: auto;
+    transform: translate(0,5%);
+    background-color: white;
+}
+.pretypeexam{
+    background-size: cover;
+    box-shadow: 2px 3px 10px #b19191;
+    background-color: white;
+    border-radius: 1%;
+    height: 50vh;
+    width: 100%;
+    /* display: flex; */
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+    position: absolute;    
+    opacity: 0.95;
+}
+
+
+
 .typeexam{
     background-size: cover;
     box-shadow: 2px 3px 10px #b19191;

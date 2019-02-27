@@ -56,7 +56,7 @@ class exam2 extends React.Component {
     }
 
     modal=()=>{this.setState({ link:true })} 
-    Redirect=()=>{if(this.state.link){ return <Redirect to="/" /> }}
+    Redirect=()=>{if(this.state.link){ return <Redirect to="/choose" /> }}
  
     nextPoint=()=>{
         let pointKey = parseInt(this.state.pointKey, 10);
@@ -150,7 +150,7 @@ class exam2 extends React.Component {
             onechoice="ก. ดาดฟ้า"
             twochoice="ข. ห้องน้ำ"
             threechoice="ค. ลานจอดรถใต้ดิน"
-            fourchoice="ง. ลานจอดรถชั้น 1"
+            fourchoice="ง. ลานจอดรถชั้นพื้นดิน"
             a = "false1"
             b = "true"
             c = "false3"
@@ -171,7 +171,7 @@ class exam2 extends React.Component {
             onechoice="ก. ดาดฟ้า"
             twochoice="ข. ห้องน้ำ"
             threechoice="ค. ลานจอดรถใต้ดิน"
-            fourchoice="ง. ลานจอดรถชั้น 1"
+            fourchoice="ง. ลานจอดรถชั้นพื้นดิน"
             a = "false1"
             b = "false2"
             c = "false3"

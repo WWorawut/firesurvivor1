@@ -9,7 +9,7 @@ import choosebutton from '../picture2/button/choosebutton.png'
 import { BrowserRouter as  Link,Redirect } from 'react-router-dom'
 import floor from '../picture2/stair360/floor3.png'
 
-import {savescore} from '../../action'
+import {savescore, stopTimer} from '../../action'
 import {connect} from 'react-redux';
 
 
@@ -34,6 +34,7 @@ class stair36012 extends React.Component {
 
 
     componentDidMount(){ 
+      this.props.dispatch(stopTimer(true));
       setTimeout(this.soundOn,1200);
       setInterval(this.outshow,7000);
     }

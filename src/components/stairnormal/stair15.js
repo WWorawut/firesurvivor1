@@ -13,7 +13,7 @@ import smoke1 from "../picture2/popscore/smoke1.png";
 import smoke2 from "../picture2/popscore/smoke2.png";
 import smoke3 from "../picture2/popscore/smoke3.png";
 
-import {savescore} from '../../action'
+import {savescore, stopTimer} from '../../action'
 import {connect} from 'react-redux';
 
 import Sound from 'react-sound';
@@ -30,6 +30,7 @@ class stair15 extends React.Component{
     playStatus:Sound.status.STOPPED
   }
     componentDidMount(){ 
+      this.props.dispatch(stopTimer(true));
       setTimeout(this.soundOn,1200);
       setInterval(this.outshow,6000);
     }
