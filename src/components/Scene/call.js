@@ -12,16 +12,27 @@ import { BrowserRouter as  Link,Redirect } from 'react-router-dom'
 import {savescore,choosecall} from '../../action'
 import {connect} from 'react-redux';
 
+import Sound from 'react-sound';
+import sound from '../video/sound/speakfire.mp3';
+
+import sound2 from '../video/sound/infosmoke.mp3';
+
 class call extends React.Component{
   state={
     popup:false,
     link:false,
+    playStatus:Sound.status.STOPPED,
+    playpop:Sound.status.STOPPED,
+    urlSound:""
   }
 
 
   openpop=data=>()=>{
     this.setState({[data.state]:true});
-    this.props.dispatch(savescore(data.score));
+    this.props.dispatch(savescore(data.score));    
+    if(data.sound){
+      this.setState({playpop:Sound.status.PLAYING,urlSound:data.sound})  
+      }
     setTimeout(this.popupClose(data),2000);
   }
     
@@ -47,6 +58,13 @@ class call extends React.Component{
         {this.Redirect()}
         {/* {this.Redirect1()} */}
 
+      <Sound
+        url={sound}
+        volume={this.props.sound === false?0:100}
+        playStatus={this.state.playStatus}
+        onFinishedPlaying={() => this.setState({ playStatus: Sound.status.STOPPED })}
+      />  
+
       <Popup
       open={this.state.popup}
       image={call1}
@@ -65,17 +83,24 @@ class call extends React.Component{
       iconclose={'none'}
       />
 
+      <Sound
+        url={this.state.urlSound}
+        volume={this.props.sound === false?0:100}
+        playStatus={this.state.playpop}
+        onFinishedPlaying={() => this.setState({ playpop: Sound.status.STOPPED })}
+      />
+
       <div className="bgcall">
 
       <div className="offset-6 boxjang animated pulse">
       <div className="boxjangtext">
       <p>สถานการณ์ :</p>
       <p className="texthead">คุณจะแจ้งข้อมูลให้เจ้าหน้าที่ดับเพลิงว่าอย่างไรในสถานการณ์ฉุกเฉิน ?</p>
-      <Button className="buttonjang" onClick={this.openpop({link:'link',score:1,state:'popup'})}>คุณๆ ไฟไหม้ตึกใหญ่แล้ว ช่วยด้วย!!</Button>
+      <Button className="buttonjang" onClick={this.openpop({link:'link',score:1,state:'popup',sound:sound2})}>คุณๆ ไฟไหม้ตึกใหญ่แล้ว ช่วยด้วย!!</Button>
       <br/>
-      <Button className="buttonjang" onClick={this.openpop({link:'link',score:3,state:'popup3'})}>ผมชื่อ... ไฟไหม้ที่ตึกสยามอาร์ท อโศก 5 นาทีแล้วครับ</Button>
+      <Button className="buttonjang" onClick={this.openpop({link:'link',score:3,state:'popup3',sound:sound2})}>ผมชื่อ... ไฟไหม้ที่ตึกสยามอาร์ท อโศก 5 นาทีแล้วครับ</Button>
       <br/>
-      <Button className="buttonjang" onClick={this.openpop({link:'link',score:2,state:'popup2'})}>ไฟไหม้ตึกสยามอาร์ทครับ รีบมาเลยนะครับ</Button>
+      <Button className="buttonjang" onClick={this.openpop({link:'link',score:2,state:'popup2',sound:sound2})}>ไฟไหม้ตึกสยามอาร์ทครับ รีบมาเลยนะครับ</Button>
       </div>
       </div>
 
@@ -92,7 +117,8 @@ const connectscore = state => ({
   score:state.score,
   choosecall:state.choosecall,
   choosefriend:state.choosefriend,
-  choosealarm:state.choosealarm
+  choosealarm:state.choosealarm,
+  sound:state.sound
   })
 
   export default connect(connectscore)(call);

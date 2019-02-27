@@ -27,6 +27,10 @@ import {connect} from 'react-redux';
 import Sound from 'react-sound';
 import sound from '../video/sound/speakmanysmoke.mp3';
 
+import sound3 from '../video/sound/infowalk.mp3';
+import sound4 from '../video/sound/infoheat.mp3';
+import sound5 from '../video/sound/infoheat.mp3';
+
 
   
 class Mstair3606 extends React.Component {
@@ -38,7 +42,9 @@ class Mstair3606 extends React.Component {
       link:false,
       class:'fadeInUp',
       outshow2:false,
-      playStatus:Sound.status.STOPPED
+      playStatus:Sound.status.STOPPED,
+      playpop:Sound.status.STOPPED,
+      urlSound:""
     };
   }
 
@@ -54,11 +60,15 @@ class Mstair3606 extends React.Component {
     }
 
     
+
     openpop=data=>()=>{
-        this.setState({[data.state]:true});
-        this.props.dispatch(savescore(data.score));
-        setTimeout(this.popupClose(data),2000);
-      }
+      this.setState({[data.state]:true});
+      this.props.dispatch(savescore(data.score));
+      if(data.sound){
+        this.setState({playpop:Sound.status.PLAYING,urlSound:data.sound})  
+        }
+      setTimeout(this.popupClose(data),2000);
+    }
         
       popupClose=data=>()=>{
         this.setState({[data.state]:false})
@@ -115,6 +125,13 @@ class Mstair3606 extends React.Component {
           image={smoke3}
           iconclose={'none'}
           />
+
+      <Sound
+        url={this.state.urlSound}
+        volume={this.props.sound === false?0:100}
+        playStatus={this.state.playpop}
+        onFinishedPlaying={() => this.setState({ playpop: Sound.status.STOPPED })}
+      />
       
    
   
@@ -128,13 +145,13 @@ class Mstair3606 extends React.Component {
        <div>
          <div className="a" >
       <div className="centerlist">
-       <img className={"list animated fadeInUp"} onClick={this.openpop({link:'link',state:'popup'})} src={list151}/>
+       <img className={"list animated fadeInUp"} onClick={this.openpop({link:'link',state:'popup',sound:sound3})} src={list151}/>
        </div>
        <div className="centerlist2">
-       <img className={"list animated fadeInUp"} onClick={this.openpop({link:'link',state:'popup1'})} src={list152}/>
+       <img className={"list animated fadeInUp"} onClick={this.openpop({link:'link',state:'popup1',sound:sound4})} src={list152}/>
        </div>
        <div className="centerlist2">
-      <img className={"list animated fadeInUp"} onClick={this.openpop({link:'link',state:'popup2'})} src={list153}/>
+      <img className={"list animated fadeInUp"} onClick={this.openpop({link:'link',state:'popup2',sound:sound5})} src={list153}/>
        </div>
        </div>
        </div>

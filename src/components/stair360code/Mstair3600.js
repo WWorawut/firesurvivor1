@@ -22,6 +22,8 @@ import {connect} from 'react-redux';
 import Sound from 'react-sound';
 import sound from '../video/sound/speak360.mp3';
 
+import sound3 from '../video/sound/infowalk.mp3';
+
 
   
 class Mstair3600 extends React.Component {
@@ -34,7 +36,9 @@ class Mstair3600 extends React.Component {
       class:'fadeInUp',
       outshow2:false,
       playStatus:Sound.status.STOPPED,
-      popup:false
+      popup:false,
+      playpop:Sound.status.STOPPED,
+      urlSound:""
     };
   }
 
@@ -53,6 +57,9 @@ class Mstair3600 extends React.Component {
     openpop=data=>()=>{
       this.setState({[data.state]:true});
       this.props.dispatch(savescore(data.score));
+      if(data.sound){
+        this.setState({playpop:Sound.status.PLAYING,urlSound:data.sound})  
+        }
       setTimeout(this.popupClose(data),2000);
     }
       
@@ -103,6 +110,13 @@ class Mstair3600 extends React.Component {
         onFinishedPlaying={() => this.setState({ playStatus: Sound.status.STOPPED })}
       />  
 
+      <Sound
+        url={this.state.urlSound}
+        volume={this.props.sound === false?0:100}
+        playStatus={this.state.playpop}
+        onFinishedPlaying={() => this.setState({ playpop: Sound.status.STOPPED })}
+      />
+
 
       <div>
        {this.state.outshow2 === false ?
@@ -124,7 +138,7 @@ class Mstair3600 extends React.Component {
       {this.Redirect()}
       <Entity events={{click:this.next('A') , mouseenter:this.mouseenter('scale1') , mouseleave:this.mouseleave('scale1')}}  primitive='a-image' material={{ src: gobutton}} scale={{x: this.state.scale1, y: this.state.scale1, z:this.state.scale1}} rotation={{x: 0, y: 0 ,z: 0}} position={{x:3, y: -1, z: -10}}/>
         
-        <Entity events={{click:this.openpop({link:'down',state:'popup'}) , mouseenter:this.mouseenter('scale2') , mouseleave:this.mouseleave('scale2')}}  primitive='a-image' material={{ src: gobutton}} scale={{x: this.state.scale2, y: this.state.scale2, z:this.state.scale2}} rotation={{x: 0, y: 0 ,z: 0}} position={{x:-3, y: 0, z:12}}/> 
+        <Entity events={{click:this.openpop({link:'down',state:'popup',sound:sound3}) , mouseenter:this.mouseenter('scale2') , mouseleave:this.mouseleave('scale2')}}  primitive='a-image' material={{ src: gobutton}} scale={{x: this.state.scale2, y: this.state.scale2, z:this.state.scale2}} rotation={{x: 0, y: 0 ,z: 0}} position={{x:-3, y: 0, z:12}}/> 
         <Entity events={{click:this.next('up') , mouseenter:this.mouseenter('scale3') , mouseleave:this.mouseleave('scale3')}}  primitive='a-image' material={{ src: gobutton}} scale={{x: this.state.scale3, y: this.state.scale3, z:this.state.scale3}} rotation={{x: 0, y: 90 ,z: 0}} position={{x:-12, y: 7, z:-4}}/>
         
        

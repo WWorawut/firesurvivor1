@@ -28,6 +28,10 @@ import {connect} from 'react-redux';
 import Sound from 'react-sound';
 import sound from '../video/sound/speakheat.mp3';
 
+import sound3 from '../video/sound/infowalk.mp3';
+import sound4 from '../video/sound/infoheat.mp3';
+import sound5 from '../video/sound/infoheat.mp3';
+
 
   
 class Mstair36011 extends React.Component {
@@ -39,7 +43,9 @@ class Mstair36011 extends React.Component {
       link:false,
       class:'fadeInUp',
       outshow2:false,
-      playStatus:Sound.status.STOPPED
+      playStatus:Sound.status.STOPPED,
+      playpop:Sound.status.STOPPED,
+      urlSound:""
     };
   }
 
@@ -56,10 +62,13 @@ class Mstair36011 extends React.Component {
 
     
     openpop=data=>()=>{
-        this.setState({[data.state]:true});
-        this.props.dispatch(savescore(data.score));
-        setTimeout(this.popupClose(data),2000);
-      }
+      this.setState({[data.state]:true});
+      this.props.dispatch(savescore(data.score));
+      if(data.sound){
+        this.setState({playpop:Sound.status.PLAYING,urlSound:data.sound})  
+        }
+      setTimeout(this.popupClose(data),2000);
+    }
         
       popupClose=data=>()=>{
         this.setState({[data.state]:false})
@@ -115,7 +124,14 @@ class Mstair36011 extends React.Component {
         open={this.state.popup2}
         image={hand13}
         iconclose={'none'}
-        />    
+        />   
+
+        <Sound
+        url={this.state.urlSound}
+        volume={this.props.sound === false?0:100}
+        playStatus={this.state.playpop}
+        onFinishedPlaying={() => this.setState({ playpop: Sound.status.STOPPED })}
+      /> 
       
    
   
@@ -131,9 +147,9 @@ class Mstair36011 extends React.Component {
            <p className="text12 animated fadeInUp">เลือกวิธีการสัมผัสผนัง เพื่อสังเกตุความร้อน</p>
            <div className="animated fadeInUp">
            <div className="boxd">
-           <img className="box12" onClick={this.openpop({link:'link',state:'popup'})} src={hand1} />
-           <img className="box12" onClick={this.openpop({link:'link',state:'popup1'})} src={hand2} />
-           <img className="box12" onClick={this.openpop({link:'link',state:'popup2'})} src={hand3} />
+           <img className="box12" onClick={this.openpop({link:'link',state:'popup',sound:sound3})} src={hand1} />
+           <img className="box12" onClick={this.openpop({link:'link',state:'popup1',sound:sound4})} src={hand2} />
+           <img className="box12" onClick={this.openpop({link:'link',state:'popup2',sound:sound5})} src={hand3} />
            </div>
            </div>
        </div>

@@ -15,6 +15,9 @@ import bu from "../picture2/popscore/Mgoshair.png";
 import {savescore} from '../../action'
 import {connect} from 'react-redux';
 
+import Sound from 'react-sound';
+import sound3 from '../video/sound/infowalk.mp3';
+
 
   
 class Mgotoshair extends React.Component {
@@ -24,7 +27,9 @@ class Mgotoshair extends React.Component {
       clickedSound:true,
       secondsElapsed: 0, 
       link:false,
-      popup:false
+      popup:false,
+      playpop:Sound.status.STOPPED,
+      urlSound:""
     };
   }
 
@@ -46,6 +51,9 @@ setlink=link=>()=>{this.setState({ [link]:true })}
 openpop=data=>()=>{
   this.setState({[data.state]:true});
   this.props.dispatch(savescore(data.score));
+  if(data.sound){
+    this.setState({playpop:Sound.status.PLAYING,urlSound:data.sound})  
+    }
   setTimeout(this.popupClose(data),2000);
 }
   
@@ -67,6 +75,13 @@ popupClose=data=>()=>{
           image={bu}
           iconclose={'none'}
           />
+
+      <Sound
+        url={this.state.urlSound}
+        volume={this.props.sound === false?0:100}
+        playStatus={this.state.playpop}
+        onFinishedPlaying={() => this.setState({ playpop: Sound.status.STOPPED })}
+      />
       
       <div>
       <Link to = "/officeoutside"><Button className="out" ghost onClick={this.out}> <Iconout/>กลับ</Button></Link>
@@ -74,7 +89,7 @@ popupClose=data=>()=>{
 
       <Scene>
       {this.Redirect()}
-      <Entity events={{click:this.openpop({link:'link',score:15,state:'popup'}) , mouseenter:this.mouseenter('scale1') , mouseleave:this.mouseleave('scale1')}}  
+      <Entity events={{click:this.openpop({link:'link',score:15,state:'popup',sound:sound3}) , mouseenter:this.mouseenter('scale1') , mouseleave:this.mouseleave('scale1')}}  
               primitive='a-image' material={{ src: gobutton}} scale={{x: this.state.scale1, y: this.state.scale1, z:this.state.scale1}} 
               rotation={{x: 0, y: 0 ,z: 0}} position={{x:3, y: 0, z: -12}}/>
 
@@ -106,7 +121,8 @@ popupClose=data=>()=>{
   }
 }
 const connectscore = state => ({
-  timer:state.timer
+  timer:state.timer,
+  sound:state.sound
   })
 
 export default connect(connectscore)(Mgotoshair);

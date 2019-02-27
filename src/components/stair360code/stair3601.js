@@ -2,10 +2,6 @@ import React, {} from 'react';
 import '../css/360.css';
 import {Entity, Scene} from 'aframe-react';
 
-import { Button } from 'antd';
-
-import gobutton from '../picture2/button/gobutton.png'
-import choosebutton from '../picture2/button/choosebutton.png'
 import { BrowserRouter as  Link,Redirect } from 'react-router-dom'
 import floor from '../picture2/stair360/floor18.png'
 import human from "../picture2/speak/human.png";
@@ -23,6 +19,9 @@ import {connect} from 'react-redux';
 import Sound from 'react-sound';
 import sound from '../video/sound/speakstair.mp3';
 
+import sound3 from '../video/sound/infowalk.mp3';
+import sound4 from '../video/sound/infoheat.mp3';
+
 
   
 class stair3601 extends React.Component {
@@ -34,7 +33,9 @@ class stair3601 extends React.Component {
       link:false,
       class:'fadeInUp',
       outshow2:false,
-      playStatus:Sound.status.STOPPED
+      playStatus:Sound.status.STOPPED,
+      playpop:Sound.status.STOPPED,
+      urlSound:""
     };
   }
 
@@ -51,10 +52,13 @@ class stair3601 extends React.Component {
 
     
     openpop=data=>()=>{
-        this.setState({[data.state]:true});
-        this.props.dispatch(savescore(data.score));
-        setTimeout(this.popupClose(data),2000);
-      }
+      this.setState({[data.state]:true});
+      this.props.dispatch(savescore(data.score));
+      if(data.sound){
+        this.setState({playpop:Sound.status.PLAYING,urlSound:data.sound})  
+        }
+      setTimeout(this.popupClose(data),2000);
+    }
         
       popupClose=data=>()=>{
         this.setState({[data.state]:false})
@@ -111,6 +115,13 @@ class stair3601 extends React.Component {
       image={run1}
       iconclose={'none'}
       />
+
+      <Sound
+        url={this.state.urlSound}
+        volume={this.props.sound === false?0:100}
+        playStatus={this.state.playpop}
+        onFinishedPlaying={() => this.setState({ playpop: Sound.status.STOPPED })}
+      />
       
    
   
@@ -122,8 +133,8 @@ class stair3601 extends React.Component {
        </div>
        :
        <div className="centerwalk">
-       <img className={"walkk animated fadeInUp"} style={{marginRight:'15%'}} onClick={this.openpop({link:'link1',score:5,state:'popup'})} src={walk}/>
-       <img className={"run animated fadeInUp"} onClick={this.openpop({link:'link2',score:-5,state:'popup2'})} src={run}/>
+       <img className={"walkk animated fadeInUp"} style={{marginRight:'15%'}} onClick={this.openpop({link:'link1',score:5,state:'popup',sound:sound3})} src={walk}/>
+       <img className={"run animated fadeInUp"} onClick={this.openpop({link:'link2',score:-5,state:'popup2',sound:sound4})} src={run}/>
        </div>
        }
        </div>

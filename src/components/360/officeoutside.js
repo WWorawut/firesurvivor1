@@ -21,6 +21,10 @@ import c from "../picture2/popscore/popfriend.png";
 import {savescore, enterroom, choosealarm, choosefriend, choosecall, stopTimer} from '../../action'
 import {connect} from 'react-redux';
 
+import sound1 from '../video/sound/infowalk.mp3';
+import sound2 from '../video/sound/infoheat.mp3';
+import sound3 from '../video/sound/infoheat.mp3';
+
 
   
 class officeoutside extends React.Component {
@@ -34,7 +38,9 @@ class officeoutside extends React.Component {
       outshow2:false,
       playStatus:Sound.status.STOPPED,
       cursor:'white',
-      popup:false
+      popup:false,
+      playpop:Sound.status.STOPPED,
+      urlSound:""
     };
   }
 
@@ -73,6 +79,9 @@ class officeoutside extends React.Component {
 openpop=data=>()=>{
   this.setState({[data.state]:true});
   this.props.dispatch(savescore(data.score));
+  if(data.sound){
+    this.setState({playpop:Sound.status.PLAYING,urlSound:data.sound})  
+    }
   setTimeout(this.popupClose(data),2000);
 }
   
@@ -114,6 +123,13 @@ popupClose=data=>()=>{
           iconclose={'none'}
           />
 
+      <Sound
+        url={this.state.urlSound}
+        volume={this.props.sound === false?0:100}
+        playStatus={this.state.playpop}
+        onFinishedPlaying={() => this.setState({ playpop: Sound.status.STOPPED })}
+      />
+
 
 
 
@@ -154,13 +170,13 @@ popupClose=data=>()=>{
         <Entity className="a" events={{click:this.next('toilet') , mouseenter:this.mouseenter('scale4') , mouseleave:this.mouseleave('scale4')}}  primitive='a-image' material={{ src: gobutton}} scale={{x: this.state.scale4, y: this.state.scale4, z:this.state.scale4}} rotation={{x: 0, y: 270 ,z: 0}} position={{x:-15, y: 0, z:-4}}/>
        
         {!this.props.choosealarm?
-        <Entity events={{click:this.openpop({link:'alarm',score:3,state:'popup'}), mouseenter:this.mouseenter('scale5') , mouseleave:this.mouseleave('scale5')}}  primitive='a-image' material={{ src: choosebutton}} scale={{x: this.state.scale5, y: this.state.scale5, z:this.state.scale5}} rotation={{x: 0, y: 150 ,z: 0}} position={{x:4, y: -2, z:8}}/>
+        <Entity events={{click:this.openpop({link:'alarm',score:3,state:'popup',sound:sound1}), mouseenter:this.mouseenter('scale5') , mouseleave:this.mouseleave('scale5')}}  primitive='a-image' material={{ src: choosebutton}} scale={{x: this.state.scale5, y: this.state.scale5, z:this.state.scale5}} rotation={{x: 0, y: 150 ,z: 0}} position={{x:4, y: -2, z:8}}/>
         :null}
         {!this.props.choosecall?
-        <Entity events={{click:this.openpop({link:'call',score:3,state:'popup2'}) , mouseenter:this.mouseenter('scale6') , mouseleave:this.mouseleave('scale6')}}  primitive='a-image' material={{ src: choosebutton}} scale={{x: this.state.scale6, y: this.state.scale6, z:this.state.scale6}} rotation={{x: 0, y: 150 ,z: 0}} position={{x:3, y: 0, z:8}}/>
+        <Entity events={{click:this.openpop({link:'call',score:3,state:'popup2',sound:sound2}) , mouseenter:this.mouseenter('scale6') , mouseleave:this.mouseleave('scale6')}}  primitive='a-image' material={{ src: choosebutton}} scale={{x: this.state.scale6, y: this.state.scale6, z:this.state.scale6}} rotation={{x: 0, y: 150 ,z: 0}} position={{x:3, y: 0, z:8}}/>
         :null}
         {!this.props.choosefriend?
-        <Entity events={{click:this.openpop({link:'friend',score:3,state:'popup3'}), mouseenter:this.mouseenter('scale7') , mouseleave:this.mouseleave('scale7')}}  primitive='a-image' material={{ src: choosebutton}} scale={{x: this.state.scale7, y: this.state.scale7, z:this.state.scale7}} rotation={{x: 0, y: 150 ,z: 0}} position={{x:-8, y: -2, z:8}}/>
+        <Entity events={{click:this.openpop({link:'friend',score:3,state:'popup3',sound:sound3}), mouseenter:this.mouseenter('scale7') , mouseleave:this.mouseleave('scale7')}}  primitive='a-image' material={{ src: choosebutton}} scale={{x: this.state.scale7, y: this.state.scale7, z:this.state.scale7}} rotation={{x: 0, y: 150 ,z: 0}} position={{x:-8, y: -2, z:8}}/>
         :null}
         <Entity primitive='a-sky' rotation="0 -100 0" src={Officeoutside}/>
       

@@ -9,6 +9,7 @@ import listfire1 from "../picture2/popscore/listfire31.png";
 import listfire2 from "../picture2/popscore/listfire32.png";
 import listfire3 from "../picture2/popscore/listfire33.png";
 
+import dab from "../picture2/popscore/dab.png";
 
 import human from "../picture2/speak/human.png";
 import sfire from "../picture2/speak/sfire.png";
@@ -23,6 +24,10 @@ import {connect} from 'react-redux';
 import Sound from 'react-sound';
 import sound from '../video/sound/speakfire.mp3';
 
+import sound2 from '../video/sound/infosmoke.mp3';
+import sound3 from '../video/sound/infowalk.mp3';
+import sound4 from '../video/sound/infoheat.mp3';
+
 
 class fire3 extends React.Component{
   state={
@@ -32,7 +37,9 @@ class fire3 extends React.Component{
     popup:false,
     link:false,
     outshow2:false,
-    playStatus:Sound.status.STOPPED
+    playStatus:Sound.status.STOPPED,
+    playpop:Sound.status.STOPPED,
+    urlSound:""
   }
 
   componentDidMount(){ 
@@ -51,7 +58,10 @@ class fire3 extends React.Component{
 
   openpop=data=>()=>{
     this.setState({[data.state]:true});
-    this.props.dispatch(savescore(data.score));
+    this.props.dispatch(savescore(data.score));    
+    if(data.sound){
+      this.setState({playpop:Sound.status.PLAYING,urlSound:data.sound})  
+      }
     setTimeout(this.popupClose(data),2000);
   }
     
@@ -62,9 +72,26 @@ class fire3 extends React.Component{
 
   setlink=link=>()=>{this.setState({ [link]:true })}
 
-  control=()=>{
-    this.setState({controlPopup:true,class2:'fadeOutDown' })
+
+  openpop1=data=>()=>{
+    this.setState({[data.state]:true});
+    this.props.dispatch(savescore(data.score));
+    this.waittocontrol(data);
   }
+
+  //time
+  waittocontrol=(data)=>{
+    if(data.sound){
+    this.setState({playpop:Sound.status.PLAYING,urlSound:data.sound})  
+    }
+    setTimeout(this.control(data),5000)
+  }
+
+
+  control=data=>()=>{
+    this.setState({[data.state]:false,controlPopup:true,class2:'fadeOutDown' });
+  }
+
 
   // Redirect1=()=>{if(this.state.l){ return <Redirect to="/" /> }}
   Redirect=()=>{
@@ -96,12 +123,25 @@ class fire3 extends React.Component{
       iconclose={'none'}
       />
 
+      <Popup
+      open={this.state.dab}
+      image={dab}
+      iconclose={'none'}
+      />  
+
       <Sound
         url={sound}
         volume={this.props.sound === false?0:100}
         playStatus={this.state.playStatus}
         onFinishedPlaying={() => this.setState({ playStatus: Sound.status.STOPPED })}
       />  
+
+      <Sound
+        url={this.state.urlSound}
+        volume={this.props.sound === false?0:100}
+        playStatus={this.state.playpop}
+        onFinishedPlaying={() => this.setState({ playpop: Sound.status.STOPPED })}
+      />
 
       {/* <img className="bgfire11" src={mousegif} />  */}
 
@@ -131,7 +171,7 @@ class fire3 extends React.Component{
         <p style={{textAlign:'center'}} className="texthead">คุณต้องการดับเพลิงเบื้องต้นด้วยตนเองหรือไม่ ?</p>
         <div classname="buttonchoice">
         <div style={{textAlign:'center', paddingTop:'3%'}}>
-        <Button style={{marginRight:'5%'}} onClick={this.control} type="primary">ตกลง</Button>
+        <Button style={{marginRight:'5%'}} onClick={this.openpop1({score:4,state:'dab',sound:sound2})} type="primary">ตกลง</Button>
         <Link to ="/firetype" ><Button type="primary" onClick={this.end} ghost>ยกเลิก</Button></Link>
         </div>
         </div>
@@ -145,11 +185,11 @@ class fire3 extends React.Component{
         <div className="boxjangtext">
         <p>สถานการณ์ :</p>
         <p className="texthead">ปลั๊กไฟปริมาณมากในเต้าเสียบอันเดียว เกิดความร้อนสูงจนไหม้เศษกระดาษที่วางบริเวณใกล้เคียง ควรทำเช่นใดเพื่อไม่ให้ไฟลุกลาม?</p>
-        <Button className="buttonjang" onClick={this.openpop({link:'link',score:3,state:'popup'})}>นำถังขยะเปล่าครอบเพลิง</Button>
+        <Button className="buttonjang" onClick={this.openpop({link:'link',score:3,state:'popup',sound:sound2})}>นำถังขยะเปล่าครอบเพลิง</Button>
         <br/>
-        <Button className="buttonjang" onClick={this.openpop({link:'link',score:-3,state:'popup2'})}>ใช้ผ้าชุบน้ำตบปลั๊กไฟ</Button>
+        <Button className="buttonjang" onClick={this.openpop({link:'link',score:-3,state:'popup2',sound:sound3})}>ใช้ผ้าชุบน้ำตบปลั๊กไฟ</Button>
         <br/>
-        <Button className="buttonjang" onClick={this.openpop({link:'link',score:-3,state:'popup3'})}>ใช้น้ำราด ไปที่ปลั๊กไฟ</Button>
+        <Button className="buttonjang" onClick={this.openpop({link:'link',score:-3,state:'popup3',sound:sound4})}>ใช้น้ำราด ไปที่ปลั๊กไฟ</Button>
         </div>
         </div>
       :
