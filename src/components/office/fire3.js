@@ -24,9 +24,10 @@ import {connect} from 'react-redux';
 import Sound from 'react-sound';
 import sound from '../video/sound/speakfire.mp3';
 
-import sound2 from '../video/sound/infosmoke.mp3';
-import sound3 from '../video/sound/infowalk.mp3';
-import sound4 from '../video/sound/infoheat.mp3';
+import sound2 from '../video/sound/dabbasic.mp3';
+import sound3 from '../video/sound/f31.mp3';
+import sound4 from '../video/sound/f35mp3.mp3';
+import sound5 from '../video/sound/f34.mp3';
 
 
 class fire3 extends React.Component{
@@ -62,7 +63,7 @@ class fire3 extends React.Component{
     if(data.sound){
       this.setState({playpop:Sound.status.PLAYING,urlSound:data.sound})  
       }
-    setTimeout(this.popupClose(data),2000);
+    setTimeout(this.popupClose(data),3000);
   }
     
   popupClose=data=>()=>{
@@ -84,7 +85,7 @@ class fire3 extends React.Component{
     if(data.sound){
     this.setState({playpop:Sound.status.PLAYING,urlSound:data.sound})  
     }
-    setTimeout(this.control(data),5000)
+    setTimeout(this.control(data),2800)
   }
 
 
@@ -185,11 +186,11 @@ class fire3 extends React.Component{
         <div className="boxjangtext">
         <p>สถานการณ์ :</p>
         <p className="texthead">ปลั๊กไฟปริมาณมากในเต้าเสียบอันเดียว เกิดความร้อนสูงจนไหม้เศษกระดาษที่วางบริเวณใกล้เคียง ควรทำเช่นใดเพื่อไม่ให้ไฟลุกลาม?</p>
-        <Button className="buttonjang" onClick={this.openpop({link:'link',score:3,state:'popup',sound:sound2})}>นำถังขยะเปล่าครอบเพลิง</Button>
+        <Button className="buttonjang" onClick={this.openpop({link:'link',score:3,state:'popup',sound:sound3})}>นำถังขยะเปล่าครอบเพลิง</Button>
         <br/>
-        <Button className="buttonjang" onClick={this.openpop({link:'link',score:-3,state:'popup2',sound:sound3})}>ใช้ผ้าชุบน้ำตบปลั๊กไฟ</Button>
+        <Button className="buttonjang" onClick={this.openpop({link:'link',score:-3,state:'popup2',sound:sound4})}>ใช้ผ้าชุบน้ำตบปลั๊กไฟ</Button>
         <br/>
-        <Button className="buttonjang" onClick={this.openpop({link:'link',score:-3,state:'popup3',sound:sound4})}>ใช้น้ำราด ไปที่ปลั๊กไฟ</Button>
+        <Button className="buttonjang" onClick={this.openpop({link:'link',score:-3,state:'popup3',sound:sound5})}>ใช้น้ำราด ไปที่ปลั๊กไฟ</Button>
         </div>
         </div>
       :

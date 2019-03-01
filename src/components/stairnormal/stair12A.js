@@ -26,10 +26,10 @@ import p4 from "../picture2/popscore/p4.png";
 import Sound from 'react-sound';
 import sound from '../video/sound/speaksmoke.mp3';
 
-import sound1 from '../video/sound/infowalk.mp3';
-import sound2 from '../video/sound/infoheat.mp3';
-import sound3 from '../video/sound/infoheat.mp3';
-import sound4 from '../video/sound/infoheat.mp3';
+import sound1 from '../video/sound/snon95.mp3';
+import sound2 from '../video/sound/snotowel.mp3';
+import sound3 from '../video/sound/snoglass.mp3';
+import sound4 from '../video/sound/snopastic.mp3';
 
 
 class stair12A extends React.Component{
@@ -66,7 +66,7 @@ class stair12A extends React.Component{
     if(data.sound){
       this.setState({playpop:Sound.status.PLAYING,urlSound:data.sound})  
       }
-    setTimeout(this.popupClose(data),2000);
+    setTimeout(this.popupClose(data),4000);
   }
     
   popupClose=data=>()=>{

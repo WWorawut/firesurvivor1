@@ -19,7 +19,7 @@ import {connect} from 'react-redux';
 
 import Sound from 'react-sound';
 import sound from '../video/sound/speakfiredown.mp3';
-import sound1 from '../video/sound/infowalk.mp3';
+import sound1 from '../video/sound/fireoffdab.mp3';
 
   
 class fire extends React.Component {
@@ -73,7 +73,7 @@ class fire extends React.Component {
   if(data.sound){
     this.setState({playpop:Sound.status.PLAYING,urlSound:data.sound})  
     }
-  setTimeout(this.popupClose(data),2000);
+  setTimeout(this.popupClose(data),3000);
 }
     
   popupClose=data=>()=>{

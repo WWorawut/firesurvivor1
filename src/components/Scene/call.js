@@ -15,7 +15,7 @@ import {connect} from 'react-redux';
 import Sound from 'react-sound';
 import sound from '../video/sound/speakfire.mp3';
 
-import sound2 from '../video/sound/infosmoke.mp3';
+import sound2 from '../video/sound/call.mp3';
 
 class call extends React.Component{
   state={
@@ -33,7 +33,7 @@ class call extends React.Component{
     if(data.sound){
       this.setState({playpop:Sound.status.PLAYING,urlSound:data.sound})  
       }
-    setTimeout(this.popupClose(data),2000);
+    setTimeout(this.popupClose(data),2800);
   }
     
   popupClose=data=>()=>{

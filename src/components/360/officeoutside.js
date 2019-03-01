@@ -21,9 +21,9 @@ import c from "../picture2/popscore/popfriend.png";
 import {savescore, enterroom, choosealarm, choosefriend, choosecall, stopTimer} from '../../action'
 import {connect} from 'react-redux';
 
-import sound1 from '../video/sound/infowalk.mp3';
-import sound2 from '../video/sound/infoheat.mp3';
-import sound3 from '../video/sound/infoheat.mp3';
+import sound1 from '../video/sound/outal.mp3';
+import sound2 from '../video/sound/outoffcall.mp3';
+import sound3 from '../video/sound/outofffriend.mp3';
 
 
   
@@ -82,7 +82,7 @@ openpop=data=>()=>{
   if(data.sound){
     this.setState({playpop:Sound.status.PLAYING,urlSound:data.sound})  
     }
-  setTimeout(this.popupClose(data),2000);
+  setTimeout(this.popupClose(data),2700);
 }
   
 popupClose=data=>()=>{

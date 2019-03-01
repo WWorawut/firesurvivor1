@@ -24,9 +24,11 @@ import {connect} from 'react-redux';
 
 import Sound from 'react-sound';
 import sound from '../video/sound/speakfire.mp3';
-import sound2 from '../video/sound/infosmoke.mp3';
-import sound3 from '../video/sound/infowalk.mp3';
-import sound4 from '../video/sound/infoheat.mp3';
+
+import sound2 from '../video/sound/dabbasic.mp3';
+import sound3 from '../video/sound/f37.mp3';
+import sound4 from '../video/sound/f36.mp3';
+import sound5 from '../video/sound/f32.mp3';
 
 
 class fire1 extends React.Component{
@@ -62,7 +64,7 @@ class fire1 extends React.Component{
     if(data.sound){
       this.setState({playpop:Sound.status.PLAYING,urlSound:data.sound})  
       }
-    setTimeout(this.popupClose(data),2000);
+    setTimeout(this.popupClose(data),3000);
   }
 
     
@@ -85,7 +87,7 @@ class fire1 extends React.Component{
     if(data.sound){
     this.setState({playpop:Sound.status.PLAYING,urlSound:data.sound})  
     }
-    setTimeout(this.control(data),5000)
+    setTimeout(this.control(data),2800)
   }
 
 
@@ -187,11 +189,11 @@ class fire1 extends React.Component{
       <div className="boxjangtext">
       <p>สถานการณ์ :</p>
       <p className="texthead">ไมโครเวฟเกิดความร้อนสูงจนเกิดประกายไฟไหม้ ลุกไหม้ผ้าเช็ดโต๊ะ ควรทำเช่นใดเพื่อไม่ให้ไฟลุกลาม?</p>
-      <Button className="buttonjang" onClick={this.openpop({link:'link',score:-3,state:'popup',sound:sound2})}>ดึงปลั๊กไมโครเวฟออก ด้วยมือเปล่า</Button>
+      <Button className="buttonjang" onClick={this.openpop({link:'link',score:-3,state:'popup',sound:sound3})}>ดึงปลั๊กไมโครเวฟออก ด้วยมือเปล่า</Button>
       <br/>
-      <Button className="buttonjang" onClick={this.openpop({link:'link',score:3,state:'popup2',sound:sound3})}>นำสิ่งของรอบๆ ออก</Button>
+      <Button className="buttonjang" onClick={this.openpop({link:'link',score:3,state:'popup2',sound:sound4})}>นำสิ่งของรอบๆ ออก</Button>
       <br/>
-      <Button className="buttonjang" onClick={this.openpop({link:'link',score:-3,state:'popup3',sound:sound4})}>ใช้น้ำราดที่ไมโครเวฟ เพื่อดับเพลิง</Button>
+      <Button className="buttonjang" onClick={this.openpop({link:'link',score:-3,state:'popup3',sound:sound5})}>ใช้น้ำราดที่ไมโครเวฟ เพื่อดับเพลิง</Button>
       </div>
       </div> 
       :

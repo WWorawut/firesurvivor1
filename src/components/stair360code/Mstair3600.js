@@ -22,7 +22,7 @@ import {connect} from 'react-redux';
 import Sound from 'react-sound';
 import sound from '../video/sound/speak360.mp3';
 
-import sound3 from '../video/sound/infowalk.mp3';
+import sound3 from '../video/sound/st360.mp3';
 
 
   
@@ -60,7 +60,7 @@ class Mstair3600 extends React.Component {
       if(data.sound){
         this.setState({playpop:Sound.status.PLAYING,urlSound:data.sound})  
         }
-      setTimeout(this.popupClose(data),2000);
+      setTimeout(this.popupClose(data),3000);
     }
       
     popupClose=data=>()=>{

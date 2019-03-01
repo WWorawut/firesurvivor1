@@ -18,8 +18,8 @@ import {savescore} from '../../action'
 import {connect} from 'react-redux';
 
 import sound from '../video/sound/speakstair.mp3';
-import sound3 from '../video/sound/infowalk.mp3';
-import sound4 from '../video/sound/infoheat.mp3';
+import sound3 from '../video/sound/stwalk.mp3';
+import sound4 from '../video/sound/stwalkorrun.mp3';
 
 class stair19 extends React.Component{
   state={

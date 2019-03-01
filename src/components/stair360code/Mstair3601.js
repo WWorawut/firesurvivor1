@@ -23,8 +23,8 @@ import {connect} from 'react-redux';
 import Sound from 'react-sound';
 import sound from '../video/sound/speakstair.mp3';
 
-import sound3 from '../video/sound/infowalk.mp3';
-import sound4 from '../video/sound/infoheat.mp3';
+import sound3 from '../video/sound/stwalk.mp3';
+import sound4 from '../video/sound/stwalkorrun.mp3';
 
 
   

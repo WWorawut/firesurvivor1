@@ -27,9 +27,9 @@ import {connect} from 'react-redux';
 import Sound from 'react-sound';
 import sound from '../video/sound/speakmanysmoke.mp3';
 
-import sound3 from '../video/sound/infowalk.mp3';
-import sound4 from '../video/sound/infoheat.mp3';
-import sound5 from '../video/sound/infoheat.mp3';
+import sound3 from '../video/sound/stkran.mp3';
+import sound4 from '../video/sound/ststan.mp3';
+import sound5 from '../video/sound/stwalkgood.mp3';
 
 
   
@@ -67,7 +67,7 @@ class Mstair3606 extends React.Component {
       if(data.sound){
         this.setState({playpop:Sound.status.PLAYING,urlSound:data.sound})  
         }
-      setTimeout(this.popupClose(data),2000);
+      setTimeout(this.popupClose(data),3300);
     }
         
       popupClose=data=>()=>{

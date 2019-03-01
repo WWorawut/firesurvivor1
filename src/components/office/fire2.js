@@ -24,9 +24,11 @@ import Sound from 'react-sound';
 import sound from '../video/sound/speakfire.mp3';
 
 import dab from "../picture2/popscore/dab.png";
-import sound2 from '../video/sound/infosmoke.mp3';
-import sound3 from '../video/sound/infowalk.mp3';
-import sound4 from '../video/sound/infoheat.mp3';
+
+import sound2 from '../video/sound/dabbasic.mp3';
+import sound3 from '../video/sound/f36.mp3';
+import sound4 from '../video/sound/f32.mp3';
+import sound5 from '../video/sound/f32.mp3';
 
 
 class fire2 extends React.Component{
@@ -63,7 +65,7 @@ class fire2 extends React.Component{
     if(data.sound){
       this.setState({playpop:Sound.status.PLAYING,urlSound:data.sound})  
       }
-    setTimeout(this.popupClose(data),2000);
+    setTimeout(this.popupClose(data),2800);
   }
     
   popupClose=data=>()=>{
@@ -83,7 +85,7 @@ class fire2 extends React.Component{
               if(data.sound){
               this.setState({playpop:Sound.status.PLAYING,urlSound:data.sound})  
               }
-              setTimeout(this.control(data),2000)
+              setTimeout(this.control(data),2800)
             }
 
 
@@ -186,11 +188,11 @@ class fire2 extends React.Component{
         <div className="boxjangtext">
         <p>สถานการณ์ :</p>
         <p className="texthead">สายไฟบริเวณหิ้งพระที่เก่ามากจนหลอมละลาย เกิดประกายไฟไหม้กระดาษต่างๆ บนโต๊ะ ควรทำเช่นใดเพื่อไม่ให้ไฟลุกลาม?</p>
-        <Button className="buttonjang" onClick={this.openpop({link:'link',score:3,state:'popup',sound:sound2})}>นำสิ่งของรอบๆ ออก</Button>
+        <Button className="buttonjang" onClick={this.openpop({link:'link',score:3,state:'popup',sound:sound3})}>นำสิ่งของรอบๆ ออก</Button>
         <br/>
-        <Button className="buttonjang" onClick={this.openpop({link:'link',score:-3,state:'popup2',sound:sound3})}>ใช้น้ำราดไปที่สายไฟ เพื่อดับเพลิง</Button>
+        <Button className="buttonjang" onClick={this.openpop({link:'link',score:-3,state:'popup2',sound:sound4})}>ใช้น้ำราดไปที่สายไฟ เพื่อดับเพลิง</Button>
         <br/>
-        <Button className="buttonjang" onClick={this.openpop({link:'link',score:-3,state:'popup3',sound:sound4})}>ดึงปลั๊กไฟด้วยมือเปล่า</Button>
+        <Button className="buttonjang" onClick={this.openpop({link:'link',score:-3,state:'popup3',sound:sound5})}>ดึงปลั๊กไฟด้วยมือเปล่า</Button>
         </div>
         </div>
       :

@@ -25,9 +25,9 @@ import {connect} from 'react-redux';
 import Sound from 'react-sound';
 import sound from '../video/sound/speakstair.mp3';
 
-import sound3 from '../video/sound/infowalk.mp3';
-import sound4 from '../video/sound/infoheat.mp3';
-import sound5 from '../video/sound/infoheat.mp3';
+import sound3 from '../video/sound/runlr.mp3';
+import sound4 from '../video/sound/runwall.mp3';
+import sound5 from '../video/sound/runst.mp3';
 
 
   
@@ -64,7 +64,7 @@ class stair3603 extends React.Component {
       if(data.sound){
         this.setState({playpop:Sound.status.PLAYING,urlSound:data.sound})  
         }
-      setTimeout(this.popupClose(data),2000);
+      setTimeout(this.popupClose(data),3800);
     }
         
       popupClose=data=>()=>{
