@@ -94,7 +94,7 @@ class preexam2 extends React.Component {
 //   activeKey={this.state.pointKey}  activeKey='11'
     return ( 
     <div>   
-        <Tabs tabPosition="bottom" tabBarStyle={{display:'none'}} className="detailexam" activeKey={this.state.pointKey} >  
+        <Tabs tabPosition="bottom" tabBarStyle={{display:'none'}} className="detailpreexam" activeKey={this.state.pointKey} >  
  
         <TabPane tab="1" key="1" >
         <div className="typeexambox">

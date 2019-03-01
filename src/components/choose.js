@@ -4,7 +4,11 @@ import { Icon } from 'antd';
 import { BrowserRouter as  Link,Redirect } from 'react-router-dom';
 
 import Sound from 'react-sound';
-import sound from './video/sound/infoescape.mp3';
+import sound2 from './video/sound/infoescape.mp3';
+
+import {connect} from 'react-redux';
+
+import bgsound from './video/sound/choose.mp3';
 
 
 class choose extends React.Component{
@@ -13,6 +17,7 @@ class choose extends React.Component{
     this.state = { 
     link:false,
     playStatus:Sound.status.STOPPED,
+    playpop:Sound.status.STOPPED,
     urlSound:""
     }
   }
@@ -34,16 +39,30 @@ class choose extends React.Component{
     this.setState({playStatus:Sound.status.STOPPED})
   }
 
+  componentDidMount(){ 
+    setTimeout(this.soundOn,1000);
+  }
+  soundOn=()=>{
+    this.setState({playStatus:Sound.status.PLAYING})
+  }
+
     render() {
       return (
         <div>
 
       <Sound
-        url={sound}
+        url={bgsound}
         volume={this.props.sound === false?0:100}
         playStatus={this.state.playStatus}
         onFinishedPlaying={() => this.setState({ playStatus: Sound.status.STOPPED })}
       /> 
+
+      <Sound
+        url={this.state.urlSound}
+        volume={this.props.sound === false?0:100}
+        playStatus={this.state.playpop}
+        onFinishedPlaying={() => this.setState({ playpop: Sound.status.STOPPED })}
+      />
             
           <div className="bgchoose">
 
@@ -53,7 +72,7 @@ class choose extends React.Component{
 
                     <div className="container">
                             <div className="col-sm">
-                            <div className="boxx2" onMouseOver={this.hoversound({sound:sound})} onMouseOut={this.hoversoundoff} >เรียนรู้การแจ้งเหตุ</div>
+                            <div className="boxx2" >เรียนรู้การแจ้งเหตุ</div>
                             </div>
                             <div className="col-sm">
                             <div className="boxx2">เรียนรู้การระงับเหตุ</div>
@@ -69,12 +88,12 @@ class choose extends React.Component{
                             <div onClick={this.preexam} className="boxx3">แบบทดสอบก่อนเรียน</div>
                             </div>
                             <div className="col">
-                            <div className="boxx3">GALLERY</div>
+                            <div className="boxx3">Fire Survivor Guide</div>
                             </div>
                         </div>
-
+{/* 
             
-
+                        <div className="boxx2" onMouseOver={this.hoversound({sound:sound2})} onMouseOut={this.hoversoundoff} >เรียนรู้การแจ้งเหตุ</div> */}
 
 {/* 
             <div className="sm col-3">
@@ -116,4 +135,8 @@ class choose extends React.Component{
     }
   }
   
-  export default choose;
+  const connectscore = state => ({
+    sound:state.sound
+    })
+    
+    export default connect(connectscore)(choose);

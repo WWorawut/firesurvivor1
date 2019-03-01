@@ -3,14 +3,25 @@ import Examchoice from './Examchoice';
 import logoexam from "../picture/logopreexam.svg";
 import { BackTop, notification, Modal, Button } from 'antd';
 import { BrowserRouter as   Link, Redirect } from 'react-router-dom';
+import {connect} from 'react-redux';
+import Sound from 'react-sound';
+import bgsound from '../video/sound/pretest.mp3';
 
 import '../css/exam.css';
 import 'antd/dist/antd.css'
 
 class preexam extends React.Component {
     state = { 
-      link:false
+      link:false,
+      playStatus:Sound.status.STOPPED
     };
+
+    componentDidMount(){ 
+      setTimeout(this.soundOn,1000);
+    }
+    soundOn=()=>{
+      this.setState({playStatus:Sound.status.PLAYING})
+    }
   
 
     next=()=>{this.setState({ link:true })}
@@ -18,6 +29,16 @@ class preexam extends React.Component {
 
   render() {
     return (
+
+      <div>
+      <Sound
+        url={bgsound}
+        volume={this.props.sound === false?0:100}
+        playStatus={this.state.playStatus}
+        onFinishedPlaying={() => this.setState({ playStatus: Sound.status.STOPPED })}
+      />  
+
+
     <div className="font">
         <div className="coverpreexam">
         <div className="coverprelogo">
@@ -31,9 +52,14 @@ class preexam extends React.Component {
         </div>
       
       </div>
+      </div>
 
     );
   }
 }
 
-export default preexam;
+const connectscore = state => ({
+  sound:state.sound
+  })
+  
+  export default connect(connectscore)(preexam);

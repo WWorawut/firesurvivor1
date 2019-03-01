@@ -12,7 +12,7 @@ import {savescore,choosealarm} from '../../action'
 import {connect} from 'react-redux';
 
 import Sound from 'react-sound';
-import sound from '../video/sound/speakfire.mp3';
+import sound from '../video/sound/qalar1.mp3';
 import sound2 from '../video/sound/algod.mp3';
 import sound3 from '../video/sound/alnogod.mp3';
 
@@ -24,6 +24,13 @@ class alarm extends React.Component{
     playStatus:Sound.status.STOPPED,
     playpop:Sound.status.STOPPED,
     urlSound:""
+  }
+
+  componentDidMount(){ 
+    setTimeout(this.soundOn,1000);
+  }
+  soundOn=()=>{
+    this.setState({playStatus:Sound.status.PLAYING})
   }
 
   openpop=data=>()=>{

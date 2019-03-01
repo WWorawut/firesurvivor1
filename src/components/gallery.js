@@ -27,10 +27,6 @@ class gallery extends React.Component{
             
           <div className="bggallery">
 
-          <div className="header">Infographic</div>
-          
-          <div className="header">Infographic</div>
-
 
     
 

@@ -119,6 +119,12 @@ style={{color:"white"}}
     height: 100vh;
 }
 
+.detailpreexam{
+    background-image: url("../picture/bgpreexam.png");
+    background-size: cover;
+    height: 100vh;
+}
+
 .typeexambox{
     height: 70vh;
     width: 70%;

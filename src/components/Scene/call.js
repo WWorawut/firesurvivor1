@@ -13,7 +13,7 @@ import {savescore,choosecall} from '../../action'
 import {connect} from 'react-redux';
 
 import Sound from 'react-sound';
-import sound from '../video/sound/speakfire.mp3';
+import sound from '../video/sound/qcall.mp3';
 
 import sound2 from '../video/sound/call.mp3';
 
@@ -25,6 +25,14 @@ class call extends React.Component{
     playpop:Sound.status.STOPPED,
     urlSound:""
   }
+
+  componentDidMount(){ 
+    setTimeout(this.soundOn,1000);
+  }
+  soundOn=()=>{
+    this.setState({playStatus:Sound.status.PLAYING})
+  }
+
 
 
   openpop=data=>()=>{

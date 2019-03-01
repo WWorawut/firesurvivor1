@@ -36,6 +36,7 @@ import Mheat360 from './Infographic/Mheat360';
 import heat from './Infographic/heat'; 
 import heat360 from './Infographic/heat360'; 
 import escape from './Infographic/escape'; 
+import Mescape from './Infographic/Mescape'; 
 import usetung from './Infographic/usetung'; 
 
 import restroom from './Scene/toilet';
@@ -140,7 +141,7 @@ class App extends React.Component{
     this.state = { 
       clickedSound:true,
       secondsElapsed: 0, 
-      layStatus:Sound.status.STOPPED,
+      playStatus:Sound.status.STOPPED,
       clock:0
     };
   }
@@ -300,7 +301,8 @@ class App extends React.Component{
       {path:"/Mheat",component:Mheat,timer:false,scoreSetting:false},
       {path:"/Mheat360",component:Mheat360,timer:false,scoreSetting:false},
       {path:"/Mwalk",component:Mwalk,timer:false,scoreSetting:false},
-      {path:"/Mwalk360",component:Mwalk360,timer:false,scoreSetting:false}]
+      {path:"/Mwalk360",component:Mwalk360,timer:false,scoreSetting:false},
+      {path:"/Mescape",component:Mescape,timer:false,scoreSetting:false},]
       
     const timer =(    
     <div className="time">

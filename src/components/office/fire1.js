@@ -30,6 +30,8 @@ import sound3 from '../video/sound/f37.mp3';
 import sound4 from '../video/sound/f36.mp3';
 import sound5 from '../video/sound/f32.mp3';
 
+import sound00 from '../video/sound/qnicro.mp3';
+
 
 class fire1 extends React.Component{
   state={

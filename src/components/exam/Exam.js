@@ -4,13 +4,25 @@ import logoexam from "../picture/logoexam.svg";
 import { BackTop, notification, Modal, Button } from 'antd';
 import { BrowserRouter as   Link, Redirect } from 'react-router-dom';
 
+import {connect} from 'react-redux';
+import Sound from 'react-sound';
+import bgsound from '../video/sound/posttest.mp3';
+
 import '../css/exam.css';
 import 'antd/dist/antd.css'
 
 class Exam extends React.Component {
     state = { 
-      link:false
+      link:false,
+      playStatus:Sound.status.STOPPED
     };
+
+    componentDidMount(){ 
+      setTimeout(this.soundOn,1000);
+    }
+    soundOn=()=>{
+      this.setState({playStatus:Sound.status.PLAYING})
+    }
   
 
     next=()=>{this.setState({ link:true })}
@@ -18,6 +30,15 @@ class Exam extends React.Component {
 
   render() {
     return (
+      <div>
+      <Sound
+      url={bgsound}
+      volume={this.props.sound === false?0:100}
+      playStatus={this.state.playStatus}
+      onFinishedPlaying={() => this.setState({ playStatus: Sound.status.STOPPED })}
+    />  
+
+
     <div className="font">
         <div className="coverexam">
         <div className="coverlogo">
@@ -30,9 +51,14 @@ class Exam extends React.Component {
         </div>
       
       </div>
+      </div>
 
     );
   }
 }
 
-export default Exam;
+const connectscore = state => ({
+  sound:state.sound
+  })
+  
+  export default connect(connectscore)(Exam);
