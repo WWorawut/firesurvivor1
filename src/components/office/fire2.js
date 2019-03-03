@@ -28,7 +28,7 @@ import dab from "../picture2/popscore/dab.png";
 import sound2 from '../video/sound/dabbasic.mp3';
 import sound3 from '../video/sound/f36.mp3';
 import sound4 from '../video/sound/f32.mp3';
-import sound5 from '../video/sound/f32.mp3';
+import sound5 from '../video/sound/fpuck.mp3';
 
 
 class fire2 extends React.Component{

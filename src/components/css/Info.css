@@ -42,6 +42,12 @@
     overflow-y: hidden;
     background-position: center;
 }
+.Mbgescape{
+    background-image: url("../picture/mescape.png");
+    background-size: cover;
+    overflow-y: hidden;
+    background-position: center;
+}
 .bgwalkinfo{
     background-image: url("../picture/bgwalk.png");
     background-size: cover;

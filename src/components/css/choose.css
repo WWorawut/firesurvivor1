@@ -86,3 +86,26 @@ body{
     padding-left: 5.5%;
     padding-right: 5.5%;
 }
+
+.logout1{
+    position: absolute;
+    top: 10px;
+    color: rgb(177, 177, 177) !important;
+    border-color: rgb(177, 177, 177) !important;
+    height: 40px !important;
+}.logout1:hover{
+    color: white !important;
+    border-color: white !important;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .logout1{
+        height: 30px !important;
+        font-size: 10px !important;
+        padding-left: 8px !important;
+    }
+    .log{
+        display: none !important;
+    }
+    }

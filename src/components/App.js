@@ -114,6 +114,8 @@ import Mstair36011 from './stair360code/Mstair36011';
 import Mstair36012 from './stair360code/Mstair36012';
 import Mstair36013 from './stair360code/Mstair36013';
 
+import modejanghad from './360/modejanghad';
+
 
 import intro from './video/IntroMP4';
 
@@ -302,7 +304,9 @@ class App extends React.Component{
       {path:"/Mheat360",component:Mheat360,timer:false,scoreSetting:false},
       {path:"/Mwalk",component:Mwalk,timer:false,scoreSetting:false},
       {path:"/Mwalk360",component:Mwalk360,timer:false,scoreSetting:false},
-      {path:"/Mescape",component:Mescape,timer:false,scoreSetting:false},]
+      {path:"/Mescape",component:Mescape,timer:false,scoreSetting:false},
+    
+      {path:"/modejanghad",component:modejanghad,timer:false,scoreSetting:false},]
       
     const timer =(    
     <div className="time">

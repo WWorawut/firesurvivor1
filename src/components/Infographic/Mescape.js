@@ -27,7 +27,7 @@ class Mescape extends React.Component{
   }
 
   close=()=>{this.setState({ link:true })}
-  Redirect=()=>{if(this.state.link){ return <Redirect to="/choose" /> }}
+  Redirect=()=>{if(this.state.link){ return <Redirect to="/modeescape" /> }}
 
     render() {
       return (
@@ -42,7 +42,7 @@ class Mescape extends React.Component{
 {/* <h1 >{formattedSeconds(this.props.time)}</h1> */}
 
 
-        <div className="bgescape">
+        <div className="Mbgescape">
         <div className="bgtypeinfo animated fadeIn ">
           <div className="typeinfo escape">
           {this.Redirect()}

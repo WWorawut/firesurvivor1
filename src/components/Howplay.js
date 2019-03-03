@@ -14,7 +14,7 @@ class Howplay extends React.Component{
   }
 
   close=()=>{this.setState({ link:true })}
-  Redirect=()=>{if(this.state.link){ return <Redirect to="/office"/> }}
+  Redirect=()=>{if(this.state.link){ return <Redirect to="/choose"/> }}
 
     render() {
       return (

@@ -31,8 +31,8 @@ constructor(props){
   render() {
     if(this.state.link){ return <Redirect to="/intro" /> }
     return (
-        <div className="dddd">
-          <Player 
+        <div className="dddd cd">
+          {/* <Player 
             ref="player"
             autoPlay
             playsInline={true}
@@ -41,7 +41,7 @@ constructor(props){
             >
             <source src={intro} />
             <ControlBar autoHide={false} disableDefaultControls></ControlBar>
-            </Player> 
+            </Player>  */}
         <div className="bgbbbb">
         <div className="fontlog"> 
 

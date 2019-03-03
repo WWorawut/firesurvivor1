@@ -5,8 +5,7 @@
     font-size: 25px;
     color: rgb(255, 38, 38);
     cursor: pointer;
-}
-.closepop:hover{
+}.closepop:hover{
     color: rgb(160, 81, 81);
 }
 
@@ -15,8 +14,7 @@
     padding-left: 3px;
     bottom: 20px;
     left: 50px;
-}
-.out:hover{
+}.out:hover{
     color: gray;
     border-color: gray;
 }
@@ -26,9 +24,16 @@
     width: 4%;
     display: flex;
     margin: auto;
-}
-.gobutton:hover{
+}.gobutton:hover{
     cursor: pointer;
     width: 4.5%;
 }
 
+
+@media only screen and (max-width: 768px) {
+    .out{
+        font-size: 12px !important;
+        left: 20px !important;
+        height: 30px;
+    }
+    }
