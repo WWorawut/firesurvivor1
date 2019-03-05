@@ -9,6 +9,7 @@ import Sound from 'react-sound';
 import bgsound from '../video/sound/posttest.mp3';
 
 import '../css/exam.css';
+import '../css/login.css';
 import 'antd/dist/antd.css'
 
 class Exam extends React.Component {
@@ -41,7 +42,7 @@ class Exam extends React.Component {
 
     <div className="font">
         <div className="coverexam">
-        <div className="coverlogo">
+        <div className="coverlogo animated bounce">
         <img src={logoexam}/>
         <div className="text-center" style={{marginTop:'12px',}}>
         {this.Redirect()}

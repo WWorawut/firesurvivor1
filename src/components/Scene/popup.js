@@ -25,7 +25,7 @@ class AlertDialogSlide extends React.Component {
         <Dialog
           open={this.props.open}
           TransitionComponent={Transition}
-          maxWidth='xs'
+          maxWidth={this.props.maxWidth === false? 'xs' : this.props.maxWidth}
           keepMounted
           onClose={this.props.close}
           aria-labelledby="alert-dialog-slide-title"

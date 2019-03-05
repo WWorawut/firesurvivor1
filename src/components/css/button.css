@@ -3,10 +3,10 @@
     right: 10px;
     top:10px;
     font-size: 25px;
-    color: rgb(255, 38, 38);
+    color: rgb(160, 81, 81);
     cursor: pointer;
 }.closepop:hover{
-    color: rgb(160, 81, 81);
+    color:rgb(168, 168, 168);
 }
 
 .out{

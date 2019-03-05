@@ -2,7 +2,7 @@ import React, {} from 'react';
 import Sound from 'react-sound';
 import './App.css';
 import './css/setting.css';
-import { Icon } from 'antd';
+import { Icon,Modal, Button } from 'antd';
 import {connect} from 'react-redux';
 
 import Loginscreen from './Loginscreen';
@@ -119,14 +119,14 @@ import modejanghad from './360/modejanghad';
 
 import intro from './video/IntroMP4';
 
-import { BrowserRouter as  Router, Route,Link} from 'react-router-dom';
+import { BrowserRouter as  Router, Route,Link,Redirect} from 'react-router-dom';
 
 
 import bgsound from './video/file/s2.mp3';
 
 import preload from './preload';
 
-import {time,closeSound, user} from './../action'
+import {time,closeSound, stopTimer,savescore} from './../action'
 
 
 
@@ -137,6 +137,7 @@ const formattedSeconds = (sec) =>
   
 
 
+
 class App extends React.Component{
   constructor(props) {
     super(props);
@@ -144,8 +145,34 @@ class App extends React.Component{
       clickedSound:true,
       secondsElapsed: 0, 
       playStatus:Sound.status.STOPPED,
-      clock:0
+      clock:0,
+      visible: false
     };
+  }
+
+  showModal = () => {
+    this.setState({
+      visible: true,
+    });
+  }
+
+  hideModal = () => {
+    this.setState({
+      visible: false,
+    });
+  }
+  okModal = () => {
+    this.setState({
+      redirect: true,
+    });
+  }
+
+  Redirect=()=>{
+    if(this.state.redirect){
+      this.setState({visible:false, redirect: false,secondsElapsed:0}); 
+      this.props.dispatch(savescore(-this.props.score));
+      this.props.dispatch(stopTimer(false));
+      return <Redirect to="/choose"/> }
   }
 
   //เงื่อนไขการ show
@@ -171,8 +198,6 @@ class App extends React.Component{
     }
   }
 
-
-  
   //sound
   clickedSound=()=>{
     this.setState({
@@ -186,8 +211,13 @@ class App extends React.Component{
     this.setState({playStatus:Sound.status.PLAYING})
   }
 // gg=()=>{this.props.dispatch(time(formattedSeconds(this.state.secondsElapsed)));}
-  
+
+
+
   render() {
+
+
+
     //sound
     let sound;
     if(this.state.clickedSound===true){
@@ -200,14 +230,14 @@ class App extends React.Component{
       {path:"/intro",component:intro,timer:false,openSound:false,scoreSetting:false,soundSetting:false},
       {path:"/finalend",component:finalend,timer:false,openSound:false,scoreSetting:false,soundSetting:false},
       {path:"/exam",component:exam,timer:false,scoreSetting:false},
-      {path:"/exam2",component:exam2,timer:false,scoreSetting:false},
+      {path:"/exam2",component:exam2,timer:false,scoreSetting:false,home:false},
       {path:"/preexam",component:preexam,timer:false,scoreSetting:false},
-      {path:"/preexam2",component:preexam2,timer:false,scoreSetting:false},
+      {path:"/preexam2",component:preexam2,timer:false,scoreSetting:false,home:false},
       {path:"/howtoplay",component:howtoplay,timer:false,scoreSetting:false},
       {path:"/share",component:share,timer:false,scoreSetting:false},
 
-      {path:"/choose",component:choose,timer:false,scoreSetting:false},
-      {path:"/gallery",component:gallery,timer:false,scoreSetting:false},
+      {path:"/choose",component:choose,timer:false,scoreSetting:false,home:false},
+      {path:"/gallery",component:gallery,timer:false,scoreSetting:false,home:false},
 
       {path:"/typeA",component:typeA,timer:false,scoreSetting:false},
 
@@ -252,7 +282,7 @@ class App extends React.Component{
       {path:"/officeoutside",component:officeoutside},
       {path:"/office",component:office,timer:false},
 
-      {path:"/stair3600",component:stair3600},
+      {path:"/stair3600",component:stair3600,timer:true},
       {path:"/stair3601",component:stair3601},
       {path:"/stair3602",component:stair3602},
       {path:"/stair3603",component:stair3603},
@@ -353,18 +383,44 @@ class App extends React.Component{
         <div id="bar-6" className={sound}></div>
       </div>
       );
+
+      const home =(
+        <div className="home">
+          <Icon type="home"  onClick={this.showModal}/>
+        </div>
+      );
+
+
+
       
     return (
       <div>
+
+        <Modal
+          title={<p  style={{fontSize:'20px'}}><Icon type="question-circle" style={{color:'orange',fontSize:'30px',paddingRight:'15px'}}/>คุณต้องการกลับไปหน้าแรกใช่หรือไม่ ?</p>}
+          content={false}
+          visible={this.state.visible}
+          onOk={this.okModal}
+          onCancel={this.hideModal}
+          okText="ตกลง"
+          cancelText="ยกเลิก"
+          closable={false}
+          style={{fontFamily:'Kanit',display:'flex',justifyContent:'center',alignItems:'center',height:'70%'}}
+          bodyStyle={{padding:'0px', }}
+        >
+        </Modal>
+
+
       <Router>
       <div>        
-
+{this.Redirect()}
         <Route exact path="/" component={Loginscreen} />
         {path.map((path) =><Route path={path.path} component={path.component} /> )}
         {path.map((path) =>path.timer === false ?null:<Route path={path.path} render={()=>timer} />)}
         {path.map((path) =>path.openSound === false ?null: <Route path={path.path} render={()=>openSound} /> )}
         {path.map((path) =>path.scoreSetting === false ?null: <Route path={path.path} render={()=>scoreSetting} /> )}
         {path.map((path) =>path.soundSetting === false ?null: <Route path={path.path} render={()=>soundSetting} /> )}
+        {path.map((path) =>path.home === false ?null: <Route path={path.path} render={()=>home} /> )}
 
       </div>
     </Router>

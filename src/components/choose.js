@@ -1,5 +1,6 @@
 import React, {} from 'react';
 import './css/choose.css';
+import './css/login.css';
 
 import { Icon, Button } from 'antd';
 import { Link,Redirect } from 'react-router-dom';
@@ -10,6 +11,8 @@ import sound2 from './video/sound/infoescape.mp3';
 import {connect} from 'react-redux';
 
 import bgsound from './video/sound/choose.mp3';
+
+import logo from "./picture2/c11.png";
 
 
 class choose extends React.Component{
@@ -33,7 +36,7 @@ class choose extends React.Component{
     if(this.state.link){ return <Redirect to="/preexam"/> }
     if(this.state.link2){ return <Redirect to="/office"/> }
     if(this.state.link4){ return <Redirect to="/gallery"/> }
-    if(this.state.link3){ return <Redirect to="/mescape"/> }
+    if(this.state.link3){ return <Redirect to="/modeescape"/> }
     if(this.state.link5){ return <Redirect to="/modejanghad"/> }
   }
 
@@ -74,7 +77,34 @@ class choose extends React.Component{
 
             <div className="boxboxchoose">
             <p className="textchoose">เลือกสถานการณ์การเรียนรู้</p>
-            <div className="boxx1" onClick={this.full}> เรียนรู้ตามเนื้อเรื่อง </div>
+
+            <div>
+            {this.Redirect()}
+                  <div className="row animated jackInTheBox">
+                    <div className="col-7">
+                    <div className="b1 bb1" onClick={this.full}><img className="c" src={logo}/> <p>เรียนรู้ตามเนื้อเรื่อง</p> </div>
+                    <div className="b2 bb2" onClick={this.preexam} style={{marginTop:'15px'}}> แบบทดสอบก่อนเรียน </div>
+                    </div>
+                    
+                    <div className="col-5">
+                    <div className="b2 bb3" onClick={this.dab} >พบเหตุและระงับเหตุ</div>
+                    <div className="b2 bb4" onClick={this.janghad} style={{marginTop:'10px'}}>แจ้งเหตุ</div>
+                    <div className="b2 bb5" onClick={this.escape} style={{marginTop:'10px'}}>หนีเหตุ</div>
+                    <div className="b2 bb6" onClick={this.tip} style={{marginTop:'10px'}}>Fire Survivor Guide</div>
+                    </div>
+                  </div>
+                </div>
+
+
+                
+
+
+
+
+
+
+
+            {/* <div className="boxx1" onClick={this.full}> เรียนรู้ตามเนื้อเรื่อง </div>
 
                     <div className="container">
                             <div className="col-sm">
@@ -96,7 +126,7 @@ class choose extends React.Component{
                             <div className="col">
                             <div className="boxx3" onClick={this.tip}>Fire Survivor Guide</div>
                             </div>
-                        </div>
+                        </div> */}
 {/* 
             
                         <div className="boxx2" onMouseOver={this.hoversound({sound:sound2})} onMouseOut={this.hoversoundoff} >เรียนรู้การแจ้งเหตุ</div> */}

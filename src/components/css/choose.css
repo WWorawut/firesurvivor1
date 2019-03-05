@@ -11,8 +11,8 @@ body{
 }
 
 .boxboxchoose{
-    /* background-color:white; */
-    width: 50%;
+    /* background-color:black; */
+    width: 40%;
     height: 75vh;
     position: absolute;
     right: 8%;
@@ -25,7 +25,7 @@ body{
     color: white;
 }
 
-
+/* 
 .boxx1{
     background-color: rgb(197, 197, 197);
     margin: auto;
@@ -76,7 +76,7 @@ body{
     cursor: pointer;
     box-shadow: 3px 4px 10px rgba(255, 255, 255, 0.589);
     font-size:1.4vw;
-}
+} */
 
 .col-sm{
     padding-left: 2%;
@@ -97,6 +97,75 @@ body{
     color: white !important;
     border-color: white !important;
 }
+
+
+.b1{
+    background-color: rgb(197, 197, 197);
+    width: 100%;
+    height: 47vh;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size:1.3vw;
+    margin:auto;
+    color: white;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+}.b1:hover{
+    cursor: pointer;
+    box-shadow: 3px 4px 10px rgba(0, 0, 0, 0.589);
+    font-size:1.4vw;
+}
+
+.b2{
+    font-size:1.3vw;
+    background-color: rgb(197, 197, 197);
+    width: 100%;
+    height: 15vh;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+}
+.b2:hover{
+    cursor: pointer;
+    box-shadow: 3px 4px 10px rgba(0, 0, 0, 0.589);
+    font-size:1.4vw;
+}
+
+.bb1{
+    background-image: url("../picture2/c1.png");
+}
+.bb2{
+    background-image: url("../picture2/c2.png");
+}
+.bb3{
+    background-image: url("../picture2/c3.png");
+}
+.bb4{
+    background-image: url("../picture2/c4.png");
+}
+.bb5{
+    background-image: url("../picture2/c5.png");
+}
+.bb6{
+    background-image: url("../picture2/c6.png");
+}
+
+.c{
+    width: 15%;
+    line-height: 20%;
+}
+
+
 
 
 @media only screen and (max-width: 768px) {

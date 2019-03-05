@@ -14,6 +14,10 @@
     z-index: 1;
 }
 
+body{
+  font-family: 'Kanit', sans-serif;
+}
+
 .mock{
     /* box-shadow: 2px 3px 10px rgb(24, 20, 32); */
     border-radius: 3%;
@@ -210,6 +214,20 @@ label {
   padding-bottom: 3px;
 }
 
+
+.home{
+  display: flexd;
+  position: absolute;
+  bottom: 18px;
+  right: 80px;
+  color: rgba(131, 131, 131, 0.884);
+  z-index: 5;
+  font-size: 25px;
+}.home:hover{
+  cursor: pointer;
+  color: white;
+}
+
   
 
 
@@ -218,7 +236,11 @@ label {
 
 @media only screen and (max-width: 1024px) {
 .bgtypemock{
-    width: 23%;
+    width: 27%;
+    height: 20vh;
+}
+.mock{
+  height: 20vh;
 }
 
 .name{
@@ -241,5 +263,11 @@ label {
 }
 .timer {
   font-size: 1rem;
+}
+
+.home{
+  bottom: 18px;
+  right: 70px;
+  font-size: 23px;
 }
 }

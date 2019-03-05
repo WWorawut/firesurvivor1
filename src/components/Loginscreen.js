@@ -8,12 +8,16 @@ import intro from "./video/file/ae.mp4";
 import {connect} from 'react-redux';
 import { BrowserRouter as  Link,Redirect } from 'react-router-dom';
 
+import Lottie from 'react-lottie';
+import animationData from './animate/data.json'
+
 import {takeuser} from './../action'
 
 class Loginscreen extends React.Component {
 constructor(props){
   super(props);
   this.state={
+    value:""
   }
 }
 
@@ -29,9 +33,30 @@ constructor(props){
   }
 
   render() {
+
+    const defaultOptions = {
+      loop: true,
+      autoplay: true, 
+      animationData: animationData,
+      rendererSettings: {
+        preserveAspectRatio: 'xMidYMid slice'
+      }
+    };
+
+
+
     if(this.state.link){ return <Redirect to="/intro" /> }
     return (
-        <div className="dddd cd">
+        <div className="dddd">
+
+          <Lottie options={defaultOptions}
+              height={"100vh"}
+              width={"100%"}
+              style={{position:'absolute'}}/>
+
+
+
+
           {/* <Player 
             ref="player"
             autoPlay

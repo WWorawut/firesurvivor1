@@ -4,7 +4,7 @@ body{
 }
 
 .bggallery{
-    background-image: url("../picture2/bgguide1.png");
+    background-image: url("../picture2/bg1.png");
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -38,3 +38,4 @@ body{
     justify-content: center;
     align-items: center;
 } */
+

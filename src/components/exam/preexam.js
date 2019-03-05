@@ -6,6 +6,7 @@ import { BrowserRouter as   Link, Redirect } from 'react-router-dom';
 import {connect} from 'react-redux';
 import Sound from 'react-sound';
 import bgsound from '../video/sound/pretest.mp3';
+import '../css/login.css';
 
 import '../css/exam.css';
 import 'antd/dist/antd.css'
@@ -41,7 +42,7 @@ class preexam extends React.Component {
 
     <div className="font">
         <div className="coverpreexam">
-        <div className="coverprelogo">
+        <div className="coverprelogo animated bounce">
         <img src={logoexam}/>
         <div className="text-center" style={{marginTop:'12px',}}>
         {this.Redirect()}
