@@ -34,7 +34,7 @@ constructor(props){
 
   render() {
 
-    const defaultOptions = {
+    const loginvideo = {
       loop: true,
       autoplay: true, 
       animationData: animationData,
@@ -49,7 +49,7 @@ constructor(props){
     return (
         <div className="dddd">
 
-          <Lottie options={defaultOptions}
+          <Lottie options={loginvideo}
               height={"100vh"}
               width={"100%"}
               style={{position:'absolute'}}/>

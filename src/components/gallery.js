@@ -95,27 +95,27 @@ class gallery extends React.Component{
               { image: pp4, sound:ss4 , shape: "circle", coords: [1200, 600, 90 ], fillColor:"rgba(0, 0, 0, 0)"},
               { image: pp5, sound:ss5 , shape: "circle", coords: [950, 530, 80 ], fillColor:"rgba(0, 0, 0, 0)"},
               { image: pp6, sound:ss6 , shape: "circle", coords: [610, 550, 80 ], fillColor:"rgba(0, 0, 0, 0)"},
-              { image: pp7, sound:ss7 , shape: "circle", coords: [300, 450, 100 ], fillColor:"rgba(0, 0, 0, 0)"},
+              { image: pp7, sound:ss7 , shape: "circle", coords: [350, 450, 100 ], fillColor:"rgba(0, 0, 0, 0)"},
               { image: pp8, sound:ss8 , shape: "circle", coords: [510, 270, 80 ], fillColor:"rgba(0, 0, 0, 0)"},
               { image: pp9, sound:ss9 , shape: "circle", coords: [800, 180, 90 ], fillColor:"rgba(0, 0, 0, 0)"},
             ]
         }    
       }
       if(window.innerWidth >=1366 && window.innerWidth <= 1919){
-        width=1200;
+        width=1050;
         popwidth='md'
         map ={
           name: "my-map",
           areas: [
-              { image: pp1, sound:ss1 , shape: "circle", coords: [170, 600, 100 ], fillColor:"rgba(0, 0, 0, 0)"},
-              { image: pp2, sound:ss2 , shape: "circle", coords: [570, 600, 80 ], fillColor:"rgba(0, 0, 0, 0)"},
-              { image: pp3, sound:ss3 , shape: "circle", coords: [870, 600, 70 ], fillColor:"rgba(0, 0, 0, 0)"},
-              { image: pp4, sound:ss4 , shape: "circle", coords: [1000, 480, 90 ], fillColor:"rgba(0, 0, 0, 0)"},
-              { image: pp5, sound:ss5 , shape: "circle", coords: [770, 430, 70 ], fillColor:"rgba(0, 0, 0, 0)"},
-              { image: pp6, sound:ss6 , shape: "circle", coords: [510, 430, 80 ], fillColor:"rgba(0, 0, 0, 0)"},
-              { image: pp7, sound:ss7 , shape: "circle", coords: [250, 350, 100 ], fillColor:"rgba(0, 0, 0, 0)"},
-              { image: pp8, sound:ss8 , shape: "circle", coords: [410, 230, 80 ], fillColor:"rgba(0, 0, 0, 0)"},
-              { image: pp9, sound:ss9 , shape: "circle", coords: [650, 150, 90 ], fillColor:"rgba(0, 0, 0, 0)"},
+              { image: pp1, sound:ss1 , shape: "circle", coords: [160, 500, 100 ], fillColor:"rgba(0, 0, 0, 0)"},
+              { image: pp2, sound:ss2 , shape: "circle", coords: [490, 500, 80 ], fillColor:"rgba(0, 0, 0, 0)"},
+              { image: pp3, sound:ss3 , shape: "circle", coords: [720, 500, 70 ], fillColor:"rgba(0, 0, 0, 0)"},
+              { image: pp4, sound:ss4 , shape: "circle", coords: [830, 430, 90 ], fillColor:"rgba(0, 0, 0, 0)"},
+              { image: pp5, sound:ss5 , shape: "circle", coords: [650, 350, 70 ], fillColor:"rgba(0, 0, 0, 0)"},
+              { image: pp6, sound:ss6 , shape: "circle", coords: [420, 390, 80 ], fillColor:"rgba(0, 0, 0, 0)"},
+              { image: pp7, sound:ss7 , shape: "circle", coords: [250, 330, 100 ], fillColor:"rgba(0, 0, 0, 0)"},
+              { image: pp8, sound:ss8 , shape: "circle", coords: [360, 210, 80 ], fillColor:"rgba(0, 0, 0, 0)"},
+              { image: pp9, sound:ss9 , shape: "circle", coords: [550, 150, 90 ], fillColor:"rgba(0, 0, 0, 0)"},
             ]
         }    
       }

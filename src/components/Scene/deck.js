@@ -29,7 +29,7 @@ class deck extends React.Component{
     this.props.dispatch(savescore(data.score));
   }
   popupClose=()=>{
-    this.setState({popup:false})
+    this.setState({popup:false, playStatus:Sound.status.STOPPED})
   }
 
   soundOn=()=>{

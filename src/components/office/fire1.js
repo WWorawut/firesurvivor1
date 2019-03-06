@@ -167,6 +167,8 @@ class fire1 extends React.Component{
 
       <div className="v">
 
+      
+
 
             <Player 
             ref="player"

@@ -34,7 +34,7 @@ soundOn=()=>{
 }
   
 popupClose=()=>{
-  this.setState({popup:false})
+  this.setState({popup:false, playStatus:Sound.status.STOPPED})
 }
 
 setlink=link=>()=>{this.setState({ [link]:true })}
