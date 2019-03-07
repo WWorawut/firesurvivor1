@@ -61,7 +61,7 @@ class endstair extends React.Component{
       </div>
       :
       <div style={{paddingTop:'48vh'}}>
-      <Link to = "/finalend"><img className="gobutton animated fadeInUp" src={gobutton} /></Link>
+      <Link to = "/finalnormal"><img className="gobutton animated fadeInUp" src={gobutton} /></Link>
       </div>
     }
     </div> 

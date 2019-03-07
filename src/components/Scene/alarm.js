@@ -78,12 +78,14 @@ class alarm extends React.Component{
       open={this.state.popup}
       image={alarm1}
       iconclose={'none'}
+      maxWidth='xs'
       />
 
       <Popup
       open={this.state.popup2}
       image={alarm2}
       iconclose={'none'}
+      maxWidth='xs'
       />
 
       

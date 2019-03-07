@@ -6,6 +6,11 @@ import '../css/exam.css';
 import ans from "../picture/ans.png";
 import { BrowserRouter as   Link, Redirect } from 'react-router-dom';
 
+import Popup from '../Scene/popup';
+import Sound from 'react-sound';
+import walk1 from "../picture2/popscore/copre.png";
+import sound3 from '../video/sound/stwalk.mp3';
+
 const Step = Steps.Step;
 const TabPane = Tabs.TabPane;
 const Option = Select.Option;
@@ -29,7 +34,10 @@ class preexam2 extends React.Component {
         choice8:"",
         choice9:"",
         choice10:"",
-        pointKey:'1'
+        pointKey:'1',
+        playStatus:Sound.status.STOPPED,
+        popup:false,
+        urlSound:""
     };
   }
 
@@ -55,7 +63,7 @@ class preexam2 extends React.Component {
         this.setState({score:score})
     }
 
-    modal=()=>{this.setState({ link:true })} 
+    setlink=link=>()=>{this.setState({ [link]:true })}
     Redirect=()=>{if(this.state.link){ return <Redirect to="/choose" /> }}
  
     nextPoint=()=>{
@@ -71,6 +79,20 @@ class preexam2 extends React.Component {
           iconType:NamedNodeMap,
           width:'950px',
         });
+    }
+
+
+    openpop=data=>()=>{
+      this.setState({[data.state]:true});
+      if(data.sound){
+        this.setState({playpop:Sound.status.PLAYING,urlSound:data.sound})  
+        }
+      setTimeout(this.popupClose(data),2000);
+    }
+      
+    popupClose=data=>()=>{
+      this.setState({[data.state]:false})
+      setTimeout(this.setlink(data.link),1000);  
     }
       
 
@@ -94,6 +116,22 @@ class preexam2 extends React.Component {
 //   activeKey={this.state.pointKey}  activeKey='11'
     return ( 
     <div>   
+
+      <Sound
+        url={this.state.urlSound}
+        volume={this.props.sound === false?0:100}
+        playStatus={this.state.playpop}
+        onFinishedPlaying={() => this.setState({ playpop: Sound.status.STOPPED })}
+      />
+
+      <Popup
+      open={this.state.popup}
+      image={walk1}
+      iconclose={'none'}
+      maxWidth='xs'
+      />
+
+
         <Tabs tabPosition="bottom" tabBarStyle={{display:'none'}} className="detailpreexam" activeKey={this.state.pointKey} >  
  
         <TabPane tab="1" key="1" >
@@ -314,7 +352,7 @@ class preexam2 extends React.Component {
           <div className="textanswer">
             <p>คะแนนของคุณ : {this.state.score} คะแนน</p>
                 {this.Redirect()}  
-          <Button onClick={this.modal} type="primary">ยืนยัน</Button>
+          <Button onClick={this.openpop({link:'link',state:'popup',sound:sound3})} type="primary">ยืนยัน</Button>
 
 
         </div>

@@ -74,6 +74,7 @@ popupClose=data=>()=>{
           open={this.state.popup}
           image={bu}
           iconclose={'none'}
+          maxWidth='xs'
           />
 
       <Sound

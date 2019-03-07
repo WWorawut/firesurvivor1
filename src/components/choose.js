@@ -6,15 +6,14 @@ import { Icon, Button } from 'antd';
 import { Link, Redirect } from 'react-router-dom';
 
 import Sound from 'react-sound';
-import sound2 from './video/sound/infoescape.mp3';
 
 import { connect } from 'react-redux';
 
 import bgsound from './video/sound/choose.mp3';
 
 import logo from "./picture2/c11.png";
-// import Lottie from 'react-lottie';
-// import animationData from './animate/choose.json'
+import Lottie from 'react-lottie';
+import animationData from './animate/choose.json'
 
 
 class choose extends React.Component {
@@ -40,15 +39,9 @@ class choose extends React.Component {
     if (this.state.link4) { return <Redirect to="/gallery" /> }
     if (this.state.link3) { return <Redirect to="/modeescape" /> }
     if (this.state.link5) { return <Redirect to="/modejanghad" /> }
+    if (this.state.link6) { return <Redirect to="/Moffice" /> }
   }
 
-  hoversound = data => () => {
-    this.setState({ playStatus: Sound.status.PLAYING, urlSound: data.sound })
-  }
-
-  hoversoundoff = () => {
-    this.setState({ playStatus: Sound.status.STOPPED })
-  }
 
   componentDidMount() {
     setTimeout(this.soundOn, 1000);
@@ -59,14 +52,14 @@ class choose extends React.Component {
 
   render() {
 
-    // const loginvideo = {
-    //   loop: true,
-    //   autoplay: true, 
-    //   animationData: animationData,
-    //   rendererSettings: {
-    //     preserveAspectRatio: 'xMidYMid slice'
-    //   }
-    // };
+    const loginvideo = {
+      loop: true,
+      autoplay: true, 
+      animationData: animationData,
+      rendererSettings: {
+        preserveAspectRatio: 'xMidYMid slice'
+      }
+    };
     return (
       <div>
 
@@ -84,11 +77,11 @@ class choose extends React.Component {
           onFinishedPlaying={() => this.setState({ playpop: Sound.status.STOPPED })}
         />
 
-        <div className="bgchoose">
-          {/* <Lottie options={loginvideo}
+        <div>
+          <Lottie options={loginvideo}
               height={"100vh"}
               width={"100%"}
-              style={{position:'absolute'}}/> */}
+              style={{position:'absolute'}}/>
 
           <div className="boxboxchoose">
             <p className="textchoose">เลือกสถานการณ์การเรียนรู้</p>

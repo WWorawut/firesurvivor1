@@ -110,16 +110,19 @@ class Mstair3603 extends React.Component {
       open={this.state.popup}
       image={run11}
       iconclose={'none'}
+      maxWidth='xs'
       />
         <Popup
       open={this.state.popup1}
       image={run12}
       iconclose={'none'}
+      maxWidth='xs'
       />
         <Popup
       open={this.state.popup2}
       image={run13}
       iconclose={'none'}
+      maxWidth='xs'
       />
 
       <Sound

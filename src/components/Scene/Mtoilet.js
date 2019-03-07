@@ -47,6 +47,7 @@ class Mtoilet extends React.Component{
       open={this.state.popup}
       image={poptoilet}
       close={this.popupClose}
+      maxWidth='xs'
       />
 
       <Sound

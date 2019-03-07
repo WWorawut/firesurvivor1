@@ -24,7 +24,7 @@ import use2 from "../picture2/popscore/Muse2.png";
 import use3 from "../picture2/popscore/Muse3.png";
 import use4 from "../picture2/popscore/Muse4.png";
 
-import p1 from "../picture2/popscore/p1.png";
+import p5 from "../picture2/popscore/p1.png";
 import p2 from "../picture2/popscore/p2.png";
 import p3 from "../picture2/popscore/p3.png";
 import p4 from "../picture2/popscore/p4.png";
@@ -132,24 +132,28 @@ class Mstair3608 extends React.Component {
       image={use1}
       iconclose={'none'}
       zIndex='6'
+      maxWidth='xs'
       />
         <Popup
       open={this.state.popup2}
       image={use2}
       iconclose={'none'}
       zIndex='6'
+      maxWidth='xs'
       />
         <Popup
       open={this.state.popup3}
       image={use3}
       iconclose={'none'}
       zIndex='6'
+      maxWidth='xs'
       />
         <Popup
       open={this.state.popup4}
       image={use4}
       iconclose={'none'}
       zIndex='6'
+      maxWidth='xs'
       />
    
   
@@ -168,7 +172,7 @@ class Mstair3608 extends React.Component {
             <p className="text12 animated fadeInUp">เลือกสิ่งของ 1 อย่าง เพื่อฝ่าควันออกไป</p>
             <div className="animated fadeInUp">
             <div className="boxd">
-            <img className="box12" onClick={this.openpop({link:'link',state:'popup',image:p1,sound:sound1})} src={water} />
+            <img className="box12" onClick={this.openpop({link:'link',state:'popup',image:p5,sound:sound1})} src={water} />
             <img className="box12" onClick={this.openpop({link:'link',state:'popup2',image:p2,sound:sound2})} src={towel} />
             <br/>
             <br/>

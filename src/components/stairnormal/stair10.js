@@ -86,16 +86,19 @@ class stair10 extends React.Component{
         open={this.state.popup}
         image={hand11}
         iconclose={'none'}
+        maxWidth='xs'
         />
           <Popup
         open={this.state.popup1}
         image={hand12}
         iconclose={'none'}
+        maxWidth='xs'
         />
           <Popup
         open={this.state.popup2}
         image={hand13}
         iconclose={'none'}
+        maxWidth='xs'
         />
  
       <Sound

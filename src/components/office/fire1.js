@@ -128,24 +128,28 @@ class fire1 extends React.Component{
       open={this.state.popup}
       image={listfire1}
       iconclose={'none'}
+      maxWidth='xs'
       />
 
       <Popup
       open={this.state.popup2}
       image={listfire2}
       iconclose={'none'}
+      maxWidth='xs'
       />
 
       <Popup
       open={this.state.popup3}
       image={listfire3}
       iconclose={'none'}
+      maxWidth='xs'
       />
 
       <Popup
       open={this.state.dab}
       image={dab}
       iconclose={'none'}
+      maxWidth='xs'
       />    
 
       <Sound

@@ -73,7 +73,7 @@ class Mstair36013 extends React.Component {
   next=name=>()=>{ this.setState({ [name]:true })}
   Redirect=()=>{
     if(this.state.up){ return <Redirect to="/Mstair36012"/> }
-    if(this.state.down){ return <Redirect to="/finalend"/> }
+    if(this.state.down){ return <Redirect to="/Mfinalend"/> }
 }
 
 

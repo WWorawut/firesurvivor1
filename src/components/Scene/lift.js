@@ -47,6 +47,7 @@ Redirect=()=>{if(this.state.link){ return <Redirect to="/stair16" /> }}
         open={this.state.popup}
         image={poplift}
         close={this.popupClose}
+        maxWidth='xs'
         />
 
       <Sound

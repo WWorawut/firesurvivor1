@@ -96,24 +96,28 @@ class Mstair12A extends React.Component{
       image={use1}
       iconclose={'none'}
       zIndex='6'
+      maxWidth='xs'
       />
         <Popup
       open={this.state.popup2}
       image={use2}
       iconclose={'none'}
       zIndex='6'
+      maxWidth='xs'
       />
         <Popup
       open={this.state.popup3}
       image={use3}
       iconclose={'none'}
       zIndex='6'
+      maxWidth='xs'
       />
         <Popup
       open={this.state.popup4}
       image={use4}
       iconclose={'none'}
       zIndex='6'
+      maxWidth='xs'
       />
 
       

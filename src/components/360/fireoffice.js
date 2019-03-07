@@ -102,6 +102,7 @@ class fire extends React.Component {
           open={this.state.popup}
           image={bu}
           iconclose={'none'}
+          maxWidth='xs'
           />
 
 {!this.props.fireroom ?

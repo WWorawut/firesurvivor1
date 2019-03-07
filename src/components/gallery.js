@@ -5,6 +5,7 @@ import logo from "./picture/logo.png";
 
 import Popup from './Scene/popup';
 import Sound from 'react-sound';
+import bgsound from './video/sound/choose.mp3';
 
 import ss1 from "./video/sound/infofirehappen.mp3";
 import ss2 from "./video/sound/infofiretung.mp3";
@@ -42,7 +43,17 @@ class gallery extends React.Component{
     this.state = { 
     link:false,
     popup:false,
+    playStatus: Sound.status.STOPPED,
+    play: Sound.status.STOPPED,
+    urlSound: ""
     }
+  }
+
+  componentDidMount() {
+    setTimeout(this.soundOn, 1000);
+  }
+  soundOn = () => {
+    this.setState({ playStatus: Sound.status.PLAYING })
   }
 
   openpop=data=>()=>{
@@ -166,6 +177,13 @@ class gallery extends React.Component{
         playStatus={this.state.playStatus}
         onFinishedPlaying={() => this.setState({ playStatus: Sound.status.STOPPED })}
       />  
+
+        {/* <Sound
+          url={bgsound}
+          volume={this.props.sound === false ? 0 : 100}
+          playStatus={this.state.playStatus}
+          onFinishedPlaying={() => this.setState({ play: Sound.status.STOPPED })}
+        /> */}
 
 
           <div className="bggallery">

@@ -81,18 +81,21 @@ class tellfriend extends React.Component{
       open={this.state.popup}
       image={friend1}
       iconclose={'none'}
+      maxWidth='xs'
       />
 
       <Popup
       open={this.state.popup2}
       image={friend2}
       iconclose={'none'}
+      maxWidth='xs'
       />
 
       <Popup
       open={this.state.popup3}
       image={friend3}
       iconclose={'none'}
+      maxWidth='xs'
       />
 
 

@@ -101,6 +101,7 @@ class Mstair3600 extends React.Component {
           open={this.state.popup}
           image={bu}
           iconclose={'none'}
+          maxWidth='xs'
           />
 
       <Sound

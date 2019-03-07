@@ -14,9 +14,9 @@ import Sound from 'react-sound';
 import sound from '../video/sound/speakoutoffice.mp3';
 
 import Popup from '../Scene/popup';
-import a from "../picture2/popscore/popalarm.png";
-import b from "../picture2/popscore/popcall.png";
-import c from "../picture2/popscore/popfriend.png";
+import a from "../picture2/popscore/mpopalarm.png";
+import b from "../picture2/popscore/mpopcall.png";
+import c from "../picture2/popscore/mpopfriend.png";
 
 import {savescore, enterroom, choosealarm, choosefriend, choosecall, stopTimer} from '../../action'
 import {connect} from 'react-redux';
@@ -71,9 +71,9 @@ class modejanghad extends React.Component {
     if(this.state.lift){this.props.dispatch(enterroom(true)); return <Redirect to="/lift"/> }
     if(this.state.normalstair){this.props.dispatch(enterroom(true)); return <Redirect to="/gotoshair"/> }
     if(this.state.toilet){this.props.dispatch(enterroom(true)); return <Redirect to="/restroom"/> }
-    if(this.state.call){this.props.dispatch(choosecall(true)); return <Redirect to="/call"/> }
-    if(this.state.alarm){this.props.dispatch(choosealarm(true)); return <Redirect to="/alarm"/> }
-    if(this.state.friend){this.props.dispatch(choosefriend(true)); return <Redirect to="/friend"/> }
+    if(this.state.call){this.props.dispatch(choosecall(true)); return <Redirect to="/Mcall"/> }
+    if(this.state.alarm){this.props.dispatch(choosealarm(true)); return <Redirect to="/Malarm"/> }
+    if(this.state.friend){this.props.dispatch(choosefriend(true)); return <Redirect to="/Mfriend"/> }
 }
 
 openpop=data=>()=>{
@@ -111,16 +111,19 @@ popupClose=data=>()=>{
           open={this.state.popup}
           image={a}
           iconclose={'none'}
+          maxWidth='xs'
           />
            <Popup
           open={this.state.popup2}
           image={b}
           iconclose={'none'}
+          maxWidth='xs'
           />
            <Popup
           open={this.state.popup3}
           image={c}
           iconclose={'none'}
+          maxWidth='xs'
           />
 
       <Sound

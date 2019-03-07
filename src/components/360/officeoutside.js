@@ -111,16 +111,19 @@ popupClose=data=>()=>{
           open={this.state.popup}
           image={a}
           iconclose={'none'}
+          maxWidth='xs'
           />
            <Popup
           open={this.state.popup2}
           image={b}
           iconclose={'none'}
+          maxWidth='xs'
           />
            <Popup
           open={this.state.popup3}
           image={c}
           iconclose={'none'}
+          maxWidth='xs'
           />
 
       <Sound

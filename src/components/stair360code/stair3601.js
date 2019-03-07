@@ -108,12 +108,14 @@ class stair3601 extends React.Component {
       open={this.state.popup}
       image={walk1}
       iconclose={'none'}
+      maxWidth='xs'
       />
 
       <Popup
       open={this.state.popup2}
       image={run1}
       iconclose={'none'}
+      maxWidth='xs'
       />
 
       <Sound

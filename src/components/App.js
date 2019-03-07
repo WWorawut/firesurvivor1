@@ -20,8 +20,10 @@ import typeA from './PeopleSummary/Asum';
 
 import allsum from './Infographic/allsum';
 import janghad from './Infographic/janghad'; 
+import Mjanghad from './Infographic/Mjanghad'; 
 import firetype from './Infographic/firetype'; 
 import rarabhad from './Infographic/rarabhad';
+import Mrarabhad from './Infographic/Mrarabhad';
 import firetung from './Infographic/firetung';  
 import walk from './Infographic/walk'; 
 import walk360 from './Infographic/walk360'; 
@@ -46,6 +48,9 @@ import lift from './Scene/lift';
 import call from './Scene/call';
 import alarm from './Scene/alarm';
 import friend from './Scene/tellfriend';
+import Mcall from './Scene/Mcall';
+import Malarm from './Scene/Malarm';
+import Mfriend from './Scene/Mtellfriend';
 
 import stair19 from './stairnormal/stair19';
 import stair17 from './stairnormal/stair17';
@@ -62,12 +67,17 @@ import endstair from './stairnormal/endstair';
 import officeoutside from './360/officeoutside';
 import gotoshair from './360/gotoshair';
 import fireoffice from './360/fireoffice';
+import Mfireoffice from './360/Mfireoffice';
 
 import office from './360/office';
+import Moffice from './360/Moffice';
 import fire1 from './office/fire1';
 import fire2 from './office/fire2';
 import fire3 from './office/fire3';
 import finalend from './office/finalend';
+
+import finalnormal from './office/finalnormal';
+import Mfinalnormal from './office/Mfinalnormal';
 
 import stair3600 from './stair360code/stair3600';
 import stair3601 from './stair360code/stair3601';
@@ -113,6 +123,7 @@ import Mstair36010 from './stair360code/Mstair36010';
 import Mstair36011 from './stair360code/Mstair36011';
 import Mstair36012 from './stair360code/Mstair36012';
 import Mstair36013 from './stair360code/Mstair36013';
+import Mfinalend from './office/Mfinalend';
 
 import modejanghad from './360/modejanghad';
 
@@ -227,14 +238,15 @@ class App extends React.Component{
     }
 
     const path =[
-      {path:"/intro",component:intro,timer:false,openSound:false,scoreSetting:false,soundSetting:false},
+      {path:"/intro",component:intro,timer:false,openSound:false,scoreSetting:false,soundSetting:false,home:false},
       {path:"/finalend",component:finalend,timer:false,openSound:false,scoreSetting:false,soundSetting:false},
       {path:"/exam",component:exam,timer:false,scoreSetting:false},
       {path:"/exam2",component:exam2,timer:false,scoreSetting:false,home:false},
       {path:"/preexam",component:preexam,timer:false,scoreSetting:false},
       {path:"/preexam2",component:preexam2,timer:false,scoreSetting:false,home:false},
-      {path:"/howtoplay",component:howtoplay,timer:false,scoreSetting:false},
+      {path:"/howtoplay",component:howtoplay,timer:false,scoreSetting:false,home:false},
       {path:"/share",component:share,timer:false,scoreSetting:false},
+      {path:"/finalnormal",component:finalnormal,timer:false,openSound:false,scoreSetting:false,soundSetting:false},
 
       {path:"/choose",component:choose,timer:false,scoreSetting:false,home:false},
       {path:"/gallery",component:gallery,timer:false,scoreSetting:false,home:false},
@@ -249,6 +261,7 @@ class App extends React.Component{
       {path:"/alarm",component:alarm},
       {path:"/friend",component:friend},
 
+
       {path:"/stair19",component:stair19},
       {path:"/stair17",component:stair17},
       {path:"/stair177",component:stair177},
@@ -261,6 +274,7 @@ class App extends React.Component{
       {path:"/endstair",component:endstair},
 
       {path:"/janghad",component:janghad,timer:false,scoreSetting:false},
+      {path:"/Mjanghad",component:Mjanghad,timer:false,scoreSetting:false},
       {path:"/rarabhad",component:rarabhad,timer:false,scoreSetting:false},
       {path:"/firetype",component:firetype,timer:false,scoreSetting:false},
       {path:"/firetung",component:firetung,timer:false,scoreSetting:false},
@@ -335,8 +349,17 @@ class App extends React.Component{
       {path:"/Mwalk",component:Mwalk,timer:false,scoreSetting:false},
       {path:"/Mwalk360",component:Mwalk360,timer:false,scoreSetting:false},
       {path:"/Mescape",component:Mescape,timer:false,scoreSetting:false},
+      {path:"/Mfinalend",component:Mfinalend,timer:false,openSound:false,scoreSetting:false,soundSetting:false},
+      {path:"/Mfinalnormal",component:Mfinalnormal,timer:false,openSound:false,scoreSetting:false,soundSetting:false},
     
-      {path:"/modejanghad",component:modejanghad,timer:false,scoreSetting:false},]
+      {path:"/modejanghad",component:modejanghad,timer:false,scoreSetting:false},
+      {path:"/Mcall",component:Mcall,timer:false,scoreSetting:false},
+      {path:"/Malarm",component:Malarm,timer:false,scoreSetting:false},
+      {path:"/Mfriend",component:Mfriend,timer:false,scoreSetting:false},
+    
+      {path:"/Moffice",component:Moffice,timer:false,scoreSetting:false},
+      {path:"/Mfireoffice",component:Mfireoffice,timer:false,scoreSetting:false},
+      {path:"/Mrarabhad",component:Mrarabhad,timer:false,scoreSetting:false},]
       
     const timer =(    
     <div className="time">

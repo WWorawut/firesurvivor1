@@ -2,16 +2,12 @@ import React, {} from 'react';
 import '../css/360.css';
 import {Entity, Scene} from 'aframe-react';
 
-import { Button } from 'antd';
-
-import gobutton from '../picture2/button/gobutton.png'
 import choosebutton from '../picture2/button/choosebutton.png'
 import { BrowserRouter as  Link,Redirect } from 'react-router-dom'
 import office from '../picture2/360/office.png'
 import human from "../picture2/speak/human.png";
 import officetext from "../picture2/speak/officetext11.png";
 
-import {savescore} from '../../action'
 import {connect} from 'react-redux';
 
 
