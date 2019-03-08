@@ -77,7 +77,7 @@ class choose extends React.Component {
           onFinishedPlaying={() => this.setState({ playpop: Sound.status.STOPPED })}
         />
 
-        <div>
+        <div style={{position:'relative',width:'100vw'}}>
           <Lottie options={loginvideo}
               height={"100vh"}
               width={"100%"}

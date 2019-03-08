@@ -166,7 +166,7 @@ class fire3 extends React.Component{
 
       <div className="bgtext">
      {this.state.outshow2 === false ?
-      <div className="centerhuman" style={{position:'absolute', right:'15%'}}>
+      <div className="centerhuman" style={{position:'absolute'}}>
         <img className={"human animated " +this.state.class} src={human}/>
         <img className={"text animated " +this.state.class} src={sfire}/>
         </div>

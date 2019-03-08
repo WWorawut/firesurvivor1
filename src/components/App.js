@@ -1,4 +1,6 @@
 import React, {} from 'react';
+// import DeviceOrientation from 'react-screen-orientation'
+
 import Sound from 'react-sound';
 import './App.css';
 import './css/setting.css';
@@ -132,6 +134,8 @@ import intro from './video/IntroMP4';
 
 import { BrowserRouter as  Router, Route,Link,Redirect} from 'react-router-dom';
 
+import mousegif from "./picture/ro.gif";
+
 
 import bgsound from './video/file/s2.mp3';
 
@@ -222,7 +226,6 @@ class App extends React.Component{
     this.setState({playStatus:Sound.status.PLAYING})
   }
 // gg=()=>{this.props.dispatch(time(formattedSeconds(this.state.secondsElapsed)));}
-
 
 
   render() {
@@ -413,12 +416,15 @@ class App extends React.Component{
         </div>
       );
 
-
-
+     let width = window.innerWidth;
+     let height = window.innerHeight; 
+     
+    return ( 
       
-    return (
-      <div>
-
+    <div>
+    {height > width ?
+    <div className="rotate"><img className="ro" src={mousegif} /></div>:
+    <div>
         <Modal
           title={<p  style={{fontSize:'20px'}}><Icon type="question-circle" style={{color:'orange',fontSize:'30px',paddingRight:'15px'}}/>คุณต้องการกลับไปหน้าแรกใช่หรือไม่ ?</p>}
           content={false}
@@ -448,6 +454,9 @@ class App extends React.Component{
       </div>
     </Router>
     </div>
+    }
+    </div>
+    
     );
   }
 }

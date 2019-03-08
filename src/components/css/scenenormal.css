@@ -81,6 +81,7 @@ body{
     display: flex;
     margin: auto;
     padding-top: 40vh;
+    right:15%;
 }
 .human{
     width: 20%;
@@ -246,6 +247,10 @@ body{
 }
 .box12{
   width: 33%;}
+
+  .centerhuman{
+    right:20%;
+}
 
   }
 
