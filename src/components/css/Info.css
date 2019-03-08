@@ -190,7 +190,7 @@
 
 
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 800px) {
     .closea{
         font-size: 25px;
     }
@@ -199,14 +199,4 @@
     }
 }
 
-@media only screen and (max-width: 414px) {
-    .bgtypeinfo{
-        width: 90%;
-    }
-}
 
-@media only screen and (max-width: 320px) {
-    .bgtypeinfo{
-        width: 90%;
-    }
-}

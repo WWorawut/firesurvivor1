@@ -2,9 +2,6 @@ import React, {} from 'react';
 import './App.css';
 import './css/login.css';
 import logo from "./picture/logo.png";
-import YouTube from 'react-youtube';
-import { Player, ControlBar } from 'video-react';
-import intro from "./video/file/ae.mp4";
 import {connect} from 'react-redux';
 import { BrowserRouter as  Link,Redirect } from 'react-router-dom';
 

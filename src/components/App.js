@@ -239,14 +239,14 @@ class App extends React.Component{
 
     const path =[
       {path:"/intro",component:intro,timer:false,openSound:false,scoreSetting:false,soundSetting:false,home:false},
-      {path:"/finalend",component:finalend,timer:false,openSound:false,scoreSetting:false,soundSetting:false},
+      {path:"/finalend",component:finalend,timer:false,openSound:false,scoreSetting:false,soundSetting:false,home:false},
       {path:"/exam",component:exam,timer:false,scoreSetting:false},
       {path:"/exam2",component:exam2,timer:false,scoreSetting:false,home:false},
       {path:"/preexam",component:preexam,timer:false,scoreSetting:false},
       {path:"/preexam2",component:preexam2,timer:false,scoreSetting:false,home:false},
       {path:"/howtoplay",component:howtoplay,timer:false,scoreSetting:false,home:false},
       {path:"/share",component:share,timer:false,scoreSetting:false},
-      {path:"/finalnormal",component:finalnormal,timer:false,openSound:false,scoreSetting:false,soundSetting:false},
+      {path:"/finalnormal",component:finalnormal,timer:false,openSound:false,scoreSetting:false,soundSetting:false,home:false},
 
       {path:"/choose",component:choose,timer:false,scoreSetting:false,home:false},
       {path:"/gallery",component:gallery,timer:false,scoreSetting:false,home:false},
@@ -273,19 +273,19 @@ class App extends React.Component{
       {path:"/stair10",component:stair10},
       {path:"/endstair",component:endstair},
 
-      {path:"/janghad",component:janghad,timer:false,scoreSetting:false},
-      {path:"/Mjanghad",component:Mjanghad,timer:false,scoreSetting:false},
-      {path:"/rarabhad",component:rarabhad,timer:false,scoreSetting:false},
-      {path:"/firetype",component:firetype,timer:false,scoreSetting:false},
-      {path:"/firetung",component:firetung,timer:false,scoreSetting:false},
-      {path:"/walk",component:walk,timer:false,scoreSetting:false},
-      {path:"/walk360",component:walk360,timer:false,scoreSetting:false},
-      {path:"/smoke",component:smoke,timer:false,scoreSetting:false},
-      {path:"/smoke360",component:smoke360,timer:false,scoreSetting:false},
-      {path:"/heat",component:heat,timer:false,scoreSetting:false},
-      {path:"/heat360",component:heat360,timer:false,scoreSetting:false},
-      {path:"/escape",component:escape,timer:false,scoreSetting:false},
-      {path:"/usetung",component:usetung,timer:false,scoreSetting:false},
+      {path:"/janghad",component:janghad,timer:false,scoreSetting:false,home:false},
+      {path:"/Mjanghad",component:Mjanghad,timer:false,scoreSetting:false,home:false},
+      {path:"/rarabhad",component:rarabhad,timer:false,scoreSetting:false,home:false},
+      {path:"/firetype",component:firetype,timer:false,scoreSetting:false,home:false},
+      {path:"/firetung",component:firetung,timer:false,scoreSetting:false,home:false},
+      {path:"/walk",component:walk,timer:false,scoreSetting:false,home:false},
+      {path:"/walk360",component:walk360,timer:false,scoreSetting:false,home:false},
+      {path:"/smoke",component:smoke,timer:false,scoreSetting:false,home:false},
+      {path:"/smoke360",component:smoke360,timer:false,scoreSetting:false,home:false},
+      {path:"/heat",component:heat,timer:false,scoreSetting:false,home:false},
+      {path:"/heat360",component:heat360,timer:false,scoreSetting:false,home:false},
+      {path:"/escape",component:escape,timer:false,scoreSetting:false,home:false},
+      {path:"/usetung",component:usetung,timer:false,scoreSetting:false,home:false},
 
       {path:"/fire1",component:fire1,timer:false},
       {path:"/fire2",component:fire2,timer:false},
@@ -342,15 +342,15 @@ class App extends React.Component{
       {path:"/Mstair36011",component:Mstair36011,timer:false,scoreSetting:false},
       {path:"/Mstair36012",component:Mstair36012,timer:false,scoreSetting:false},
       {path:"/Mstair36013",component:Mstair36013,timer:false,scoreSetting:false},
-      {path:"/Msmoke",component:Msmoke,timer:false,scoreSetting:false},
-      {path:"/Msmoke360",component:Msmoke360,timer:false,scoreSetting:false},
-      {path:"/Mheat",component:Mheat,timer:false,scoreSetting:false},
-      {path:"/Mheat360",component:Mheat360,timer:false,scoreSetting:false},
-      {path:"/Mwalk",component:Mwalk,timer:false,scoreSetting:false},
-      {path:"/Mwalk360",component:Mwalk360,timer:false,scoreSetting:false},
-      {path:"/Mescape",component:Mescape,timer:false,scoreSetting:false},
-      {path:"/Mfinalend",component:Mfinalend,timer:false,openSound:false,scoreSetting:false,soundSetting:false},
-      {path:"/Mfinalnormal",component:Mfinalnormal,timer:false,openSound:false,scoreSetting:false,soundSetting:false},
+      {path:"/Msmoke",component:Msmoke,timer:false,scoreSetting:false,home:false},
+      {path:"/Msmoke360",component:Msmoke360,timer:false,scoreSetting:false,home:false},
+      {path:"/Mheat",component:Mheat,timer:false,scoreSetting:false,home:false},
+      {path:"/Mheat360",component:Mheat360,timer:false,scoreSetting:false,home:false},
+      {path:"/Mwalk",component:Mwalk,timer:false,scoreSetting:false,home:false},
+      {path:"/Mwalk360",component:Mwalk360,timer:false,scoreSetting:false,home:false},
+      {path:"/Mescape",component:Mescape,timer:false,scoreSetting:false,home:false},
+      {path:"/Mfinalend",component:Mfinalend,timer:false,openSound:false,scoreSetting:false,soundSetting:false,home:false},
+      {path:"/Mfinalnormal",component:Mfinalnormal,timer:false,openSound:false,scoreSetting:false,soundSetting:false,home:false},
     
       {path:"/modejanghad",component:modejanghad,timer:false,scoreSetting:false},
       {path:"/Mcall",component:Mcall,timer:false,scoreSetting:false},
@@ -359,7 +359,7 @@ class App extends React.Component{
     
       {path:"/Moffice",component:Moffice,timer:false,scoreSetting:false},
       {path:"/Mfireoffice",component:Mfireoffice,timer:false,scoreSetting:false},
-      {path:"/Mrarabhad",component:Mrarabhad,timer:false,scoreSetting:false},]
+      {path:"/Mrarabhad",component:Mrarabhad,timer:false,scoreSetting:false,home:false},]
       
     const timer =(    
     <div className="time">

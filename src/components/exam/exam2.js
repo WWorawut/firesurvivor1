@@ -131,8 +131,8 @@ class exam2 extends React.Component {
       maxWidth='xs'
       />
 
-
-        <Tabs tabPosition="bottom" tabBarStyle={{display:'none'}} className="detailexam" activeKey={this.state.pointKey} >  
+      {/* activeKey={this.state.pointKey}   activeKey='11' */}
+        <Tabs tabPosition="bottom" tabBarStyle={{display:'none'}} className="detailexam" activeKey={this.state.pointKey}>  
  
         <TabPane tab="1" key="1" >
         <div className="typeexambox">

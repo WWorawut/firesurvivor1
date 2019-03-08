@@ -217,6 +217,38 @@ body{
 }
 
 
+@media only screen and (max-width: 1024px) {
+  .human{
+    width: 29%;
+    height: 29%;
+}
+    .text{
+  margin: 3% 0 0 7%;
+  width: 120%;
+  height: 120%;
+}
+
+.walkk{
+  width: 40%;
+  height: 30vh;
+}
+.run{
+  width: 40%;
+  height: 30vh;
+}
+
+.list{
+  width: 115%;
+}
+
+.text12{
+  font-size: 1rem;
+}
+.box12{
+  width: 33%;}
+
+  }
+
 
 
 

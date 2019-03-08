@@ -64,21 +64,35 @@
 
 @media only screen and (max-width: 1024px) {
     .human360{
-        width: 10%;
+        width: 8%;
     }
     .center{
         width: 40%;
       }
 
-      .officeouttext{
+    .officeouttext{
         width: 40%;
         height: 20%;
-        margin: 1% 0 0 11%;
+        margin: 1% 0 0 9%;
     }
     .firetext{
-        margin: 1% 0 0 11%;
-        width: 49%;
+        margin: 1% 0 0 9%;
+        width: 48%;
+        height: 13%;
+    }
+    .firetext1{
+        margin: 1% 0 0 9%;
+        width: 35%;
+        height: 12%;
+    }
+    .firetext2{
+        margin: 1% 0 0 9%;
+        width: 35%;
+        height: 16%;
+    }
+    .firetext3{
+        margin: 1% 0 0 9%;
+        width: 36%;
         height: 14%;
     }
-    
     }

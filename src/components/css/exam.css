@@ -252,7 +252,7 @@ style={{color:"white"}}
 
 
 /* mobile plus */
-    @media only screen and (max-width: 728px) {
+    @media only screen and (max-width: 812px) {
     .sizef{
         font-size: 13px;
     }
@@ -297,10 +297,15 @@ style={{color:"white"}}
     }
     .answer{
         width: 70%;
+        height: 100vh;
     }
  
     .d{
         display: none !important;
+    }
+
+    .typeexam{
+        height: 100vh;
     }
     }
     
