@@ -8,7 +8,7 @@ import alarm1 from "../picture2/popscore/malarm1.png";
 import alarm2 from "../picture2/popscore/malarm2.png";
 
 import { BrowserRouter as  Link,Redirect } from 'react-router-dom'
-import {savescore,choosealarm} from '../../action'
+import {choosealarm} from '../../action'
 import {connect} from 'react-redux';
 
 import Sound from 'react-sound';
@@ -34,8 +34,7 @@ class Malarm extends React.Component{
   }
 
   openpop=data=>()=>{
-    this.setState({[data.state]:true});
-    this.props.dispatch(savescore(data.score));    
+    this.setState({[data.state]:true});   
     if(data.sound){
       this.setState({playpop:Sound.status.PLAYING,urlSound:data.sound})  
       }
@@ -95,9 +94,9 @@ class Malarm extends React.Component{
       <div className="boxjangtext">
       <p>สถานการณ์ :</p>
       <p className="texthead">ในขณะเกิดเหตุเพลิงไหม้ คุณต้องการที่จะกดกริ่งเพื่อเตือนภัย หรือไม่ ?</p>
-      <Button className="buttonjang" onClick={this.openpop({link:'link',score:5,state:'popup',sound:sound2})}>กดสัญญาณ</Button>
+      <Button className="buttonjang" onClick={this.openpop({link:'link',state:'popup',sound:sound2})}>กดสัญญาณ</Button>
       <br/>
-      <Button className="buttonjang" onClick={this.openpop({link:'link',score:-5,state:'popup2',sound:sound3})}>ไม่กดสัญญาณ</Button>
+      <Button className="buttonjang" onClick={this.openpop({link:'link',state:'popup2',sound:sound3})}>ไม่กดสัญญาณ</Button>
       </div>
 
 
@@ -113,7 +112,6 @@ class Malarm extends React.Component{
   }
 }
 const connectscore = state => ({
-  score:state.score,
   choosecall:state.choosecall,
   choosefriend:state.choosefriend,
   choosealarm:state.choosealarm,

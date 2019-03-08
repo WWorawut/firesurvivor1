@@ -51,9 +51,9 @@ class Mofficenormal extends React.Component {
 
   next=name=>()=>{ this.setState({ [name]:true })}
   Redirect=()=>{
-    if(this.state.A){ return <Redirect to="/fire1"/> }
-    if(this.state.B){ return <Redirect to="/fire2"/> }
-    if(this.state.C){ return <Redirect to="/fire3"/> }
+    if(this.state.A){ return <Redirect to="/Mfire1"/> }
+    if(this.state.B){ return <Redirect to="/Mfire2"/> }
+    if(this.state.C){ return <Redirect to="/Mfire3"/> }
 }
 np
 
@@ -125,7 +125,6 @@ np
   }
 }
 const connectscore = state => ({
-  score:state.score,
   sound:state.sound,
   })  
 

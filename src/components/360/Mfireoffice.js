@@ -12,7 +12,7 @@ import firetext from "../picture2/speak/firetext.png";
 
 import Popup from '../Scene/popup';
 
-import bu from "../picture2/popscore/bu.png";
+import bu from "../picture2/popscore/Mbu.png";
 
 import {stopTimer,fireroom} from '../../action'
 import {connect} from 'react-redux';
@@ -62,9 +62,9 @@ class Mfire extends React.Component {
 
   next=name=>()=>{ this.setState({ [name]:true })}
   Redirect=()=>{
-    if(this.state.firetung){ return <Redirect to="/firetung"/> }
+    if(this.state.firetung){ return <Redirect to="/Mfiretung"/> }
     if(this.state.out){ return <Redirect to="/Mrarabhad"/> }
-    if(this.state.link){this.props.dispatch(fireroom(true)); return <Redirect to="/firetung" /> }
+    if(this.state.link){this.props.dispatch(fireroom(true)); return <Redirect to="/Mfiretung" /> }
 }
 
   openpop=data=>()=>{

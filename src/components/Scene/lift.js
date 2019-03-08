@@ -70,7 +70,7 @@ Redirect=()=>{if(this.state.link){ return <Redirect to="/stair16" /> }}
 }
 const connectscore = state => ({
   score:state.score,
-  score:state.sound
+  sound:state.sound
   })
 
   

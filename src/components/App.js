@@ -4,7 +4,7 @@ import React, {} from 'react';
 import Sound from 'react-sound';
 import './App.css';
 import './css/setting.css';
-import { Icon,Modal, Button } from 'antd';
+import { Icon,Modal } from 'antd';
 import {connect} from 'react-redux';
 
 import Loginscreen from './Loginscreen';
@@ -24,9 +24,11 @@ import allsum from './Infographic/allsum';
 import janghad from './Infographic/janghad'; 
 import Mjanghad from './Infographic/Mjanghad'; 
 import firetype from './Infographic/firetype'; 
+import Mfiretype from './Infographic/Mfiretype'; 
 import rarabhad from './Infographic/rarabhad';
 import Mrarabhad from './Infographic/Mrarabhad';
-import firetung from './Infographic/firetung';  
+import firetung from './Infographic/firetung'; 
+import Mfiretung from './Infographic/Mfiretung';   
 import walk from './Infographic/walk'; 
 import walk360 from './Infographic/walk360'; 
 import smoke from './Infographic/smoke'; 
@@ -42,6 +44,7 @@ import heat360 from './Infographic/heat360';
 import escape from './Infographic/escape'; 
 import Mescape from './Infographic/Mescape'; 
 import usetung from './Infographic/usetung'; 
+import Musetung from './Infographic/Musetung'; 
 
 import restroom from './Scene/toilet';
 import deck from './Scene/deck';
@@ -76,6 +79,9 @@ import Moffice from './360/Moffice';
 import fire1 from './office/fire1';
 import fire2 from './office/fire2';
 import fire3 from './office/fire3';
+import Mfire1 from './office/Mfire1';
+import Mfire2 from './office/Mfire2';
+import Mfire3 from './office/Mfire3';
 import finalend from './office/finalend';
 
 import finalnormal from './office/finalnormal';
@@ -138,8 +144,6 @@ import mousegif from "./picture/ro.gif";
 
 
 import bgsound from './video/file/s2.mp3';
-
-import preload from './preload';
 
 import {time,closeSound, stopTimer,savescore} from './../action'
 
@@ -289,6 +293,7 @@ class App extends React.Component{
       {path:"/heat360",component:heat360,timer:false,scoreSetting:false,home:false},
       {path:"/escape",component:escape,timer:false,scoreSetting:false,home:false},
       {path:"/usetung",component:usetung,timer:false,scoreSetting:false,home:false},
+    
 
       {path:"/fire1",component:fire1,timer:false},
       {path:"/fire2",component:fire2,timer:false},
@@ -359,10 +364,16 @@ class App extends React.Component{
       {path:"/Mcall",component:Mcall,timer:false,scoreSetting:false},
       {path:"/Malarm",component:Malarm,timer:false,scoreSetting:false},
       {path:"/Mfriend",component:Mfriend,timer:false,scoreSetting:false},
-    
+      
       {path:"/Moffice",component:Moffice,timer:false,scoreSetting:false},
       {path:"/Mfireoffice",component:Mfireoffice,timer:false,scoreSetting:false},
-      {path:"/Mrarabhad",component:Mrarabhad,timer:false,scoreSetting:false,home:false},]
+      {path:"/Mrarabhad",component:Mrarabhad,timer:false,scoreSetting:false,home:false},
+      {path:"/Mfire1",component:Mfire1,timer:false,scoreSetting:false},
+      {path:"/Mfire2",component:Mfire2,timer:false,scoreSetting:false},
+      {path:"/Mfire3",component:Mfire3,timer:false,scoreSetting:false},
+      {path:"/Mfiretype",component:Mfiretype,timer:false,scoreSetting:false,home:false},
+      {path:"/Musetung",component:Musetung,timer:false,scoreSetting:false,home:false},
+      {path:"/Mfiretung",component:Mfiretung,timer:false,scoreSetting:false,home:false},]
       
     const timer =(    
     <div className="time">

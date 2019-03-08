@@ -4,7 +4,6 @@ import {Entity, Scene} from 'aframe-react';
 
 
 import gobutton from '../picture2/button/gobutton.png'
-import choosebutton from '../picture2/button/choosebutton.png'
 import { BrowserRouter as  Link,Redirect } from 'react-router-dom'
 import Officeoutside from '../picture2/360/officeoutside.png'
 import human from "../picture2/speak/human.png";
@@ -18,7 +17,7 @@ import a from "../picture2/popscore/popalarm.png";
 import b from "../picture2/popscore/popcall.png";
 import c from "../picture2/popscore/popfriend.png";
 
-import {savescore, enterroom, choosealarm, choosefriend, choosecall} from '../../action'
+import {enterroom, choosealarm, choosefriend, choosecall} from '../../action'
 import {connect} from 'react-redux';
 
 
@@ -68,7 +67,6 @@ class modeeacape extends React.Component {
 
 openpop=data=>()=>{
   this.setState({[data.state]:true});
-  this.props.dispatch(savescore(data.score));
   setTimeout(this.popupClose(data),2000);
 }
   
@@ -171,7 +169,6 @@ popupClose=data=>()=>{
 }
 
 const connectscore = state => ({
-  score:state.score,
   sound:state.sound,
   allchoose:state.allchoose,
   choosecall:state.choosecall,

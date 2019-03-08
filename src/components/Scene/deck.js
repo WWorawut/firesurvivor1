@@ -70,7 +70,7 @@ class deck extends React.Component{
 }
 const connectscore = state => ({
   score:state.score,
-  score:state.sound
+  sound:state.sound
   })
   
   export default connect(connectscore)(deck);

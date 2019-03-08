@@ -9,7 +9,6 @@ import choosebutton from "../picture2/button/choosebutton.png";
 import poplift from "../picture2/lift/Mwarninglift.png";
 import { Link,Redirect } from 'react-router-dom';
 
-import {savescore} from '../../action'
 import {connect} from 'react-redux';
 
 import Sound from 'react-sound';
@@ -26,7 +25,6 @@ state={
 openpop=data=>()=>{
   setTimeout(this.soundOn,100);
   this.setState({popup:true})
-  this.props.dispatch(savescore(data.score));
 }
 
 soundOn=()=>{
@@ -69,7 +67,7 @@ Redirect=()=>{if(this.state.link){ return <Redirect to="/stair16" /> }}
   }
 }
 const connectscore = state => ({
-  score:state.sound
+  sound:state.sound
   })
 
   

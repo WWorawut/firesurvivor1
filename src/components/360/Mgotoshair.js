@@ -12,7 +12,6 @@ import gotoshair from '../picture2/360/gotoshair.png'
 import Popup from '../Scene/popup';
 import bu from "../picture2/popscore/Mgoshair.png";
 
-import {savescore} from '../../action'
 import {connect} from 'react-redux';
 
 import Sound from 'react-sound';
@@ -50,7 +49,6 @@ setlink=link=>()=>{this.setState({ [link]:true })}
 
 openpop=data=>()=>{
   this.setState({[data.state]:true});
-  this.props.dispatch(savescore(data.score));
   if(data.sound){
     this.setState({playpop:Sound.status.PLAYING,urlSound:data.sound})  
     }
@@ -90,7 +88,7 @@ popupClose=data=>()=>{
 
       <Scene>
       {this.Redirect()}
-      <Entity events={{click:this.openpop({link:'link',score:15,state:'popup',sound:sound3}) , mouseenter:this.mouseenter('scale1') , mouseleave:this.mouseleave('scale1')}}  
+      <Entity events={{click:this.openpop({link:'link',state:'popup',sound:sound3}) , mouseenter:this.mouseenter('scale1') , mouseleave:this.mouseleave('scale1')}}  
               primitive='a-image' material={{ src: gobutton}} scale={{x: this.state.scale1, y: this.state.scale1, z:this.state.scale1}} 
               rotation={{x: 0, y: 0 ,z: 0}} position={{x:3, y: 0, z: -12}}/>
 

@@ -33,8 +33,6 @@ import sound5 from '../video/sound/f32.mp3';
 
 import sound00 from '../video/sound/qnicro.mp3';
 
-import Lottie from 'react-lottie';
-import animationData from '../animate/data.json'
 
 
 class fire1 extends React.Component{
@@ -109,15 +107,6 @@ class fire1 extends React.Component{
   
 
    render() {
-
-    const defaultOptions = {
-      loop: true,
-      autoplay: true, 
-      animationData: animationData,
-      rendererSettings: {
-        preserveAspectRatio: 'xMidYMid slice'
-      }
-    };
 
 
     return (

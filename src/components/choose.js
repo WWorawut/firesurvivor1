@@ -154,7 +154,7 @@ class choose extends React.Component {
 
           </div>
 
-          <div style={{ right: '10px', position: 'absolute' }}>
+          <div style={{position: 'absolute' }}>
             <Link to="/"><Button className="logout1" ghost><Icon className="log" type="poweroff" />ออกจากระบบ</Button></Link>
           </div>
 

@@ -47,7 +47,6 @@ class Mstair3607 extends React.Component {
     
     openpop=data=>()=>{
         this.setState({[data.state]:true});
-        this.props.dispatch(savescore(data.score));
         setTimeout(this.popupClose(data),2000);
       }
         

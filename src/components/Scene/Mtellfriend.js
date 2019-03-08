@@ -9,7 +9,7 @@ import friend2 from "../picture2/popscore/Mfriend2.png";
 import friend3 from "../picture2/popscore/Mfriend3.png";
 
 import { BrowserRouter as  Link,Redirect } from 'react-router-dom'
-import {savescore,choosefriend} from '../../action'
+import {choosefriend} from '../../action'
 import {connect} from 'react-redux';
 
 import Sound from 'react-sound';
@@ -35,8 +35,7 @@ class Mtellfriend extends React.Component{
   }
 
   openpop=data=>()=>{
-    this.setState({[data.state]:true});
-    this.props.dispatch(savescore(data.score));    
+    this.setState({[data.state]:true});  
     if(data.sound){
       this.setState({playpop:Sound.status.PLAYING,urlSound:data.sound})  
       }
@@ -105,11 +104,11 @@ class Mtellfriend extends React.Component{
           <div className="boxjangtext">
           <p>สถานการณ์ :</p>
           <p className="texthead">หลังจากที่คุณพบเหตุแล้ว คุณต้องการแจ้งเพื่อนร่วมชั้นให้หนี คุณจะแจ้งอย่างไร ?</p>
-          <Button className="buttonjang" onClick={this.openpop({link:'link',score:1,state:'popup',sound:sound2})}>เจ้าค่าเอ้ย ไฟไหม้จ้า เจ้าค่าเอ้ย</Button>
+          <Button className="buttonjang" onClick={this.openpop({link:'link',state:'popup',sound:sound2})}>เจ้าค่าเอ้ย ไฟไหม้จ้า เจ้าค่าเอ้ย</Button>
           <br/>
-          <Button className="buttonjang" onClick={this.openpop({link:'link',score:2,state:'popup2',sound:sound2})}>ทุกคน หนีเร็ว ไฟไหม้ใหญ่แล้ว</Button>
+          <Button className="buttonjang" onClick={this.openpop({link:'link',state:'popup2',sound:sound2})}>ทุกคน หนีเร็ว ไฟไหม้ใหญ่แล้ว</Button>
           <br/>
-          <Button className="buttonjang" onClick={this.openpop({link:'link',score:3,state:'popup3',sound:sound2})}>ไฟไหม้! ที่ห้องออฟฟิศชั้น 20 รีบหนีเร็ว</Button>
+          <Button className="buttonjang" onClick={this.openpop({link:'link',state:'popup3',sound:sound2})}>ไฟไหม้! ที่ห้องออฟฟิศชั้น 20 รีบหนีเร็ว</Button>
           </div>
           </div>
 
@@ -123,7 +122,6 @@ class Mtellfriend extends React.Component{
   }
 }
 const connectscore = state => ({
-  score:state.score,
   choosecall:state.choosecall,
   choosefriend:state.choosefriend,
   choosealarm:state.choosealarm,

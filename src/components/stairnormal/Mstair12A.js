@@ -62,7 +62,6 @@ class Mstair12A extends React.Component{
    ////////////////////
    openpop=data=>()=>{
     this.setState({[data.state]:true});
-    this.props.dispatch(savescore(data.score));
     if(data.sound){
       this.setState({playpop:Sound.status.PLAYING,urlSound:data.sound})  
       }

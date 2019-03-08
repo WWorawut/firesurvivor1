@@ -12,7 +12,7 @@ import sound from '../video/sound/infojanghad.mp3';
 
 import Popup from '../Scene/popup';
 import walk1 from "../picture2/popscore/cojang.png";
-import sound3 from '../video/sound/stwalk.mp3';
+import sound3 from '../video/sound/sjang.mp3';
 {/* Info แจ้งเหตุ */}
 
 
@@ -42,7 +42,7 @@ class Mjanghad extends React.Component{
     if(data.sound){
       this.setState({playpop:Sound.status.PLAYING,urlSound:data.sound})  
       }
-    setTimeout(this.popupClose(data),2000);
+    setTimeout(this.popupClose(data),3000);
   }
     
   popupClose=data=>()=>{

@@ -11,7 +11,7 @@ import sound from '../video/sound/inforarabhad.mp3';
 
 import Popup from '../Scene/popup';
 import walk1 from "../picture2/popscore/codab.png";
-import sound3 from '../video/sound/stwalk.mp3';
+import sound3 from '../video/sound/srarab.mp3';
 {/* Info ระงับเหตุ */}
 
 class Mrarabhad extends React.Component{  
@@ -38,7 +38,7 @@ class Mrarabhad extends React.Component{
     if(data.sound){
       this.setState({playpop:Sound.status.PLAYING,urlSound:data.sound})  
       }
-    setTimeout(this.popupClose(data),2000);
+    setTimeout(this.popupClose(data),3000);
   }
     
   popupClose=data=>()=>{

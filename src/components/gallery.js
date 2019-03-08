@@ -5,7 +5,7 @@ import logo from "./picture/logo.png";
 
 import Popup from './Scene/popup';
 import Sound from 'react-sound';
-import bgsound from './video/sound/choose.mp3';
+import bgsound from './video/sound/szone.mp3';
 
 import ss1 from "./video/sound/infofirehappen.mp3";
 import ss2 from "./video/sound/infofiretung.mp3";
@@ -37,6 +37,7 @@ import Iconout from '@material-ui/icons/ChevronLeft';
 import { Link,Redirect } from 'react-router-dom';
 import ImageMapper from 'react-image-mapper';
 import ff from './picture2/bg3.png';
+
 class gallery extends React.Component{
   constructor(props) {
     super(props);
@@ -63,9 +64,6 @@ class gallery extends React.Component{
   }
   popupClose=()=>{
     this.setState({popup:false, playStatus:Sound.status.STOPPED})
-  }
-  soundOn=()=>{
-    this.setState({playStatus:Sound.status.PLAYING})
   }
 
 
@@ -100,51 +98,73 @@ class gallery extends React.Component{
         map ={
           name: "my-map",
           areas: [
-              { image: pp1,sound:ss1 , shape: "circle", coords: [230, 750, 100 ], fillColor:"rgba(0, 0, 0, 0)", strokeColor:"white"},
-              { image: pp2, sound:ss2 , shape: "circle", coords: [700, 750, 80 ], fillColor:"rgba(0, 0, 0, 0)"},
-              { image: pp3, sound:ss3 , shape: "circle", coords: [1070, 750, 70 ], fillColor:"rgba(0, 0, 0, 0)"},
-              { image: pp4, sound:ss4 , shape: "circle", coords: [1200, 600, 90 ], fillColor:"rgba(0, 0, 0, 0)"},
-              { image: pp5, sound:ss5 , shape: "circle", coords: [950, 530, 80 ], fillColor:"rgba(0, 0, 0, 0)"},
-              { image: pp6, sound:ss6 , shape: "circle", coords: [610, 550, 80 ], fillColor:"rgba(0, 0, 0, 0)"},
-              { image: pp7, sound:ss7 , shape: "circle", coords: [350, 450, 100 ], fillColor:"rgba(0, 0, 0, 0)"},
-              { image: pp8, sound:ss8 , shape: "circle", coords: [510, 270, 80 ], fillColor:"rgba(0, 0, 0, 0)"},
-              { image: pp9, sound:ss9 , shape: "circle", coords: [800, 180, 90 ], fillColor:"rgba(0, 0, 0, 0)"},
+              { image: pp1,sound:ss1 , shape: "circle", coords: [230, 750, 100 ], preFillColor: "red" },
+              { image: pp2, sound:ss2 , shape: "circle", coords: [700, 750, 80 ], preFillColor: "red" },
+              { image: pp3, sound:ss3 , shape: "circle", coords: [1070, 750, 70 ], preFillColor: "red" },
+              { image: pp4, sound:ss4 , shape: "circle", coords: [1200, 600, 90 ], preFillColor: "red" },
+              { image: pp5, sound:ss5 , shape: "circle", coords: [950, 530, 80 ], preFillColor: "red" },
+              { image: pp6, sound:ss6 , shape: "circle", coords: [610, 550, 80 ], preFillColor: "red" },
+              { image: pp7, sound:ss7 , shape: "circle", coords: [350, 450, 100 ], preFillColor: "red" },
+              { image: pp8, sound:ss8 , shape: "circle", coords: [510, 270, 80 ], preFillColor: "red" },
+              { image: pp9, sound:ss9 , shape: "circle", coords: [800, 180, 90 ], preFillColor: "red" },
             ]
         }    
       }
-      if(window.innerWidth >=1366 && window.innerWidth <= 1919){
-        width=1050;
+      if(window.innerWidth >=1367 && window.innerWidth <= 1999){  //notebook B
+        width=1200;
         popwidth='md'
         map ={
           name: "my-map",
           areas: [
-              { image: pp1, sound:ss1 , shape: "circle", coords: [160, 500, 100 ], fillColor:"rgba(0, 0, 0, 0)"},
-              { image: pp2, sound:ss2 , shape: "circle", coords: [490, 500, 80 ], fillColor:"rgba(0, 0, 0, 0)"},
-              { image: pp3, sound:ss3 , shape: "circle", coords: [720, 500, 70 ], fillColor:"rgba(0, 0, 0, 0)"},
-              { image: pp4, sound:ss4 , shape: "circle", coords: [830, 430, 90 ], fillColor:"rgba(0, 0, 0, 0)"},
-              { image: pp5, sound:ss5 , shape: "circle", coords: [650, 350, 70 ], fillColor:"rgba(0, 0, 0, 0)"},
-              { image: pp6, sound:ss6 , shape: "circle", coords: [420, 390, 80 ], fillColor:"rgba(0, 0, 0, 0)"},
-              { image: pp7, sound:ss7 , shape: "circle", coords: [250, 330, 100 ], fillColor:"rgba(0, 0, 0, 0)"},
-              { image: pp8, sound:ss8 , shape: "circle", coords: [360, 210, 80 ], fillColor:"rgba(0, 0, 0, 0)"},
-              { image: pp9, sound:ss9 , shape: "circle", coords: [550, 150, 90 ], fillColor:"rgba(0, 0, 0, 0)"},
+              { image: pp1, sound:ss1 , shape: "circle", coords: [170, 560, 80 ], fillColor:"rgba(0, 0, 0, 0)" },
+              { image: pp2, sound:ss2 , shape: "circle", coords: [550, 560, 60 ], fillColor:"rgba(0, 0, 0, 0)" },
+              { image: pp3, sound:ss3 , shape: "circle", coords: [820, 580, 60 ], fillColor:"rgba(0, 0, 0, 0)" },
+              { image: pp4, sound:ss4 , shape: "circle", coords: [940, 480, 70 ], fillColor:"rgba(0, 0, 0, 0)" },
+              { image: pp5, sound:ss5 , shape: "circle", coords: [750, 370, 70 ], fillColor:"rgba(0, 0, 0, 0)" },
+              { image: pp6, sound:ss6 , shape: "circle", coords: [490, 420, 70 ], fillColor:"rgba(0, 0, 0, 0)" },
+              { image: pp7, sound:ss7 , shape: "circle", coords: [280, 370, 80 ], fillColor:"rgba(0, 0, 0, 0)" },
+              { image: pp8, sound:ss8 , shape: "circle", coords: [400, 210, 80 ], fillColor:"rgba(0, 0, 0, 0)" },
+              { image: pp9, sound:ss9 , shape: "circle", coords: [630, 160, 80 ], fillColor:"rgba(0, 0, 0, 0)" },
             ]
         }    
       }
-      if(window.innerWidth >=0 && window.innerWidth <= 1365){
+      if(window.innerWidth >=813 && window.innerWidth <= 1366){  //macbook B
+        width=1100;
+        popwidth='md'
+        map ={
+          name: "my-map",
+          areas: [
+              { image: pp1, sound:ss1 , shape: "circle", coords: [160, 510, 70 ], fillColor:"rgba(0, 0, 0, 0)" },
+              { image: pp2, sound:ss2 , shape: "circle", coords: [490, 520, 60 ], fillColor:"rgba(0, 0, 0, 0)" },
+              { image: pp3, sound:ss3 , shape: "circle", coords: [760, 530, 60 ], fillColor:"rgba(0, 0, 0, 0)" },
+              { image: pp4, sound:ss4 , shape: "circle", coords: [850, 430, 60 ], fillColor:"rgba(0, 0, 0, 0)" },
+              { image: pp5, sound:ss5 , shape: "circle", coords: [680, 350, 70 ], fillColor:"rgba(0, 0, 0, 0)" },
+              { image: pp6, sound:ss6 , shape: "circle", coords: [430, 390, 70 ], fillColor:"rgba(0, 0, 0, 0)" },
+              { image: pp7, sound:ss7 , shape: "circle", coords: [250, 330, 70 ], fillColor:"rgba(0, 0, 0, 0)" },
+              { image: pp8, sound:ss8 , shape: "circle", coords: [370, 210, 70 ], fillColor:"rgba(0, 0, 0, 0)" },
+              { image: pp9, sound:ss9 , shape: "circle", coords: [580, 150, 70 ], fillColor:"rgba(0, 0, 0, 0)" },
+            ]
+        }    
+      }
+
+      // fillColor:"rgba(0, 0, 0, 0)"
+
+
+      if(window.innerWidth >=0 && window.innerWidth <= 812){
         width=550;
         popwidth='sm'
         map ={
           name: "my-map",
           areas: [
-              { image: pp1, sound:ss1 , shape: "circle", coords: [80, 280, 40 ], fillColor:"rgba(0, 0, 0, 0)"},
-              { image: pp2, sound:ss2 , shape: "circle", coords: [250, 280, 40 ], fillColor:"rgba(0, 0, 0, 0)"},
-              { image: pp3, sound:ss3 , shape: "circle", coords: [370, 270, 40 ], fillColor:"rgba(0, 0, 0, 0)"},
-              { image: pp4, sound:ss4 , shape: "circle", coords: [450, 220, 40 ], fillColor:"rgba(0, 0, 0, 0)"},
-              { image: pp5, sound:ss4 , shape: "circle", coords: [350, 180, 40 ], fillColor:"rgba(0, 0, 0, 0)"},
-              { image: pp6, sound:ss5 , shape: "circle", coords: [220, 190, 40 ], fillColor:"rgba(0, 0, 0, 0)"},
-              { image: pp7, sound:ss6 , shape: "circle", coords: [120, 160, 40 ], fillColor:"rgba(0, 0, 0, 0)"},
-              { image: pp8, sound:ss7 , shape: "circle", coords: [190, 100, 40 ], fillColor:"rgba(0, 0, 0, 0)"},
-              { image: pp9, sound:ss8 , shape: "circle", coords: [300, 70, 40 ], fillColor:"rgba(0, 0, 0, 0)"},
+              { image: pp1, sound:ss1 , shape: "circle", coords: [80, 280, 40 ], preFillColor: "red" },
+              { image: pp2, sound:ss2 , shape: "circle", coords: [250, 280, 40 ], preFillColor: "red" },
+              { image: pp3, sound:ss3 , shape: "circle", coords: [370, 270, 40 ], preFillColor: "red" },
+              { image: pp4, sound:ss4 , shape: "circle", coords: [450, 220, 40 ], preFillColor: "red" },
+              { image: pp5, sound:ss4 , shape: "circle", coords: [350, 180, 40 ], preFillColor: "red" },
+              { image: pp6, sound:ss5 , shape: "circle", coords: [220, 190, 40 ], preFillColor: "red" },
+              { image: pp7, sound:ss6 , shape: "circle", coords: [120, 160, 40 ], preFillColor: "red" },
+              { image: pp8, sound:ss7 , shape: "circle", coords: [190, 100, 40 ], preFillColor: "red" },
+              { image: pp9, sound:ss8 , shape: "circle", coords: [300, 70, 40 ], preFillColor: "red" },
             ]
         }    
       }
@@ -178,12 +198,12 @@ class gallery extends React.Component{
         onFinishedPlaying={() => this.setState({ playStatus: Sound.status.STOPPED })}
       />  
 
-        {/* <Sound
+        <Sound
           url={bgsound}
           volume={this.props.sound === false ? 0 : 100}
           playStatus={this.state.playStatus}
           onFinishedPlaying={() => this.setState({ play: Sound.status.STOPPED })}
-        /> */}
+        />
 
 
           <div className="bggallery">

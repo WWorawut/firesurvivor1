@@ -9,7 +9,7 @@ import { BrowserRouter as   Link, Redirect } from 'react-router-dom';
 import Popup from '../Scene/popup';
 import Sound from 'react-sound';
 import walk1 from "../picture2/popscore/cofull.png";
-import sound3 from '../video/sound/stwalk.mp3';
+import sound3 from '../video/sound/sfull.mp3';
 
 const Step = Steps.Step;
 const TabPane = Tabs.TabPane;
@@ -87,7 +87,7 @@ class exam2 extends React.Component {
       if(data.sound){
         this.setState({playpop:Sound.status.PLAYING,urlSound:data.sound})  
         }
-      setTimeout(this.popupClose(data),2000);
+      setTimeout(this.popupClose(data),3000);
     }
       
     popupClose=data=>()=>{

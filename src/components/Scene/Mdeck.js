@@ -9,7 +9,6 @@ import choosebutton from "../picture2/button/choosebutton.png";
 import popdeck from "../picture2/deck/Mwarningdeck.png";
 import { Link,Redirect } from 'react-router-dom'
 
-import {savescore} from '../../action'
 import {connect} from 'react-redux';
 
 import Sound from 'react-sound';
@@ -26,7 +25,6 @@ class Mdeck extends React.Component{
   openpop=data=>()=>{
     setTimeout(this.soundOn,100);
     this.setState({popup:true})
-    this.props.dispatch(savescore(data.score));
   }
   popupClose=()=>{
     this.setState({popup:false, playStatus:Sound.status.STOPPED})
@@ -69,7 +67,7 @@ class Mdeck extends React.Component{
   }
 }
 const connectscore = state => ({
-  score:state.sound
+  sound:state.sound
   })
   
   export default connect(connectscore)(Mdeck);

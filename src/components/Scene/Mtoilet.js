@@ -10,7 +10,6 @@ import poptoilet from "../picture2/toilet/Mwarningtoilet.png";
 
 import { Link,Redirect } from 'react-router-dom';
 
-import {savescore} from '../../action'
 import {connect} from 'react-redux';
 
 import Sound from 'react-sound';
@@ -27,8 +26,8 @@ class Mtoilet extends React.Component{
   openpop=data=>()=>{
     setTimeout(this.soundOn,100);
     this.setState({popup:true})
-    this.props.dispatch(savescore(data.score));
   }
+  
   popupClose=()=>{
     this.setState({popup:false, playStatus:Sound.status.STOPPED})
   }
@@ -69,7 +68,7 @@ class Mtoilet extends React.Component{
   }
 }
 const connectscore = state => ({
-  score:state.sound
+  sound:state.sound
   })
   
   export default connect(connectscore)(Mtoilet);

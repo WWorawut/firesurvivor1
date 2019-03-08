@@ -171,4 +171,8 @@ body{
     .log{
         display: none !important;
     }
+
+    .c{
+        width: 15%;
+    }
     }

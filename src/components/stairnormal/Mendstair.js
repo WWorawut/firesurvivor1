@@ -78,7 +78,6 @@ class Mendstair extends React.Component{
   }
 }
 const connectscore = state => ({
-  score:state.score,
   sound:state.sound
   })
   

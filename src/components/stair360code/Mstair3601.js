@@ -57,7 +57,6 @@ class Mstair3601 extends React.Component {
     
     openpop=data=>()=>{
       this.setState({[data.state]:true});
-      this.props.dispatch(savescore(data.score));
       if(data.sound){
         this.setState({playpop:Sound.status.PLAYING,urlSound:data.sound})  
         }
@@ -136,8 +135,8 @@ class Mstair3601 extends React.Component {
        </div>
        :
        <div className="centerwalk">
-       <img className={"walkk animated fadeInUp"} style={{marginRight:'15%'}} onClick={this.openpop({link:'link1',score:5,state:'popup',sound:sound3})} src={walk}/>
-       <img className={"run animated fadeInUp"} onClick={this.openpop({link:'link2',score:-5,state:'popup2',sound:sound4})} src={run}/>
+       <img className={"walkk animated fadeInUp"} style={{marginRight:'15%'}} onClick={this.openpop({link:'link1',state:'popup',sound:sound3})} src={walk}/>
+       <img className={"run animated fadeInUp"} onClick={this.openpop({link:'link2',state:'popup2',sound:sound4})} src={run}/>
        </div>
        }
        </div>

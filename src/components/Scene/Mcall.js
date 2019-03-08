@@ -9,7 +9,7 @@ import call2 from "../picture2/popscore/mcall2.png";
 import call3 from "../picture2/popscore/mcall3.png";
 
 import { BrowserRouter as  Link,Redirect } from 'react-router-dom'
-import {savescore,choosecall} from '../../action'
+import {choosecall} from '../../action'
 import {connect} from 'react-redux';
 
 import Sound from 'react-sound';
@@ -36,8 +36,7 @@ class Mcall extends React.Component{
 
 
   openpop=data=>()=>{
-    this.setState({[data.state]:true});
-    this.props.dispatch(savescore(data.score));    
+    this.setState({[data.state]:true});   
     if(data.sound){
       this.setState({playpop:Sound.status.PLAYING,urlSound:data.sound})  
       }
@@ -107,11 +106,11 @@ class Mcall extends React.Component{
       <div className="boxjangtext">
       <p>สถานการณ์ :</p>
       <p className="texthead">คุณจะแจ้งข้อมูลให้เจ้าหน้าที่ดับเพลิงว่าอย่างไรในสถานการณ์ฉุกเฉิน ?</p>
-      <Button className="buttonjang" onClick={this.openpop({link:'link',score:1,state:'popup',sound:sound2})}>คุณๆ ไฟไหม้ตึกใหญ่แล้ว ช่วยด้วย!!</Button>
+      <Button className="buttonjang" onClick={this.openpop({link:'link',state:'popup',sound:sound2})}>คุณๆ ไฟไหม้ตึกใหญ่แล้ว ช่วยด้วย!!</Button>
       <br/>
-      <Button className="buttonjang" onClick={this.openpop({link:'link',score:3,state:'popup3',sound:sound2})}>ผมชื่อ... ไฟไหม้ที่ตึกสยามอาร์ท อโศก 5 นาทีแล้วครับ</Button>
+      <Button className="buttonjang" onClick={this.openpop({link:'link',state:'popup3',sound:sound2})}>ผมชื่อ... ไฟไหม้ที่ตึกสยามอาร์ท อโศก 5 นาทีแล้วครับ</Button>
       <br/>
-      <Button className="buttonjang" onClick={this.openpop({link:'link',score:2,state:'popup2',sound:sound2})}>ไฟไหม้ตึกสยามอาร์ทครับ รีบมาเลยนะครับ</Button>
+      <Button className="buttonjang" onClick={this.openpop({link:'link',state:'popup2',sound:sound2})}>ไฟไหม้ตึกสยามอาร์ทครับ รีบมาเลยนะครับ</Button>
       </div>
       </div>
 
@@ -125,7 +124,6 @@ class Mcall extends React.Component{
   }
 }
 const connectscore = state => ({
-  score:state.score,
   choosecall:state.choosecall,
   choosefriend:state.choosefriend,
   choosealarm:state.choosealarm,

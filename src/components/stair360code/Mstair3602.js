@@ -2,9 +2,6 @@ import React, {} from 'react';
 import '../css/360.css';
 import {Entity, Scene} from 'aframe-react';
 
-import { Button } from 'antd';
-
-import gobutton from '../picture2/button/gobutton.png'
 import choosebutton from '../picture2/button/choosebutton.png'
 import { BrowserRouter as  Link,Redirect } from 'react-router-dom'
 import floor from '../picture2/stair360/floor18.png'
@@ -23,7 +20,7 @@ import {connect} from 'react-redux';
 
 
 import Sound from 'react-sound';
-import sound from '../video/sound/speakstair.mp3';
+
 
 
 import sound3 from '../video/sound/walklorr.mp3';
@@ -61,7 +58,6 @@ class Mstair3602 extends React.Component {
     
     openpop=data=>()=>{
       this.setState({[data.state]:true});
-      this.props.dispatch(savescore(data.score));
       if(data.sound){
         this.setState({playpop:Sound.status.PLAYING,urlSound:data.sound})  
         }
