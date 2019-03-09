@@ -15,6 +15,9 @@ import {connect} from 'react-redux';
 import Sound from 'react-sound';
 import sound from '../video/sound/speaktoilet.mp3';
 
+import Preload from '../preload';
+import { Preloader, Placeholder } from 'react-preloading-screen';
+
 class Mtoilet extends React.Component{
 
   state={
@@ -41,6 +44,7 @@ class Mtoilet extends React.Component{
    
    render() {
     return (
+      <Preloader>
       <div>
       <Popup
       open={this.state.popup}
@@ -64,6 +68,11 @@ class Mtoilet extends React.Component{
       {this.Redirect()}
       <Link to = "/modeescape"><Button className="out" ghost onClick={this.out}> <Iconout/>กลับ</Button></Link>
       </div>
+
+      <Placeholder>
+<span><Preload/></span>
+</Placeholder>
+</Preloader>
     );
   }
 }

@@ -18,6 +18,8 @@ import {connect} from 'react-redux';
 import sound from '../video/sound/speakstair.mp3';
 import sound3 from '../video/sound/stwalk.mp3';
 import sound4 from '../video/sound/stwalkorrun.mp3';
+import Preload from '../preload';
+import { Preloader, Placeholder } from 'react-preloading-screen';
 
 
 
@@ -66,6 +68,7 @@ class stair19 extends React.Component{
 
    render() {
     return (
+      <Preloader>
    
         <div>
       <Sound
@@ -117,6 +120,11 @@ class stair19 extends React.Component{
       </div> */}
       </div>
       </div>
+
+      <Placeholder>
+<span><Preload/></span>
+</Placeholder>
+</Preloader>
 
     );
   }

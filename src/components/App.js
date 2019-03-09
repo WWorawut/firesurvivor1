@@ -143,7 +143,9 @@ import { BrowserRouter as  Router, Route,Link,Redirect} from 'react-router-dom';
 import mousegif from "./picture/ro.gif";
 
 
-import bgsound from './video/file/s2.mp3';
+import bgsound from './video/sound/finalbg.mp3';
+
+// import bgsound from './video/file/s2.mp3';
 
 import {time,closeSound, stopTimer,savescore} from './../action'
 

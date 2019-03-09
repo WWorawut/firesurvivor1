@@ -15,6 +15,9 @@ import {connect} from 'react-redux';
 import Sound from 'react-sound';
 import sound from '../video/sound/speakdeck.mp3';
 
+import Preload from '../preload';
+import { Preloader, Placeholder } from 'react-preloading-screen';
+
 class deck extends React.Component{
 
   state={
@@ -42,6 +45,7 @@ class deck extends React.Component{
    
    render() {
     return (
+      <Preloader>
       <div>
       <Popup
       open={this.state.popup}
@@ -65,6 +69,11 @@ class deck extends React.Component{
       {this.Redirect()}
       <Link to = "/stair3600"><Button className="out" ghost onClick={this.out}> <Iconout/>กลับ</Button></Link>
       </div>
+
+      <Placeholder>
+<span><Preload/></span>
+</Placeholder>
+</Preloader>
     );
   }
 }

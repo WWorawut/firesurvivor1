@@ -15,6 +15,9 @@ import {connect} from 'react-redux';
 import Sound from 'react-sound';
 import sound from '../video/sound/speaklift.mp3';
 
+import Preload from '../preload';
+import { Preloader, Placeholder } from 'react-preloading-screen';
+
 class lift extends React.Component{
 
 state={
@@ -42,6 +45,7 @@ Redirect=()=>{if(this.state.link){ return <Redirect to="/stair16" /> }}
    
    render() {
     return (
+      <Preloader>
       <div>
         <Popup
         open={this.state.popup}
@@ -65,6 +69,11 @@ Redirect=()=>{if(this.state.link){ return <Redirect to="/stair16" /> }}
       {this.Redirect()}
       <Link to = "/officeoutside"><Button className="out" ghost onClick={this.out}> <Iconout/>กลับ</Button></Link>
       </div> 
+
+      <Placeholder>
+<span><Preload/></span>
+</Placeholder>
+</Preloader>
     );
   }
 }

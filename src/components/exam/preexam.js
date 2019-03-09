@@ -11,6 +11,10 @@ import '../css/login.css';
 import '../css/exam.css';
 import 'antd/dist/antd.css'
 
+
+import Preload from '../preload';
+import { Preloader, Placeholder } from 'react-preloading-screen';
+
 class preexam extends React.Component {
     state = { 
       link:false,
@@ -30,6 +34,7 @@ class preexam extends React.Component {
 
   render() {
     return (
+      <Preloader>
 
       <div>
       <Sound
@@ -54,6 +59,11 @@ class preexam extends React.Component {
       
       </div>
       </div>
+
+      <Placeholder>
+<span><Preload/></span>
+</Placeholder>
+</Preloader>
 
     );
   }

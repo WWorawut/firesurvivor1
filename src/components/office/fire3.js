@@ -29,6 +29,9 @@ import sound3 from '../video/sound/f31.mp3';
 import sound4 from '../video/sound/f35mp3.mp3';
 import sound5 from '../video/sound/f34.mp3';
 
+import Preload from '../preload';
+import { Preloader, Placeholder } from 'react-preloading-screen';
+
 
 class fire3 extends React.Component{
   state={
@@ -108,7 +111,9 @@ class fire3 extends React.Component{
   
 
    render() {
+    
     return (
+      <Preloader>
       <div>
         {this.Redirect()}
         {/* {this.Redirect1()} */}
@@ -212,6 +217,12 @@ class fire3 extends React.Component{
 
       </div>
     </div>
+
+    
+    <Placeholder>
+<span><Preload/></span>
+</Placeholder>
+</Preloader>
     );
   }
 }

@@ -37,6 +37,9 @@ import { Link,Redirect } from 'react-router-dom';
 import ImageMapper from 'react-image-mapper';
 import ff from './picture2/bg3.png';
 
+import Preload from './preload';
+import { Preloader, Placeholder } from 'react-preloading-screen';
+
 class gallery extends React.Component{
   constructor(props) {
     super(props);
@@ -89,6 +92,7 @@ class gallery extends React.Component{
 
 
     render() {
+   
       let map;
       let width;
       let popwidth;
@@ -160,11 +164,11 @@ class gallery extends React.Component{
               { image: pp2, sound:ss2 , shape: "circle", coords: [250, 280, 40 ], fillColor:"rgba(0, 0, 0, 0)" },
               { image: pp3, sound:ss3 , shape: "circle", coords: [370, 270, 40 ], fillColor:"rgba(0, 0, 0, 0)"},
               { image: pp4, sound:ss4 , shape: "circle", coords: [450, 220, 40 ],fillColor:"rgba(0, 0, 0, 0)" },
-              { image: pp5, sound:ss4 , shape: "circle", coords: [350, 180, 40 ], fillColor:"rgba(0, 0, 0, 0)" },
-              { image: pp6, sound:ss5 , shape: "circle", coords: [220, 190, 40 ], fillColor:"rgba(0, 0, 0, 0)" },
-              { image: pp7, sound:ss6 , shape: "circle", coords: [120, 160, 40 ], fillColor:"rgba(0, 0, 0, 0)" },
-              { image: pp8, sound:ss7 , shape: "circle", coords: [190, 100, 40 ],fillColor:"rgba(0, 0, 0, 0)" },
-              { image: pp9, sound:ss8 , shape: "circle", coords: [300, 70, 40 ], fillColor:"rgba(0, 0, 0, 0)" },
+              { image: pp5, sound:ss5 , shape: "circle", coords: [350, 180, 40 ], fillColor:"rgba(0, 0, 0, 0)" },
+              { image: pp6, sound:ss6 , shape: "circle", coords: [220, 190, 40 ], fillColor:"rgba(0, 0, 0, 0)" },
+              { image: pp7, sound:ss7 , shape: "circle", coords: [120, 160, 40 ], fillColor:"rgba(0, 0, 0, 0)" },
+              { image: pp8, sound:ss8 , shape: "circle", coords: [190, 100, 40 ],fillColor:"rgba(0, 0, 0, 0)" },
+              { image: pp9, sound:ss9 , shape: "circle", coords: [300, 70, 40 ], fillColor:"rgba(0, 0, 0, 0)" },
             ]
         }    
       }
@@ -181,7 +185,10 @@ class gallery extends React.Component{
         padding:'10px',
         zIndex: 1,
       }
+
+   
       return (
+        <Preloader>
         <div >
 
       <Popup
@@ -228,6 +235,11 @@ class gallery extends React.Component{
             </div>
 
           </div>
+
+          <Placeholder>
+<span><Preload/></span>
+</Placeholder>
+</Preloader>
   
       );
     }
