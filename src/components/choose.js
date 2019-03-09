@@ -15,6 +15,9 @@ import logo from "./picture2/c11.png";
 import Lottie from 'react-lottie';
 import animationData from './animate/choose.json'
 
+import Preload from './preload';
+import { Preloader, Placeholder } from 'react-preloading-screen';
+
 
 class choose extends React.Component {
   constructor(props) {
@@ -61,6 +64,7 @@ class choose extends React.Component {
       }
     };
     return (
+      <Preloader>
       <div>
 
         <Sound
@@ -117,44 +121,13 @@ class choose extends React.Component {
             </div>
 
 
-
-
-
-
-
-
-
-
-            {/* <div className="boxx1" onClick={this.full}> เรียนรู้ตามเนื้อเรื่อง </div>
-
-                    <div className="container">
-                            <div className="col-sm">
-                            <div className="boxx2" onClick={this.janghad} >เรียนรู้การแจ้งเหตุ</div>
-                            </div>
-                            <div className="col-sm">
-                            <div className="boxx2" onClick={this.dab}>เรียนรู้การระงับเหตุ</div>
-                            </div>
-                            <div className="col-sm">
-                            <div className="boxx2" onClick={this.escape}>เรียนรู้การหนีเหตุ</div>
-                            </div>
-                        </div>
-
-                        <div className="row">
-                            <div className="col">
-                            {this.Redirect()}
-                            <div onClick={this.preexam} className="boxx3">แบบทดสอบก่อนเรียน</div>
-                            </div>
-                            <div className="col">
-                            <div className="boxx3" onClick={this.tip}>Fire Survivor Guide</div>
-                            </div>
-                        </div> */}
             {/* 
             
                         <div className="boxx2" onMouseOver={this.hoversound({sound:sound2})} onMouseOut={this.hoversoundoff} >เรียนรู้การแจ้งเหตุ</div> */}
 
           </div>
 
-          <div style={{position: 'absolute' }}>
+          <div style={{float: 'right'}}>
             <Link to="/"><Button className="logout1" ghost><Icon className="log" type="poweroff" />ออกจากระบบ</Button></Link>
           </div>
 
@@ -163,6 +136,11 @@ class choose extends React.Component {
 
 
       </div>
+
+<Placeholder>
+<span><Preload/></span>
+</Placeholder>
+</Preloader>
 
 
 

@@ -25,7 +25,8 @@ import sound1 from '../video/sound/outal.mp3';
 import sound2 from '../video/sound/outoffcall.mp3';
 import sound3 from '../video/sound/outofffriend.mp3';
 
-
+import Preload from '../preload';
+import { Preloader, Placeholder } from 'react-preloading-screen';
   
 class officeoutside extends React.Component {
   constructor(props) {
@@ -105,6 +106,7 @@ popupClose=data=>()=>{
 
   render() {
     return (
+      <Preloader>
     <div>
 
           <Popup
@@ -192,7 +194,10 @@ popupClose=data=>()=>{
       </Scene>
 
     </div>
-     
+           <Placeholder>
+           <span><Preload/></span>
+        </Placeholder>
+       </Preloader>
      
     );
   }

@@ -5,6 +5,9 @@ import { Icon } from 'antd';
 import { BrowserRouter as  Link,Redirect } from 'react-router-dom';
 import mousegif from "./picture/mouse.gif";
 
+import Preload from './preload';
+import { Preloader, Placeholder } from 'react-preloading-screen';
+
 class Howplay extends React.Component{
   constructor(props) {
     super(props);
@@ -18,6 +21,7 @@ class Howplay extends React.Component{
 
     render() {
       return (
+        <Preloader>
         <div>
           <section>
           <div className="bghowto">
@@ -40,6 +44,11 @@ class Howplay extends React.Component{
           </div>
         </section>
         </div>
+
+        <Placeholder>
+           <span><Preload/></span>
+        </Placeholder>
+       </Preloader>
 
 
 

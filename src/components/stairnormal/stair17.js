@@ -4,9 +4,7 @@ import listwalk1 from "../picture2/stairnormal/listwalk1.png";
 import listwalk2 from "../picture2/stairnormal/listwalk2.png";
 import listwalk3 from "../picture2/stairnormal/listwalk3.png";
 import { Redirect } from 'react-router-dom';
-import Preload from 'react-preload';
 
-import Reloade from '../preload';
 import Popup from '../Scene/popup';
 
 import walk11 from "../picture2/popscore/walk11.png";

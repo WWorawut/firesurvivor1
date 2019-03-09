@@ -6,14 +6,12 @@ import stair1 from "../picture2/speak/stair1.png";
 import walk from "../picture2/speak/walkk.png";
 import run from "../picture2/speak/run.png";
 import { Link, Redirect } from 'react-router-dom';
-import Preload from 'react-preload';
 import Sound from 'react-sound';
 
 import walk1 from "../picture2/popscore/Mwalk1.png";
 import run1 from "../picture2/popscore/Mrun1.png";
 import Popup from '../Scene/popup';
 
-import Reloade from '../preload';
 import {savescore} from '../../action'
 import {connect} from 'react-redux';
 
@@ -65,21 +63,8 @@ class Mstair19 extends React.Component{
     Redirect1=()=>{if(this.state.link2){ return <Redirect to="/Mstair177" /> }}
 
    render() {
-
-    var images = [{human,stair1,walk,run}];
-    var loadingIndicator = (<Reloade/>);
     return (
- 
-        <Preload
-            loadingIndicator={loadingIndicator}
-            images={images}
-            autoResolveDelay={30000}
-            onError={this._handleImageLoadError}
-            onSuccess={this._handleImageLoadSuccess}
-            resolveOnError={true}
-            mountChildren={true}
-        >
-
+<div>
 
       <Sound
         url={sound}
@@ -137,7 +122,8 @@ class Mstair19 extends React.Component{
         </div>              
       </div> */}
       </div>
-      </Preload>
+      </div>
+
     );
   }
 }

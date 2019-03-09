@@ -24,6 +24,9 @@ import sound from '../video/sound/speak360.mp3';
 
 import sound3 from '../video/sound/st360.mp3';
 
+import Preload from '../preload';
+import { Preloader, Placeholder } from 'react-preloading-screen';
+
 
   
 class Mstair3600 extends React.Component {
@@ -94,6 +97,7 @@ class Mstair3600 extends React.Component {
 
   render() {
     return (
+      <Preloader>
     <div>
 
           <Popup
@@ -153,12 +157,12 @@ class Mstair3600 extends React.Component {
       </Scene>
 
 
-
-
-
-
-
     </div>
+
+    <Placeholder>
+           <span><Preload/></span>
+        </Placeholder>
+       </Preloader>
      
      
     );

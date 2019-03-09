@@ -149,6 +149,7 @@ import {time,closeSound, stopTimer,savescore} from './../action'
 
 
 
+
 const formattedSeconds = (sec) =>
   Math.floor(sec / 60) +
     ':' +
@@ -165,7 +166,7 @@ class App extends React.Component{
       secondsElapsed: 0, 
       playStatus:Sound.status.STOPPED,
       clock:0,
-      visible: false
+      visible: false,
     };
   }
 
@@ -192,6 +193,9 @@ class App extends React.Component{
       this.props.dispatch(savescore(-this.props.score));
       this.props.dispatch(stopTimer(false));
       return <Redirect to="/choose"/> }
+      if (this.props.user ==="") {
+        return <Redirect to='/' />
+     }
   }
 
   //เงื่อนไขการ show
@@ -233,9 +237,6 @@ class App extends React.Component{
 
 
   render() {
-
-
-
     //sound
     let sound;
     if(this.state.clickedSound===true){
@@ -245,15 +246,15 @@ class App extends React.Component{
     }
 
     const path =[
-      {path:"/intro",component:intro,timer:false,openSound:false,scoreSetting:false,soundSetting:false,home:false},
-      {path:"/finalend",component:finalend,timer:false,openSound:false,scoreSetting:false,soundSetting:false,home:false},
+      {path:"/intro",component:intro,timer:false,scoreSetting:false,soundSetting:false,home:false},
+      {path:"/finalend",component:finalend,timer:false,scoreSetting:false,soundSetting:false,home:false},
       {path:"/exam",component:exam,timer:false,scoreSetting:false},
       {path:"/exam2",component:exam2,timer:false,scoreSetting:false,home:false},
       {path:"/preexam",component:preexam,timer:false,scoreSetting:false},
       {path:"/preexam2",component:preexam2,timer:false,scoreSetting:false,home:false},
       {path:"/howtoplay",component:howtoplay,timer:false,scoreSetting:false,home:false},
       {path:"/share",component:share,timer:false,scoreSetting:false},
-      {path:"/finalnormal",component:finalnormal,timer:false,openSound:false,scoreSetting:false,soundSetting:false,home:false},
+      {path:"/finalnormal",component:finalnormal,timer:false,scoreSetting:false,soundSetting:false,home:false},
 
       {path:"/choose",component:choose,timer:false,scoreSetting:false,home:false},
       {path:"/gallery",component:gallery,timer:false,scoreSetting:false,home:false},
@@ -357,8 +358,8 @@ class App extends React.Component{
       {path:"/Mwalk",component:Mwalk,timer:false,scoreSetting:false,home:false},
       {path:"/Mwalk360",component:Mwalk360,timer:false,scoreSetting:false,home:false},
       {path:"/Mescape",component:Mescape,timer:false,scoreSetting:false,home:false},
-      {path:"/Mfinalend",component:Mfinalend,timer:false,openSound:false,scoreSetting:false,soundSetting:false,home:false},
-      {path:"/Mfinalnormal",component:Mfinalnormal,timer:false,openSound:false,scoreSetting:false,soundSetting:false,home:false},
+      {path:"/Mfinalend",component:Mfinalend,timer:false,scoreSetting:false,soundSetting:false,home:false},
+      {path:"/Mfinalnormal",component:Mfinalnormal,timer:false,scoreSetting:false,soundSetting:false,home:false},
     
       {path:"/modejanghad",component:modejanghad,timer:false,scoreSetting:false},
       {path:"/Mcall",component:Mcall,timer:false,scoreSetting:false},
@@ -384,16 +385,6 @@ class App extends React.Component{
       </div>
     </div>
     </div>
-    );
-
-    const openSound =(
-      <Sound
-        url={bgsound}
-        loop={true}
-        volume={this.props.sound === false?0:45}
-        playStatus={Sound.status.PLAYING}   
-        onFinishedPlaying={() => this.setState({ playStatus: Sound.status.STOPPED })}
-      />  
     );
     const scoreSetting =(
       <div className="bgmock">
@@ -427,15 +418,41 @@ class App extends React.Component{
         </div>
       );
 
-     let width = window.innerWidth;
-     let height = window.innerHeight; 
-     
+    let playSound = Sound.status.PLAYING;
+    let pathname = window.location.pathname;
+    if(pathname === '/' || pathname === '/intro' || pathname === '/finalend' || pathname === '/finalnormal' || pathname === '/Mfinalend' || pathname === '/Mfinalnormal'){
+      playSound = Sound.status.STOPPED;}
+      else{playSound = Sound.status.PLAYING;}
+
+    let width = window.innerWidth;
+    let height = window.innerHeight; 
+    // const user = this.props.user;
+    // function withRestriction(WrappedComponent) {
+    //   return class RestrictedComponent extends React.Component { 
+    //     render() {
+    //       if (user ==="") {
+    //          return <Redirect to='/' />
+    //       }else{
+    //        return <WrappedComponent />
+    //       }  
+    //     }
+    //   }
+    // }
+    // const IntroMP42=withRestriction(intro)
     return ( 
       
     <div>
     {height > width ?
     <div className="rotate"><img className="ro" src={mousegif} /></div>:
     <div>
+
+      <Sound
+        url={bgsound}
+        loop={true}
+        debugMode= {false}
+        volume={this.props.sound === false?0:45}
+        playStatus={playSound}   
+      /> 
         <Modal
           title={<p  style={{fontSize:'20px'}}><Icon type="question-circle" style={{color:'orange',fontSize:'30px',paddingRight:'15px'}}/>คุณต้องการกลับไปหน้าแรกใช่หรือไม่ ?</p>}
           content={false}
@@ -457,11 +474,9 @@ class App extends React.Component{
         <Route exact path="/" component={Loginscreen} />
         {path.map((path) =><Route path={path.path} component={path.component} /> )}
         {path.map((path) =>path.timer === false ?null:<Route path={path.path} render={()=>timer} />)}
-        {path.map((path) =>path.openSound === false ?null: <Route path={path.path} render={()=>openSound} /> )}
         {path.map((path) =>path.scoreSetting === false ?null: <Route path={path.path} render={()=>scoreSetting} /> )}
         {path.map((path) =>path.soundSetting === false ?null: <Route path={path.path} render={()=>soundSetting} /> )}
         {path.map((path) =>path.home === false ?null: <Route path={path.path} render={()=>home} /> )}
-
       </div>
     </Router>
     </div>

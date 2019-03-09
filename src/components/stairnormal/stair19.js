@@ -6,20 +6,20 @@ import stair1 from "../picture2/speak/stair1.png";
 import walk from "../picture2/speak/walkk.png";
 import run from "../picture2/speak/run.png";
 import { Link, Redirect } from 'react-router-dom';
-import Preload from 'react-preload';
 import Sound from 'react-sound';
 
 import walk1 from "../picture2/popscore/walk1.png";
 import run1 from "../picture2/popscore/run1.png";
 import Popup from '../Scene/popup';
 
-import Reloade from '../preload';
 import {savescore} from '../../action'
 import {connect} from 'react-redux';
 
 import sound from '../video/sound/speakstair.mp3';
 import sound3 from '../video/sound/stwalk.mp3';
 import sound4 from '../video/sound/stwalkorrun.mp3';
+
+
 
 class stair19 extends React.Component{
   state={
@@ -65,38 +65,21 @@ class stair19 extends React.Component{
     Redirect1=()=>{if(this.state.link2){ return <Redirect to="/stair177" /> }}
 
    render() {
-
-    var images = [{human,stair1,walk,run}];
-    var loadingIndicator = (<Reloade/>);
     return (
- 
-        <Preload
-            loadingIndicator={loadingIndicator}
-            images={images}
-            autoResolveDelay={30000}
-            onError={this._handleImageLoadError}
-            onSuccess={this._handleImageLoadSuccess}
-            resolveOnError={true}
-            mountChildren={true}
-        >
-
-
+   
+        <div>
       <Sound
         url={sound}
         volume={this.props.sound === false?0:100}
         playStatus={this.state.playStatus}
         onFinishedPlaying={() => this.setState({ playStatus: Sound.status.STOPPED })}
       />  
-
-      
       <Sound
         url={this.state.urlSound}
         volume={this.props.sound === false?0:100}
         playStatus={this.state.playpop}
         onFinishedPlaying={() => this.setState({ playpop: Sound.status.STOPPED })}
       />
-          
-
         {this.Redirect()}
         {this.Redirect1()}
 
@@ -127,18 +110,14 @@ class stair19 extends React.Component{
        <img className={"run animated fadeInUp"} onClick={this.openpop({link:'link2',score:-5,state:'popup2',sound:sound4})} src={run}/>
        </div>
       }
-    
-
-     
-      
-
       {/* <div className="bgtypeinfo">
         <div className="typeinfo janghad">
         <Icon className="closea" type="close" onClick={this.close}/>
         </div>              
       </div> */}
       </div>
-      </Preload>
+      </div>
+
     );
   }
 }

@@ -20,6 +20,9 @@ import c from "../picture2/popscore/popfriend.png";
 import {enterroom, choosealarm, choosefriend, choosecall} from '../../action'
 import {connect} from 'react-redux';
 
+import Preload from '../preload';
+import { Preloader, Placeholder } from 'react-preloading-screen';
+
 
   
 class modeeacape extends React.Component {
@@ -90,6 +93,7 @@ popupClose=data=>()=>{
 
   render() {
     return (
+      <Preloader>
     <div>
 
           <Popup
@@ -162,6 +166,11 @@ popupClose=data=>()=>{
       </Scene>
 
     </div>
+
+<Placeholder>
+<span><Preload/></span>
+</Placeholder>
+</Preloader>
      
      
     );

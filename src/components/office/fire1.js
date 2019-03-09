@@ -49,9 +49,16 @@ class fire1 extends React.Component{
   }
 
   componentDidMount(){ 
+    this.refs.player.subscribeToStateChange(this.handleStateChange);
     setTimeout(this.soundOn,1200);
     setTimeout(this.outshow,5000);
   }
+
+  handleStateChange=()=> {
+    this.refs.player.volume = this.props.sound;
+  }
+
+
   outshow=()=>{this.setState({class:'fadeOutDown'})
   setTimeout(this.outshow2,1000)
   }
@@ -169,6 +176,7 @@ class fire1 extends React.Component{
             autoPlay
             playsInline={true}
             loop={true}
+            volume={0}
             className="bghhv"
             >
             <source src={intro} />

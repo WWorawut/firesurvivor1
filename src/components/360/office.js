@@ -14,6 +14,9 @@ import {connect} from 'react-redux';
 import Sound from 'react-sound';
 import sound from '../video/sound/speakstart.mp3';
 
+import Preload from '../preload';
+import { Preloader, Placeholder } from 'react-preloading-screen';
+
 
   
 class officenormal extends React.Component {
@@ -59,6 +62,7 @@ np
 
   render() {
     return (
+      <Preloader>
     <div>
 
       <Sound
@@ -112,13 +116,12 @@ np
         </Entity>
       </Scene>
 
-
-
-
-
-
-
     </div>
+
+    <Placeholder>
+    <span><Preload/></span>
+    </Placeholder>
+    </Preloader>
      
      
     );

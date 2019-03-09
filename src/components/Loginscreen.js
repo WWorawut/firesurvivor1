@@ -9,6 +9,8 @@ import Lottie from 'react-lottie';
 import animationData from './animate/data.json'
 
 import {takeuser} from './../action'
+import Preload from './preload';
+import { Preloader, Placeholder } from 'react-preloading-screen';
 
 class Loginscreen extends React.Component {
 constructor(props){
@@ -30,6 +32,7 @@ constructor(props){
   }
 
   render() {
+    
 
     const loginvideo = {
       loop: true,
@@ -44,6 +47,7 @@ constructor(props){
 
     if(this.state.link){ return <Redirect to="/intro" /> }
     return (
+      <Preloader>
         <div className="dddd">
 
           <Lottie options={loginvideo}
@@ -51,19 +55,6 @@ constructor(props){
               width={"100%"}
               style={{position:'absolute'}}/>
 
-
-
-
-          {/* <Player 
-            ref="player"
-            autoPlay
-            playsInline={true}
-            loop={true}
-            className="vdologin"
-            >
-            <source src={intro} />
-            <ControlBar autoHide={false} disableDefaultControls></ControlBar>
-            </Player>  */}
         <div className="bgbbbb">
         <div className="fontlog"> 
 
@@ -87,6 +78,12 @@ constructor(props){
             </div>
           </div>
         </div>   
+
+        <Placeholder>
+           <span><Preload/></span>
+        </Placeholder>
+       </Preloader>
+
     );
   }
 }

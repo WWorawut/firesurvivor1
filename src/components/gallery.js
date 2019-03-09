@@ -1,7 +1,6 @@
 import React, {} from 'react';
 import './css/gallery.css';
-import { Icon, Button } from 'antd';
-import logo from "./picture/logo.png";
+import { Button } from 'antd';
 
 import Popup from './Scene/popup';
 import Sound from 'react-sound';
@@ -51,6 +50,7 @@ class gallery extends React.Component{
   }
 
   componentDidMount() {
+    this.setState({play: Sound.status.PLAYING})
     setTimeout(this.soundOn, 1000);
   }
   soundOn = () => {
@@ -92,25 +92,25 @@ class gallery extends React.Component{
       let map;
       let width;
       let popwidth;
-      if(window.innerWidth >=1920){
+      if(window.innerWidth >=1901){
         width=1520;
         popwidth='lg'
         map ={
           name: "my-map",
           areas: [
-              { image: pp1,sound:ss1 , shape: "circle", coords: [230, 750, 100 ], preFillColor: "red" },
-              { image: pp2, sound:ss2 , shape: "circle", coords: [700, 750, 80 ], preFillColor: "red" },
-              { image: pp3, sound:ss3 , shape: "circle", coords: [1070, 750, 70 ], preFillColor: "red" },
-              { image: pp4, sound:ss4 , shape: "circle", coords: [1200, 600, 90 ], preFillColor: "red" },
-              { image: pp5, sound:ss5 , shape: "circle", coords: [950, 530, 80 ], preFillColor: "red" },
-              { image: pp6, sound:ss6 , shape: "circle", coords: [610, 550, 80 ], preFillColor: "red" },
-              { image: pp7, sound:ss7 , shape: "circle", coords: [350, 450, 100 ], preFillColor: "red" },
-              { image: pp8, sound:ss8 , shape: "circle", coords: [510, 270, 80 ], preFillColor: "red" },
-              { image: pp9, sound:ss9 , shape: "circle", coords: [800, 180, 90 ], preFillColor: "red" },
+              { image: pp1,sound:ss1 , shape: "circle", coords: [230, 750, 100 ], fillColor:"rgba(0, 0, 0, 0)" },
+              { image: pp2, sound:ss2 , shape: "circle", coords: [700, 750, 80 ], fillColor:"rgba(0, 0, 0, 0)" },
+              { image: pp3, sound:ss3 , shape: "circle", coords: [1050, 750, 70 ], fillColor:"rgba(0, 0, 0, 0)" },
+              { image: pp4, sound:ss4 , shape: "circle", coords: [1200, 600, 90 ], fillColor:"rgba(0, 0, 0, 0)"},
+              { image: pp5, sound:ss5 , shape: "circle", coords: [950, 500, 80 ], fillColor:"rgba(0, 0, 0, 0)" },
+              { image: pp6, sound:ss6 , shape: "circle", coords: [610, 550, 80 ], fillColor:"rgba(0, 0, 0, 0)" },
+              { image: pp7, sound:ss7 , shape: "circle", coords: [360, 450, 100 ], fillColor:"rgba(0, 0, 0, 0)" },
+              { image: pp8, sound:ss8 , shape: "circle", coords: [510, 270, 80 ], fillColor:"rgba(0, 0, 0, 0)" },
+              { image: pp9, sound:ss9 , shape: "circle", coords: [800, 200, 90 ], fillColor:"rgba(0, 0, 0, 0)" },
             ]
         }    
       }
-      if(window.innerWidth >=1367 && window.innerWidth <= 1999){  //notebook B
+      if(window.innerWidth >=1367 && window.innerWidth <= 1900){  //notebook B
         width=1200;
         popwidth='md'
         map ={
@@ -147,7 +147,7 @@ class gallery extends React.Component{
         }    
       }
 
-      // fillColor:"rgba(0, 0, 0, 0)"
+      // fillColor:"rgba(0, 0, 0, 0)" preFillColor: "red"
 
 
       if(window.innerWidth >=0 && window.innerWidth <= 812){
@@ -156,15 +156,15 @@ class gallery extends React.Component{
         map ={
           name: "my-map",
           areas: [
-              { image: pp1, sound:ss1 , shape: "circle", coords: [80, 280, 40 ], preFillColor: "red" },
-              { image: pp2, sound:ss2 , shape: "circle", coords: [250, 280, 40 ], preFillColor: "red" },
-              { image: pp3, sound:ss3 , shape: "circle", coords: [370, 270, 40 ], preFillColor: "red" },
-              { image: pp4, sound:ss4 , shape: "circle", coords: [450, 220, 40 ], preFillColor: "red" },
-              { image: pp5, sound:ss4 , shape: "circle", coords: [350, 180, 40 ], preFillColor: "red" },
-              { image: pp6, sound:ss5 , shape: "circle", coords: [220, 190, 40 ], preFillColor: "red" },
-              { image: pp7, sound:ss6 , shape: "circle", coords: [120, 160, 40 ], preFillColor: "red" },
-              { image: pp8, sound:ss7 , shape: "circle", coords: [190, 100, 40 ], preFillColor: "red" },
-              { image: pp9, sound:ss8 , shape: "circle", coords: [300, 70, 40 ], preFillColor: "red" },
+              { image: pp1, sound:ss1 , shape: "circle", coords: [80, 280, 40 ], fillColor:"rgba(0, 0, 0, 0)" },
+              { image: pp2, sound:ss2 , shape: "circle", coords: [250, 280, 40 ], fillColor:"rgba(0, 0, 0, 0)" },
+              { image: pp3, sound:ss3 , shape: "circle", coords: [370, 270, 40 ], fillColor:"rgba(0, 0, 0, 0)"},
+              { image: pp4, sound:ss4 , shape: "circle", coords: [450, 220, 40 ],fillColor:"rgba(0, 0, 0, 0)" },
+              { image: pp5, sound:ss4 , shape: "circle", coords: [350, 180, 40 ], fillColor:"rgba(0, 0, 0, 0)" },
+              { image: pp6, sound:ss5 , shape: "circle", coords: [220, 190, 40 ], fillColor:"rgba(0, 0, 0, 0)" },
+              { image: pp7, sound:ss6 , shape: "circle", coords: [120, 160, 40 ], fillColor:"rgba(0, 0, 0, 0)" },
+              { image: pp8, sound:ss7 , shape: "circle", coords: [190, 100, 40 ],fillColor:"rgba(0, 0, 0, 0)" },
+              { image: pp9, sound:ss8 , shape: "circle", coords: [300, 70, 40 ], fillColor:"rgba(0, 0, 0, 0)" },
             ]
         }    
       }
@@ -201,7 +201,7 @@ class gallery extends React.Component{
         <Sound
           url={bgsound}
           volume={this.props.sound === false ? 0 : 100}
-          playStatus={this.state.playStatus}
+          playStatus={this.state.play}
           onFinishedPlaying={() => this.setState({ play: Sound.status.STOPPED })}
         />
 

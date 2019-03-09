@@ -61,7 +61,7 @@ class Mstair12A extends React.Component{
 
    ////////////////////
    openpop=data=>()=>{
-    this.setState({[data.state]:true});
+    this.setState({[data.state]:true,image:data.image,people:'fadeInUp'});
     if(data.sound){
       this.setState({playpop:Sound.status.PLAYING,urlSound:data.sound})  
       }

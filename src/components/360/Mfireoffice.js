@@ -21,6 +21,9 @@ import Sound from 'react-sound';
 import sound from '../video/sound/speakfiredown.mp3';
 import sound1 from '../video/sound/fireoffdab.mp3';
 
+import Preload from '../preload';
+import { Preloader, Placeholder } from 'react-preloading-screen';
+
   
 class Mfire extends React.Component {
   constructor(props) {
@@ -87,6 +90,7 @@ class Mfire extends React.Component {
 
   render() {;
     return (
+      <Preloader>
     <div>
        {this.Redirect()}
 
@@ -156,14 +160,12 @@ class Mfire extends React.Component {
         
         </Entity>
       </Scene>
-
-
-
-
-
-
-
     </div>
+
+<Placeholder>
+<span><Preload/></span>
+</Placeholder>
+</Preloader>
      
      
     );

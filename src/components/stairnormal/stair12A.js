@@ -61,7 +61,7 @@ class stair12A extends React.Component{
 
    ////////////////////
    openpop=data=>()=>{
-    this.setState({[data.state]:true});
+    this.setState({[data.state]:true,image:data.image,people:'fadeInUp'});
     this.props.dispatch(savescore(data.score));
     if(data.sound){
       this.setState({playpop:Sound.status.PLAYING,urlSound:data.sound})  
@@ -84,9 +84,7 @@ class stair12A extends React.Component{
    render() {
 
  
-;
-    var images = [{human,stair12talk,water,towel,glass,bag}];
- 
+
     
     return (
       <div>
