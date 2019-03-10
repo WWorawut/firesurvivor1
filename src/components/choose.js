@@ -40,8 +40,8 @@ class choose extends React.Component {
     if (this.state.link) { return <Redirect to="/preexam" /> }
     if (this.state.link2) { return <Redirect to="/office" /> }
     if (this.state.link4) { return <Redirect to="/gallery" /> }
-    if (this.state.link3) { return <Redirect to="/modeescape" /> }
-    if (this.state.link5) { return <Redirect to="/modejanghad" /> }
+    if (this.state.link3) { return <Redirect to="/Mvideoescape" /> }
+    if (this.state.link5) { return <Redirect to="/Mvideojang" /> }
     if (this.state.link6) { return <Redirect to="/Moffice" /> }
   }
 

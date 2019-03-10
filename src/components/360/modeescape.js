@@ -17,7 +17,7 @@ import a from "../picture2/popscore/popalarm.png";
 import b from "../picture2/popscore/popcall.png";
 import c from "../picture2/popscore/popfriend.png";
 
-import {enterroom, choosealarm, choosefriend, choosecall} from '../../action'
+import {enterroom} from '../../action'
 import {connect} from 'react-redux';
 
 import Preload from '../preload';

@@ -87,6 +87,9 @@ import finalend from './office/finalend';
 import finalnormal from './office/finalnormal';
 import Mfinalnormal from './office/Mfinalnormal';
 
+import Mvideoescape from './office/Mvideoescape';
+import Mvideojang from './office/Mvideojang';
+
 import stair3600 from './stair360code/stair3600';
 import stair3601 from './stair360code/stair3601';
 import stair3602 from './stair360code/stair3602';
@@ -301,6 +304,9 @@ class App extends React.Component{
       {path:"/fire1",component:fire1,timer:false},
       {path:"/fire2",component:fire2,timer:false},
       {path:"/fire3",component:fire3,timer:false},
+
+      {path:"/Mvideoescape",component:Mvideoescape,timer:false,scoreSetting:false},
+      {path:"/Mvideojang",component:Mvideojang,timer:false,scoreSetting:false},
 
       {path:"/allsum",component:allsum,timer:false,scoreSetting:false},
       {path:"/fireoffice",component:fireoffice},

@@ -1,8 +1,11 @@
 import React from 'react';
-import { Player } from 'video-react';
+import { Player, ControlBar } from 'video-react';
 import '../css/Info.css';
 import intro from "../video/file/fire.mp4";
 import { BrowserRouter as  Link,Redirect } from 'react-router-dom';
+
+import Preload from '../preload';
+import { Preloader, Placeholder } from 'react-preloading-screen';
 
 class IntroMP4 extends React.Component{
   constructor(props) {
@@ -29,6 +32,7 @@ class IntroMP4 extends React.Component{
         return <Redirect to="/howtoplay" /> 
        }
       return (
+         <Preloader>
         <div>
          
             <div className="video">
@@ -39,12 +43,18 @@ class IntroMP4 extends React.Component{
 
             >
             <source src={intro} />
+            {/* <ControlBar autoHide={false} disableDefaultControls></ControlBar> */}
 
  
             </Player> 
             </div>
 
         </div>
+
+        <Placeholder>
+<span><Preload/></span>
+</Placeholder>
+</Preloader>
       );
     }
   }

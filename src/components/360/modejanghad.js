@@ -69,10 +69,6 @@ class modejanghad extends React.Component {
 
   next=name=>()=>{ this.setState({ [name]:true })}
   Redirect=()=>{
-    if(this.state.firestair){this.props.dispatch(enterroom(true)); return <Redirect to="/stair3600"/> }
-    if(this.state.lift){this.props.dispatch(enterroom(true)); return <Redirect to="/lift"/> }
-    if(this.state.normalstair){this.props.dispatch(enterroom(true)); return <Redirect to="/gotoshair"/> }
-    if(this.state.toilet){this.props.dispatch(enterroom(true)); return <Redirect to="/restroom"/> }
     if(this.state.call){this.props.dispatch(choosecall(true)); return <Redirect to="/Mcall"/> }
     if(this.state.alarm){this.props.dispatch(choosealarm(true)); return <Redirect to="/Malarm"/> }
     if(this.state.friend){this.props.dispatch(choosefriend(true)); return <Redirect to="/Mfriend"/> }
