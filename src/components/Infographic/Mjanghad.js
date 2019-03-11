@@ -9,7 +9,6 @@ import {connect} from 'react-redux';
 import Sound from 'react-sound';
 import sound from '../video/sound/infojanghad.mp3';
 
-import {enterroom, choosealarm, choosefriend, choosecall} from '../../action'
 import Popup from '../Scene/popup';
 import walk1 from "../picture2/popscore/cojang.png";
 import sound3 from '../video/sound/sjang.mp3';
@@ -35,7 +34,9 @@ class Mjanghad extends React.Component{
 
   // close=()=>{this.setState({ link:true })}
   setlink=link=>()=>{this.setState({ [link]:true })}
-  Redirect=()=>{if(this.state.link){this.props.dispatch(choosecall(false),choosealarm(false),choosefriend(false)) ;return <Redirect to="/choose" /> }}
+  Redirect=()=>{
+    if(this.state.link){return <Redirect to="/choose" /> }
+  }
 
   openpop=data=>()=>{
     this.setState({[data.state]:true});

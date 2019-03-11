@@ -43,7 +43,7 @@ class IntroMP4 extends React.Component{
 
             >
             <source src={intro} />
-            {/* <ControlBar autoHide={false} disableDefaultControls></ControlBar> */}
+            <ControlBar autoHide={false} disableDefaultControls></ControlBar>
 
  
             </Player> 
