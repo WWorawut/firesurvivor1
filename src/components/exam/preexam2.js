@@ -165,7 +165,7 @@ class preexam2 extends React.Component {
             change={this.change('choice2')}
             quiz="2. คนส่วนใหญ่ที่เสียชีวิตในเหตุเพลิงไหม้ มาจากสาเหตุใดมากที่สุด"
             onechoice="ก. ล้ม"
-            twochoice="ข. ไฟคอก"
+            twochoice="ข. ไฟคลอก"
             threechoice="ค. ความร้อน"
             fourchoice="ง. ควันพิษ"
             a = "false1"

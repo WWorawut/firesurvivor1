@@ -313,7 +313,7 @@ class exam2 extends React.Component {
             quiz="9. คนส่วนใหญ่ที่เสียชีวิตในเหตุเพลิงไหม้ มาจากสาเหตุใดมากที่สุด"
             onechoice="ก. ควันพิษ"
             twochoice="ข. ความร้อน"
-            threechoice="ค. ไฟคอก"
+            threechoice="ค. ไฟคลอก"
             fourchoice="ง. ล้ม"
             a = "true"
             b = "false2"
