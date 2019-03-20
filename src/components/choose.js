@@ -17,7 +17,7 @@ import animationData from './animate/choose.json'
 
 import Preload from './preload';
 import { Preloader, Placeholder } from 'react-preloading-screen';
-import {enterroom, choosealarm, choosefriend, choosecall, fireroom} from '../action'
+import {enterroom, choosealarm, choosefriend, choosecall, fireroom, savescore, stopTimer} from '../action'
 
 class choose extends React.Component {
   constructor(props) {
@@ -47,11 +47,13 @@ class choose extends React.Component {
 
 
   componentDidMount() {
-    this.props.dispatch(choosecall(false))
-    this.props.dispatch(choosealarm(false))
-    this.props.dispatch(choosefriend(false))
-    this.props.dispatch(enterroom(false))
-    this.props.dispatch(fireroom(false))
+    this.props.dispatch(choosecall(false));
+    this.props.dispatch(choosealarm(false));
+    this.props.dispatch(choosefriend(false));
+    this.props.dispatch(enterroom(false));
+    this.props.dispatch(fireroom(false));
+    this.props.dispatch(savescore(-this.props.score));
+    this.props.dispatch(stopTimer(false));
     setTimeout(this.soundOn, 1000);
   }
   soundOn = () => {
@@ -156,7 +158,8 @@ class choose extends React.Component {
 }
 
 const connectscore = state => ({
-  sound: state.sound
+  sound: state.sound,
+  score: state.score
 })
 
 export default connect(connectscore)(choose);
